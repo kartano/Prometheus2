@@ -1,0 +1,6 @@
+{
+  "require": {
+    	"facebook/php-sdk": "3.2.*",
+    "team-reflex/discord-php": "^4.0"
+    }
+}
