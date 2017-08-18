@@ -8,5 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'TrafficCophp' => array($vendorDir . '/TrafficCophp/ByteBuffer/src'),
     'React\\Partial' => array($vendorDir . '/react/partial/src'),
+    'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
     'Evenement' => array($vendorDir . '/evenement/evenement/src'),
+    'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib'),
 );
