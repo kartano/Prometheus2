@@ -20,6 +20,22 @@ require_once dirname(__FILE__) . '/../bootstrap.php';
 
 // SEE:  https://www.binpress.com/tutorial/php-bootstrapping-crash-course/146
 
+// SAMPLE OF CONF FILE APACHE:
+/*
+ * DocumentRoot /path/to/myapp/app/public
+<Directory "/path/to/myapp/app/public">
+  # other setting here
+</Directory>
+ */
+
+// Then the local .htaccess looks likes this:
+/*
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+ */
+
 $page = $_SERVER['REQUEST_URI'];
 $halfValue = explode('.php/', $page);
 
