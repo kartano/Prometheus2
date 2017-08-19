@@ -14,15 +14,23 @@
  * @property bool uses_jqueryui Flag to determine if header needs to include jquery ui
  * @property bool display_header Flag to determine if page <header> element is rendered.
  * @property bool display_footer Flag to determine if page <footer> element is rendered.
+ * @property string document_type The HTML Document type.
+ * @property string render_body_only If TRUE then only the body of the page is render - the <HEAD> and <BODY> tags do NOT get used.
+ * @property string title The title of the site.
+ * @property string sectionid The HTML ID.
  */
 namespace Prometheus2\common\pagerendering;
-
+use Prometheus2\common\settings\Settings AS CFG;
 /**
  * Class PageOptions
  * @package Prometheus2\common\pagerendering
  */
 class PageOptions
 {
+    /**
+     * @var int $sectioncount A static var shared between all page options, to help ensure they are unique.
+     */
+    protected static $sectioncount=1;
     /**
      * @var array The array of settings
      */
@@ -37,6 +45,14 @@ class PageOptions
         $this->uses_jqueryui=true;
         $this->display_header=true;
         $this->display_footer=true;
+
+        $this->document_type='HTML';
+
+        $this->render_body_only=false;
+
+        $this->title=CFG::get('app','name');
+
+        $this->sectionid='section'.self::$sectioncount++;
     }
 
     /**
