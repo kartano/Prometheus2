@@ -6,14 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'yii\\swiftmailer\\' => array($vendorDir . '/yiisoft/yii2-swiftmailer'),
-    'yii\\httpclient\\' => array($vendorDir . '/yiisoft/yii2-httpclient'),
-    'yii\\composer\\' => array($vendorDir . '/yiisoft/yii2-composer'),
-    'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
-    'yii\\authclient\\' => array($vendorDir . '/yiisoft/yii2-authclient'),
-    'yii\\' => array($vendorDir . '/yiisoft/yii2'),
-    'dektrium\\user\\' => array($vendorDir . '/dektrium/yii2-user'),
-    'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'WyriHaximus\\React\\Guzzle\\HttpClient\\' => array($vendorDir . '/wyrihaximus/react-guzzle-http-client/src'),
     'WyriHaximus\\React\\GuzzlePsr7\\' => array($vendorDir . '/wyrihaximus/react-guzzle-psr7/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
@@ -40,7 +32,6 @@ return array(
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
-    'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/EmailValidator'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),
     'Discord\\' => array($vendorDir . '/team-reflex/discord-php/src/Discord'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),

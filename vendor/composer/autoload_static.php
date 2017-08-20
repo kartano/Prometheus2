@@ -10,9 +10,7 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '6b06ce8ccf69c43a60a1e48495a034c9' => __DIR__ . '/..' . '/react/promise-timer/src/functions.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
@@ -23,23 +21,6 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
     );
 
     public static $prefixLengthsPsr4 = array (
-        'y' => 
-        array (
-            'yii\\swiftmailer\\' => 16,
-            'yii\\httpclient\\' => 15,
-            'yii\\composer\\' => 13,
-            'yii\\bootstrap\\' => 14,
-            'yii\\authclient\\' => 15,
-            'yii\\' => 4,
-        ),
-        'd' => 
-        array (
-            'dektrium\\user\\' => 14,
-        ),
-        'c' => 
-        array (
-            'cebe\\markdown\\' => 14,
-        ),
         'W' => 
         array (
             'WyriHaximus\\React\\Guzzle\\HttpClient\\' => 36,
@@ -87,10 +68,6 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
-        'E' => 
-        array (
-            'Egulias\\EmailValidator\\' => 23,
-        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 26,
@@ -107,38 +84,6 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
     );
 
     public static $prefixDirsPsr4 = array (
-        'yii\\swiftmailer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
-        ),
-        'yii\\httpclient\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-httpclient',
-        ),
-        'yii\\composer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-composer',
-        ),
-        'yii\\bootstrap\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap',
-        ),
-        'yii\\authclient\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-authclient',
-        ),
-        'yii\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2',
-        ),
-        'dektrium\\user\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dektrium/yii2-user',
-        ),
-        'cebe\\markdown\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/cebe/markdown',
-        ),
         'WyriHaximus\\React\\Guzzle\\HttpClient\\' => 
         array (
             0 => __DIR__ . '/..' . '/wyrihaximus/react-guzzle-http-client/src',
@@ -243,10 +188,6 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Egulias\\EmailValidator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
-        ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
@@ -292,13 +233,6 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
                 0 => __DIR__ . '/..' . '/react/partial/src',
             ),
         ),
-        'H' => 
-        array (
-            'HTMLPurifier' => 
-            array (
-                0 => __DIR__ . '/..' . '/ezyang/htmlpurifier/library',
-            ),
-        ),
         'E' => 
         array (
             'Evenement' => 
@@ -308,10 +242,6 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         ),
         'D' => 
         array (
-            'Doctrine\\Common\\Lexer\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
-            ),
             'Detection' => 
             array (
                 0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
