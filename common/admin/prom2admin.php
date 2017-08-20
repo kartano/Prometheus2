@@ -11,6 +11,7 @@
 
 
 namespace Prometheus2\common\admin;
+use Detection\MobileDetect as Mobile_Detect;
 use Prometheus2\common\database as DB;
 use Prometheus2\common\pagerendering as Page;
 
@@ -58,6 +59,11 @@ class Prom2Admin extends Page\PageRenderer
         <h1>It is working.</h1>
         <p>If you can read this, we are effectively good to go.</p>
         <?php
+        $mobile=new Mobile_Detect();
+        echo "<pre>";
+        print_r($mobile->getHttpHeaders());
+        print_r($mobile->getUserAgent());
+        echo "</pre>";
     }
 
     /**

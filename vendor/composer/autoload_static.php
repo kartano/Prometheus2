@@ -312,6 +312,10 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
             ),
+            'Detection' => 
+            array (
+                0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
+            ),
         ),
     );
 
@@ -319,6 +323,7 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         'BaseFacebook' => __DIR__ . '/..' . '/facebook/php-sdk/src/base_facebook.php',
         'Facebook' => __DIR__ . '/..' . '/facebook/php-sdk/src/facebook.php',
         'FacebookApiException' => __DIR__ . '/..' . '/facebook/php-sdk/src/base_facebook.php',
+        'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

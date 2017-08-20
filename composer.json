@@ -2,6 +2,7 @@
   "require": {
     	"facebook/php-sdk": "3.2.*",
     "team-reflex/discord-php": "^4.0",
-    "dektrium/yii2-user": "^0.9.12"
+    "dektrium/yii2-user": "^0.9.12",
+    "mobiledetect/mobiledetectlib": "^2.8"
     }
 }
