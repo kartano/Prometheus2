@@ -19,6 +19,7 @@
  *           NOT get used.
  * @property string title            The title of the site.
  * @property string sectionid        The HTML ID.
+ * @property string description The Description to be used for the meta tags in web pages.
  */
 
 namespace Prometheus2\common\pagerendering;
@@ -57,6 +58,8 @@ class PageOptions
         $this->title = CFG::get('app', 'name');
 
         $this->sectionid = 'section' . self::$sectioncount++;
+
+        $this->description = CFG::get('app','description');
     }
 
     /**

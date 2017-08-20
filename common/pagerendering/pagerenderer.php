@@ -6,7 +6,7 @@
  *
  * @namespace   Prometheus2\common\pagerendering
  *
- * @version     1.0.0           2017-08-18 12:31:00 Prototype.
+ * @version     1.0.1               2017-08-20 16:02:00 Fixed bug where HTML node was missing.
  */
 
 namespace Prometheus2\common\pagerendering;
@@ -49,8 +49,15 @@ abstract class PageRenderer
     {
         $starttime = microtime(true);
         if (!$this->options->render_body_only) {
+            ?>
+            <!DOCUMENT <?= $this->options->document_type; ?>>
+            <html lang="en">
+            <?php
             $this->renderHead();
             $this->renderBody($starttime);
+            ?>
+            </html>
+            <?php
         } else {
             ?>
             <script type="text/javascript">
@@ -70,37 +77,42 @@ abstract class PageRenderer
     private function renderHead(): void
     {
         ?>
-        <!DOCUMENT <?= $this->options->document_type; ?>>
-        <head>
-            <title><?= $this->options->title; ?></title>
-            <?php
-            if ($this->options->uses_jquery) {
-                ?>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <head>
+                <title><?= $this->options->title; ?></title>
+                <meta name="robots" content="noindex, nofollow, noarchive, none, noodp, nosnippet">
+                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+                <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+                <meta name="description" content="<?=$this->options->description;?>">
+                <meta charset="UTF-8">
                 <?php
-            }
-            if ($this->options->uses_jqueryui) {
+                if ($this->options->uses_jquery) {
+                    ?>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                    <?php
+                }
+                if ($this->options->uses_jqueryui) {
+                    ?>
+                    <link rel="stylesheet"
+                          href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+                    <?php
+                }
+                $this->renderHeadContent();
                 ?>
                 <link rel="stylesheet"
-                      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-                <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-                <?php
-            }
-            $this->renderHeadContent();
-            ?>
-            <link rel="stylesheet"
-                  href="/global.css">
-            <script type="text/javascript">
-                $(function () {
+                      href="/global.css">
+                <script type="text/javascript">
+                    $(function () {
+                        <?php
+                        $this->renderDocumentReady();
+                        ?>
+                    });
                     <?php
-                    $this->renderDocumentReady();
+                    $this->renderCustomJS();
                     ?>
-                });
-                <?php
-                $this->renderCustomJS();
-                ?>
-            </script>
-        </head>
+                </script>
+            </head>
+        </html>
         <?php
         // TO DO:  render the HEAD option.
     }

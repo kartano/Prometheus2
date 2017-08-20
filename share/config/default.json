@@ -1,6 +1,7 @@
 {
   "app": {
     "name": "Prometheus2",
+    "description": "Default SunsetCoders project",
     "debug": true
   },
   "log": {
