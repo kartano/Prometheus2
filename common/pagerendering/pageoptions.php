@@ -59,7 +59,7 @@ class PageOptions
      * @param string $name The name of the setting.
      * @return mixed The return value. NULL of setting not found.
      */
-    public function __get(string $name): mixed
+    public function __get(string $name)
     {
         if (array_key_exists($name, $this->data)) {
             return $this->data[$name];
@@ -74,7 +74,7 @@ class PageOptions
      * @param string $name The name of the setting.
      * @param mixed $value The value for the setting.
      */
-    public function __set(string $name , mixed $value)
+    public function __set(string $name , $value)
     {
         $this->data[$name]=$value;
     }

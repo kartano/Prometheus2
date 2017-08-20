@@ -10,6 +10,9 @@
  */
 
 require_once dirname(__FILE__) . '/../bootstrap.php';
+use Prometheus2\common\admin as Page;
+use Prometheus2\common\database as DB;
+use Prometheus2\common\pagerendering as PR;
 
 // TO DO:  Create an instance of the app.
 //         Determine what page is requested.
@@ -36,21 +39,23 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
  */
 
-$page = $_SERVER['REQUEST_URI'];
-$halfValue = explode('.php/', $page);
-
-if (!empty($halfValue[1])) {
-    $pageName = $halfValue[1];
-} else {
-    $pageName="home";
-}
+$bits = parse_url($_SERVER['REQUEST_URI']);
+$query = isset($bits['query']) ? $bits['query'] : '';
+$path = $bits['path'];
 
 // SM:  Use $pageHome at this point to switch to what part of the site is being requested.
 //      This is be either "home" if no URL was specified; or
 //
 
-echo "<pre>";
-print_r($page);
-print_r($halfValue);
-print_r($pageName);
-echo "</pre>";
+if ($path=='/admin') {
+    $database = DB\PromDB::Create();
+    $options = new PR\PageOptions();
+    $page = new Page\Prom2Admin($database, $options);
+    $page->renderPage();
+} else {
+    // Do something with this.
+    echo "<pre>";
+    print_r($path);
+    print_r($query);
+    echo "</pre>";
+}

@@ -19,6 +19,7 @@ use prometheus2\common\logging\logger;
  */
 class Settings
 {
+    public static $config;
     /**
      * @var string $filename File from which configuration settings were loaded.
      */
@@ -32,17 +33,11 @@ class Settings
      */
     protected static function getData(): array
     {
-        static $data = null;
-        if ($data === null) {
-            self::$filename = '../share/config/default.php';
-            $rawdata = include self::$filename;
-            if (is_array($rawdata)) {
-                $data = $rawdata;
-            } else {
-                throw new \Exception("No config found in file.");
-            }
-        }
-        return $data;
+        $filename = dirname(__FILE__).'\\..\\..\\share\\config\\default.json';
+        $config=json_decode(file_get_contents($filename),true);
+        self::$config=$config;
+        self::$config['db']['socket']=intval(ini_get("mysqli.default_socket"));
+        return self::$config;
     }
 
     /**
@@ -50,7 +45,7 @@ class Settings
      *
      * @return mixed The value identified from the list of arguments.
      */
-    public static function get(...$optionPathComponents): mixed
+    public static function get(...$optionPathComponents)
     {
         $ret = self::getData();
         foreach ($optionPathComponents as $key) {
@@ -68,7 +63,7 @@ class Settings
      * @param mixed $value The value to store in specified path.
      * @param array ...$optionPathComponents The path from which to retrieve a setting
      */
-    public static function set(mixed $value, ...$optionPathComponents)
+    public static function set($value, ...$optionPathComponents)
     {
         $currentOption =   self::getData();
         foreach ($optionPathComponents as $key) {
