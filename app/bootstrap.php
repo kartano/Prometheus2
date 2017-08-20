@@ -13,7 +13,7 @@
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 // Init config data
-$config = array();
+$config = [];
 
 $configFile = dirname(__FILE__) . '/../share/config/default.php';
 if (is_readable($configFile)) {
@@ -26,10 +26,10 @@ if (is_readable($configFile)) {
  * it will fall back to here - where we can determine our class name.
  */
 spl_autoload_register(function ($name) {
-    $file=dirname(__FILE__);
-    $file.='\\..\\';
-    $name=strtolower(str_replace('Prometheus2\\','',$name)).'.php';
-    $file.=$name;
+    $file = dirname(__FILE__);
+    $file .= '\\..\\';
+    $name = strtolower(str_replace('Prometheus2\\', '', $name)) . '.php';
+    $file .= $name;
     if (file_exists($file)) {
         require_once $file;
     } else {

@@ -33,15 +33,16 @@ class Settings
      */
     protected static function getData(): array
     {
-        $filename = dirname(__FILE__).'\\..\\..\\share\\config\\default.json';
-        $config=json_decode(file_get_contents($filename),true);
-        self::$config=$config;
-        self::$config['db']['socket']=intval(ini_get("mysqli.default_socket"));
+        $filename = dirname(__FILE__) . '\\..\\..\\share\\config\\default.json';
+        $config = json_decode(file_get_contents($filename), true);
+        self::$config = $config;
+        self::$config['db']['socket'] = intval(ini_get("mysqli.default_socket"));
         return self::$config;
     }
 
     /**
-     * @param array ...$optionPathComponents The path from which to retrieve a setting.  I.E:  Settings::get('db','host');
+     * @param array ...$optionPathComponents The path from which to retrieve a setting.  I.E:
+     *                                       Settings::get('db','host');
      *
      * @return mixed The value identified from the list of arguments.
      */
@@ -60,12 +61,12 @@ class Settings
     /**
      * Set a value in the settings array.  THE VALUE IS NOT PERSISTENT BETWEEN EXECUTIONS!
      *
-     * @param mixed $value The value to store in specified path.
+     * @param mixed $value                   The value to store in specified path.
      * @param array ...$optionPathComponents The path from which to retrieve a setting
      */
     public static function set($value, ...$optionPathComponents)
     {
-        $currentOption =   self::getData();
+        $currentOption = self::getData();
         foreach ($optionPathComponents as $key) {
             if (!is_array($currentOption)) {
                 $currentOption[$key] = [];
@@ -82,10 +83,10 @@ class Settings
      */
     public static function getLogger(): logger
     {
-        static $logger=null;
-        if ($logger===null) {
-            $classType=self::get('log','class');
-            $logger= new $classType;
+        static $logger = null;
+        if ($logger === null) {
+            $classType = self::get('log', 'class');
+            $logger = new $classType;
         }
         return $logger;
     }

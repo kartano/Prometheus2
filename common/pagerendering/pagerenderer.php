@@ -2,7 +2,7 @@
 /**
  * Page rendering engine.
  *
- * @author Simon Mitchell <kartano@gmail.com>
+ * @author      Simon Mitchell <kartano@gmail.com>
  *
  * @namespace   Prometheus2\common\pagerendering
  *
@@ -31,8 +31,9 @@ abstract class PageRenderer
 
     /**
      * PageRenderer constructor.
-     * @param DB\PromDB $database The DB connect to use.
-     * @param PageOptions $options The page options to driver rendering.
+     *
+     * @param DB\PromDB   $database The DB connect to use.
+     * @param PageOptions $options  The page options to driver rendering.
      */
     public function __construct(DB\PromDB $database, PageOptions $options)
     {
@@ -125,11 +126,11 @@ abstract class PageRenderer
         $this->renderContent();
         $endtime = microtime(true);
         $timediff = $endtime - $starttime;
-        if (CFG::get('app','debug')) {
+        if (CFG::get('app', 'debug')) {
             ?>
-            <section id="debugsection_<?=__CLASS__;?>">
+            <section id="debugsection_<?= __CLASS__; ?>">
                 <code>
-                    Page Render Time:  <?=$timediff;?> seconds.
+                    Page Render Time: <?= $timediff; ?> seconds.
                 </code>
             </section>
             <?php
@@ -185,6 +186,7 @@ abstract class PageRenderer
     {
         // Render <HEADER> block.
     }
+
     /**
      * Render section content
      * @return void
@@ -207,7 +209,7 @@ abstract class PageRenderer
      * Render custom JS.
      * @return void
      */
-    
+
     protected function renderCustomJS(): void
     {
         // Render any custom JS code here - functions NOT executed within document ready.

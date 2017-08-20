@@ -10,6 +10,7 @@
  */
 
 require_once dirname(__FILE__) . '/../bootstrap.php';
+
 use Prometheus2\common\admin as Page;
 use Prometheus2\common\database as DB;
 use Prometheus2\common\pagerendering as PR;
@@ -47,7 +48,7 @@ $path = $bits['path'];
 //      This is be either "home" if no URL was specified; or
 //
 
-if ($path=='/admin') {
+if ($path == '/admin') {
     $database = DB\PromDB::Create();
     $options = new PR\PageOptions();
     $page = new Page\Prom2Admin($database, $options);

@@ -15,6 +15,7 @@ namespace Prometheus2\common\database;
 
 use Prometheus2\common\settings\Settings AS CFG;
 use Prometheus2\common\exceptions\DatabaseException AS DBException;
+
 /**
  * Class PromDB
  * @package Prometheus2\common\database
@@ -58,7 +59,8 @@ class PromDB extends \mysqli
      */
     public static function Create(): PromDB
     {
-        $settings=CFG::get('db');
-        return new PromDB($settings['host'],$settings['user'],$settings['pass'],$settings['catalogue'],$settings['port'],$settings['socket']);
+        $settings = CFG::get('db');
+        return new PromDB($settings['host'], $settings['user'], $settings['pass'], $settings['catalogue'],
+            $settings['port'], $settings['socket']);
     }
 }
