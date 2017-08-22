@@ -15,6 +15,10 @@ namespace Prometheus2\common\migration\migrationscripts;
 use Prometheus2\common\migration\MigrationBaseClass;
 use Prometheus2\common\database as DB;
 
+/**
+ * Class Init_Prom2
+ * @package Prometheus2\common\migration\migrationscripts
+ */
 class Init_Prom2 extends MigrationBaseClass
 {
     /**

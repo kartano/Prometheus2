@@ -1,5 +1,7 @@
 /* Global Styles Here */
-
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 /* Exception display box format */
 .exception_div {

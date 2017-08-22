@@ -23,6 +23,7 @@ use Prometheus2\common\exceptions\DatabaseException AS DBException;
  */
 class PromDB extends \mysqli
 {
+    protected $isGod;
     /**
      * PromDB constructor.
      *
@@ -44,6 +45,7 @@ class PromDB extends \mysqli
         if ($this->connect_error) {
             throw new DBException($this->connect_error, $this->connect_errno);
         }
+        $this->isGod=false;
     }
 
     /**
@@ -74,8 +76,20 @@ class PromDB extends \mysqli
     public static function createGod(): PromDB
     {
         $settings = CFG::get('god');
-        return new PromDB($settings['host'], $settings['user'], $settings['pass'], $settings['catalogue'],
+        $database=new PromDB($settings['host'], $settings['user'], $settings['pass'], $settings['catalogue'],
             $settings['port'], $settings['socket']);
+        $database->isGod=true;
+        return $database;
+    }
+
+    /**
+     * Get the "God" flag.
+     *
+     * @return bool TRUE if this is a root connection.
+     */
+    public function getIsGod(): bool
+    {
+        return $this->isGod;
     }
 
     /**
@@ -107,15 +121,15 @@ class PromDB extends \mysqli
     {
         try {
             // SM:  PHP/MySQLI do not like you using params for table names.
-            $query="SHOW TABLES LIKE '".$this->real_escape_string($tablename)."'";
-            $statement=$this->prepare($query);
+            $query = "SHOW TABLES LIKE '" . $this->real_escape_string($tablename) . "'";
+            $statement = $this->prepare($query);
             $statement->execute();
             $statement->store_result();
-            $retval=$statement->num_rows==1;
+            $retval = $statement->num_rows == 1;
             $statement->close();
             return $retval;
         } catch (\mysqli_sql_exception $exception) {
-            throw new DatabaseException($exception->getMessage(), $exception->getCode(),$exception);
+            throw new DatabaseException($exception->getMessage(), $exception->getCode(), $exception);
         }
     }
 }
