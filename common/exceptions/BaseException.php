@@ -32,6 +32,27 @@ abstract class BaseException extends \Exception
     }
 
     /**
+     * Displays a nicely formatted exception on the screen.
+     * This will only show a HTTP 500 if DEBUG is turned off.
+     */
+    public function display()
+    {
+        if (CFG::get('app','debug')) {
+            ?>
+            </script>
+            <div class="exception_div">
+                <section class="exception_section">
+                    <h1>Exception thrown: <code>".__CLASS__."</code></h1>
+                    <p>Error(<?=$this->getCode(); ?>) - <?=$this->getMessage();?></p>
+                </section>
+            </div>
+            <?php
+        } else {
+            // THrow a HTTP 500.
+        }
+    }
+
+    /**
      * Save this exception to the log.
      *
      * @return int The related db entry, where applicable.

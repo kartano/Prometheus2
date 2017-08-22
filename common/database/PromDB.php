@@ -8,7 +8,7 @@
  *
  * @namespace       Prometheus2\common\database
  *
- * @version         1.0.0           2017-08-17 2017-08-17 Prototype
+ * @version         1.1.0           2017-08-22 09:29:00 Now turns on exceptions instead of errors.
  */
 
 namespace Prometheus2\common\database;
@@ -32,11 +32,14 @@ class PromDB extends \mysqli
      * @param int    $port
      * @param int    $socket
      *
-     * @throws DatabaseException Thrown if the DB does not connect.
+     * @throws DBException Thrown if the DB does not connect.
      */
     public function __construct(string $host, string $username, string $passwd, string $dbname, int $port, int $socket)
     {
         parent::__construct($host, $username, $passwd, $dbname, $port, $socket);
+
+        // SM:  Force us to throw exceptions for all errors.
+        mysqli_report(MYSQLI_REPORT_ALL);
         if ($this->connect_error) {
             throw new DBException($this->connect_error, $this->connect_errno);
         }
@@ -47,6 +50,7 @@ class PromDB extends \mysqli
      */
     public function __destruct()
     {
+        mysqli_report(MYSQLI_REPORT_OFF);
         if ($this->ping()) {
             @$this->close();
         }
@@ -62,5 +66,22 @@ class PromDB extends \mysqli
         $settings = CFG::get('db');
         return new PromDB($settings['host'], $settings['user'], $settings['pass'], $settings['catalogue'],
             $settings['port'], $settings['socket']);
+    }
+
+    /**
+     * Set flag for foreign key checks.
+     *
+     * @param bool $flag True to turn on foreign key checks, false to turn them off.
+     *
+     * @throws \mysqli_sql_exception If the query fails.
+     */
+    public function ForeignKeyChecks(bool $flag)
+    {
+        try {
+            $value = $flag ? '1' : '0';
+            $this->query('SET FOREIGN_KEY_CHECKS=' . $value);
+        } catch (\mysqli_sql_exception $exception) {
+            throw $exception;
+        }
     }
 }

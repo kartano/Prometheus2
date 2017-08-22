@@ -38,3 +38,16 @@ spl_autoload_register(function ($name) {
         throw new \Exception("Unable to create instance of class: $name.");
     }
 });
+
+/**
+ * Execute migration scripts.
+ */
+try {
+    $db=\Prometheus2\common\database\PromDB::Create();
+    $manager=new \Prometheus2\common\migration\MigrationManager;
+    $manager->InstallScripts($db);
+    $db->close();
+} catch (\mysqli_sql_exception $exception) {
+    Prometheus2\common\pagerendering\pagehelper::throwHTTPError($exception->getCode(), $exception->getMessage());
+    exit(-1);
+}
