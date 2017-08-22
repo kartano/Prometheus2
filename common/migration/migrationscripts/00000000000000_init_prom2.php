@@ -44,8 +44,9 @@ class Init_Prom2 extends MigrationBaseClass
             $statement=$this->db->prepare("CREATE TABLE `prom2_migrations` (
   `cntID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `datExecute` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  `txtFilename` varchar(255) NOT NULL DEFAULT '' COMMENT 'Name of migration script run.',
-  PRIMARY KEY (`cntID`)
+  `txtFilename` varchar(255) NOT NULL DEFAULT '' COMMENT 'Name of migration script run.',  
+  PRIMARY KEY (`cntID`),
+  UNIQUE KEY `txtFilename` (`txtFilename`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
             $statement->execute();
             $statement->close();

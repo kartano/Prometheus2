@@ -31,6 +31,12 @@ class MigrationManager
      */
     public static function InstallScripts(DB\PromDB $db, bool $up=true): void
     {
+        static $already_checked=false;
+
+        if ($already_checked) {
+            return;
+        }
+        $already_checked=true;
         $migration_scripts=[];
 
         $script_path=dirname(__FILE__).'\\migrationscripts\\';
@@ -48,7 +54,6 @@ class MigrationManager
                     {
                         $class_name=self::getMigrationScriptClassName($filename_parts['filename']);
                         require_once $script_path.$filename;
-                        echo "<p>Create $class_name</p>";
                         $class_name="Prometheus2\\common\\migration\\migrationscripts\\$class_name";
                         $migration_script=new $class_name($db);
                         $migration_scripts[$filename]=$migration_script;
@@ -62,7 +67,19 @@ class MigrationManager
         }
 
         try {
-            foreach($migration_scripts as $class_name => $migration_script) {
+            $migration_insert_query="INSERT INTO prom2_migrations(datExecute, txtFilename) VALUES (NOW(), ?)";
+            $migration_check_query="SELECT * from prom2_migrations WHERE txtFilename=?";
+            foreach($migration_scripts as $filename => $migration_script) {
+                $statement=$db->prepare($migration_check_query);
+                $statement->bind_param('s', $filename);
+                $statement->execute();
+                $statement->store_result();
+                $rowcount=$statement->num_rows;
+                $statement->close();
+                if ($rowcount==1) {
+                    continue;
+                }
+                $db->autocommit(false);
                 $db->begin_transaction();
                 if ($up) {
                     $migration_script->safeUp();
@@ -70,11 +87,16 @@ class MigrationManager
                     $migration_script->safeDown();
                 }
                 $db->commit();
+                $db->autocommit(true);
                 if ($up) {
                     $migration_script->up();
                 } else {
                     $migration_script->down();
                 }
+                $statement=$db->prepare($migration_insert_query);
+                $statement->bind_param('s', $filename);
+                $statement->execute();
+                $statement->close();
             }
         } catch (\mysqli_sql_exception $exception) {
             throw $exception;

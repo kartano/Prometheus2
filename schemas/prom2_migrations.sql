@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100125
 File Encoding         : 65001
 
-Date: 2017-08-22 07:29:32
+Date: 2017-08-22 12:36:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,10 +23,7 @@ CREATE TABLE `prom2_migrations` (
   `cntID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `datExecute` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   `txtFilename` varchar(255) NOT NULL DEFAULT '' COMMENT 'Name of migration script run.',
-  PRIMARY KEY (`cntID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of prom2_migrations
--- ----------------------------
+  PRIMARY KEY (`cntID`),
+  UNIQUE KEY `txtFilename` (`txtFilename`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 SET FOREIGN_KEY_CHECKS=1;
