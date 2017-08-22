@@ -66,7 +66,7 @@ class BrowserUtils
             case 504: $text = 'Gateway Time-out'; break;
             case 505: $text = 'HTTP Version not supported'; break;
             default:
-                $text= 'Unknown http status code "' . htmlentities($code) . '"';
+                $text= 'Unknown http status code "' . htmlentities($error_code) . '"';
                 break;
         }
         return $text;

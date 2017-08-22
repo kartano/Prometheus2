@@ -33,12 +33,17 @@ class Create_Prom2_Log extends MigrationBaseClass
      * @return void
      * @throws \mysqli_sql_exception Exception thrown on either foreign key setting, or the query to create tables.
      */
-    public function safeUp(): void
+    public function up(): void
     {
         try {
+            if ($this->db->tableExists('prom2_log')) {
+                return;
+            }
             $this->db->ForeignKeyChecks(false);
-            $this->db->query = ("DROP TABLE IF EXISTS prom2_log");
-            $this->db->query("CREATE TABLE `prom2_log` (
+            $statement=$this->db->prepare("DROP TABLE IF EXISTS prom2_log");
+            $statement->execute();
+            $statement->close();
+            $statement=$this->db->prepare("CREATE TABLE `prom2_log` (
   `cntLogID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `datTimestamp` datetime NOT NULL,
   `txtCallStack` varchar(512) DEFAULT NULL,
@@ -48,6 +53,8 @@ class Create_Prom2_Log extends MigrationBaseClass
   PRIMARY KEY (`cntLogID`),
   KEY `lngLoggedInUserID` (`lngLoggedInUserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+            $statement->execute();
+            $statement->close();
             $this->db->ForeignKeyChecks(true);
         } catch (\mysqli_sql_exception $exception) {
             throw $exception;
@@ -60,11 +67,13 @@ class Create_Prom2_Log extends MigrationBaseClass
      * @return void
      * @throws \mysqli_sql_exception Exception thrown on either foreign key setting, or the query to create tables.
      */
-    public function safeDown(): void
+    public function down(): void
     {
         try {
             $this->db->ForeignKeyChecks(false);
-            $this->db->query = ("DROP TABLE IF EXISTS prom2_log");
+            $statement=$this->db->prepare("DROP TABLE IF EXISTS prom2_log");
+            $statement->execute();
+            $statement->close();
             $this->db->ForeignKeyChecks(true);
         } catch (\mysqli_sql_exception $exception) {
             throw $exception;

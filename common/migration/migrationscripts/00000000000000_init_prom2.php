@@ -33,20 +33,25 @@ class Init_Prom2 extends MigrationBaseClass
      * @return void
      * @throws \mysqli_sql_exception Exception thrown on either foreign key setting, or the query to create tables.
      */
-    public function safeUp(): void
+    public function up(): void
     {
         try {
+            // SM:  We NEVER delete this table.
+            if ($this->db->tableExists('prom2_migrations')) {
+                return;
+            }
             $this->db->ForeignKeyChecks(false);
-            $this->db->query = ("DROP TABLE IF EXISTS prom2_migrations");
-            $this->db->query("CREATE TABLE `prom2_migrations` (
+            $statement=$this->db->prepare("CREATE TABLE `prom2_migrations` (
   `cntID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `datExecute` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   `txtFilename` varchar(255) NOT NULL DEFAULT '' COMMENT 'Name of migration script run.',
   PRIMARY KEY (`cntID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8");
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+            $statement->execute();
+            $statement->close();
             $this->db->ForeignKeyChecks(true);
         } catch (\mysqli_sql_exception $exception) {
-            throw $exception;
+           throw $exception;
         }
     }
 
@@ -56,11 +61,13 @@ class Init_Prom2 extends MigrationBaseClass
      * @return void
      * @throws \mysqli_sql_exception Exception thrown on either foreign key setting, or the query to create tables.
      */
-    public function safeDown(): void
+    public function down(): void
     {
         try {
             $this->db->ForeignKeyChecks(false);
-            $this->db->query = ("DROP TABLE IF EXISTS prom2_migrations");
+            $statement=$this->db->prepare("DROP TABLE IF EXISTS prom2_migrations");
+            $statement->execute();
+            $statement->close();
             $this->db->ForeignKeyChecks(true);
         } catch (\mysqli_sql_exception $exception) {
             throw $exception;

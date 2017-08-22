@@ -53,7 +53,7 @@ abstract class MigrationBaseClass
     public function __destruct()
     {
         if ($this->internal_db_used) {
-            $this->db->close();
+            @$this->db->close();
         }
     }
 

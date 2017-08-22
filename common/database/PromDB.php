@@ -8,11 +8,12 @@
  *
  * @namespace       Prometheus2\common\database
  *
- * @version         1.1.0           2017-08-22 09:29:00 Now turns on exceptions instead of errors.
+ * @version         1.1.1           2017-08-22 12:12:00 Added tableExists method.
  */
 
 namespace Prometheus2\common\database;
 
+use Prometheus2\common\exceptions\DatabaseException;
 use Prometheus2\common\settings\Settings AS CFG;
 use Prometheus2\common\exceptions\DatabaseException AS DBException;
 
@@ -39,7 +40,7 @@ class PromDB extends \mysqli
         parent::__construct($host, $username, $passwd, $dbname, $port, $socket);
 
         // SM:  Force us to throw exceptions for all errors.
-        mysqli_report(MYSQLI_REPORT_ALL);
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         if ($this->connect_error) {
             throw new DBException($this->connect_error, $this->connect_errno);
         }
@@ -50,10 +51,8 @@ class PromDB extends \mysqli
      */
     public function __destruct()
     {
-        mysqli_report(MYSQLI_REPORT_OFF);
-        if ($this->ping()) {
-            @$this->close();
-        }
+        @mysqli_report(MYSQLI_REPORT_OFF);
+        @$this->close();
     }
 
     /**
@@ -82,6 +81,30 @@ class PromDB extends \mysqli
             $this->query('SET FOREIGN_KEY_CHECKS=' . $value);
         } catch (\mysqli_sql_exception $exception) {
             throw $exception;
+        }
+    }
+
+    /**
+     * Check to see if a table exists in this particular database.
+     *
+     * @param string $tablename The table to check.
+     *
+     * @return bool TRUE if table exists, FALSE if not.
+     * @throws \Prometheus2\common\exceptions\DatabaseException On errors checking for table.
+     */
+    public function tableExists(string $tablename): bool
+    {
+        try {
+            // SM:  PHP/MySQLI do not like you using params for table names.
+            $query="SHOW TABLES LIKE '".$this->real_escape_string($tablename)."'";
+            $statement=$this->prepare($query);
+            $statement->execute();
+            $statement->store_result();
+            $retval=$statement->num_rows==1;
+            $statement->close();
+            return $retval;
+        } catch (\mysqli_sql_exception $exception) {
+            throw new DatabaseException($exception->getMessage(), $exception->getCode(),$exception);
         }
     }
 }
