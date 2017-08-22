@@ -15,5 +15,13 @@
     "catalogue": "prom2",
     "port": 3306,
     "socket": 0
+  },
+  "god": {
+    "host": "localhost",
+    "user": "root",
+    "pass": "",
+    "catalogue": "prom2",
+    "port": 3306,
+    "socket": 0
   }
 }

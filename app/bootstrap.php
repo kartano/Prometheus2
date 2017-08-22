@@ -43,7 +43,7 @@ spl_autoload_register(function ($name) {
  * Execute migration scripts.
  */
 try {
-    $db=\Prometheus2\common\database\PromDB::Create();
+    $db=\Prometheus2\common\database\PromDB::createGod();
     $manager=new \Prometheus2\common\migration\MigrationManager;
     $manager->InstallScripts($db);
     @$db->close();

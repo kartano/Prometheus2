@@ -8,7 +8,7 @@
  *
  * @namespace       Prometheus2\common\database
  *
- * @version         1.1.1           2017-08-22 12:12:00 Added tableExists method.
+ * @version         1.1.2           2017-08-22 15:00:00 Added createGod
  */
 
 namespace Prometheus2\common\database;
@@ -56,13 +56,24 @@ class PromDB extends \mysqli
     }
 
     /**
-     * Basic factory method to create a new instance of a DB.
+     * Basic factory method to create a new instance of a DB using the standard DB access.
      *
      * @return \Prometheus2\common\database\PromDB
      */
     public static function Create(): PromDB
     {
         $settings = CFG::get('db');
+        return new PromDB($settings['host'], $settings['user'], $settings['pass'], $settings['catalogue'],
+            $settings['port'], $settings['socket']);
+    }
+
+    /**
+     * Factory method to create a new instance of a DB with ROOT priviledges.
+     * THIS CONNECTION SHOULD NOT BE USED FOR ANYTHING OTHER THAN MIGRATION SCRIPTS!
+     */
+    public static function createGod(): PromDB
+    {
+        $settings = CFG::get('god');
         return new PromDB($settings['host'], $settings['user'], $settings['pass'], $settings['catalogue'],
             $settings['port'], $settings['socket']);
     }
