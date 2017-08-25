@@ -4,13 +4,13 @@
  *
  * @author          Simon Mitchell <kartano@gmail.com>
  *
- * @namespace       Prometheus2\common\admin
+ * @namespace       Prometheus2\common\modules\admin
  *
  * @version         1.0.0           2017-08-20 2017-08-20 Prototype
  */
 
 
-namespace Prometheus2\common\admin;
+namespace Prometheus2\common\modules\admin;
 use Detection\MobileDetect as Mobile_Detect;
 use Prometheus2\common\database as DB;
 use Prometheus2\common\pagerendering as Page;
