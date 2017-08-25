@@ -12,6 +12,11 @@
 // Including global autoloader
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
+/**
+ * Global Prom2 Version no.
+ */
+define('PROM2_VERSION_NO','0.0.1alpha',true);
+
 // Init config data
 $config = [];
 

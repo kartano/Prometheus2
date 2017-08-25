@@ -14,3 +14,13 @@ body {
 .exception_section {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Prom2 Heading font styles */
+.prom2admin_headerspan {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+.prom2admin_versionno {
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategrey;
+}

@@ -9,12 +9,15 @@
  * @version         1.0.0           2017-08-22 2017-08-22 Prototype
  */
 
-
 namespace Prometheus2\common\migration\migrationscripts;
 
 use Prometheus2\common\migration\MigrationBaseClass;
 use Prometheus2\common\database AS DB;
 
+/**
+ * Class Create_Prom2_User
+ * @package Prometheus2\common\migration\migrationscripts
+ */
 class Create_Prom2_User extends MigrationBaseClass
 {
     /**
