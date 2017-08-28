@@ -49,7 +49,7 @@ spl_autoload_register(function ($name) {
  */
 try {
     $db=\Prometheus2\common\database\PromDB::createGod();
-    $manager=new \Prometheus2\common\migration\MigrationManager;
+    $manager=new \Prometheus2\common\migration\MigrationManager();
     $manager->InstallScripts($db);
     @$db->close();
 } catch (\Exception $exception) {

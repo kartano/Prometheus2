@@ -6,10 +6,11 @@
  *
  * @namespace       Prometheus2\common\migration
  *
- * @version         1.0.0           2017-08-22 2017-08-22 Prototype
+ * @version         1.0.1           2017-08-27 20:50:00 SM Fixed a bug where a fresh DB would never run any migration scripts because the migration table wouldn't exist yet.
  */
 
 namespace Prometheus2\common\migration;
+
 use Prometheus2\common\database as DB;
 use Prometheus2\common\exceptions AS EX;
 
@@ -29,55 +30,54 @@ class MigrationManager
      * @throws \Exception Usually occurs when a particular migration script cannot be executed.
      * @throws \Prometheus2\common\exceptions\DatabaseException if an attempt to determine if a table exists has failed.
      */
-    public static function InstallScripts(DB\PromDB $db, bool $up=true): void
+    public static function InstallScripts(DB\PromDB $db, bool $up = true): void
     {
-        static $already_checked=false;
+        static $already_checked = false;
 
         if ($already_checked) {
             return;
         }
-        $already_checked=true;
-        $migration_scripts=[];
+        $already_checked = true;
+        $migration_scripts = [];
 
-        $script_path=dirname(__FILE__).'\\migrationscripts\\';
-        $handle=opendir($script_path);
-        if ($handle===false)
+        $script_path = dirname(__FILE__) . '\\migrationscripts\\';
+        $handle = opendir($script_path);
+        if ($handle === false)
             throw new \RuntimeException("Migration script folder doesn't exist or is not accessible: $script_path");
-        try
-        {
-            while ($filename=readdir($handle))
-            {
-                if ($filename != "." && $filename != "..")
-                {
-                    $filename_parts=pathinfo($script_path.$filename);
-                    if (strtoupper($filename_parts['extension'])=="PHP")
-                    {
-                        $class_name=self::getMigrationScriptClassName($filename_parts['filename']);
-                        require_once $script_path.$filename;
-                        $class_name="Prometheus2\\common\\migration\\migrationscripts\\$class_name";
-                        $migration_script=new $class_name($db);
-                        $migration_scripts[$filename]=$migration_script;
+        try {
+            while ($filename = readdir($handle)) {
+                if ($filename != "." && $filename != "..") {
+                    $filename_parts = pathinfo($script_path . $filename);
+                    if (strtoupper($filename_parts['extension']) == "PHP") {
+                        $class_name = self::getMigrationScriptClassName($filename_parts['filename']);
+                        require_once $script_path . $filename;
+                        $class_name = "Prometheus2\\common\\migration\\migrationscripts\\$class_name";
+                        $migration_script = new $class_name($db);
+                        $migration_scripts[$filename] = $migration_script;
                     }
                 }
             }
             closedir($handle);
-        }
-        catch (\Exception $exception) {
+        } catch (\Exception $exception) {
             throw $exception;
         }
 
         try {
-            $migration_insert_query="INSERT INTO prom2_migrations(datExecute, txtFilename) VALUES (NOW(), ?)";
-            $migration_check_query="SELECT * from prom2_migrations WHERE txtFilename=?";
-            foreach($migration_scripts as $filename => $migration_script) {
-                $statement=$db->prepare($migration_check_query);
-                $statement->bind_param('s', $filename);
-                $statement->execute();
-                $statement->store_result();
-                $rowcount=$statement->num_rows;
-                $statement->close();
-                if ($rowcount==1) {
-                    continue;
+            $migration_insert_query = "INSERT INTO prom2_migrations(datExecute, txtFilename) VALUES (NOW(), ?)";
+            $migration_check_query = "SELECT * from prom2_migrations WHERE txtFilename=?";
+            foreach ($migration_scripts as $filename => $migration_script) {
+                // SM:  We only bother to check if this migration has run, IF the migrations table exists.
+                //      If not, we treat this as a clean install.
+                if ($db->tableExists('prom2_migrations')) {
+                    $statement = $db->prepare($migration_check_query);
+                    $statement->bind_param('s', $filename);
+                    $statement->execute();
+                    $statement->store_result();
+                    $rowcount = $statement->num_rows;
+                    $statement->close();
+                    if ($rowcount == 1) {
+                        continue;
+                    }
                 }
                 $db->autocommit(false);
                 $db->begin_transaction();
@@ -93,7 +93,7 @@ class MigrationManager
                 } else {
                     $migration_script->down();
                 }
-                $statement=$db->prepare($migration_insert_query);
+                $statement = $db->prepare($migration_insert_query);
                 $statement->bind_param('s', $filename);
                 $statement->execute();
                 $statement->close();
@@ -114,8 +114,8 @@ class MigrationManager
      */
     protected static function getMigrationScriptClassName(string $filename): string
     {
-        $first_us_pos=strpos($filename,'_');
-        $filename=substr($filename,$first_us_pos+1);
-        return ucwords($filename,'_');
+        $first_us_pos = strpos($filename, '_');
+        $filename = substr($filename, $first_us_pos + 1);
+        return ucwords($filename, '_');
     }
 }

@@ -6,7 +6,7 @@
  *
  * @namespace
  *
- * @version         1.0.0           2017-08-16 2017-08-16 Prototype
+ * @version         1.0.1           2017-08-27 20:53:00 SM Fixed bug where index.html and index.php were treated as pages to ignore.
  */
 
 require_once dirname(__FILE__) . '/../bootstrap.php';
@@ -52,6 +52,8 @@ $path = $bits['path'];
 $database = DB\PromDB::Create();
 switch(strtolower($path)) {
     case '/':
+    case 'index.html':
+    case 'index.php':
         $options=new PR\PageOptions();
         $page = new Content\HomePage($database,$options);
         $page->renderPage();

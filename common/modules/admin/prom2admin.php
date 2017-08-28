@@ -21,6 +21,7 @@ use Prometheus2\common\pagerendering as Page;
  */
 class Prom2Admin extends Page\PageRenderer
 {
+    protected $adminheader;
     /**
      * Prom2Admin constructor.
      *
@@ -29,6 +30,7 @@ class Prom2Admin extends Page\PageRenderer
      */
     public function __construct(DB\PromDB $database, Page\PageOptions $options)
     {
+        $this->adminheader=new Prom2AdminHeader($database);
         parent::__construct($database, $options);
     }
 
@@ -47,7 +49,7 @@ class Prom2Admin extends Page\PageRenderer
      */
     protected function renderHeader(): void
     {
-        // Render <HEADER> block.
+        $this->adminheader->renderPage();
     }
     /**
      * Render section content
@@ -55,10 +57,6 @@ class Prom2Admin extends Page\PageRenderer
      */
     protected function renderSectionContent(): void
     {
-        ?>
-        <h1>It is working.</h1>
-        <p>If you can read this, we are effectively good to go.</p>
-        <?php
         $mobile=new Mobile_Detect();
         echo "<pre>";
         print_r($mobile->getHttpHeaders());
