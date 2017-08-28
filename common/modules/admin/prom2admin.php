@@ -6,7 +6,7 @@
  *
  * @namespace       Prometheus2\common\modules\admin
  *
- * @version         1.0.0           2017-08-20 2017-08-20 Prototype
+ * @version         1.0.1           2017-08-27 21:00:00 SM Added use of admin header as section only portion of page.
  */
 
 
