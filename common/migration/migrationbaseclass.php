@@ -43,7 +43,7 @@ abstract class MigrationBaseClass
             $this->db=$db;
         } else {
             $this->internal_db_used=true;
-            $this->db=DB\PromDB::Create();
+            $this->db=DB\PromDB::create();
         }
     }
 

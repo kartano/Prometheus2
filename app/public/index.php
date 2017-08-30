@@ -49,7 +49,7 @@ $path = $bits['path'];
 //      This is be either "home" if no URL was specified; or
 //
 
-$database = DB\PromDB::Create();
+$database = DB\PromDB::create();
 switch(strtolower($path)) {
     case '/':
     case 'index.html':

@@ -6,7 +6,7 @@
  *
  * @namespace       prometheus2\common\logging
  *
- * @version         1.0.0           2017-08-17 2017-08-17 Prototype
+ * @version         1.1.0           2017-08-30 12:54:00 Fleshed out code to write to logs.
  */
 
 namespace Prometheus2\common\logging;
@@ -32,7 +32,7 @@ class dblogger extends logger
         static $db=null;
         try {
             if ($db===null) {
-                $db=DB::Create();
+                $db=DB::create();
             }
         }
         catch (DBException $exception) {
@@ -49,7 +49,14 @@ class dblogger extends logger
      */
     public static function appendToLog(string $message): int
     {
-        // SM:  To get the log table - CFG::get('log','table')
+        try {
+            $query="INSERT INTO prom2_log (datTimestamp,txtCallStack,txtMessage,lngCode,lngLoggedInUserID) VALUES(NOW(), null, ?, 0, 0)";
+            $statement=self::getDB()->prepare($query);
+            $statement->bind_param('s', $message);
+            $statement->execute();
+        } catch (\mysqli_sql_exception $exception) {
+            die($exception);
+        }
     }
 
     /**
@@ -61,6 +68,14 @@ class dblogger extends logger
      */
     public static function appendExceptionToLog(\Exception $exception): int
     {
-        // TO DO:  Write to database
+        try {
+            $callstack=debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT ,10);
+            $query="INSERT INTO prom2_log (datTimestamp,txtCallStack,txtMessage,lngCode,lngLoggedInUserID) VALUES(NOW(), ?, ?, ?, ?)";
+            $statement=self::getDB()->prepare($query);
+            $statement->bind_param('ssii', print_r($callstack,true), $exception->getMessage(), $exception->getCode(), 0);
+            $statement->execute();
+        } catch (\mysqli_sql_exception $exception) {
+            die($exception);
+        }
     }
 }

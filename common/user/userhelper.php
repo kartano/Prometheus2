@@ -35,7 +35,7 @@ class UserHelper
      * @param string $salt The random salt value.
      *
      * @return string The hashed password, including the salt.
-     * @throws RuntimeException Thrown if the requested hashing algorithm is not available.
+     * @throws \RuntimeException Thrown if the requested hashing algorithm is not available.
      */
     public static function encryptPassword(string $password, string $salt): string
     {
