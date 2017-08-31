@@ -60,6 +60,7 @@ switch(strtolower($path)) {
         break;
     case '/admin':
         $options = new PR\PageOptions();
+        $options->requires_logged_in=true;
         $page = new Admin\Prom2Admin($database, $options);
         $page->renderPage();
         break;

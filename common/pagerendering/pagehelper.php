@@ -23,10 +23,15 @@ class PageHelper
      *
      * @param int    $http_error_code The HTTPD code to be returned.  Usually a 500.
      * @param string $message  The additional message to send.
+     * @param bool $die If TRUE then execution terminates.
+     * @return void
      */
-    public static function throwHTTPError(int $http_error_code, string $message): void
+    public static function throwHTTPError(int $http_error_code, string $message, bool $die=false): void
     {
         header("HTTP/1.1 $http_error_code ".BU\BrowserUtils::getHTTPErrorMessage($http_error_code));
         echo $message;
+        if ($die) {
+            exit(-1);
+        }
     }
 }

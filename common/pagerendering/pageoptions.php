@@ -20,6 +20,7 @@
  * @property string title            The title of the site.
  * @property string sectionid        The HTML ID.
  * @property string description The Description to be used for the meta tags in web pages.
+ * @property bool   requires_logged_in  If TRUE then session authentication will be checked.  THIS WILL *NOT* WORK IF YOU ARE OPERATING WITH CONTENT ONLY RENDERING!
  */
 
 namespace Prometheus2\common\pagerendering;
@@ -60,6 +61,8 @@ class PageOptions
         $this->sectionid = 'section' . self::$sectioncount++;
 
         $this->description = CFG::get('app','description');
+
+        $this->requires_logged_in=false;
     }
 
     /**

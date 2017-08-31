@@ -23,5 +23,8 @@
     "catalogue": "prom2",
     "port": 3306,
     "socket": 0
+  },
+  "security" : {
+    "session_regenerate_mins" : 10
   }
 }

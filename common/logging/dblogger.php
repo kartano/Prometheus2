@@ -13,7 +13,6 @@ namespace Prometheus2\common\logging;
 
 use Prometheus2\common\database\PromDB AS DB;
 use Prometheus2\common\exceptions\DatabaseException AS DBException;
-use Prometheus2\common\settings\Settings AS CFG;
 
 /**
  * Class dblogger

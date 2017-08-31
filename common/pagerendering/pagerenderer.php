@@ -13,6 +13,8 @@ namespace Prometheus2\common\pagerendering;
 
 use Prometheus2\common\database as DB;
 use Prometheus2\common\settings\Settings AS CFG;
+use Prometheus2\common\user AS User;
+use Prometheus2\common\exceptions AS Exceptions;
 
 /**
  * Class PageRenderer
@@ -47,6 +49,14 @@ abstract class PageRenderer
      */
     public function renderPage(): void
     {
+        if ($this->options->requires_logged_in) {
+            try {
+                User\SessionManager::secureSessionStart();
+            } catch(Exceptions\NotLoggedInException $exception) {
+                PageHelper::throwHTTPError(400, 'Must be logged in to access this page',true);
+            }
+        }
+
         $starttime = microtime(true);
         if (!$this->options->render_body_only) {
             ?>
