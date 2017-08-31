@@ -6,12 +6,13 @@
  *
  * @namespace       Prometheus2\common\exceptions
  *
- * @version         1.0.0           2017-08-17 2017-08-17 Prototype
+ * @version         1.0.1           2017-08-31 12:07:00 SM:  Now throws a 500 if the debug setting is not set.
  */
 
 namespace Prometheus2\common\exceptions;
 
 use Prometheus2\common\settings\Settings AS CFG;
+use Prometheus2\common\pagerendering\pagehelper AS PageHelper;
 
 /**
  * Class BaseException
@@ -37,18 +38,20 @@ abstract class BaseException extends \Exception
      */
     public function display()
     {
+        $logid=$this->saveToLog();
         if (CFG::get('app','debug')) {
             ?>
             </script>
             <div class="exception_div">
                 <section class="exception_section">
                     <h1>Exception thrown: <code>".__CLASS__."</code></h1>
+                    <p>Log ID:  <?=$logid; ?></p>
                     <p>Error(<?=$this->getCode(); ?>) - <?=$this->getMessage();?></p>
                 </section>
             </div>
             <?php
         } else {
-            // THrow a HTTP 500.
+            PageHelper::throwHTTPError('500','Invalid debug value in settings.',true);
         }
     }
 

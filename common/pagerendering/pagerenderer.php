@@ -53,6 +53,7 @@ abstract class PageRenderer
             try {
                 User\SessionManager::secureSessionStart();
             } catch(Exceptions\NotLoggedInException $exception) {
+                $exception->display();
                 PageHelper::throwHTTPError(400, 'Must be logged in to access this page',true);
             }
         }
