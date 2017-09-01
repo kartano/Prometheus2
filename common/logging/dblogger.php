@@ -68,11 +68,17 @@ class dblogger extends logger
     public static function appendExceptionToLog(\Exception $exception): int
     {
         try {
-            $callstack=debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT ,10);
+            $callstack=print_r(debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT ,10),true);
+            $message=$exception->getMessage();
+            $code=$exception->getCode();
+            $usercode=0;
             $query="INSERT INTO prom2_log (datTimestamp,txtCallStack,txtMessage,lngCode,lngLoggedInUserID) VALUES(NOW(), ?, ?, ?, ?)";
             $statement=self::getDB()->prepare($query);
-            $statement->bind_param('ssii', print_r($callstack,true), $exception->getMessage(), $exception->getCode(), 0);
+            $statement->bind_param('ssii', $callstack, $message, $code, $usercode);
             $statement->execute();
+            $retval=$statement->insert_id;
+            $statement->close();
+            return $retval;
         } catch (\mysqli_sql_exception $exception) {
             die($exception);
         }

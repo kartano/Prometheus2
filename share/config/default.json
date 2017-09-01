@@ -5,7 +5,7 @@
     "debug": true
   },
   "log": {
-    "class": "dblogger",
+    "class": "Prometheus2\\common\\logging\\dblogger",
     "table": "prom2_log"
   },
   "db": {

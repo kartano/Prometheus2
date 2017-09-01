@@ -11,7 +11,7 @@
 
 namespace Prometheus2\common\settings;
 
-use prometheus2\common\logging\logger;
+use Prometheus2\common\logging\logger;
 
 /**
  * Class Settings

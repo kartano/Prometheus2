@@ -2,9 +2,9 @@
 /**
  * Session management tools
  *
- * @author   Simon Mitchell <kartano@gmail.com>
+ * @author          Simon Mitchell <kartano@gmail.com>
  *
- * @namespace   Prometheus2\common\user
+ * @namespace       Prometheus2\common\user
  *
  * @version         1.0.0        2017-08-31 11:10
  */
@@ -28,7 +28,7 @@ class SessionManager
     {
         session_start();
 
-        if (!isset($_SESSION['authenticated'])) {
+        if (!AuthenticationManager::userLoggedIn()) {
             throw new Prom2Exceptions\NotLoggedInException();
         }
 
@@ -43,8 +43,6 @@ class SessionManager
             || $_SESSION['_USER_ACCEPT_LANG'] != $_SERVER['HTTP_ACCEPT_LANGUAGE']
             || $_SESSION['_USER_ACCEPT_CHARSET'] != $_SERVER['HTTP_ACCEPT_CHARSET']) {
             self::MurderSession();
-            throw new Prom2Exceptions\NotLoggedInException();
-        } elseif (!$_SESSION['authenticated'] == 'auth') {
             throw new Prom2Exceptions\NotLoggedInException();
         }
 
@@ -76,5 +74,21 @@ class SessionManager
     {
         session_unset();
         session_destroy();
+    }
+
+    /**
+     * Determine if a session is active.
+     * @return bool TRUE if there is an active session.
+     */
+    public static function sessionIsActive(): bool
+    {
+        if (php_sapi_name() !== 'cli') {
+            if (version_compare(phpversion(), '5.4.0', '>=')) {
+                return session_status() === PHP_SESSION_ACTIVE ? true : false;
+            } else {
+                return session_id() === '' ? false : true;
+            }
+        }
+        return false;
     }
 }

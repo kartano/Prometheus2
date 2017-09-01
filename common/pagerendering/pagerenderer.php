@@ -49,15 +49,6 @@ abstract class PageRenderer
      */
     public function renderPage(): void
     {
-        if ($this->options->requires_logged_in) {
-            try {
-                User\SessionManager::secureSessionStart();
-            } catch(Exceptions\NotLoggedInException $exception) {
-                $exception->display();
-                PageHelper::throwHTTPError(400, 'Must be logged in to access this page',true);
-            }
-        }
-
         $starttime = microtime(true);
         if (!$this->options->render_body_only) {
             ?>
@@ -108,6 +99,11 @@ abstract class PageRenderer
                     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
                     <?php
                 }
+                if ($this->options->uses_font_awesome) {
+                    ?>
+                    <script src="https://use.fontawesome.com/6c044d20cb.js"></script>
+                    <?php
+                }
                 $this->renderHeadContent();
                 ?>
                 <link rel="stylesheet"
@@ -125,7 +121,6 @@ abstract class PageRenderer
             </head>
         </html>
         <?php
-        // TO DO:  render the HEAD option.
     }
 
     /**
@@ -146,7 +141,14 @@ abstract class PageRenderer
             </header>
             <?php
         }
-        $this->renderContent();
+        if ($this->options->requires_logged_in) {
+            if (!User\AuthenticationManager::userLoggedIn()) {
+                $loginform = new LoginForm($this->database);
+                $loginform->renderPage();
+            }
+        } else {
+            $this->renderContent();
+        }
         $endtime = microtime(true);
         $timediff = $endtime - $starttime;
         if (CFG::get('app', 'debug')) {

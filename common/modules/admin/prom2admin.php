@@ -9,7 +9,6 @@
  * @version         1.0.1           2017-08-27 21:00:00 SM Added use of admin header as section only portion of page.
  */
 
-
 namespace Prometheus2\common\modules\admin;
 use Detection\MobileDetect as Mobile_Detect;
 use Prometheus2\common\database as DB;
@@ -22,6 +21,7 @@ use Prometheus2\common\pagerendering as Page;
 class Prom2Admin extends Page\PageRenderer
 {
     protected $adminheader;
+
     /**
      * Prom2Admin constructor.
      *

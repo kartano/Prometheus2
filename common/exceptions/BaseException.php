@@ -42,9 +42,21 @@ abstract class BaseException extends \Exception
         if (CFG::get('app','debug')) {
             ?>
             </script>
+            <style>
+                .exception_div {
+                    border: 2px solid red;
+                    border-radius: 25px;
+                    width: 90%;
+                    background-color: white;
+                }
+
+                .exception_section {
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            </style>
             <div class="exception_div">
                 <section class="exception_section">
-                    <h1>Exception thrown: <code>".__CLASS__."</code></h1>
+                    <h1>Exception thrown: <code><?=get_class($this);?></code></h1>
                     <p>Log ID:  <?=$logid; ?></p>
                     <p>Error(<?=$this->getCode(); ?>) - <?=$this->getMessage();?></p>
                 </section>
