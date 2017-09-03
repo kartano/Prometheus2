@@ -17,7 +17,7 @@
  * @property string document_type    The HTML Document type.
  * @property string render_body_only If TRUE then only the body of the page is render - the <HEAD> and <BODY> tags do
  *           NOT get used.
- * @property string title            The title of the site.
+ * @property string title            The title of the page.  For the SITE title, use that supplied in SETTINGS.
  * @property string sectionid        The HTML ID.
  * @property string description The Description to be used for the meta tags in web pages.
  * @property bool   requires_logged_in  If TRUE then session authentication will be checked.  THIS WILL *NOT* WORK IF YOU ARE OPERATING WITH CONTENT ONLY RENDERING!

@@ -11,7 +11,7 @@
 
 namespace Prometheus2\common\exceptions;
 
-class DatabaseException
+class DatabaseException extends BaseException
 {
     //
 }
