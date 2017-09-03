@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \React\Dns
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/React.Dns.html" title="Dns">
+                    <i class="icon-th"></i> Dns
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/React.Dns.Config.html" title="Config">
+            <i class="icon-th"></i> Config
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Dns.Model.html" title="Model">
+            <i class="icon-th"></i> Model
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Dns.Protocol.html" title="Protocol">
+            <i class="icon-th"></i> Protocol
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Dns.Query.html" title="Query">
+            <i class="icon-th"></i> Query
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Dns.Resolver.html" title="Resolver">
+            <i class="icon-th"></i> Resolver
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.html">Dns</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_BadServerException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BadServerException .collapse">
+        <h1>BadServerException<a href="../classes/React.Dns.BadServerException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.BadServerException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RecordNotFoundException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RecordNotFoundException .collapse">
+        <h1>RecordNotFoundException<a href="../classes/React.Dns.RecordNotFoundException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.RecordNotFoundException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.Model.html">Model</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_HeaderBag" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HeaderBag .collapse">
+        <h1>HeaderBag<a href="../classes/React.Dns.Model.HeaderBag.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Model.HeaderBag.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Message" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Message .collapse">
+        <h1>Message<a href="../classes/React.Dns.Model.Message.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Model.Message.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Record" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Record .collapse">
+        <h1>Record<a href="../classes/React.Dns.Model.Record.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Model.Record.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.Config.html">Config</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Config" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Config .collapse">
+        <h1>Config<a href="../classes/React.Dns.Config.Config.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Config.Config.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FilesystemFactory" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FilesystemFactory .collapse">
+        <h1>FilesystemFactory<a href="../classes/React.Dns.Config.FilesystemFactory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Config.FilesystemFactory.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_HostsFile" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HostsFile .collapse">
+        <h1>HostsFile<a href="../classes/React.Dns.Config.HostsFile.html">¶</a></h1>
+        <p class="short_description">Represents a static hosts file which maps hostnames to IPs</p>
+        <div class="details collapse">
+                            <p>Hosts files are used on most systems to avoid actually hitting the DNS for
+certain common hostnames.</p>
+<p>Most notably, this file usually contains an entry to map &quot;localhost&quot; to the
+local IP. Windows is a notable exception here, as Windows does not actually
+include &quot;localhost&quot; in this file by default. To compensate for this, this
+class may explicitly be wrapped in another HostsFile instance which
+hard-codes these entries for Windows (see also Factory).</p>
+<p>This class mostly exists to abstract the parsing/extraction process so this
+can be replaced with a faster alternative in the future.</p>
+                    </div>
+        <a href="../classes/React.Dns.Config.HostsFile.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.Query.html">Query</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_ExecutorInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ExecutorInterface .collapse">
+        <h1>ExecutorInterface<a href="../classes/React.Dns.Query.ExecutorInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.ExecutorInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_CachedExecutor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CachedExecutor .collapse">
+        <h1>CachedExecutor<a href="../classes/React.Dns.Query.CachedExecutor.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.CachedExecutor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CancellationException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CancellationException .collapse">
+        <h1>CancellationException<a href="../classes/React.Dns.Query.CancellationException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.CancellationException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Executor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Executor .collapse">
+        <h1>Executor<a href="../classes/React.Dns.Query.Executor.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.Executor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_HostsFileExecutor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HostsFileExecutor .collapse">
+        <h1>HostsFileExecutor<a href="../classes/React.Dns.Query.HostsFileExecutor.html">¶</a></h1>
+        <p class="short_description">Resolves hosts from the givne HostsFile or falls back to another executor</p>
+        <div class="details collapse">
+                            <p>If the host is found in the hosts file, it will not be passed to the actual
+DNS executor. If the host is not found in the hosts file, it will be passed
+to the DNS executor as a fallback.</p>
+                    </div>
+        <a href="../classes/React.Dns.Query.HostsFileExecutor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Query" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Query .collapse">
+        <h1>Query<a href="../classes/React.Dns.Query.Query.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.Query.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RecordBag" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RecordBag .collapse">
+        <h1>RecordBag<a href="../classes/React.Dns.Query.RecordBag.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.RecordBag.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RecordCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RecordCache .collapse">
+        <h1>RecordCache<a href="../classes/React.Dns.Query.RecordCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.RecordCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RetryExecutor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RetryExecutor .collapse">
+        <h1>RetryExecutor<a href="../classes/React.Dns.Query.RetryExecutor.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.RetryExecutor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TimeoutException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TimeoutException .collapse">
+        <h1>TimeoutException<a href="../classes/React.Dns.Query.TimeoutException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.TimeoutException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TimeoutExecutor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TimeoutExecutor .collapse">
+        <h1>TimeoutExecutor<a href="../classes/React.Dns.Query.TimeoutExecutor.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Query.TimeoutExecutor.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.Protocol.html">Protocol</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_BinaryDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BinaryDumper .collapse">
+        <h1>BinaryDumper<a href="../classes/React.Dns.Protocol.BinaryDumper.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Protocol.BinaryDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Parser" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Parser .collapse">
+        <h1>Parser<a href="../classes/React.Dns.Protocol.Parser.html">¶</a></h1>
+        <p class="short_description">DNS protocol parser</p>
+        <div class="details collapse">
+                            <p>Obsolete and uncommon types and classes are not implemented.</p>
+                    </div>
+        <a href="../classes/React.Dns.Protocol.Parser.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Dns.Resolver.html">Resolver</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Factory" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Factory .collapse">
+        <h1>Factory<a href="../classes/React.Dns.Resolver.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Resolver.Factory.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Resolver" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Resolver .collapse">
+        <h1>Resolver<a href="../classes/React.Dns.Resolver.Resolver.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Dns.Resolver.Resolver.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:58 +0200.<br/>
+    </footer>
+    </body>
+</html>

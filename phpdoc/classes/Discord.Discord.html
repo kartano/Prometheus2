@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Discord\Discord
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___call" title="__call :: Handles dynamic calls to the client.">
+            <span class="description">Handles dynamic calls to the client.</span><pre>__call</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method___construct" title="__construct :: Creates a Discord client instance.">
+            <span class="description">Creates a Discord client instance.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method___debugInfo" title="__debugInfo :: Returns an array that can be used to describe the internal state of this
+object.">
+            <span class="description">Returns an array that can be used to describe the internal state of this
+object.</span><pre>__debugInfo</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method___get" title="__get :: Handles dynamic get calls to the client.">
+            <span class="description">Handles dynamic get calls to the client.</span><pre>__get</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method___set" title="__set :: Handles dynamic set calls to the client.">
+            <span class="description">Handles dynamic set calls to the client.</span><pre>__set</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_addLargeGuild" title="addLargeGuild :: Adds a large guild to the large guild array.">
+            <span class="description">Adds a large guild to the large guild array.</span><pre>addLargeGuild</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_close" title="close :: Closes the Discord client.">
+            <span class="description">Closes the Discord client.</span><pre>close</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public inherited">
+        <a href="#method_emit" title="emit :: ">
+            <span class="description"></span><pre>emit</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_factory" title="factory :: Allows access to the part/repository factory.">
+            <span class="description">Allows access to the part/repository factory.</span><pre>factory</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getRepository" title="getRepository :: Attempts to get a repository from the cache.">
+            <span class="description">Attempts to get a repository from the cache.</span><pre>getRepository</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getVoiceClient" title="getVoiceClient :: Gets a voice client from a guild ID.">
+            <span class="description">Gets a voice client from a guild ID.</span><pre>getVoiceClient</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method public">
+        <a href="#method_handleWsClose" title="handleWsClose :: Handles WebSocket closes received by the client.">
+            <span class="description">Handles WebSocket closes received by the client.</span><pre>handleWsClose</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_handleWsConnection" title="handleWsConnection :: Handles WebSocket connections received by the client.">
+            <span class="description">Handles WebSocket connections received by the client.</span><pre>handleWsConnection</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_handleWsError" title="handleWsError :: Handles WebSocket errors received by the client.">
+            <span class="description">Handles WebSocket errors received by the client.</span><pre>handleWsError</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_handleWsMessage" title="handleWsMessage :: Handles WebSocket messages received by the client.">
+            <span class="description">Handles WebSocket messages received by the client.</span><pre>handleWsMessage</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_heartbeat" title="heartbeat :: Sends a heartbeat packet to the Discord gateway.">
+            <span class="description">Sends a heartbeat packet to the Discord gateway.</span><pre>heartbeat</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_joinVoiceChannel" title="joinVoiceChannel :: Joins a voice channel.">
+            <span class="description">Joins a voice channel.</span><pre>joinVoiceChannel</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_listeners" title="listeners :: ">
+            <span class="description"></span><pre>listeners</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_on" title="on :: ">
+            <span class="description"></span><pre>on</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_once" title="once :: ">
+            <span class="description"></span><pre>once</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public inherited">
+        <a href="#method_removeAllListeners" title="removeAllListeners :: ">
+            <span class="description"></span><pre>removeAllListeners</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_removeListener" title="removeListener :: ">
+            <span class="description"></span><pre>removeListener</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_run" title="run :: Starts the ReactPHP event loop.">
+            <span class="description">Starts the ReactPHP event loop.</span><pre>run</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_updatePresence" title="updatePresence :: Updates the clients presence.">
+            <span class="description">Updates the clients presence.</span><pre>updatePresence</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                        <li class="method protected">
+                            <a href="#method_connectWs" title="connectWs :: Initilizes the connection with the Discord gateway.">
+                                <span class="description">Initilizes the connection with the Discord gateway.</span><pre>connectWs</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method protected">
+                            <a href="#method_handleDispatch" title="handleDispatch :: Handles dispatch events received by the WebSocket.">
+                                <span class="description">Handles dispatch events received by the WebSocket.</span><pre>handleDispatch</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleGuildMembersChunk" title="handleGuildMembersChunk :: Handles `GUILD_MEMBERS_CHUNK` packets.">
+                                <span class="description">Handles `GUILD_MEMBERS_CHUNK` packets.</span><pre>handleGuildMembersChunk</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleHeartbeat" title="handleHeartbeat :: Handles heartbeat packets received by the client.">
+                                <span class="description">Handles heartbeat packets received by the client.</span><pre>handleHeartbeat</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleHeartbeatAck" title="handleHeartbeatAck :: Handles heartbeat ACK packets received by the client.">
+                                <span class="description">Handles heartbeat ACK packets received by the client.</span><pre>handleHeartbeatAck</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleHello" title="handleHello :: Handles HELLO packets received by the websocket.">
+                                <span class="description">Handles HELLO packets received by the websocket.</span><pre>handleHello</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleInvalidSession" title="handleInvalidSession :: Handles invalid session packets received by the client.">
+                                <span class="description">Handles invalid session packets received by the client.</span><pre>handleInvalidSession</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleReady" title="handleReady :: Handles `READY` packets.">
+                                <span class="description">Handles `READY` packets.</span><pre>handleReady</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleReconnect" title="handleReconnect :: Handles reconnect packets received by the client.">
+                                <span class="description">Handles reconnect packets received by the client.</span><pre>handleReconnect</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleResume" title="handleResume :: Handles `RESUME` packets.">
+                                <span class="description">Handles `RESUME` packets.</span><pre>handleResume</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleVoiceServerUpdate" title="handleVoiceServerUpdate :: Handles `VOICE_SERVER_UPDATE` packets.">
+                                <span class="description">Handles `VOICE_SERVER_UPDATE` packets.</span><pre>handleVoiceServerUpdate</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleVoiceStateUpdate" title="handleVoiceStateUpdate :: Handles `VOICE_STATE_UPDATE` packets.">
+                                <span class="description">Handles `VOICE_STATE_UPDATE` packets.</span><pre>handleVoiceStateUpdate</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                    <li class="method protected">
+                            <a href="#method_identify" title="identify :: Identifies with the Discord gateway with `IDENTIFY` or `RESUME` packets.">
+                                <span class="description">Identifies with the Discord gateway with `IDENTIFY` or `RESUME` packets.</span><pre>identify</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method protected">
+                            <a href="#method_ready" title="ready :: Emits ready if it has not been emitted already.">
+                                <span class="description">Emits ready if it has not been emitted already.</span><pre>ready</pre>
+                            </a>
+                        </li>
+                                                                                                                                                        <li class="method protected">
+                            <a href="#method_resolveOptions" title="resolveOptions :: Resolves the options.">
+                                <span class="description">Resolves the options.</span><pre>resolveOptions</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
+                            <a href="#method_send" title="send :: Sends a packet to the Discord gateway.">
+                                <span class="description">Sends a packet to the Discord gateway.</span><pre>send</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_setGateway" title="setGateway :: Retrieves and sets the gateway URL for the client.">
+                                <span class="description">Retrieves and sets the gateway URL for the client.</span><pre>setGateway</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_setupChunking" title="setupChunking :: Sets guild member chunking up.">
+                                <span class="description">Sets guild member chunking up.</span><pre>setupChunking</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_setupHeartbeat" title="setupHeartbeat :: Sets the heartbeat timer up.">
+                                <span class="description">Sets the heartbeat timer up.</span><pre>setupHeartbeat</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_GATEWAY_VERSION" title="GATEWAY_VERSION :: The gateway version the client uses.">
+                        <span class="description">The gateway version the client uses.</span><pre>GATEWAY_VERSION</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_HTTP_API_VERSION" title="HTTP_API_VERSION :: The HTTP API version the client usees.">
+                        <span class="description">The HTTP API version the client usees.</span><pre>HTTP_API_VERSION</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_VERSION" title="VERSION :: The client version.">
+                        <span class="description">The client version.</span><pre>VERSION</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Discord</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">The Discord client class.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                                                                                                                                                                            </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___call"></a>
+                        <div class="element clickable method public  method___call" data-toggle="collapse" data-target=".method___call .collapse">
+                            <h2>Handles dynamic calls to the client.</h2>
+                            <pre>__call(string $name, array $params) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>Function name.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>array</code><p><p>Function paramaters.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Creates a Discord client instance.</h2>
+                            <pre>__construct(array $options = array()) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>Array of options.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___debugInfo"></a>
+                        <div class="element clickable method public  method___debugInfo" data-toggle="collapse" data-target=".method___debugInfo .collapse">
+                            <h2>Returns an array that can be used to describe the internal state of this
+object.</h2>
+                            <pre>__debugInfo() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___get"></a>
+                        <div class="element clickable method public  method___get" data-toggle="collapse" data-target=".method___get .collapse">
+                            <h2>Handles dynamic get calls to the client.</h2>
+                            <pre>__get(string $name) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>Variable name.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___set"></a>
+                        <div class="element clickable method public  method___set" data-toggle="collapse" data-target=".method___set .collapse">
+                            <h2>Handles dynamic set calls to the client.</h2>
+                            <pre>__set(string $name, mixed $value) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>Variable name.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>mixed</code><p><p>Value to set.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_addLargeGuild"></a>
+                        <div class="element clickable method public  method_addLargeGuild" data-toggle="collapse" data-target=".method_addLargeGuild .collapse">
+                            <h2>Adds a large guild to the large guild array.</h2>
+                            <pre>addLargeGuild(\Discord\Guild $guild) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$guild</h4>
+                                                <code>\Discord\Guild</code><p><p>The guild.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_close"></a>
+                        <div class="element clickable method public  method_close" data-toggle="collapse" data-target=".method_close .collapse">
+                            <h2>Closes the Discord client.</h2>
+                            <pre>close() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_connectWs"></a>
+                        <div class="element clickable method protected  method_connectWs" data-toggle="collapse" data-target=".method_connectWs .collapse">
+                            <h2>Initilizes the connection with the Discord gateway.</h2>
+                            <pre>connectWs() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_emit"></a>
+                        <div class="element clickable method public  method_emit inherited" data-toggle="collapse" data-target=".method_emit .collapse">
+                            <h2>emit</h2>
+                            <pre>emit( $event, array $arguments = array()) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$arguments</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_factory"></a>
+                        <div class="element clickable method public  method_factory" data-toggle="collapse" data-target=".method_factory .collapse">
+                            <h2>Allows access to the part/repository factory.</h2>
+                            <pre>factory() : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            <a href="../classes/Discord.Factory.Factory.html#method_create">\Discord\Factory\Factory::create()</a>
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getRepository"></a>
+                        <div class="element clickable method public  method_getRepository" data-toggle="collapse" data-target=".method_getRepository .collapse">
+                            <h2>Attempts to get a repository from the cache.</h2>
+                            <pre>getRepository(string $class, string $id, string $key, array $vars = array()) : \Discord\AbstractRepository</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$class</h4>
+                                                <code>string</code><p><p>The repository to look for.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$id</h4>
+                                                <code>string</code><p><p>The snowflake to look for.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>The key to look for.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$vars</h4>
+                                                <code>array</code><p><p>An array of args to pass to the repository.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Discord\AbstractRepository</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getVoiceClient"></a>
+                        <div class="element clickable method public  method_getVoiceClient" data-toggle="collapse" data-target=".method_getVoiceClient .collapse">
+                            <h2>Gets a voice client from a guild ID.</h2>
+                            <pre>getVoiceClient(integer $id) : \React\Promise\Promise</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$id</h4>
+                                                <code>integer</code><p><p>The guild ID to look up.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/React.Promise.Promise.html">\React\Promise\Promise</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleDispatch"></a>
+                        <div class="element clickable method protected  method_handleDispatch" data-toggle="collapse" data-target=".method_handleDispatch .collapse">
+                            <h2>Handles dispatch events received by the WebSocket.</h2>
+                            <pre>handleDispatch(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleGuildMembersChunk"></a>
+                        <div class="element clickable method protected  method_handleGuildMembersChunk" data-toggle="collapse" data-target=".method_handleGuildMembersChunk .collapse">
+                            <h2>Handles `GUILD_MEMBERS_CHUNK` packets.</h2>
+                            <pre>handleGuildMembersChunk(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleHeartbeat"></a>
+                        <div class="element clickable method protected  method_handleHeartbeat" data-toggle="collapse" data-target=".method_handleHeartbeat .collapse">
+                            <h2>Handles heartbeat packets received by the client.</h2>
+                            <pre>handleHeartbeat(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleHeartbeatAck"></a>
+                        <div class="element clickable method protected  method_handleHeartbeatAck" data-toggle="collapse" data-target=".method_handleHeartbeatAck .collapse">
+                            <h2>Handles heartbeat ACK packets received by the client.</h2>
+                            <pre>handleHeartbeatAck(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleHello"></a>
+                        <div class="element clickable method protected  method_handleHello" data-toggle="collapse" data-target=".method_handleHello .collapse">
+                            <h2>Handles HELLO packets received by the websocket.</h2>
+                            <pre>handleHello(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleInvalidSession"></a>
+                        <div class="element clickable method protected  method_handleInvalidSession" data-toggle="collapse" data-target=".method_handleInvalidSession .collapse">
+                            <h2>Handles invalid session packets received by the client.</h2>
+                            <pre>handleInvalidSession(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleReady"></a>
+                        <div class="element clickable method protected  method_handleReady" data-toggle="collapse" data-target=".method_handleReady .collapse">
+                            <h2>Handles `READY` packets.</h2>
+                            <pre>handleReady(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleReconnect"></a>
+                        <div class="element clickable method protected  method_handleReconnect" data-toggle="collapse" data-target=".method_handleReconnect .collapse">
+                            <h2>Handles reconnect packets received by the client.</h2>
+                            <pre>handleReconnect(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleResume"></a>
+                        <div class="element clickable method protected  method_handleResume" data-toggle="collapse" data-target=".method_handleResume .collapse">
+                            <h2>Handles `RESUME` packets.</h2>
+                            <pre>handleResume(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleVoiceServerUpdate"></a>
+                        <div class="element clickable method protected  method_handleVoiceServerUpdate" data-toggle="collapse" data-target=".method_handleVoiceServerUpdate .collapse">
+                            <h2>Handles `VOICE_SERVER_UPDATE` packets.</h2>
+                            <pre>handleVoiceServerUpdate(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleVoiceStateUpdate"></a>
+                        <div class="element clickable method protected  method_handleVoiceStateUpdate" data-toggle="collapse" data-target=".method_handleVoiceStateUpdate .collapse">
+                            <h2>Handles `VOICE_STATE_UPDATE` packets.</h2>
+                            <pre>handleVoiceStateUpdate(object $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>object</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleWsClose"></a>
+                        <div class="element clickable method public  method_handleWsClose" data-toggle="collapse" data-target=".method_handleWsClose .collapse">
+                            <h2>Handles WebSocket closes received by the client.</h2>
+                            <pre>handleWsClose(integer $op, string $reason) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$op</h4>
+                                                <code>integer</code><p><p>The close code.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$reason</h4>
+                                                <code>string</code><p><p>The reason the WebSocket closed.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleWsConnection"></a>
+                        <div class="element clickable method public  method_handleWsConnection" data-toggle="collapse" data-target=".method_handleWsConnection .collapse">
+                            <h2>Handles WebSocket connections received by the client.</h2>
+                            <pre>handleWsConnection(\Ratchet\Client\WebSocket $ws) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$ws</h4>
+                                                <code><a href="../classes/Ratchet.Client.WebSocket.html">\Ratchet\Client\WebSocket</a></code><p><p>WebSocket client.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleWsError"></a>
+                        <div class="element clickable method public  method_handleWsError" data-toggle="collapse" data-target=".method_handleWsError .collapse">
+                            <h2>Handles WebSocket errors received by the client.</h2>
+                            <pre>handleWsError(\Exception $e) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$e</h4>
+                                                <code>\Exception</code><p><p>The error.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleWsMessage"></a>
+                        <div class="element clickable method public  method_handleWsMessage" data-toggle="collapse" data-target=".method_handleWsMessage .collapse">
+                            <h2>Handles WebSocket messages received by the client.</h2>
+                            <pre>handleWsMessage(\Ratchet\RFC6455\Messaging\Message $message) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code><a href="../classes/Ratchet.RFC6455.Messaging.Message.html">\Ratchet\RFC6455\Messaging\Message</a></code><p><p>Message object.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_heartbeat"></a>
+                        <div class="element clickable method public  method_heartbeat" data-toggle="collapse" data-target=".method_heartbeat .collapse">
+                            <h2>Sends a heartbeat packet to the Discord gateway.</h2>
+                            <pre>heartbeat() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_identify"></a>
+                        <div class="element clickable method protected  method_identify" data-toggle="collapse" data-target=".method_identify .collapse">
+                            <h2>Identifies with the Discord gateway with `IDENTIFY` or `RESUME` packets.</h2>
+                            <pre>identify(boolean $resume = true) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$resume</h4>
+                                                <code>boolean</code><p><p>Whether resume should be enabled.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_joinVoiceChannel"></a>
+                        <div class="element clickable method public  method_joinVoiceChannel" data-toggle="collapse" data-target=".method_joinVoiceChannel .collapse">
+                            <h2>Joins a voice channel.</h2>
+                            <pre>joinVoiceChannel(\Discord\Parts\Channel\Channel $channel, boolean $mute = false, boolean $deaf = true, \Monolog\Logger $monolog = null) : \React\Promise\Promise</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$channel</h4>
+                                                <code><a href="../classes/Discord.Parts.Channel.Channel.html">\Discord\Parts\Channel\Channel</a></code><p><p>The channel to join.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mute</h4>
+                                                <code>boolean</code><p><p>Whether you should be mute when you join the channel.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$deaf</h4>
+                                                <code>boolean</code><p><p>Whether you should be deaf when you join the channel.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$monolog</h4>
+                                                <code><a href="../classes/Monolog.Logger.html">\Monolog\Logger</a></code><p><p>A Monolog logger to use.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/React.Promise.Promise.html">\React\Promise\Promise</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_listeners"></a>
+                        <div class="element clickable method public  method_listeners inherited" data-toggle="collapse" data-target=".method_listeners .collapse">
+                            <h2>listeners</h2>
+                            <pre>listeners( $event) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_on"></a>
+                        <div class="element clickable method public  method_on inherited" data-toggle="collapse" data-target=".method_on .collapse">
+                            <h2>on</h2>
+                            <pre>on( $event, callable $listener) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$listener</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_once"></a>
+                        <div class="element clickable method public  method_once inherited" data-toggle="collapse" data-target=".method_once .collapse">
+                            <h2>once</h2>
+                            <pre>once( $event, callable $listener) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$listener</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ready"></a>
+                        <div class="element clickable method protected  method_ready" data-toggle="collapse" data-target=".method_ready .collapse">
+                            <h2>Emits ready if it has not been emitted already.</h2>
+                            <pre>ready() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_removeAllListeners"></a>
+                        <div class="element clickable method public  method_removeAllListeners inherited" data-toggle="collapse" data-target=".method_removeAllListeners .collapse">
+                            <h2>removeAllListeners</h2>
+                            <pre>removeAllListeners( $event = null) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_removeListener"></a>
+                        <div class="element clickable method public  method_removeListener inherited" data-toggle="collapse" data-target=".method_removeListener .collapse">
+                            <h2>removeListener</h2>
+                            <pre>removeListener( $event, callable $listener) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$listener</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_resolveOptions"></a>
+                        <div class="element clickable method protected  method_resolveOptions" data-toggle="collapse" data-target=".method_resolveOptions .collapse">
+                            <h2>Resolves the options.</h2>
+                            <pre>resolveOptions(array $options = array()) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>Array of options.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>Options.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_run"></a>
+                        <div class="element clickable method public  method_run" data-toggle="collapse" data-target=".method_run .collapse">
+                            <h2>Starts the ReactPHP event loop.</h2>
+                            <pre>run() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_send"></a>
+                        <div class="element clickable method protected  method_send" data-toggle="collapse" data-target=".method_send .collapse">
+                            <h2>Sends a packet to the Discord gateway.</h2>
+                            <pre>send(array $data) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p><p>Packet data.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setGateway"></a>
+                        <div class="element clickable method protected  method_setGateway" data-toggle="collapse" data-target=".method_setGateway .collapse">
+                            <h2>Retrieves and sets the gateway URL for the client.</h2>
+                            <pre>setGateway(string|null $gateway = null) : \React\Promise\Promise</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$gateway</h4>
+                                                <code>string|null</code><p><p>Gateway URL to set.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/React.Promise.Promise.html">\React\Promise\Promise</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setupChunking"></a>
+                        <div class="element clickable method protected  method_setupChunking" data-toggle="collapse" data-target=".method_setupChunking .collapse">
+                            <h2>Sets guild member chunking up.</h2>
+                            <pre>setupChunking() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setupHeartbeat"></a>
+                        <div class="element clickable method protected  method_setupHeartbeat" data-toggle="collapse" data-target=".method_setupHeartbeat .collapse">
+                            <h2>Sets the heartbeat timer up.</h2>
+                            <pre>setupHeartbeat(integer $interval) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$interval</h4>
+                                                <code>integer</code><p><p>The heartbeat interval in milliseconds.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_updatePresence"></a>
+                        <div class="element clickable method public  method_updatePresence" data-toggle="collapse" data-target=".method_updatePresence .collapse">
+                            <h2>Updates the clients presence.</h2>
+                            <pre>updatePresence(\Discord\Parts\User\Game $game = null, boolean $idle = false) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$game</h4>
+                                                <code><a href="../classes/Discord.Parts.User.Game.html">\Discord\Parts\User\Game</a></code><p><p>The game object.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$idle</h4>
+                                                <code>boolean</code><p><p>Whether we are idle.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_GATEWAY_VERSION"> </a>
+                            <div class="element clickable constant  constant_GATEWAY_VERSION" data-toggle="collapse" data-target=".constant_GATEWAY_VERSION .collapse">
+                                <h2>The gateway version the client uses.</h2>
+                                <pre>GATEWAY_VERSION</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Gateway version.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_HTTP_API_VERSION"> </a>
+                            <div class="element clickable constant  constant_HTTP_API_VERSION" data-toggle="collapse" data-target=".constant_HTTP_API_VERSION .collapse">
+                                <h2>The HTTP API version the client usees.</h2>
+                                <pre>HTTP_API_VERSION</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>HTTP API version.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_VERSION"> </a>
+                            <div class="element clickable constant  constant_VERSION" data-toggle="collapse" data-target=".constant_VERSION .collapse">
+                                <h2>The client version.</h2>
+                                <pre>VERSION</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Version.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_logger"> </a>
+                            <div class="element clickable property  protected property_logger" data-toggle="collapse" data-target=".property_logger .collapse">
+                                <h2>The logger.</h2>
+                                <pre>logger : \Discord\Wrapper\LoggerWrapper</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Logger.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Wrapper.LoggerWrapper.html">\Discord\Wrapper\LoggerWrapper</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_voiceLoggers"> </a>
+                            <div class="element clickable property  protected property_voiceLoggers" data-toggle="collapse" data-target=".property_voiceLoggers .collapse">
+                                <h2>An array of loggers for voice clients.</h2>
+                                <pre>voiceLoggers : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Loggers.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_options"> </a>
+                            <div class="element clickable property  protected property_options" data-toggle="collapse" data-target=".property_options .collapse">
+                                <h2>An array of options passed to the client.</h2>
+                                <pre>options : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Options.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_token"> </a>
+                            <div class="element clickable property  protected property_token" data-toggle="collapse" data-target=".property_token .collapse">
+                                <h2>The authentication token.</h2>
+                                <pre>token : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Token.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_loop"> </a>
+                            <div class="element clickable property  protected property_loop" data-toggle="collapse" data-target=".property_loop .collapse">
+                                <h2>The ReactPHP event loop.</h2>
+                                <pre>loop : \React\EventLoop\LoopInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Event loop.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/React.EventLoop.LoopInterface.html">\React\EventLoop\LoopInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_wsFactory"> </a>
+                            <div class="element clickable property  protected property_wsFactory" data-toggle="collapse" data-target=".property_wsFactory .collapse">
+                                <h2>The WebSocket client factory.</h2>
+                                <pre>wsFactory : \Discord\WsFactory</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Factory.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Discord\WsFactory</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_ws"> </a>
+                            <div class="element clickable property  protected property_ws" data-toggle="collapse" data-target=".property_ws .collapse">
+                                <h2>The WebSocket instance.</h2>
+                                <pre>ws : \Ratchet\Client\WebSocket</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Instance.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Ratchet.Client.WebSocket.html">\Ratchet\Client\WebSocket</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_handlers"> </a>
+                            <div class="element clickable property  protected property_handlers" data-toggle="collapse" data-target=".property_handlers .collapse">
+                                <h2>The event handlers.</h2>
+                                <pre>handlers : \Discord\WebSockets\Handlers</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Handlers.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.WebSockets.Handlers.html">\Discord\WebSockets\Handlers</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_seq"> </a>
+                            <div class="element clickable property  protected property_seq" data-toggle="collapse" data-target=".property_seq .collapse">
+                                <h2>The packet sequence that the client is up to.</h2>
+                                <pre>seq : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Sequence.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_reconnecting"> </a>
+                            <div class="element clickable property  protected property_reconnecting" data-toggle="collapse" data-target=".property_reconnecting .collapse">
+                                <h2>Whether the client is currently reconnecting.</h2>
+                                <pre>reconnecting : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Reconnecting.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_connected"> </a>
+                            <div class="element clickable property  protected property_connected" data-toggle="collapse" data-target=".property_connected .collapse">
+                                <h2>Whether the client is connected to the gateway.</h2>
+                                <pre>connected : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Connected.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_closing"> </a>
+                            <div class="element clickable property  protected property_closing" data-toggle="collapse" data-target=".property_closing .collapse">
+                                <h2>Whether the client is closing.</h2>
+                                <pre>closing : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Closing.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_sessionId"> </a>
+                            <div class="element clickable property  protected property_sessionId" data-toggle="collapse" data-target=".property_sessionId .collapse">
+                                <h2>The session ID of the current session.</h2>
+                                <pre>sessionId : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Session ID.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_voiceClients"> </a>
+                            <div class="element clickable property  protected property_voiceClients" data-toggle="collapse" data-target=".property_voiceClients .collapse">
+                                <h2>An array of voice clients that are currently connected.</h2>
+                                <pre>voiceClients : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Voice Clients.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_largeGuilds"> </a>
+                            <div class="element clickable property  protected property_largeGuilds" data-toggle="collapse" data-target=".property_largeGuilds .collapse">
+                                <h2>An array of large guilds that need to be requested for
+members.</h2>
+                                <pre>largeGuilds : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Large guilds.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_largeSent"> </a>
+                            <div class="element clickable property  protected property_largeSent" data-toggle="collapse" data-target=".property_largeSent .collapse">
+                                <h2>An array of large guilds that have been requested for members.</h2>
+                                <pre>largeSent : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Large guilds.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_unparsedPackets"> </a>
+                            <div class="element clickable property  protected property_unparsedPackets" data-toggle="collapse" data-target=".property_unparsedPackets .collapse">
+                                <h2>An array of unparsed packets.</h2>
+                                <pre>unparsedPackets : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Unparsed packets.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_reconnectCount"> </a>
+                            <div class="element clickable property  protected property_reconnectCount" data-toggle="collapse" data-target=".property_reconnectCount .collapse">
+                                <h2>How many times the client has reconnected.</h2>
+                                <pre>reconnectCount : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Reconnect count.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_heartbeatInterval"> </a>
+                            <div class="element clickable property  protected property_heartbeatInterval" data-toggle="collapse" data-target=".property_heartbeatInterval .collapse">
+                                <h2>The heartbeat interval.</h2>
+                                <pre>heartbeatInterval : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Heartbeat interval.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_heatbeatTimer"> </a>
+                            <div class="element clickable property  protected property_heatbeatTimer" data-toggle="collapse" data-target=".property_heatbeatTimer .collapse">
+                                <h2>The timer that sends the heartbeat packet.</h2>
+                                <pre>heatbeatTimer : \React\EventLoop\Timer\TimerInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Timer.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/React.EventLoop.Timer.TimerInterface.html">\React\EventLoop\Timer\TimerInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_heartbeatAckTimer"> </a>
+                            <div class="element clickable property  protected property_heartbeatAckTimer" data-toggle="collapse" data-target=".property_heartbeatAckTimer .collapse">
+                                <h2>The timer that resends the heartbeat packet if
+a HEARTBEAT_ACK packet is not received in 5 seconds.</h2>
+                                <pre>heartbeatAckTimer : \React\EventLoop\Timer\TimerInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Timer.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/React.EventLoop.Timer.TimerInterface.html">\React\EventLoop\Timer\TimerInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_heartbeatTime"> </a>
+                            <div class="element clickable property  protected property_heartbeatTime" data-toggle="collapse" data-target=".property_heartbeatTime .collapse">
+                                <h2>The time that the last heartbeat packet was sent.</h2>
+                                <pre>heartbeatTime : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Epoch time.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_emittedReady"> </a>
+                            <div class="element clickable property  protected property_emittedReady" data-toggle="collapse" data-target=".property_emittedReady .collapse">
+                                <h2>Whether `ready` has been emitted.</h2>
+                                <pre>emittedReady : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Emitted.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_gateway"> </a>
+                            <div class="element clickable property  protected property_gateway" data-toggle="collapse" data-target=".property_gateway .collapse">
+                                <h2>The gateway URL that the WebSocket client will connect to.</h2>
+                                <pre>gateway : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Gateway URL.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_encoding"> </a>
+                            <div class="element clickable property  protected property_encoding" data-toggle="collapse" data-target=".property_encoding .collapse">
+                                <h2>What encoding the client will use, either `json` or `etf`.</h2>
+                                <pre>encoding : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Encoding.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_http"> </a>
+                            <div class="element clickable property  protected property_http" data-toggle="collapse" data-target=".property_http .collapse">
+                                <h2>The HTTP client.</h2>
+                                <pre>http : \Discord\Http\Http</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Client.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Http.Http.html">\Discord\Http\Http</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_factory"> </a>
+                            <div class="element clickable property  protected property_factory" data-toggle="collapse" data-target=".property_factory .collapse">
+                                <h2>The part/repository factory.</h2>
+                                <pre>factory : \Discord\Factory\Factory</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Part factory.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Factory.Factory.html">\Discord\Factory\Factory</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_cache"> </a>
+                            <div class="element clickable property  protected property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
+                                <h2>The cache wrapper.</h2>
+                                <pre>cache : \Discord\Wrapper\CacheWrapper</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Cache.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Wrapper.CacheWrapper.html">\Discord\Wrapper\CacheWrapper</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_cachePool"> </a>
+                            <div class="element clickable property  protected property_cachePool" data-toggle="collapse" data-target=".property_cachePool .collapse">
+                                <h2>The cache pool that is in use.</h2>
+                                <pre>cachePool : \Psr\Cache\CacheItemPoolInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Cache pool.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Psr.Cache.CacheItemPoolInterface.html">\Psr\Cache\CacheItemPoolInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_client"> </a>
+                            <div class="element clickable property  protected property_client" data-toggle="collapse" data-target=".property_client .collapse">
+                                <h2>The Client class.</h2>
+                                <pre>client : \Discord\Parts\User\Client</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Discord client.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Parts.User.Client.html">\Discord\Parts\User\Client</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_listeners"> </a>
+                            <div class="element clickable property  protected property_listeners inherited" data-toggle="collapse" data-target=".property_listeners .collapse">
+                                <h2>listeners</h2>
+                                <pre>listeners : </pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Discord\Discord"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Discord.Discord.html">Discord</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:04 +0200.<br/>
+    </footer>
+    </body>
+</html>

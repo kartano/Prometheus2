@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Illuminate\Contracts
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Illuminate.Contracts.html" title="Contracts">
+                    <i class="icon-th"></i> Contracts
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Auth.html" title="Auth">
+            <i class="icon-th"></i> Auth
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Auth.Access.html" title="Access">
+            <i class="icon-th"></i> Access
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Broadcasting.html" title="Broadcasting">
+            <i class="icon-th"></i> Broadcasting
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Bus.html" title="Bus">
+            <i class="icon-th"></i> Bus
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Cache.html" title="Cache">
+            <i class="icon-th"></i> Cache
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Config.html" title="Config">
+            <i class="icon-th"></i> Config
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Console.html" title="Console">
+            <i class="icon-th"></i> Console
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Container.html" title="Container">
+            <i class="icon-th"></i> Container
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Cookie.html" title="Cookie">
+            <i class="icon-th"></i> Cookie
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Database.html" title="Database">
+            <i class="icon-th"></i> Database
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Debug.html" title="Debug">
+            <i class="icon-th"></i> Debug
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Encryption.html" title="Encryption">
+            <i class="icon-th"></i> Encryption
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Events.html" title="Events">
+            <i class="icon-th"></i> Events
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Filesystem.html" title="Filesystem">
+            <i class="icon-th"></i> Filesystem
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Foundation.html" title="Foundation">
+            <i class="icon-th"></i> Foundation
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Hashing.html" title="Hashing">
+            <i class="icon-th"></i> Hashing
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Http.html" title="Http">
+            <i class="icon-th"></i> Http
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Logging.html" title="Logging">
+            <i class="icon-th"></i> Logging
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Mail.html" title="Mail">
+            <i class="icon-th"></i> Mail
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Notifications.html" title="Notifications">
+            <i class="icon-th"></i> Notifications
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Pagination.html" title="Pagination">
+            <i class="icon-th"></i> Pagination
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Pipeline.html" title="Pipeline">
+            <i class="icon-th"></i> Pipeline
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Queue.html" title="Queue">
+            <i class="icon-th"></i> Queue
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Redis.html" title="Redis">
+            <i class="icon-th"></i> Redis
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Routing.html" title="Routing">
+            <i class="icon-th"></i> Routing
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Session.html" title="Session">
+            <i class="icon-th"></i> Session
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Support.html" title="Support">
+            <i class="icon-th"></i> Support
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Translation.html" title="Translation">
+            <i class="icon-th"></i> Translation
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.Validation.html" title="Validation">
+            <i class="icon-th"></i> Validation
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Illuminate.Contracts.View.html" title="View">
+            <i class="icon-th"></i> View
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Routing.html">Routing</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_BindingRegistrar" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_BindingRegistrar .collapse">
+        <h1>BindingRegistrar<a href="../classes/Illuminate.Contracts.Routing.BindingRegistrar.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Routing.BindingRegistrar.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Registrar" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Registrar .collapse">
+        <h1>Registrar<a href="../classes/Illuminate.Contracts.Routing.Registrar.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Routing.Registrar.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_ResponseFactory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ResponseFactory .collapse">
+        <h1>ResponseFactory<a href="../classes/Illuminate.Contracts.Routing.ResponseFactory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Routing.ResponseFactory.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_UrlGenerator" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_UrlGenerator .collapse">
+        <h1>UrlGenerator<a href="../classes/Illuminate.Contracts.Routing.UrlGenerator.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Routing.UrlGenerator.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_UrlRoutable" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_UrlRoutable .collapse">
+        <h1>UrlRoutable<a href="../classes/Illuminate.Contracts.Routing.UrlRoutable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Routing.UrlRoutable.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Events.html">Events</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Dispatcher" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Dispatcher .collapse">
+        <h1>Dispatcher<a href="../classes/Illuminate.Contracts.Events.Dispatcher.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Events.Dispatcher.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Bus.html">Bus</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Dispatcher" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Dispatcher .collapse">
+        <h1>Dispatcher<a href="../classes/Illuminate.Contracts.Bus.Dispatcher.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Bus.Dispatcher.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_QueueingDispatcher" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_QueueingDispatcher .collapse">
+        <h1>QueueingDispatcher<a href="../classes/Illuminate.Contracts.Bus.QueueingDispatcher.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Bus.QueueingDispatcher.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Cache.html">Cache</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.Cache.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Cache.Factory.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Lock" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Lock .collapse">
+        <h1>Lock<a href="../classes/Illuminate.Contracts.Cache.Lock.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Cache.Lock.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_LockProvider" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_LockProvider .collapse">
+        <h1>LockProvider<a href="../classes/Illuminate.Contracts.Cache.LockProvider.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Cache.LockProvider.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Repository" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Repository .collapse">
+        <h1>Repository<a href="../classes/Illuminate.Contracts.Cache.Repository.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Cache.Repository.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Store" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Store .collapse">
+        <h1>Store<a href="../classes/Illuminate.Contracts.Cache.Store.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Cache.Store.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_LockTimeoutException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LockTimeoutException .collapse">
+        <h1>LockTimeoutException<a href="../classes/Illuminate.Contracts.Cache.LockTimeoutException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Cache.LockTimeoutException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Auth.html">Auth</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Authenticatable" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Authenticatable .collapse">
+        <h1>Authenticatable<a href="../classes/Illuminate.Contracts.Auth.Authenticatable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.Authenticatable.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_CanResetPassword" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_CanResetPassword .collapse">
+        <h1>CanResetPassword<a href="../classes/Illuminate.Contracts.Auth.CanResetPassword.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.CanResetPassword.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.Auth.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.Factory.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Guard" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Guard .collapse">
+        <h1>Guard<a href="../classes/Illuminate.Contracts.Auth.Guard.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.Guard.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_PasswordBroker" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_PasswordBroker .collapse">
+        <h1>PasswordBroker<a href="../classes/Illuminate.Contracts.Auth.PasswordBroker.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.PasswordBroker.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_PasswordBrokerFactory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_PasswordBrokerFactory .collapse">
+        <h1>PasswordBrokerFactory<a href="../classes/Illuminate.Contracts.Auth.PasswordBrokerFactory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.PasswordBrokerFactory.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_StatefulGuard" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_StatefulGuard .collapse">
+        <h1>StatefulGuard<a href="../classes/Illuminate.Contracts.Auth.StatefulGuard.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.StatefulGuard.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_SupportsBasicAuth" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_SupportsBasicAuth .collapse">
+        <h1>SupportsBasicAuth<a href="../classes/Illuminate.Contracts.Auth.SupportsBasicAuth.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.SupportsBasicAuth.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_UserProvider" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_UserProvider .collapse">
+        <h1>UserProvider<a href="../classes/Illuminate.Contracts.Auth.UserProvider.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.UserProvider.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Auth.html">Auth</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Auth.Access.html">Access</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Authorizable" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Authorizable .collapse">
+        <h1>Authorizable<a href="../classes/Illuminate.Contracts.Auth.Access.Authorizable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.Access.Authorizable.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Gate" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Gate .collapse">
+        <h1>Gate<a href="../classes/Illuminate.Contracts.Auth.Access.Gate.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Auth.Access.Gate.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Http.html">Http</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Kernel" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Kernel .collapse">
+        <h1>Kernel<a href="../classes/Illuminate.Contracts.Http.Kernel.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Http.Kernel.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Validation.html">Validation</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.Validation.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Validation.Factory.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_ImplicitRule" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ImplicitRule .collapse">
+        <h1>ImplicitRule<a href="../classes/Illuminate.Contracts.Validation.ImplicitRule.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Validation.ImplicitRule.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Rule" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Rule .collapse">
+        <h1>Rule<a href="../classes/Illuminate.Contracts.Validation.Rule.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Validation.Rule.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_ValidatesWhenResolved" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ValidatesWhenResolved .collapse">
+        <h1>ValidatesWhenResolved<a href="../classes/Illuminate.Contracts.Validation.ValidatesWhenResolved.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Validation.ValidatesWhenResolved.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Validator" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Validator .collapse">
+        <h1>Validator<a href="../classes/Illuminate.Contracts.Validation.Validator.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Validation.Validator.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Container.html">Container</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Container" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Container .collapse">
+        <h1>Container<a href="../classes/Illuminate.Contracts.Container.Container.html">¶</a></h1>
+        <p class="short_description">Describes the interface of a container that exposes methods to read its entries.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Container.Container.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_ContextualBindingBuilder" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ContextualBindingBuilder .collapse">
+        <h1>ContextualBindingBuilder<a href="../classes/Illuminate.Contracts.Container.ContextualBindingBuilder.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Container.ContextualBindingBuilder.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_BindingResolutionException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BindingResolutionException .collapse">
+        <h1>BindingResolutionException<a href="../classes/Illuminate.Contracts.Container.BindingResolutionException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Container.BindingResolutionException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Mail.html">Mail</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Mailable" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Mailable .collapse">
+        <h1>Mailable<a href="../classes/Illuminate.Contracts.Mail.Mailable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Mail.Mailable.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Mailer" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Mailer .collapse">
+        <h1>Mailer<a href="../classes/Illuminate.Contracts.Mail.Mailer.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Mail.Mailer.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_MailQueue" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_MailQueue .collapse">
+        <h1>MailQueue<a href="../classes/Illuminate.Contracts.Mail.MailQueue.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Mail.MailQueue.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Support.html">Support</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Arrayable" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Arrayable .collapse">
+        <h1>Arrayable<a href="../classes/Illuminate.Contracts.Support.Arrayable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Support.Arrayable.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Htmlable" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Htmlable .collapse">
+        <h1>Htmlable<a href="../classes/Illuminate.Contracts.Support.Htmlable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Support.Htmlable.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Jsonable" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Jsonable .collapse">
+        <h1>Jsonable<a href="../classes/Illuminate.Contracts.Support.Jsonable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Support.Jsonable.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_MessageBag" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_MessageBag .collapse">
+        <h1>MessageBag<a href="../classes/Illuminate.Contracts.Support.MessageBag.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Support.MessageBag.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_MessageProvider" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_MessageProvider .collapse">
+        <h1>MessageProvider<a href="../classes/Illuminate.Contracts.Support.MessageProvider.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Support.MessageProvider.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Renderable" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Renderable .collapse">
+        <h1>Renderable<a href="../classes/Illuminate.Contracts.Support.Renderable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Support.Renderable.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Responsable" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Responsable .collapse">
+        <h1>Responsable<a href="../classes/Illuminate.Contracts.Support.Responsable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Support.Responsable.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Encryption.html">Encryption</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Encrypter" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Encrypter .collapse">
+        <h1>Encrypter<a href="../classes/Illuminate.Contracts.Encryption.Encrypter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Encryption.Encrypter.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_DecryptException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DecryptException .collapse">
+        <h1>DecryptException<a href="../classes/Illuminate.Contracts.Encryption.DecryptException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Encryption.DecryptException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_EncryptException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_EncryptException .collapse">
+        <h1>EncryptException<a href="../classes/Illuminate.Contracts.Encryption.EncryptException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Encryption.EncryptException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.View.html">View</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Engine" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Engine .collapse">
+        <h1>Engine<a href="../classes/Illuminate.Contracts.View.Engine.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.View.Engine.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.View.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.View.Factory.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_View" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_View .collapse">
+        <h1>View<a href="../classes/Illuminate.Contracts.View.View.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.View.View.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Notifications.html">Notifications</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Dispatcher" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Dispatcher .collapse">
+        <h1>Dispatcher<a href="../classes/Illuminate.Contracts.Notifications.Dispatcher.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Notifications.Dispatcher.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.Notifications.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Notifications.Factory.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Session.html">Session</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Session" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Session .collapse">
+        <h1>Session<a href="../classes/Illuminate.Contracts.Session.Session.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Session.Session.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Logging.html">Logging</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Log" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Log .collapse">
+        <h1>Log<a href="../classes/Illuminate.Contracts.Logging.Log.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Logging.Log.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Database.html">Database</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ModelIdentifier" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ModelIdentifier .collapse">
+        <h1>ModelIdentifier<a href="../classes/Illuminate.Contracts.Database.ModelIdentifier.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Database.ModelIdentifier.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Queue.html">Queue</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_EntityResolver" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_EntityResolver .collapse">
+        <h1>EntityResolver<a href="../classes/Illuminate.Contracts.Queue.EntityResolver.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Queue.EntityResolver.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.Queue.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Queue.Factory.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Job" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Job .collapse">
+        <h1>Job<a href="../classes/Illuminate.Contracts.Queue.Job.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Queue.Job.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Monitor" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Monitor .collapse">
+        <h1>Monitor<a href="../classes/Illuminate.Contracts.Queue.Monitor.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Queue.Monitor.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Queue" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Queue .collapse">
+        <h1>Queue<a href="../classes/Illuminate.Contracts.Queue.Queue.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Queue.Queue.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_QueueableCollection" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_QueueableCollection .collapse">
+        <h1>QueueableCollection<a href="../classes/Illuminate.Contracts.Queue.QueueableCollection.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Queue.QueueableCollection.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_QueueableEntity" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_QueueableEntity .collapse">
+        <h1>QueueableEntity<a href="../classes/Illuminate.Contracts.Queue.QueueableEntity.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Queue.QueueableEntity.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_ShouldQueue" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ShouldQueue .collapse">
+        <h1>ShouldQueue<a href="../classes/Illuminate.Contracts.Queue.ShouldQueue.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Queue.ShouldQueue.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_EntityNotFoundException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_EntityNotFoundException .collapse">
+        <h1>EntityNotFoundException<a href="../classes/Illuminate.Contracts.Queue.EntityNotFoundException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Queue.EntityNotFoundException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Translation.html">Translation</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Loader" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Loader .collapse">
+        <h1>Loader<a href="../classes/Illuminate.Contracts.Translation.Loader.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Translation.Loader.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Translator" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Translator .collapse">
+        <h1>Translator<a href="../classes/Illuminate.Contracts.Translation.Translator.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Translation.Translator.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Pipeline.html">Pipeline</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Hub" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Hub .collapse">
+        <h1>Hub<a href="../classes/Illuminate.Contracts.Pipeline.Hub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Pipeline.Hub.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Pipeline" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Pipeline .collapse">
+        <h1>Pipeline<a href="../classes/Illuminate.Contracts.Pipeline.Pipeline.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Pipeline.Pipeline.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Filesystem.html">Filesystem</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Cloud" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Cloud .collapse">
+        <h1>Cloud<a href="../classes/Illuminate.Contracts.Filesystem.Cloud.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Filesystem.Cloud.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.Filesystem.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Filesystem.Factory.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Filesystem" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Filesystem .collapse">
+        <h1>Filesystem<a href="../classes/Illuminate.Contracts.Filesystem.Filesystem.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Filesystem.Filesystem.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_FileNotFoundException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FileNotFoundException .collapse">
+        <h1>FileNotFoundException<a href="../classes/Illuminate.Contracts.Filesystem.FileNotFoundException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Filesystem.FileNotFoundException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Cookie.html">Cookie</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.Cookie.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Cookie.Factory.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Pagination.html">Pagination</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_LengthAwarePaginator" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_LengthAwarePaginator .collapse">
+        <h1>LengthAwarePaginator<a href="../classes/Illuminate.Contracts.Pagination.LengthAwarePaginator.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Pagination.LengthAwarePaginator.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Paginator" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Paginator .collapse">
+        <h1>Paginator<a href="../classes/Illuminate.Contracts.Pagination.Paginator.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Pagination.Paginator.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Debug.html">Debug</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_ExceptionHandler" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ExceptionHandler .collapse">
+        <h1>ExceptionHandler<a href="../classes/Illuminate.Contracts.Debug.ExceptionHandler.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Debug.ExceptionHandler.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Broadcasting.html">Broadcasting</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Broadcaster" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Broadcaster .collapse">
+        <h1>Broadcaster<a href="../classes/Illuminate.Contracts.Broadcasting.Broadcaster.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Broadcasting.Broadcaster.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.Broadcasting.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Broadcasting.Factory.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_ShouldBroadcast" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ShouldBroadcast .collapse">
+        <h1>ShouldBroadcast<a href="../classes/Illuminate.Contracts.Broadcasting.ShouldBroadcast.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Broadcasting.ShouldBroadcast.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_ShouldBroadcastNow" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ShouldBroadcastNow .collapse">
+        <h1>ShouldBroadcastNow<a href="../classes/Illuminate.Contracts.Broadcasting.ShouldBroadcastNow.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Broadcasting.ShouldBroadcastNow.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Console.html">Console</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Application" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Application .collapse">
+        <h1>Application<a href="../classes/Illuminate.Contracts.Console.Application.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Console.Application.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_Kernel" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Kernel .collapse">
+        <h1>Kernel<a href="../classes/Illuminate.Contracts.Console.Kernel.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Console.Kernel.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Redis.html">Redis</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Factory" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Factory .collapse">
+        <h1>Factory<a href="../classes/Illuminate.Contracts.Redis.Factory.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Redis.Factory.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_LimiterTimeoutException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LimiterTimeoutException .collapse">
+        <h1>LimiterTimeoutException<a href="../classes/Illuminate.Contracts.Redis.LimiterTimeoutException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Redis.LimiterTimeoutException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Hashing.html">Hashing</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Hasher" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Hasher .collapse">
+        <h1>Hasher<a href="../classes/Illuminate.Contracts.Hashing.Hasher.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Hashing.Hasher.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Foundation.html">Foundation</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Application" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Application .collapse">
+        <h1>Application<a href="../classes/Illuminate.Contracts.Foundation.Application.html">¶</a></h1>
+        <p class="short_description">Describes the interface of a container that exposes methods to read its entries.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Foundation.Application.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.html">Illuminate</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.html">Contracts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Illuminate.Contracts.Config.html">Config</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Repository" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Repository .collapse">
+        <h1>Repository<a href="../classes/Illuminate.Contracts.Config.Repository.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Illuminate.Contracts.Config.Repository.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:57 +0200.<br/>
+    </footer>
+    </body>
+</html>

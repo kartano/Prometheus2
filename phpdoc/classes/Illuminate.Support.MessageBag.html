@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Illuminate\Support\MessageBag
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Create a new message bag instance.">
+            <span class="description">Create a new message bag instance.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method___toString" title="__toString :: Convert the message bag to its string representation.">
+            <span class="description">Convert the message bag to its string representation.</span><pre>__toString</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_add" title="add :: Add a message to the bag.">
+            <span class="description">Add a message to the bag.</span><pre>add</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_all" title="all :: Get all of the messages for every key in the bag.">
+            <span class="description">Get all of the messages for every key in the bag.</span><pre>all</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_any" title="any :: Determine if the message bag has any messages.">
+            <span class="description">Determine if the message bag has any messages.</span><pre>any</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_count" title="count :: Get the number of messages in the container.">
+            <span class="description">Get the number of messages in the container.</span><pre>count</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_first" title="first :: Get the first message from the bag for a given key.">
+            <span class="description">Get the first message from the bag for a given key.</span><pre>first</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_get" title="get :: Get all of the messages from the bag for a given key.">
+            <span class="description">Get all of the messages from the bag for a given key.</span><pre>get</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getFormat" title="getFormat :: Get the default message format.">
+            <span class="description">Get the default message format.</span><pre>getFormat</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getMessageBag" title="getMessageBag :: Get the messages for the instance.">
+            <span class="description">Get the messages for the instance.</span><pre>getMessageBag</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getMessages" title="getMessages :: Get the raw messages in the container.">
+            <span class="description">Get the raw messages in the container.</span><pre>getMessages</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_has" title="has :: Determine if messages exist for all of the given keys.">
+            <span class="description">Determine if messages exist for all of the given keys.</span><pre>has</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_hasAny" title="hasAny :: Determine if messages exist for any of the given keys.">
+            <span class="description">Determine if messages exist for any of the given keys.</span><pre>hasAny</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isEmpty" title="isEmpty :: Determine if the message bag has any messages.">
+            <span class="description">Determine if the message bag has any messages.</span><pre>isEmpty</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isNotEmpty" title="isNotEmpty :: Determine if the message bag has any messages.">
+            <span class="description">Determine if the message bag has any messages.</span><pre>isNotEmpty</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_jsonSerialize" title="jsonSerialize :: Convert the object into something JSON serializable.">
+            <span class="description">Convert the object into something JSON serializable.</span><pre>jsonSerialize</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_keys" title="keys :: Get the keys present in the message bag.">
+            <span class="description">Get the keys present in the message bag.</span><pre>keys</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_merge" title="merge :: Merge a new array of messages into the bag.">
+            <span class="description">Merge a new array of messages into the bag.</span><pre>merge</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_messages" title="messages :: Get the raw messages in the container.">
+            <span class="description">Get the raw messages in the container.</span><pre>messages</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setFormat" title="setFormat :: Set the default message format.">
+            <span class="description">Set the default message format.</span><pre>setFormat</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_toArray" title="toArray :: Get the instance as an array.">
+            <span class="description">Get the instance as an array.</span><pre>toArray</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_toJson" title="toJson :: Convert the object to its JSON representation.">
+            <span class="description">Convert the object to its JSON representation.</span><pre>toJson</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_unique" title="unique :: Get all of the unique messages for every key in the bag.">
+            <span class="description">Get all of the unique messages for every key in the bag.</span><pre>unique</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                <li class="method protected">
+                            <a href="#method_checkFormat" title="checkFormat :: Get the appropriate format based on the given format.">
+                                <span class="description">Get the appropriate format based on the given format.</span><pre>checkFormat</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                        <li class="method protected">
+                            <a href="#method_getMessagesForWildcardKey" title="getMessagesForWildcardKey :: Get the messages for a wildcard key.">
+                                <span class="description">Get the messages for a wildcard key.</span><pre>getMessagesForWildcardKey</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method protected">
+                            <a href="#method_isUnique" title="isUnique :: Determine if a key and message combination already exists.">
+                                <span class="description">Determine if a key and message combination already exists.</span><pre>isUnique</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                            <li class="method protected">
+                            <a href="#method_transform" title="transform :: Format an array of messages.">
+                                <span class="description">Format an array of messages.</span><pre>transform</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>MessageBag</h1>
+                <small style="display: block; text-align: right">
+                                                                Implements <a href="../classes/Illuminate.Contracts.Support.Arrayable.html">\Illuminate\Contracts\Support\Arrayable</a>, \Countable, <a href="../classes/Illuminate.Contracts.Support.Jsonable.html">\Illuminate\Contracts\Support\Jsonable</a>, \JsonSerializable, <a href="../classes/Illuminate.Contracts.Support.MessageBag.html">\Illuminate\Contracts\Support\MessageBag</a>, <a href="../classes/Illuminate.Contracts.Support.MessageProvider.html">\Illuminate\Contracts\Support\MessageProvider</a>
+                                    </small>
+                <p class="short_description"></p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Create a new message bag instance.</h2>
+                            <pre>__construct(array $messages = array()) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$messages</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___toString"></a>
+                        <div class="element clickable method public  method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+                            <h2>Convert the message bag to its string representation.</h2>
+                            <pre>__toString() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_add"></a>
+                        <div class="element clickable method public  method_add" data-toggle="collapse" data-target=".method_add .collapse">
+                            <h2>Add a message to the bag.</h2>
+                            <pre>add(string $key, string $message) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_all"></a>
+                        <div class="element clickable method public  method_all" data-toggle="collapse" data-target=".method_all .collapse">
+                            <h2>Get all of the messages for every key in the bag.</h2>
+                            <pre>all(string $format = null) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$format</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_any"></a>
+                        <div class="element clickable method public  method_any" data-toggle="collapse" data-target=".method_any .collapse">
+                            <h2>Determine if the message bag has any messages.</h2>
+                            <pre>any() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_checkFormat"></a>
+                        <div class="element clickable method protected  method_checkFormat" data-toggle="collapse" data-target=".method_checkFormat .collapse">
+                            <h2>Get the appropriate format based on the given format.</h2>
+                            <pre>checkFormat(string $format) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$format</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_count"></a>
+                        <div class="element clickable method public  method_count" data-toggle="collapse" data-target=".method_count .collapse">
+                            <h2>Get the number of messages in the container.</h2>
+                            <pre>count() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_first"></a>
+                        <div class="element clickable method public  method_first" data-toggle="collapse" data-target=".method_first .collapse">
+                            <h2>Get the first message from the bag for a given key.</h2>
+                            <pre>first(string $key = null, string $format = null) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$format</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_get"></a>
+                        <div class="element clickable method public  method_get" data-toggle="collapse" data-target=".method_get .collapse">
+                            <h2>Get all of the messages from the bag for a given key.</h2>
+                            <pre>get(string $key, string $format = null) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$format</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getFormat"></a>
+                        <div class="element clickable method public  method_getFormat" data-toggle="collapse" data-target=".method_getFormat .collapse">
+                            <h2>Get the default message format.</h2>
+                            <pre>getFormat() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getMessageBag"></a>
+                        <div class="element clickable method public  method_getMessageBag" data-toggle="collapse" data-target=".method_getMessageBag .collapse">
+                            <h2>Get the messages for the instance.</h2>
+                            <pre>getMessageBag() : \Illuminate\Support\MessageBag</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Illuminate.Support.MessageBag.html">\Illuminate\Support\MessageBag</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getMessages"></a>
+                        <div class="element clickable method public  method_getMessages" data-toggle="collapse" data-target=".method_getMessages .collapse">
+                            <h2>Get the raw messages in the container.</h2>
+                            <pre>getMessages() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getMessagesForWildcardKey"></a>
+                        <div class="element clickable method protected  method_getMessagesForWildcardKey" data-toggle="collapse" data-target=".method_getMessagesForWildcardKey .collapse">
+                            <h2>Get the messages for a wildcard key.</h2>
+                            <pre>getMessagesForWildcardKey(string $key, string|null $format) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$format</h4>
+                                                <code>string|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_has"></a>
+                        <div class="element clickable method public  method_has" data-toggle="collapse" data-target=".method_has .collapse">
+                            <h2>Determine if messages exist for all of the given keys.</h2>
+                            <pre>has(array|string $key) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>array|string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasAny"></a>
+                        <div class="element clickable method public  method_hasAny" data-toggle="collapse" data-target=".method_hasAny .collapse">
+                            <h2>Determine if messages exist for any of the given keys.</h2>
+                            <pre>hasAny(array|string $keys = array()) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$keys</h4>
+                                                <code>array|string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isEmpty"></a>
+                        <div class="element clickable method public  method_isEmpty" data-toggle="collapse" data-target=".method_isEmpty .collapse">
+                            <h2>Determine if the message bag has any messages.</h2>
+                            <pre>isEmpty() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isNotEmpty"></a>
+                        <div class="element clickable method public  method_isNotEmpty" data-toggle="collapse" data-target=".method_isNotEmpty .collapse">
+                            <h2>Determine if the message bag has any messages.</h2>
+                            <pre>isNotEmpty() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isUnique"></a>
+                        <div class="element clickable method protected  method_isUnique" data-toggle="collapse" data-target=".method_isUnique .collapse">
+                            <h2>Determine if a key and message combination already exists.</h2>
+                            <pre>isUnique(string $key, string $message) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_jsonSerialize"></a>
+                        <div class="element clickable method public  method_jsonSerialize" data-toggle="collapse" data-target=".method_jsonSerialize .collapse">
+                            <h2>Convert the object into something JSON serializable.</h2>
+                            <pre>jsonSerialize() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_keys"></a>
+                        <div class="element clickable method public  method_keys" data-toggle="collapse" data-target=".method_keys .collapse">
+                            <h2>Get the keys present in the message bag.</h2>
+                            <pre>keys() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_merge"></a>
+                        <div class="element clickable method public  method_merge" data-toggle="collapse" data-target=".method_merge .collapse">
+                            <h2>Merge a new array of messages into the bag.</h2>
+                            <pre>merge(\Illuminate\Contracts\Support\MessageProvider|array $messages) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$messages</h4>
+                                                <code><a href="../classes/Illuminate.Contracts.Support.MessageProvider.html">\Illuminate\Contracts\Support\MessageProvider</a>|array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_messages"></a>
+                        <div class="element clickable method public  method_messages" data-toggle="collapse" data-target=".method_messages .collapse">
+                            <h2>Get the raw messages in the container.</h2>
+                            <pre>messages() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setFormat"></a>
+                        <div class="element clickable method public  method_setFormat" data-toggle="collapse" data-target=".method_setFormat .collapse">
+                            <h2>Set the default message format.</h2>
+                            <pre>setFormat(string $format = &#039;:message&#039;) : \Illuminate\Support\MessageBag</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$format</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Illuminate.Support.MessageBag.html">\Illuminate\Support\MessageBag</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_toArray"></a>
+                        <div class="element clickable method public  method_toArray" data-toggle="collapse" data-target=".method_toArray .collapse">
+                            <h2>Get the instance as an array.</h2>
+                            <pre>toArray() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_toJson"></a>
+                        <div class="element clickable method public  method_toJson" data-toggle="collapse" data-target=".method_toJson .collapse">
+                            <h2>Convert the object to its JSON representation.</h2>
+                            <pre>toJson(integer $options) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_transform"></a>
+                        <div class="element clickable method protected  method_transform" data-toggle="collapse" data-target=".method_transform .collapse">
+                            <h2>Format an array of messages.</h2>
+                            <pre>transform(array $messages, string $format, string $messageKey) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$messages</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$format</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$messageKey</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_unique"></a>
+                        <div class="element clickable method public  method_unique" data-toggle="collapse" data-target=".method_unique .collapse">
+                            <h2>Get all of the unique messages for every key in the bag.</h2>
+                            <pre>unique(string $format = null) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$format</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_messages"> </a>
+                            <div class="element clickable property  protected property_messages" data-toggle="collapse" data-target=".property_messages .collapse">
+                                <h2>All of the registered messages.</h2>
+                                <pre>messages : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_format"> </a>
+                            <div class="element clickable property  protected property_format" data-toggle="collapse" data-target=".property_format .collapse">
+                                <h2>Default format for message output.</h2>
+                                <pre>format : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Illuminate\Support\MessageBag"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Illuminate.Support.html">Support</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Illuminate.Support.MessageBag.html">MessageBag</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:04 +0200.<br/>
+    </footer>
+    </body>
+</html>

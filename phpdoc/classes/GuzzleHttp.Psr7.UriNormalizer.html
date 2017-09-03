@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \GuzzleHttp\Psr7\UriNormalizer
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                                                                                                                                                                                            <li class="method public">
+        <a href="#method_isEquivalent" title="isEquivalent :: Whether two URIs can be considered equivalent.">
+            <span class="description">Whether two URIs can be considered equivalent.</span><pre>isEquivalent</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_normalize" title="normalize :: Returns a normalized URI.">
+            <span class="description">Returns a normalized URI.</span><pre>normalize</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                            <li class="method private">
+                            <a href="#method___construct" title="__construct :: ">
+                                <span class="description"></span><pre>__construct</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_capitalizePercentEncoding" title="capitalizePercentEncoding :: ">
+                                <span class="description"></span><pre>capitalizePercentEncoding</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_decodeUnreservedCharacters" title="decodeUnreservedCharacters :: ">
+                                <span class="description"></span><pre>decodeUnreservedCharacters</pre>
+                            </a>
+                        </li>
+                                                                                                                        </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_CAPITALIZE_PERCENT_ENCODING" title="CAPITALIZE_PERCENT_ENCODING :: All letters within a percent-encoding triplet (e.g., &quot;%3A&quot;) are case-insensitive, and should be capitalized.">
+                        <span class="description">All letters within a percent-encoding triplet (e.g., &quot;%3A&quot;) are case-insensitive, and should be capitalized.</span><pre>CAPITALIZE_PERCENT_ENCODING</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CONVERT_EMPTY_PATH" title="CONVERT_EMPTY_PATH :: Converts the empty path to &quot;/&quot; for http and https URIs.">
+                        <span class="description">Converts the empty path to &quot;/&quot; for http and https URIs.</span><pre>CONVERT_EMPTY_PATH</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_DECODE_UNRESERVED_CHARACTERS" title="DECODE_UNRESERVED_CHARACTERS :: Decodes percent-encoded octets of unreserved characters.">
+                        <span class="description">Decodes percent-encoded octets of unreserved characters.</span><pre>DECODE_UNRESERVED_CHARACTERS</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_PRESERVING_NORMALIZATIONS" title="PRESERVING_NORMALIZATIONS :: Default normalizations which only include the ones that preserve semantics.">
+                        <span class="description">Default normalizations which only include the ones that preserve semantics.</span><pre>PRESERVING_NORMALIZATIONS</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_REMOVE_DEFAULT_HOST" title="REMOVE_DEFAULT_HOST :: Removes the default host of the given URI scheme from the URI.">
+                        <span class="description">Removes the default host of the given URI scheme from the URI.</span><pre>REMOVE_DEFAULT_HOST</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_REMOVE_DEFAULT_PORT" title="REMOVE_DEFAULT_PORT :: Removes the default port of the given URI scheme from the URI.">
+                        <span class="description">Removes the default port of the given URI scheme from the URI.</span><pre>REMOVE_DEFAULT_PORT</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_REMOVE_DOT_SEGMENTS" title="REMOVE_DOT_SEGMENTS :: Removes unnecessary dot-segments.">
+                        <span class="description">Removes unnecessary dot-segments.</span><pre>REMOVE_DOT_SEGMENTS</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_REMOVE_DUPLICATE_SLASHES" title="REMOVE_DUPLICATE_SLASHES :: Paths which include two or more adjacent slashes are converted to one.">
+                        <span class="description">Paths which include two or more adjacent slashes are converted to one.</span><pre>REMOVE_DUPLICATE_SLASHES</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_SORT_QUERY_PARAMETERS" title="SORT_QUERY_PARAMETERS :: Sort query parameters with their values in alphabetical order.">
+                        <span class="description">Sort query parameters with their values in alphabetical order.</span><pre>SORT_QUERY_PARAMETERS</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>UriNormalizer</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">Provides methods to normalize and compare URIs.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        author
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Tobias Schultze</p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        link
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p><a href="https://tools.ietf.org/html/rfc3986#section-6">https://tools.ietf.org/html/rfc3986#section-6</a></p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method private  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>__construct</h2>
+                            <pre>__construct() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_capitalizePercentEncoding"></a>
+                        <div class="element clickable method private  method_capitalizePercentEncoding" data-toggle="collapse" data-target=".method_capitalizePercentEncoding .collapse">
+                            <h2>capitalizePercentEncoding</h2>
+                            <pre>capitalizePercentEncoding(\Psr\Http\Message\UriInterface $uri) </pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code><a href="../classes/Psr.Http.Message.UriInterface.html">\Psr\Http\Message\UriInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_decodeUnreservedCharacters"></a>
+                        <div class="element clickable method private  method_decodeUnreservedCharacters" data-toggle="collapse" data-target=".method_decodeUnreservedCharacters .collapse">
+                            <h2>decodeUnreservedCharacters</h2>
+                            <pre>decodeUnreservedCharacters(\Psr\Http\Message\UriInterface $uri) </pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code><a href="../classes/Psr.Http.Message.UriInterface.html">\Psr\Http\Message\UriInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isEquivalent"></a>
+                        <div class="element clickable method public  method_isEquivalent" data-toggle="collapse" data-target=".method_isEquivalent .collapse">
+                            <h2>Whether two URIs can be considered equivalent.</h2>
+                            <pre>isEquivalent(\Psr\Http\Message\UriInterface $uri1, \Psr\Http\Message\UriInterface $uri2, integer $normalizations = self::PRESERVING_NORMALIZATIONS) : boolean</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Both URIs are normalized automatically before comparison with the given $normalizations bitmask. The method also
+accepts relative URI references and returns true when they are equivalent. This of course assumes they will be
+resolved against the same base URI. If this is not the case, determination of equivalence or difference of
+relative references does not mean anything.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    link
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p><a href="https://tools.ietf.org/html/rfc3986#section-6.1">https://tools.ietf.org/html/rfc3986#section-6.1</a></p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri1</h4>
+                                                <code><a href="../classes/Psr.Http.Message.UriInterface.html">\Psr\Http\Message\UriInterface</a></code><p><p>An URI to compare</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri2</h4>
+                                                <code><a href="../classes/Psr.Http.Message.UriInterface.html">\Psr\Http\Message\UriInterface</a></code><p><p>An URI to compare</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$normalizations</h4>
+                                                <code>integer</code><p><p>A bitmask of normalizations to apply, see constants</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_normalize"></a>
+                        <div class="element clickable method public  method_normalize" data-toggle="collapse" data-target=".method_normalize .collapse">
+                            <h2>Returns a normalized URI.</h2>
+                            <pre>normalize(\Psr\Http\Message\UriInterface $uri, integer $flags = self::PRESERVING_NORMALIZATIONS) : \Psr\Http\Message\UriInterface</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The scheme and host component are already normalized to lowercase per PSR-7 UriInterface.
+This methods adds additional normalizations that can be configured with the $flags parameter.</p>
+<p>PSR-7 UriInterface cannot distinguish between an empty component and a missing component as
+getQuery(), getFragment() etc. always return a string. This means the URIs &quot;/?#&quot; and &quot;/&quot; are
+treated equivalent which is not necessarily true according to RFC 3986. But that difference
+is highly uncommon in reality. So this potential normalization is implied in PSR-7 as well.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    link
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p><a href="https://tools.ietf.org/html/rfc3986#section-6.2">https://tools.ietf.org/html/rfc3986#section-6.2</a></p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code><a href="../classes/Psr.Http.Message.UriInterface.html">\Psr\Http\Message\UriInterface</a></code><p><p>The URI to normalize</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$flags</h4>
+                                                <code>integer</code><p><p>A bitmask of normalizations to apply, see constants</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Psr.Http.Message.UriInterface.html">\Psr\Http\Message\UriInterface</a></code><p><p>The normalized URI</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_PRESERVING_NORMALIZATIONS"> </a>
+                            <div class="element clickable constant  constant_PRESERVING_NORMALIZATIONS" data-toggle="collapse" data-target=".constant_PRESERVING_NORMALIZATIONS .collapse">
+                                <h2>Default normalizations which only include the ones that preserve semantics.</h2>
+                                <pre>PRESERVING_NORMALIZATIONS</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>self::CAPITALIZE_PERCENT_ENCODING | self::DECODE_UNRESERVED_CHARACTERS | self::CONVERT_EMPTY_PATH |
+self::REMOVE_DEFAULT_HOST | self::REMOVE_DEFAULT_PORT | self::REMOVE_DOT_SEGMENTS</p></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CAPITALIZE_PERCENT_ENCODING"> </a>
+                            <div class="element clickable constant  constant_CAPITALIZE_PERCENT_ENCODING" data-toggle="collapse" data-target=".constant_CAPITALIZE_PERCENT_ENCODING .collapse">
+                                <h2>All letters within a percent-encoding triplet (e.g., &quot;%3A&quot;) are case-insensitive, and should be capitalized.</h2>
+                                <pre>CAPITALIZE_PERCENT_ENCODING</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Example: <a href="http://example.org/a%c2%b1b">http://example.org/a%c2%b1b</a> → <a href="http://example.org/a%C2%B1b">http://example.org/a%C2%B1b</a></p></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_DECODE_UNRESERVED_CHARACTERS"> </a>
+                            <div class="element clickable constant  constant_DECODE_UNRESERVED_CHARACTERS" data-toggle="collapse" data-target=".constant_DECODE_UNRESERVED_CHARACTERS .collapse">
+                                <h2>Decodes percent-encoded octets of unreserved characters.</h2>
+                                <pre>DECODE_UNRESERVED_CHARACTERS</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>For consistency, percent-encoded octets in the ranges of ALPHA (%41–%5A and %61–%7A), DIGIT (%30–%39),
+hyphen (%2D), period (%2E), underscore (%5F), or tilde (%7E) should not be created by URI producers and,
+when found in a URI, should be decoded to their corresponding unreserved characters by URI normalizers.</p>
+<p>Example: <a href="http://example.org/%7Eusern%61me/">http://example.org/%7Eusern%61me/</a> → <a href="http://example.org/~username/">http://example.org/~username/</a></p></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CONVERT_EMPTY_PATH"> </a>
+                            <div class="element clickable constant  constant_CONVERT_EMPTY_PATH" data-toggle="collapse" data-target=".constant_CONVERT_EMPTY_PATH .collapse">
+                                <h2>Converts the empty path to &quot;/&quot; for http and https URIs.</h2>
+                                <pre>CONVERT_EMPTY_PATH</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Example: <a href="http://example.org">http://example.org</a> → <a href="http://example.org/">http://example.org/</a></p></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_REMOVE_DEFAULT_HOST"> </a>
+                            <div class="element clickable constant  constant_REMOVE_DEFAULT_HOST" data-toggle="collapse" data-target=".constant_REMOVE_DEFAULT_HOST .collapse">
+                                <h2>Removes the default host of the given URI scheme from the URI.</h2>
+                                <pre>REMOVE_DEFAULT_HOST</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Only the &quot;file&quot; scheme defines the default host &quot;localhost&quot;.
+All of <code>file:/myfile</code>, <code>file:///myfile</code>, and <code>file://localhost/myfile</code>
+are equivalent according to RFC 3986. The first format is not accepted
+by PHPs stream functions and thus already normalized implicitly to the
+second format in the Uri class. See <code>GuzzleHttp\Psr7\Uri::composeComponents</code>.</p>
+<p>Example: file://localhost/myfile → file:///myfile</p></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_REMOVE_DEFAULT_PORT"> </a>
+                            <div class="element clickable constant  constant_REMOVE_DEFAULT_PORT" data-toggle="collapse" data-target=".constant_REMOVE_DEFAULT_PORT .collapse">
+                                <h2>Removes the default port of the given URI scheme from the URI.</h2>
+                                <pre>REMOVE_DEFAULT_PORT</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Example: <a href="http://example.org:80/">http://example.org:80/</a> → <a href="http://example.org/">http://example.org/</a></p></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_REMOVE_DOT_SEGMENTS"> </a>
+                            <div class="element clickable constant  constant_REMOVE_DOT_SEGMENTS" data-toggle="collapse" data-target=".constant_REMOVE_DOT_SEGMENTS .collapse">
+                                <h2>Removes unnecessary dot-segments.</h2>
+                                <pre>REMOVE_DOT_SEGMENTS</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Dot-segments in relative-path references are not removed as it would
+change the semantics of the URI reference.</p>
+<p>Example: <a href="http://example.org/../a/b/../c/./d.html">http://example.org/../a/b/../c/./d.html</a> → <a href="http://example.org/a/c/d.html">http://example.org/a/c/d.html</a></p></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_REMOVE_DUPLICATE_SLASHES"> </a>
+                            <div class="element clickable constant  constant_REMOVE_DUPLICATE_SLASHES" data-toggle="collapse" data-target=".constant_REMOVE_DUPLICATE_SLASHES .collapse">
+                                <h2>Paths which include two or more adjacent slashes are converted to one.</h2>
+                                <pre>REMOVE_DUPLICATE_SLASHES</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Webservers usually ignore duplicate slashes and treat those URIs equivalent.
+But in theory those URIs do not need to be equivalent. So this normalization
+may change the semantics. Encoded slashes (%2F) are not removed.</p>
+<p>Example: <a href="http://example.org//foo///bar.html">http://example.org//foo///bar.html</a> → <a href="http://example.org/foo/bar.html">http://example.org/foo/bar.html</a></p></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_SORT_QUERY_PARAMETERS"> </a>
+                            <div class="element clickable constant  constant_SORT_QUERY_PARAMETERS" data-toggle="collapse" data-target=".constant_SORT_QUERY_PARAMETERS .collapse">
+                                <h2>Sort query parameters with their values in alphabetical order.</h2>
+                                <pre>SORT_QUERY_PARAMETERS</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>However, the order of parameters in a URI may be significant (this is not defined by the standard).
+So this normalization is not safe and may change the semantics of the URI.</p>
+<p>Example: ?lang=en&amp;article=fred → ?article=fred&amp;lang=en</p>
+<p>Note: The sorting is neither locale nor Unicode aware (the URI query does not get decoded at all) as the
+purpose is to be able to compare URIs in a reproducible way, not to have the params sorted perfectly.</p></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                        </div>
+            </div>
+            <a id="\GuzzleHttp\Psr7\UriNormalizer"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/GuzzleHttp.Psr7.html">Psr7</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/GuzzleHttp.Psr7.UriNormalizer.html">UriNormalizer</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:05 +0200.<br/>
+    </footer>
+    </body>
+</html>

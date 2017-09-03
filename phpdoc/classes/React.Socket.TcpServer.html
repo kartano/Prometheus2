@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \React\Socket\TcpServer
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Creates a plaintext TCP/IP socket server and starts listening on the given address">
+            <span class="description">Creates a plaintext TCP/IP socket server and starts listening on the given address</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_close" title="close :: Shuts down this listening socket">
+            <span class="description">Shuts down this listening socket</span><pre>close</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_emit" title="emit :: ">
+            <span class="description"></span><pre>emit</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getAddress" title="getAddress :: Returns the full address (URI) this server is currently listening on">
+            <span class="description">Returns the full address (URI) this server is currently listening on</span><pre>getAddress</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_listeners" title="listeners :: ">
+            <span class="description"></span><pre>listeners</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_on" title="on :: ">
+            <span class="description"></span><pre>on</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_once" title="once :: ">
+            <span class="description"></span><pre>once</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_pause" title="pause :: Pauses accepting new incoming connections.">
+            <span class="description">Pauses accepting new incoming connections.</span><pre>pause</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_removeAllListeners" title="removeAllListeners :: ">
+            <span class="description"></span><pre>removeAllListeners</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_removeListener" title="removeListener :: ">
+            <span class="description"></span><pre>removeListener</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_resume" title="resume :: Resumes accepting new incoming connections.">
+            <span class="description">Resumes accepting new incoming connections.</span><pre>resume</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>TcpServer</h1>
+                <small style="display: block; text-align: right">
+                                            Extends <a href="../classes/Evenement.EventEmitter.html">\Evenement\EventEmitter</a>
+                                                                Implements <a href="../classes/React.Socket.ServerInterface.html">\React\Socket\ServerInterface</a>
+                                    </small>
+                <p class="short_description">The `TcpServer` class implements the `ServerInterface` and
+is responsible for accepting plaintext TCP/IP connections.</p>
+                <div class="details">
+                    <div class="long_description">
+                        <pre><code class="language-php">$server = new TcpServer(8080, $loop);</code></pre>
+<p>Whenever a client connects, it will emit a <code>connection</code> event with a connection
+instance implementing <code>ConnectionInterface</code>:</p>
+<pre><code class="language-php">$server-&gt;on('connection', function (ConnectionInterface $connection) {
+    echo 'Plaintext connection from ' . $connection-&gt;getRemoteAddress() . PHP_EOL;
+    $connection-&gt;write('hello there!' . PHP_EOL);
+    …
+});</code></pre>
+<p>See also the <code>ServerInterface</code> for more details.</p>
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        see
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <th>
+                                        see
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Creates a plaintext TCP/IP socket server and starts listening on the given address</h2>
+                            <pre>__construct(string|integer $uri, \React\EventLoop\LoopInterface $loop, array $context = array()) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This starts accepting new incoming connections on the given address.
+See also the <code>connection event</code> documented in the <code>ServerInterface</code>
+for more details.</p>
+<pre><code class="language-php">$server = new TcpServer(8080, $loop);</code></pre>
+<p>As above, the <code>$uri</code> parameter can consist of only a port, in which case the
+server will default to listening on the localhost address <code>127.0.0.1</code>,
+which means it will not be reachable from outside of this system.</p>
+<p>In order to use a random port assignment, you can use the port <code>0</code>:</p>
+<pre><code class="language-php">$server = new TcpServer(0, $loop);
+$address = $server-&gt;getAddress();</code></pre>
+<p>In order to change the host the socket is listening on, you can provide an IP
+address through the first parameter provided to the constructor, optionally
+preceded by the <code>tcp://</code> scheme:</p>
+<pre><code class="language-php">$server = new TcpServer('192.168.0.1:8080', $loop);</code></pre>
+<p>If you want to listen on an IPv6 address, you MUST enclose the host in square
+brackets:</p>
+<pre><code class="language-php">$server = new TcpServer('[::1]:8080', $loop);</code></pre>
+<p>If the given URI is invalid, does not contain a port, any other scheme or if it
+contains a hostname, it will throw an <code>InvalidArgumentException</code>:</p>
+<pre><code class="language-php">// throws InvalidArgumentException due to missing port
+$server = new TcpServer('127.0.0.1', $loop);</code></pre>
+<p>If the given URI appears to be valid, but listening on it fails (such as if port
+is already in use or port below 1024 may require root access etc.), it will
+throw a <code>RuntimeException</code>:</p>
+<pre><code class="language-php">$first = new TcpServer(8080, $loop);
+
+// throws RuntimeException because port is already in use
+$second = new TcpServer(8080, $loop);</code></pre>
+<p>Note that these error conditions may vary depending on your system and/or
+configuration.
+See the exception message and code for more details about the actual error
+condition.</p>
+<p>Optionally, you can specify <a href="http://php.net/manual/en/context.socket.php">socket context options</a>
+for the underlying stream socket resource like this:</p>
+<pre><code class="language-php">$server = new TcpServer('[::1]:8080', $loop, array(
+    'backlog' =&gt; 200,
+    'so_reuseport' =&gt; true,
+    'ipv6_v6only' =&gt; true
+));</code></pre>
+<p>Note that available <a href="http://php.net/manual/en/context.socket.php">socket context options</a>,
+their defaults and effects of changing these may vary depending on your system
+and/or PHP version.
+Passing unknown context options has no effect.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\InvalidArgumentException</dt>
+                                                        <dd><p>if the listening address is invalid</p></dd>
+                                                                                                            <dt>\RuntimeException</dt>
+                                                        <dd><p>if listening on this address fails (already in use etc.)</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|integer</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$loop</h4>
+                                                <code><a href="../classes/React.EventLoop.LoopInterface.html">\React\EventLoop\LoopInterface</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$context</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_close"></a>
+                        <div class="element clickable method public  method_close" data-toggle="collapse" data-target=".method_close .collapse">
+                            <h2>Shuts down this listening socket</h2>
+                            <pre>close() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This will stop listening for new incoming connections on this socket.</p>
+<p>Calling this method more than once on the same instance is a NO-OP.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_emit"></a>
+                        <div class="element clickable method public  method_emit inherited" data-toggle="collapse" data-target=".method_emit .collapse">
+                            <h2>emit</h2>
+                            <pre>emit( $event, array $arguments = array()) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$arguments</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getAddress"></a>
+                        <div class="element clickable method public  method_getAddress" data-toggle="collapse" data-target=".method_getAddress .collapse">
+                            <h2>Returns the full address (URI) this server is currently listening on</h2>
+                            <pre>getAddress() : \React\Socket\?string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><pre><code class="language-php">$address = $server-&gt;getAddress();
+echo 'Server listening on ' . $address . PHP_EOL;</code></pre>
+<p>If the address can not be determined or is unknown at this time (such as
+after the socket has been closed), it MAY return a <code>NULL</code> value instead.</p>
+<p>Otherwise, it will return the full address (URI) as a string value, such
+as <code>tcp://127.0.0.1:8080</code>, <code>tcp://[::1]:80</code> or <code>tls://127.0.0.1:443</code>.
+Note that individual URI components are application specific and depend
+on the underlying transport protocol.</p>
+<p>If this is a TCP/IP based server and you only want the local port, you may
+use something like this:</p>
+<pre><code class="language-php">$address = $server-&gt;getAddress();
+$port = parse_url($address, PHP_URL_PORT);
+echo 'Server listening on port ' . $port . PHP_EOL;</code></pre></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\React\Socket\?string</code><p><p>the full listening address (URI) or NULL if it is unknown (not applicable to this server socket or already closed)</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_listeners"></a>
+                        <div class="element clickable method public  method_listeners inherited" data-toggle="collapse" data-target=".method_listeners .collapse">
+                            <h2>listeners</h2>
+                            <pre>listeners( $event) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_on"></a>
+                        <div class="element clickable method public  method_on inherited" data-toggle="collapse" data-target=".method_on .collapse">
+                            <h2>on</h2>
+                            <pre>on( $event, callable $listener) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$listener</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_once"></a>
+                        <div class="element clickable method public  method_once inherited" data-toggle="collapse" data-target=".method_once .collapse">
+                            <h2>once</h2>
+                            <pre>once( $event, callable $listener) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$listener</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_pause"></a>
+                        <div class="element clickable method public  method_pause" data-toggle="collapse" data-target=".method_pause .collapse">
+                            <h2>Pauses accepting new incoming connections.</h2>
+                            <pre>pause() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Removes the socket resource from the EventLoop and thus stop accepting
+new connections. Note that the listening socket stays active and is not
+closed.</p>
+<p>This means that new incoming connections will stay pending in the
+operating system backlog until its configurable backlog is filled.
+Once the backlog is filled, the operating system may reject further
+incoming connections until the backlog is drained again by resuming
+to accept new connections.</p>
+<p>Once the server is paused, no futher <code>connection</code> events SHOULD
+be emitted.</p>
+<pre><code class="language-php">$server-&gt;pause();
+
+$server-&gt;on('connection', assertShouldNeverCalled());</code></pre>
+<p>This method is advisory-only, though generally not recommended, the
+server MAY continue emitting <code>connection</code> events.</p>
+<p>Unless otherwise noted, a successfully opened server SHOULD NOT start
+in paused state.</p>
+<p>You can continue processing events by calling <code>resume()</code> again.</p>
+<p>Note that both methods can be called any number of times, in particular
+calling <code>pause()</code> more than once SHOULD NOT have any effect.
+Similarly, calling this after <code>close()</code> is a NO-OP.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_removeAllListeners"></a>
+                        <div class="element clickable method public  method_removeAllListeners inherited" data-toggle="collapse" data-target=".method_removeAllListeners .collapse">
+                            <h2>removeAllListeners</h2>
+                            <pre>removeAllListeners( $event = null) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_removeListener"></a>
+                        <div class="element clickable method public  method_removeListener inherited" data-toggle="collapse" data-target=".method_removeListener .collapse">
+                            <h2>removeListener</h2>
+                            <pre>removeListener( $event, callable $listener) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$listener</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_resume"></a>
+                        <div class="element clickable method public  method_resume" data-toggle="collapse" data-target=".method_resume .collapse">
+                            <h2>Resumes accepting new incoming connections.</h2>
+                            <pre>resume() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Re-attach the socket resource to the EventLoop after a previous <code>pause()</code>.</p>
+<pre><code class="language-php">$server-&gt;pause();
+
+$loop-&gt;addTimer(1.0, function () use ($server) {
+    $server-&gt;resume();
+});</code></pre>
+<p>Note that both methods can be called any number of times, in particular
+calling <code>resume()</code> without a prior <code>pause()</code> SHOULD NOT have any effect.
+Similarly, calling this after <code>close()</code> is a NO-OP.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_master"> </a>
+                            <div class="element clickable property  private property_master" data-toggle="collapse" data-target=".property_master .collapse">
+                                <h2>master</h2>
+                                <pre>master : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_loop"> </a>
+                            <div class="element clickable property  private property_loop" data-toggle="collapse" data-target=".property_loop .collapse">
+                                <h2>loop</h2>
+                                <pre>loop : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_listening"> </a>
+                            <div class="element clickable property  private property_listening" data-toggle="collapse" data-target=".property_listening .collapse">
+                                <h2>listening</h2>
+                                <pre>listening : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_listeners"> </a>
+                            <div class="element clickable property  protected property_listeners inherited" data-toggle="collapse" data-target=".property_listeners .collapse">
+                                <h2>listeners</h2>
+                                <pre>listeners : </pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\React\Socket\TcpServer"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/React.Socket.html">Socket</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/React.Socket.TcpServer.html">TcpServer</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:03 +0200.<br/>
+    </footer>
+    </body>
+</html>

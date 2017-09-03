@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \GuzzleHttp\Middleware
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method_cookies" title="cookies :: Middleware that adds cookies to requests.">
+            <span class="description">Middleware that adds cookies to requests.</span><pre>cookies</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_history" title="history :: Middleware that pushes history data to an ArrayAccess container.">
+            <span class="description">Middleware that pushes history data to an ArrayAccess container.</span><pre>history</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_httpErrors" title="httpErrors :: Middleware that throws exceptions for 4xx or 5xx responses when the
+&quot;http_error&quot; request option is set to true.">
+            <span class="description">Middleware that throws exceptions for 4xx or 5xx responses when the
+&quot;http_error&quot; request option is set to true.</span><pre>httpErrors</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_log" title="log :: Middleware that logs requests, responses, and errors using a message
+formatter.">
+            <span class="description">Middleware that logs requests, responses, and errors using a message
+formatter.</span><pre>log</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_mapRequest" title="mapRequest :: Middleware that applies a map function to the request before passing to
+the next handler.">
+            <span class="description">Middleware that applies a map function to the request before passing to
+the next handler.</span><pre>mapRequest</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_mapResponse" title="mapResponse :: Middleware that applies a map function to the resolved promise&#039;s
+response.">
+            <span class="description">Middleware that applies a map function to the resolved promise&#039;s
+response.</span><pre>mapResponse</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_prepareBody" title="prepareBody :: This middleware adds a default content-type if possible, a default
+content-length or transfer-encoding header, and the expect header.">
+            <span class="description">This middleware adds a default content-type if possible, a default
+content-length or transfer-encoding header, and the expect header.</span><pre>prepareBody</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_redirect" title="redirect :: Middleware that handles request redirects.">
+            <span class="description">Middleware that handles request redirects.</span><pre>redirect</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_retry" title="retry :: Middleware that retries requests based on the boolean result of
+invoking the provided &quot;decider&quot; function.">
+            <span class="description">Middleware that retries requests based on the boolean result of
+invoking the provided &quot;decider&quot; function.</span><pre>retry</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_tap" title="tap :: Middleware that invokes a callback before and after sending a request.">
+            <span class="description">Middleware that invokes a callback before and after sending a request.</span><pre>tap</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Middleware</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">Functions used to create and wrap handlers with handler middleware.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method_cookies"></a>
+                        <div class="element clickable method public  method_cookies" data-toggle="collapse" data-target=".method_cookies .collapse">
+                            <h2>Middleware that adds cookies to requests.</h2>
+                            <pre>cookies() : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The options array must be set to a CookieJarInterface in order to use
+cookies. This is typically handled for you by a client.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p><p>Returns a function that accepts the next handler.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_history"></a>
+                        <div class="element clickable method public  method_history" data-toggle="collapse" data-target=".method_history .collapse">
+                            <h2>Middleware that pushes history data to an ArrayAccess container.</h2>
+                            <pre>history(array &$container) : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\InvalidArgumentException</dt>
+                                                        <dd><p>if container is not an array or ArrayAccess.</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$container</h4>
+                                                <code>array</code><p><p>Container to hold the history (by reference).</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p><p>Returns a function that accepts the next handler.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_httpErrors"></a>
+                        <div class="element clickable method public  method_httpErrors" data-toggle="collapse" data-target=".method_httpErrors .collapse">
+                            <h2>Middleware that throws exceptions for 4xx or 5xx responses when the
+&quot;http_error&quot; request option is set to true.</h2>
+                            <pre>httpErrors() : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p><p>Returns a function that accepts the next handler.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_log"></a>
+                        <div class="element clickable method public  method_log" data-toggle="collapse" data-target=".method_log .collapse">
+                            <h2>Middleware that logs requests, responses, and errors using a message
+formatter.</h2>
+                            <pre>log(\Psr\Log\LoggerInterface $logger, \GuzzleHttp\MessageFormatter $formatter, string $logLevel = \Psr\Log\LogLevel::INFO) : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$logger</h4>
+                                                <code><a href="../classes/Psr.Log.LoggerInterface.html">\Psr\Log\LoggerInterface</a></code><p><p>Logs messages.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$formatter</h4>
+                                                <code><a href="../classes/GuzzleHttp.MessageFormatter.html">\GuzzleHttp\MessageFormatter</a></code><p><p>Formatter used to create message strings.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$logLevel</h4>
+                                                <code>string</code><p><p>Level at which to log requests.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p><p>Returns a function that accepts the next handler.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_mapRequest"></a>
+                        <div class="element clickable method public  method_mapRequest" data-toggle="collapse" data-target=".method_mapRequest .collapse">
+                            <h2>Middleware that applies a map function to the request before passing to
+the next handler.</h2>
+                            <pre>mapRequest(callable $fn) : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$fn</h4>
+                                                <code>callable</code><p><p>Function that accepts a RequestInterface and returns
+a RequestInterface.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_mapResponse"></a>
+                        <div class="element clickable method public  method_mapResponse" data-toggle="collapse" data-target=".method_mapResponse .collapse">
+                            <h2>Middleware that applies a map function to the resolved promise&#039;s
+response.</h2>
+                            <pre>mapResponse(callable $fn) : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$fn</h4>
+                                                <code>callable</code><p><p>Function that accepts a ResponseInterface and
+returns a ResponseInterface.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_prepareBody"></a>
+                        <div class="element clickable method public  method_prepareBody" data-toggle="collapse" data-target=".method_prepareBody .collapse">
+                            <h2>This middleware adds a default content-type if possible, a default
+content-length or transfer-encoding header, and the expect header.</h2>
+                            <pre>prepareBody() : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_redirect"></a>
+                        <div class="element clickable method public  method_redirect" data-toggle="collapse" data-target=".method_redirect .collapse">
+                            <h2>Middleware that handles request redirects.</h2>
+                            <pre>redirect() : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p><p>Returns a function that accepts the next handler.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_retry"></a>
+                        <div class="element clickable method public  method_retry" data-toggle="collapse" data-target=".method_retry .collapse">
+                            <h2>Middleware that retries requests based on the boolean result of
+invoking the provided &quot;decider&quot; function.</h2>
+                            <pre>retry(callable $decider, callable $delay = null) : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>If no delay function is provided, a simple implementation of exponential
+backoff will be utilized.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$decider</h4>
+                                                <code>callable</code><p><p>Function that accepts the number of retries,
+a request, [response], and [exception] and
+returns true if the request is to be retried.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$delay</h4>
+                                                <code>callable</code><p><p>Function that accepts the number of retries and
+returns the number of milliseconds to delay.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p><p>Returns a function that accepts the next handler.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_tap"></a>
+                        <div class="element clickable method public  method_tap" data-toggle="collapse" data-target=".method_tap .collapse">
+                            <h2>Middleware that invokes a callback before and after sending a request.</h2>
+                            <pre>tap(callable $before = null, callable $after = null) : callable</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The provided listener cannot modify or alter the response. It simply
+&quot;taps&quot; into the chain to be notified before returning the promise. The
+before listener accepts a request and options array, and the after
+listener accepts a request, options array, and response promise.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$before</h4>
+                                                <code>callable</code><p><p>Function to invoke before forwarding the request.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$after</h4>
+                                                <code>callable</code><p><p>Function invoked after forwarding.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p><p>Returns a function that accepts the next handler.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                        </div>
+            </div>
+            <a id="\GuzzleHttp\Middleware"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/GuzzleHttp.Middleware.html">Middleware</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:02 +0200.<br/>
+    </footer>
+    </body>
+</html>

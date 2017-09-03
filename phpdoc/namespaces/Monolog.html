@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Monolog
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Monolog.html" title="Monolog">
+                    <i class="icon-th"></i> Monolog
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/Monolog.Formatter.html" title="Formatter">
+            <i class="icon-th"></i> Formatter
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Monolog.Handler.html" title="Handler">
+            <i class="icon-th"></i> Handler
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Monolog.Handler.Curl.html" title="Curl">
+            <i class="icon-th"></i> Curl
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Monolog.Handler.FingersCrossed.html" title="FingersCrossed">
+            <i class="icon-th"></i> FingersCrossed
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Monolog.Handler.Slack.html" title="Slack">
+            <i class="icon-th"></i> Slack
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Monolog.Handler.SyslogUdp.html" title="SyslogUdp">
+            <i class="icon-th"></i> SyslogUdp
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Monolog.Processor.html" title="Processor">
+            <i class="icon-th"></i> Processor
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.html">Monolog</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ErrorHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ErrorHandler .collapse">
+        <h1>ErrorHandler<a href="../classes/Monolog.ErrorHandler.html">¶</a></h1>
+        <p class="short_description">Monolog error handler</p>
+        <div class="details collapse">
+                            <p>A facility to enable logging of runtime errors, exceptions and fatal errors.</p>
+<p>Quick setup: <code>ErrorHandler::register($logger);</code></p>
+                    </div>
+        <a href="../classes/Monolog.ErrorHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ErrorHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ErrorHandlerTest .collapse">
+        <h1>ErrorHandlerTest<a href="../classes/Monolog.ErrorHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.ErrorHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Logger" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Logger .collapse">
+        <h1>Logger<a href="../classes/Monolog.Logger.html">¶</a></h1>
+        <p class="short_description">Monolog log channel</p>
+        <div class="details collapse">
+                            <p>It contains a stack of Handlers and a stack of Processors,
+and uses them to store records that are added to it.</p>
+                    </div>
+        <a href="../classes/Monolog.Logger.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LoggerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LoggerTest .collapse">
+        <h1>LoggerTest<a href="../classes/Monolog.LoggerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.LoggerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PsrLogCompatTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PsrLogCompatTest .collapse">
+        <h1>PsrLogCompatTest<a href="../classes/Monolog.PsrLogCompatTest.html">¶</a></h1>
+        <p class="short_description">Provides a base test class for ensuring compliance with the LoggerInterface.</p>
+        <div class="details collapse">
+                            <p>Implementors can extend the class and implement abstract methods to run this
+as part of their test suite.</p>
+                    </div>
+        <a href="../classes/Monolog.PsrLogCompatTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Registry" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Registry .collapse">
+        <h1>Registry<a href="../classes/Monolog.Registry.html">¶</a></h1>
+        <p class="short_description">Monolog log registry</p>
+        <div class="details collapse">
+                            <p>Allows to get <code>Logger</code> instances in the global scope
+via static method calls on this class.</p>
+<p><code>
+$application = new Monolog\Logger('application');
+$api = new Monolog\Logger('api');</p>
+<p>Monolog\Registry::addLogger($application);
+Monolog\Registry::addLogger($api);</p>
+<p>function testLogger()
+{
+Monolog\Registry::api()-&gt;addError('Sent to $api Logger instance');
+Monolog\Registry::application()-&gt;addError('Sent to $application Logger instance');
+}
+</code></p>
+                    </div>
+        <a href="../classes/Monolog.Registry.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RegistryTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RegistryTest .collapse">
+        <h1>RegistryTest<a href="../classes/Monolog.RegistryTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.RegistryTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/Monolog.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.TestCase.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.html">Monolog</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Handler.html">Handler</a>
+    </li>
+
+        </ul>
+
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-function"></i> Functions</h3>
+                                        <div id="function_error_log" class="element ajax clickable function" data-toggle="collapse" data-target="#function_error_log .collapse">
+        <h1>error_log<a href="../namespaces/Monolog.Handler.html#function_error_log">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/Monolog.Handler.html#function_error_log" class="more">« More »</a>    </div>
+
+                                        <div id="function_mail" class="element ajax clickable function" data-toggle="collapse" data-target="#function_mail .collapse">
+        <h1>mail<a href="../namespaces/Monolog.Handler.html#function_mail">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$to</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$subject</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$additional_headers</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$additional_parameters</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/Monolog.Handler.html#function_mail" class="more">« More »</a>    </div>
+
+                                        <div id="function_newrelic_add_custom_parameter" class="element ajax clickable function" data-toggle="collapse" data-target="#function_newrelic_add_custom_parameter .collapse">
+        <h1>newrelic_add_custom_parameter<a href="../namespaces/Monolog.Handler.html#function_newrelic_add_custom_parameter">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/Monolog.Handler.html#function_newrelic_add_custom_parameter" class="more">« More »</a>    </div>
+
+                                        <div id="function_newrelic_name_transaction" class="element ajax clickable function" data-toggle="collapse" data-target="#function_newrelic_name_transaction .collapse">
+        <h1>newrelic_name_transaction<a href="../namespaces/Monolog.Handler.html#function_newrelic_name_transaction">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$transactionName</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/Monolog.Handler.html#function_newrelic_name_transaction" class="more">« More »</a>    </div>
+
+                                        <div id="function_newrelic_notice_error" class="element ajax clickable function" data-toggle="collapse" data-target="#function_newrelic_notice_error .collapse">
+        <h1>newrelic_notice_error<a href="../namespaces/Monolog.Handler.html#function_newrelic_notice_error">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/Monolog.Handler.html#function_newrelic_notice_error" class="more">« More »</a>    </div>
+
+                                        <div id="function_newrelic_set_appname" class="element ajax clickable function" data-toggle="collapse" data-target="#function_newrelic_set_appname .collapse">
+        <h1>newrelic_set_appname<a href="../namespaces/Monolog.Handler.html#function_newrelic_set_appname">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$appname</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/Monolog.Handler.html#function_newrelic_set_appname" class="more">« More »</a>    </div>
+
+                            </div>
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_HandlerInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_HandlerInterface .collapse">
+        <h1>HandlerInterface<a href="../classes/Monolog.Handler.HandlerInterface.html">¶</a></h1>
+        <p class="short_description">Interface that all Monolog Handlers must implement</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.HandlerInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_AbstractHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractHandler .collapse">
+        <h1>AbstractHandler<a href="../classes/Monolog.Handler.AbstractHandler.html">¶</a></h1>
+        <p class="short_description">Base Handler class providing the Handler structure</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.AbstractHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_AbstractHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractHandlerTest .collapse">
+        <h1>AbstractHandlerTest<a href="../classes/Monolog.Handler.AbstractHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.AbstractHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_AbstractProcessingHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractProcessingHandler .collapse">
+        <h1>AbstractProcessingHandler<a href="../classes/Monolog.Handler.AbstractProcessingHandler.html">¶</a></h1>
+        <p class="short_description">Base Handler class providing the Handler structure</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.AbstractProcessingHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_AbstractProcessingHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractProcessingHandlerTest .collapse">
+        <h1>AbstractProcessingHandlerTest<a href="../classes/Monolog.Handler.AbstractProcessingHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.AbstractProcessingHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_AbstractSyslogHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractSyslogHandler .collapse">
+        <h1>AbstractSyslogHandler<a href="../classes/Monolog.Handler.AbstractSyslogHandler.html">¶</a></h1>
+        <p class="short_description">Common syslog functionality</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.AbstractSyslogHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_AmqpHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AmqpHandler .collapse">
+        <h1>AmqpHandler<a href="../classes/Monolog.Handler.AmqpHandler.html">¶</a></h1>
+        <p class="short_description">Base Handler class providing the Handler structure</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.AmqpHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_AmqpHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AmqpHandlerTest .collapse">
+        <h1>AmqpHandlerTest<a href="../classes/Monolog.Handler.AmqpHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.AmqpHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_BrowserConsoleHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BrowserConsoleHandler .collapse">
+        <h1>BrowserConsoleHandler<a href="../classes/Monolog.Handler.BrowserConsoleHandler.html">¶</a></h1>
+        <p class="short_description">Handler sending logs to browser&#039;s javascript console with no browser extension required</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.BrowserConsoleHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_BrowserConsoleHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BrowserConsoleHandlerTest .collapse">
+        <h1>BrowserConsoleHandlerTest<a href="../classes/Monolog.Handler.BrowserConsoleHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.BrowserConsoleHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_BufferHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BufferHandler .collapse">
+        <h1>BufferHandler<a href="../classes/Monolog.Handler.BufferHandler.html">¶</a></h1>
+        <p class="short_description">Buffers all records until closing the handler and then pass them as batch.</p>
+        <div class="details collapse">
+                            <p>This is useful for a MailHandler to send only one mail per request instead of
+sending one per log message.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.BufferHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_BufferHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BufferHandlerTest .collapse">
+        <h1>BufferHandlerTest<a href="../classes/Monolog.Handler.BufferHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.BufferHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChromePHPHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChromePHPHandler .collapse">
+        <h1>ChromePHPHandler<a href="../classes/Monolog.Handler.ChromePHPHandler.html">¶</a></h1>
+        <p class="short_description">Handler sending logs to the ChromePHP extension (http://www.chromephp.com/)</p>
+        <div class="details collapse">
+                            <p>This also works out of the box with Firefox 43+</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.ChromePHPHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChromePHPHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChromePHPHandlerTest .collapse">
+        <h1>ChromePHPHandlerTest<a href="../classes/Monolog.Handler.ChromePHPHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.ChromePHPHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CouchDBHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CouchDBHandler .collapse">
+        <h1>CouchDBHandler<a href="../classes/Monolog.Handler.CouchDBHandler.html">¶</a></h1>
+        <p class="short_description">CouchDB handler</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.CouchDBHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CouchDBHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CouchDBHandlerTest .collapse">
+        <h1>CouchDBHandlerTest<a href="../classes/Monolog.Handler.CouchDBHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.CouchDBHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CubeHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CubeHandler .collapse">
+        <h1>CubeHandler<a href="../classes/Monolog.Handler.CubeHandler.html">¶</a></h1>
+        <p class="short_description">Logs to Cube.</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.CubeHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DeduplicationHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DeduplicationHandler .collapse">
+        <h1>DeduplicationHandler<a href="../classes/Monolog.Handler.DeduplicationHandler.html">¶</a></h1>
+        <p class="short_description">Simple handler wrapper that deduplicates log records across multiple requests</p>
+        <div class="details collapse">
+                            <p>It also includes the BufferHandler functionality and will buffer
+all messages until the end of the request or flush() is called.</p>
+<p>This works by storing all log records' messages above $deduplicationLevel
+to the file specified by $deduplicationStore. When further logs come in at the end of the
+request (or when flush() is called), all those above $deduplicationLevel are checked
+against the existing stored logs. If they match and the timestamps in the stored log is
+not older than $time seconds, the new log record is discarded. If no log record is new, the
+whole data set is discarded.</p>
+<p>This is mainly useful in combination with Mail handlers or things like Slack or HipChat handlers
+that send messages to people, to avoid spamming with the same message over and over in case of
+a major component failure like a database server being down which makes all requests fail in the
+same way.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.DeduplicationHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DeduplicationHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DeduplicationHandlerTest .collapse">
+        <h1>DeduplicationHandlerTest<a href="../classes/Monolog.Handler.DeduplicationHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.DeduplicationHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DoctrineCouchDBHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DoctrineCouchDBHandler .collapse">
+        <h1>DoctrineCouchDBHandler<a href="../classes/Monolog.Handler.DoctrineCouchDBHandler.html">¶</a></h1>
+        <p class="short_description">CouchDB handler for Doctrine CouchDB ODM</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.DoctrineCouchDBHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DoctrineCouchDBHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DoctrineCouchDBHandlerTest .collapse">
+        <h1>DoctrineCouchDBHandlerTest<a href="../classes/Monolog.Handler.DoctrineCouchDBHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.DoctrineCouchDBHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DynamoDbHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DynamoDbHandler .collapse">
+        <h1>DynamoDbHandler<a href="../classes/Monolog.Handler.DynamoDbHandler.html">¶</a></h1>
+        <p class="short_description">Amazon DynamoDB handler (http://aws.amazon.com/dynamodb/)</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.DynamoDbHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DynamoDbHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DynamoDbHandlerTest .collapse">
+        <h1>DynamoDbHandlerTest<a href="../classes/Monolog.Handler.DynamoDbHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.DynamoDbHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ElasticSearchHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ElasticSearchHandler .collapse">
+        <h1>ElasticSearchHandler<a href="../classes/Monolog.Handler.ElasticSearchHandler.html">¶</a></h1>
+        <p class="short_description">Elastic Search handler</p>
+        <div class="details collapse">
+                            <p>Usage example:</p>
+<p>$client = new \Elastica\Client();
+$options = array(
+'index' =&gt; 'elastic_index_name',
+'type' =&gt; 'elastic_doc_type',
+);
+$handler = new ElasticSearchHandler($client, $options);
+$log = new Logger('application');
+$log-&gt;pushHandler($handler);</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.ElasticSearchHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ElasticSearchHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ElasticSearchHandlerTest .collapse">
+        <h1>ElasticSearchHandlerTest<a href="../classes/Monolog.Handler.ElasticSearchHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.ElasticSearchHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ErrorLogHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ErrorLogHandler .collapse">
+        <h1>ErrorLogHandler<a href="../classes/Monolog.Handler.ErrorLogHandler.html">¶</a></h1>
+        <p class="short_description">Stores to PHP error_log() handler.</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.ErrorLogHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ErrorLogHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ErrorLogHandlerTest .collapse">
+        <h1>ErrorLogHandlerTest<a href="../classes/Monolog.Handler.ErrorLogHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.ErrorLogHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ExceptionTestHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExceptionTestHandler .collapse">
+        <h1>ExceptionTestHandler<a href="../classes/Monolog.Handler.ExceptionTestHandler.html">¶</a></h1>
+        <p class="short_description">Used for testing purposes.</p>
+        <div class="details collapse">
+                            <p>It records all records and gives you access to them for verification.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.ExceptionTestHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FilterHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FilterHandler .collapse">
+        <h1>FilterHandler<a href="../classes/Monolog.Handler.FilterHandler.html">¶</a></h1>
+        <p class="short_description">Simple handler wrapper that filters records based on a list of levels</p>
+        <div class="details collapse">
+                            <p>It can be configured with an exact list of levels to allow, or a min/max level.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.FilterHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FilterHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FilterHandlerTest .collapse">
+        <h1>FilterHandlerTest<a href="../classes/Monolog.Handler.FilterHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.FilterHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FingersCrossedHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FingersCrossedHandler .collapse">
+        <h1>FingersCrossedHandler<a href="../classes/Monolog.Handler.FingersCrossedHandler.html">¶</a></h1>
+        <p class="short_description">Buffers all records until a certain level is reached</p>
+        <div class="details collapse">
+                            <p>The advantage of this approach is that you don't get any clutter in your log files.
+Only requests which actually trigger an error (or whatever your actionLevel is) will be
+in the logs, but they will contain all records, not only those above the level threshold.</p>
+<p>You can find the various activation strategies in the
+Monolog\Handler\FingersCrossed\ namespace.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.FingersCrossedHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FingersCrossedHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FingersCrossedHandlerTest .collapse">
+        <h1>FingersCrossedHandlerTest<a href="../classes/Monolog.Handler.FingersCrossedHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.FingersCrossedHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FirePHPHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FirePHPHandler .collapse">
+        <h1>FirePHPHandler<a href="../classes/Monolog.Handler.FirePHPHandler.html">¶</a></h1>
+        <p class="short_description">Simple FirePHP Handler (http://www.firephp.org/), which uses the Wildfire protocol.</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.FirePHPHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FirePHPHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FirePHPHandlerTest .collapse">
+        <h1>FirePHPHandlerTest<a href="../classes/Monolog.Handler.FirePHPHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.FirePHPHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FleepHookHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FleepHookHandler .collapse">
+        <h1>FleepHookHandler<a href="../classes/Monolog.Handler.FleepHookHandler.html">¶</a></h1>
+        <p class="short_description">Sends logs to Fleep.io using Webhook integrations</p>
+        <div class="details collapse">
+                            <p>You'll need a Fleep.io account to use this handler.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.FleepHookHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FleepHookHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FleepHookHandlerTest .collapse">
+        <h1>FleepHookHandlerTest<a href="../classes/Monolog.Handler.FleepHookHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.FleepHookHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FlowdockHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FlowdockHandler .collapse">
+        <h1>FlowdockHandler<a href="../classes/Monolog.Handler.FlowdockHandler.html">¶</a></h1>
+        <p class="short_description">Sends notifications through the Flowdock push API</p>
+        <div class="details collapse">
+                            <p>This must be configured with a FlowdockFormatter instance via setFormatter()</p>
+<p>Notes:
+API token - Flowdock API token</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.FlowdockHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FlowdockHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FlowdockHandlerTest .collapse">
+        <h1>FlowdockHandlerTest<a href="../classes/Monolog.Handler.FlowdockHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.FlowdockHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GelfHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GelfHandler .collapse">
+        <h1>GelfHandler<a href="../classes/Monolog.Handler.GelfHandler.html">¶</a></h1>
+        <p class="short_description">Handler to send messages to a Graylog2 (http://www.graylog2.org) server</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.GelfHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GelfHandlerLegacyTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GelfHandlerLegacyTest .collapse">
+        <h1>GelfHandlerLegacyTest<a href="../classes/Monolog.Handler.GelfHandlerLegacyTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.GelfHandlerLegacyTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GelfHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GelfHandlerTest .collapse">
+        <h1>GelfHandlerTest<a href="../classes/Monolog.Handler.GelfHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.GelfHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GelfMockMessagePublisher" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GelfMockMessagePublisher .collapse">
+        <h1>GelfMockMessagePublisher<a href="../classes/Monolog.Handler.GelfMockMessagePublisher.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.GelfMockMessagePublisher.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GroupHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GroupHandler .collapse">
+        <h1>GroupHandler<a href="../classes/Monolog.Handler.GroupHandler.html">¶</a></h1>
+        <p class="short_description">Forwards records to multiple handlers</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.GroupHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GroupHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GroupHandlerTest .collapse">
+        <h1>GroupHandlerTest<a href="../classes/Monolog.Handler.GroupHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.GroupHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_HandlerWrapper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HandlerWrapper .collapse">
+        <h1>HandlerWrapper<a href="../classes/Monolog.Handler.HandlerWrapper.html">¶</a></h1>
+        <p class="short_description">This simple wrapper class can be used to extend handlers functionality.</p>
+        <div class="details collapse">
+                            <p>Example: A custom filtering that can be applied to any handler.</p>
+<p>Inherit from this class and override handle() like this:</p>
+<p>public function handle(array $record)
+{
+if ($record meets certain conditions) {
+return false;
+}
+return $this-&gt;handler-&gt;handle($record);
+}</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.HandlerWrapper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_HandlerWrapperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HandlerWrapperTest .collapse">
+        <h1>HandlerWrapperTest<a href="../classes/Monolog.Handler.HandlerWrapperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.HandlerWrapperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_HipChatHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HipChatHandler .collapse">
+        <h1>HipChatHandler<a href="../classes/Monolog.Handler.HipChatHandler.html">¶</a></h1>
+        <p class="short_description">Sends notifications through the hipchat api to a hipchat room</p>
+        <div class="details collapse">
+                            <p>Notes:
+API token - HipChat API token
+Room      - HipChat Room Id or name, where messages are sent
+Name      - Name used to send the message (from)
+notify    - Should the message trigger a notification in the clients
+version   - The API version to use (HipChatHandler::API_V1 | HipChatHandler::API_V2)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.HipChatHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_HipChatHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HipChatHandlerTest .collapse">
+        <h1>HipChatHandlerTest<a href="../classes/Monolog.Handler.HipChatHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.HipChatHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IFTTTHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IFTTTHandler .collapse">
+        <h1>IFTTTHandler<a href="../classes/Monolog.Handler.IFTTTHandler.html">¶</a></h1>
+        <p class="short_description">IFTTTHandler uses cURL to trigger IFTTT Maker actions</p>
+        <div class="details collapse">
+                            <p>Register a secret key and trigger/event name at <a href="https://ifttt.com/maker">https://ifttt.com/maker</a></p>
+<p>value1 will be the channel from monolog's Logger constructor,
+value2 will be the level name (ERROR, WARNING, ..)
+value3 will be the log record's message</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.IFTTTHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogEntriesHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogEntriesHandler .collapse">
+        <h1>LogEntriesHandler<a href="../classes/Monolog.Handler.LogEntriesHandler.html">¶</a></h1>
+        <p class="short_description">Stores to any socket - uses fsockopen() or pfsockopen().</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.LogEntriesHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogEntriesHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogEntriesHandlerTest .collapse">
+        <h1>LogEntriesHandlerTest<a href="../classes/Monolog.Handler.LogEntriesHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.LogEntriesHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogglyHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogglyHandler .collapse">
+        <h1>LogglyHandler<a href="../classes/Monolog.Handler.LogglyHandler.html">¶</a></h1>
+        <p class="short_description">Sends errors to Loggly.</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.LogglyHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MailHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MailHandler .collapse">
+        <h1>MailHandler<a href="../classes/Monolog.Handler.MailHandler.html">¶</a></h1>
+        <p class="short_description">Base class for all mail handlers</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.MailHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MailHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MailHandlerTest .collapse">
+        <h1>MailHandlerTest<a href="../classes/Monolog.Handler.MailHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.MailHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MandrillHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MandrillHandler .collapse">
+        <h1>MandrillHandler<a href="../classes/Monolog.Handler.MandrillHandler.html">¶</a></h1>
+        <p class="short_description">MandrillHandler uses cURL to send the emails to the Mandrill API</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.MandrillHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MissingExtensionException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MissingExtensionException .collapse">
+        <h1>MissingExtensionException<a href="../classes/Monolog.Handler.MissingExtensionException.html">¶</a></h1>
+        <p class="short_description">Exception can be thrown if an extension for an handler is missing</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.MissingExtensionException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MockRavenClient" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MockRavenClient .collapse">
+        <h1>MockRavenClient<a href="../classes/Monolog.Handler.MockRavenClient.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.MockRavenClient.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Mongo" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Mongo .collapse">
+        <h1>Mongo<a href="../classes/Monolog.Handler.Mongo.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.Mongo.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MongoDBHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MongoDBHandler .collapse">
+        <h1>MongoDBHandler<a href="../classes/Monolog.Handler.MongoDBHandler.html">¶</a></h1>
+        <p class="short_description">Logs to a MongoDB database.</p>
+        <div class="details collapse">
+                            <p>usage example:</p>
+<p>$log = new Logger('application');
+$mongodb = new MongoDBHandler(new \Mongo(&quot;mongodb://localhost:27017&quot;), &quot;logs&quot;, &quot;prod&quot;);
+$log-&gt;pushHandler($mongodb);</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.MongoDBHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MongoDBHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MongoDBHandlerTest .collapse">
+        <h1>MongoDBHandlerTest<a href="../classes/Monolog.Handler.MongoDBHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.MongoDBHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NativeMailerHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NativeMailerHandler .collapse">
+        <h1>NativeMailerHandler<a href="../classes/Monolog.Handler.NativeMailerHandler.html">¶</a></h1>
+        <p class="short_description">NativeMailerHandler uses the mail() function to send the emails</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.NativeMailerHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NativeMailerHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NativeMailerHandlerTest .collapse">
+        <h1>NativeMailerHandlerTest<a href="../classes/Monolog.Handler.NativeMailerHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.NativeMailerHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NewRelicHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NewRelicHandler .collapse">
+        <h1>NewRelicHandler<a href="../classes/Monolog.Handler.NewRelicHandler.html">¶</a></h1>
+        <p class="short_description">Class to record a log on a NewRelic application.</p>
+        <div class="details collapse">
+                            <p>Enabling New Relic High Security mode may prevent capture of useful information.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.NewRelicHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NewRelicHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NewRelicHandlerTest .collapse">
+        <h1>NewRelicHandlerTest<a href="../classes/Monolog.Handler.NewRelicHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.NewRelicHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NullHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NullHandler .collapse">
+        <h1>NullHandler<a href="../classes/Monolog.Handler.NullHandler.html">¶</a></h1>
+        <p class="short_description">Blackhole</p>
+        <div class="details collapse">
+                            <p>Any record it can handle will be thrown away. This can be used
+to put on top of an existing stack to override it temporarily.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.NullHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NullHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NullHandlerTest .collapse">
+        <h1>NullHandlerTest<a href="../classes/Monolog.Handler.NullHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.NullHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PHPConsoleHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PHPConsoleHandler .collapse">
+        <h1>PHPConsoleHandler<a href="../classes/Monolog.Handler.PHPConsoleHandler.html">¶</a></h1>
+        <p class="short_description">Monolog handler for Google Chrome extension &quot;PHP Console&quot;</p>
+        <div class="details collapse">
+                            <p>Display PHP error/debug log messages in Google Chrome console and notification popups, executes PHP code remotely</p>
+<p>Usage:</p>
+<ol>
+<li>Install Google Chrome extension <a href="https://chrome.google.com/webstore/detail/php-console/nfhmhhlpfleoednkpnnnkolmclajemef">https://chrome.google.com/webstore/detail/php-console/nfhmhhlpfleoednkpnnnkolmclajemef</a></li>
+<li>See overview <a href="https://github.com/barbushin/php-console#overview">https://github.com/barbushin/php-console#overview</a></li>
+<li>Install PHP Console library <a href="https://github.com/barbushin/php-console#installation">https://github.com/barbushin/php-console#installation</a></li>
+<li>
+<p>Example (result will looks like <a href="http://i.hizliresim.com/vg3Pz4.png">http://i.hizliresim.com/vg3Pz4.png</a>)</p>
+<p>$logger = new \Monolog\Logger('all', array(new \Monolog\Handler\PHPConsoleHandler()));
+\Monolog\ErrorHandler::register($logger);
+echo $undefinedVar;
+$logger-&gt;addDebug('SELECT * FROM users', array('db', 'time' =&gt; 0.012));
+PC::debug($_SERVER); // PHP Console debugger for any type of vars</p>
+</li>
+</ol>
+                    </div>
+        <a href="../classes/Monolog.Handler.PHPConsoleHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PHPConsoleHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PHPConsoleHandlerTest .collapse">
+        <h1>PHPConsoleHandlerTest<a href="../classes/Monolog.Handler.PHPConsoleHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.PHPConsoleHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PsrHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PsrHandler .collapse">
+        <h1>PsrHandler<a href="../classes/Monolog.Handler.PsrHandler.html">¶</a></h1>
+        <p class="short_description">Proxies log messages to an existing PSR-3 compliant logger.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.PsrHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PsrHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PsrHandlerTest .collapse">
+        <h1>PsrHandlerTest<a href="../classes/Monolog.Handler.PsrHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.PsrHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PushoverHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PushoverHandler .collapse">
+        <h1>PushoverHandler<a href="../classes/Monolog.Handler.PushoverHandler.html">¶</a></h1>
+        <p class="short_description">Sends notifications through the pushover api to mobile phones</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.PushoverHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PushoverHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PushoverHandlerTest .collapse">
+        <h1>PushoverHandlerTest<a href="../classes/Monolog.Handler.PushoverHandlerTest.html">¶</a></h1>
+        <p class="short_description">Almost all examples (expected header, titles, messages) taken from
+https://www.pushover.net/api</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.PushoverHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RavenHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RavenHandler .collapse">
+        <h1>RavenHandler<a href="../classes/Monolog.Handler.RavenHandler.html">¶</a></h1>
+        <p class="short_description">Handler to send messages to a Sentry (https://github.com/getsentry/sentry) server
+using raven-php (https://github.com/getsentry/raven-php)</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.RavenHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RavenHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RavenHandlerTest .collapse">
+        <h1>RavenHandlerTest<a href="../classes/Monolog.Handler.RavenHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.RavenHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RedisHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RedisHandler .collapse">
+        <h1>RedisHandler<a href="../classes/Monolog.Handler.RedisHandler.html">¶</a></h1>
+        <p class="short_description">Logs to a Redis key using rpush</p>
+        <div class="details collapse">
+                            <p>usage example:</p>
+<p>$log = new Logger('application');
+$redis = new RedisHandler(new Predis\Client(&quot;tcp://localhost:6379&quot;), &quot;logs&quot;, &quot;prod&quot;);
+$log-&gt;pushHandler($redis);</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.RedisHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RedisHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RedisHandlerTest .collapse">
+        <h1>RedisHandlerTest<a href="../classes/Monolog.Handler.RedisHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.RedisHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RollbarHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RollbarHandler .collapse">
+        <h1>RollbarHandler<a href="../classes/Monolog.Handler.RollbarHandler.html">¶</a></h1>
+        <p class="short_description">Sends errors to Rollbar</p>
+        <div class="details collapse">
+                            <p>If the context data contains a <code>payload</code> key, that is used as an array
+of payload options to RollbarNotifier's report_message/report_exception methods.</p>
+<p>Rollbar's context info will contain the context + extra keys from the log record
+merged, and then on top of that a few keys:</p>
+<ul>
+<li>level (rollbar level name)</li>
+<li>monolog_level (monolog level name, raw level, as rollbar only has 5 but monolog 8)</li>
+<li>channel</li>
+<li>datetime (unix timestamp)</li>
+</ul>
+                    </div>
+        <a href="../classes/Monolog.Handler.RollbarHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RollbarHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RollbarHandlerTest .collapse">
+        <h1>RollbarHandlerTest<a href="../classes/Monolog.Handler.RollbarHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.RollbarHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RotatingFileHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RotatingFileHandler .collapse">
+        <h1>RotatingFileHandler<a href="../classes/Monolog.Handler.RotatingFileHandler.html">¶</a></h1>
+        <p class="short_description">Stores logs to files that are rotated every day and a limited number of files are kept.</p>
+        <div class="details collapse">
+                            <p>This rotation is only intended to be used as a workaround. Using logrotate to
+handle the rotation is strongly encouraged when you can use it.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.RotatingFileHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RotatingFileHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RotatingFileHandlerTest .collapse">
+        <h1>RotatingFileHandlerTest<a href="../classes/Monolog.Handler.RotatingFileHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.RotatingFileHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SamplingHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SamplingHandler .collapse">
+        <h1>SamplingHandler<a href="../classes/Monolog.Handler.SamplingHandler.html">¶</a></h1>
+        <p class="short_description">Sampling handler</p>
+        <div class="details collapse">
+                            <p>A sampled event stream can be useful for logging high frequency events in
+a production environment where you only need an idea of what is happening
+and are not concerned with capturing every occurrence. Since the decision to
+handle or not handle a particular event is determined randomly, the
+resulting sampled log is not guaranteed to contain 1/N of the events that
+occurred in the application, but based on the Law of large numbers, it will
+tend to be close to this ratio with a large number of attempts.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.SamplingHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SamplingHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SamplingHandlerTest .collapse">
+        <h1>SamplingHandlerTest<a href="../classes/Monolog.Handler.SamplingHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.SamplingHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SlackbotHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SlackbotHandler .collapse">
+        <h1>SlackbotHandler<a href="../classes/Monolog.Handler.SlackbotHandler.html">¶</a></h1>
+        <p class="short_description">Sends notifications through Slack&#039;s Slackbot</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.SlackbotHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SlackbotHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SlackbotHandlerTest .collapse">
+        <h1>SlackbotHandlerTest<a href="../classes/Monolog.Handler.SlackbotHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.SlackbotHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SlackHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SlackHandler .collapse">
+        <h1>SlackHandler<a href="../classes/Monolog.Handler.SlackHandler.html">¶</a></h1>
+        <p class="short_description">Sends notifications through Slack API</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.SlackHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SlackHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SlackHandlerTest .collapse">
+        <h1>SlackHandlerTest<a href="../classes/Monolog.Handler.SlackHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.SlackHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SlackWebhookHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SlackWebhookHandler .collapse">
+        <h1>SlackWebhookHandler<a href="../classes/Monolog.Handler.SlackWebhookHandler.html">¶</a></h1>
+        <p class="short_description">Sends notifications through Slack Webhooks</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.SlackWebhookHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SlackWebhookHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SlackWebhookHandlerTest .collapse">
+        <h1>SlackWebhookHandlerTest<a href="../classes/Monolog.Handler.SlackWebhookHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.SlackWebhookHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SocketHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SocketHandler .collapse">
+        <h1>SocketHandler<a href="../classes/Monolog.Handler.SocketHandler.html">¶</a></h1>
+        <p class="short_description">Stores to any socket - uses fsockopen() or pfsockopen().</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.SocketHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SocketHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SocketHandlerTest .collapse">
+        <h1>SocketHandlerTest<a href="../classes/Monolog.Handler.SocketHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.SocketHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StreamHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StreamHandler .collapse">
+        <h1>StreamHandler<a href="../classes/Monolog.Handler.StreamHandler.html">¶</a></h1>
+        <p class="short_description">Stores to any stream resource</p>
+        <div class="details collapse">
+                            <p>Can be used to store into php://stderr, remote and local files, etc.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.StreamHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StreamHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StreamHandlerTest .collapse">
+        <h1>StreamHandlerTest<a href="../classes/Monolog.Handler.StreamHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.StreamHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StubNewRelicHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StubNewRelicHandler .collapse">
+        <h1>StubNewRelicHandler<a href="../classes/Monolog.Handler.StubNewRelicHandler.html">¶</a></h1>
+        <p class="short_description">Class to record a log on a NewRelic application.</p>
+        <div class="details collapse">
+                            <p>Enabling New Relic High Security mode may prevent capture of useful information.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.StubNewRelicHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StubNewRelicHandlerWithoutExtension" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StubNewRelicHandlerWithoutExtension .collapse">
+        <h1>StubNewRelicHandlerWithoutExtension<a href="../classes/Monolog.Handler.StubNewRelicHandlerWithoutExtension.html">¶</a></h1>
+        <p class="short_description">Class to record a log on a NewRelic application.</p>
+        <div class="details collapse">
+                            <p>Enabling New Relic High Security mode may prevent capture of useful information.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.StubNewRelicHandlerWithoutExtension.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SwiftMailerHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SwiftMailerHandler .collapse">
+        <h1>SwiftMailerHandler<a href="../classes/Monolog.Handler.SwiftMailerHandler.html">¶</a></h1>
+        <p class="short_description">SwiftMailerHandler uses Swift_Mailer to send the emails</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.SwiftMailerHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SwiftMailerHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SwiftMailerHandlerTest .collapse">
+        <h1>SwiftMailerHandlerTest<a href="../classes/Monolog.Handler.SwiftMailerHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.SwiftMailerHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SyslogHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SyslogHandler .collapse">
+        <h1>SyslogHandler<a href="../classes/Monolog.Handler.SyslogHandler.html">¶</a></h1>
+        <p class="short_description">Logs to syslog service.</p>
+        <div class="details collapse">
+                            <p>usage example:</p>
+<p>$log = new Logger('application');
+$syslog = new SyslogHandler('myfacility', 'local6');
+$formatter = new LineFormatter(&quot;%channel%.%level_name%: %message% %extra%&quot;);
+$syslog-&gt;setFormatter($formatter);
+$log-&gt;pushHandler($syslog);</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.SyslogHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SyslogHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SyslogHandlerTest .collapse">
+        <h1>SyslogHandlerTest<a href="../classes/Monolog.Handler.SyslogHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.SyslogHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SyslogUdpHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SyslogUdpHandler .collapse">
+        <h1>SyslogUdpHandler<a href="../classes/Monolog.Handler.SyslogUdpHandler.html">¶</a></h1>
+        <p class="short_description">A Handler for logging to a remote syslogd server.</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.SyslogUdpHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SyslogUdpHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SyslogUdpHandlerTest .collapse">
+        <h1>SyslogUdpHandlerTest<a href="../classes/Monolog.Handler.SyslogUdpHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.SyslogUdpHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestChromePHPHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestChromePHPHandler .collapse">
+        <h1>TestChromePHPHandler<a href="../classes/Monolog.Handler.TestChromePHPHandler.html">¶</a></h1>
+        <p class="short_description">Handler sending logs to the ChromePHP extension (http://www.chromephp.com/)</p>
+        <div class="details collapse">
+                            <p>This also works out of the box with Firefox 43+</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.TestChromePHPHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestFirePHPHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestFirePHPHandler .collapse">
+        <h1>TestFirePHPHandler<a href="../classes/Monolog.Handler.TestFirePHPHandler.html">¶</a></h1>
+        <p class="short_description">Simple FirePHP Handler (http://www.firephp.org/), which uses the Wildfire protocol.</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.TestFirePHPHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestHandler .collapse">
+        <h1>TestHandler<a href="../classes/Monolog.Handler.TestHandler.html">¶</a></h1>
+        <p class="short_description">Used for testing purposes.</p>
+        <div class="details collapse">
+                            <p>It records all records and gives you access to them for verification.</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.TestHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestHandlerTest .collapse">
+        <h1>TestHandlerTest<a href="../classes/Monolog.Handler.TestHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.TestHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UdpSocketTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UdpSocketTest .collapse">
+        <h1>UdpSocketTest<a href="../classes/Monolog.Handler.UdpSocketTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.UdpSocketTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_WhatFailureGroupHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_WhatFailureGroupHandler .collapse">
+        <h1>WhatFailureGroupHandler<a href="../classes/Monolog.Handler.WhatFailureGroupHandler.html">¶</a></h1>
+        <p class="short_description">Forwards records to multiple handlers suppressing failures of each handler
+and continuing through to give every handler a chance to succeed.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.WhatFailureGroupHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_WhatFailureGroupHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_WhatFailureGroupHandlerTest .collapse">
+        <h1>WhatFailureGroupHandlerTest<a href="../classes/Monolog.Handler.WhatFailureGroupHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.WhatFailureGroupHandlerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ZendMonitorHandler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ZendMonitorHandler .collapse">
+        <h1>ZendMonitorHandler<a href="../classes/Monolog.Handler.ZendMonitorHandler.html">¶</a></h1>
+        <p class="short_description">Handler sending logs to Zend Monitor</p>
+        <div class="details collapse">
+                            <p>Classes extending it should (in most cases) only implement write($record)</p>
+                    </div>
+        <a href="../classes/Monolog.Handler.ZendMonitorHandler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ZendMonitorHandlerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ZendMonitorHandlerTest .collapse">
+        <h1>ZendMonitorHandlerTest<a href="../classes/Monolog.Handler.ZendMonitorHandlerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.ZendMonitorHandlerTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.html">Monolog</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Handler.html">Handler</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Handler.Slack.html">Slack</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_SlackRecord" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SlackRecord .collapse">
+        <h1>SlackRecord<a href="../classes/Monolog.Handler.Slack.SlackRecord.html">¶</a></h1>
+        <p class="short_description">Slack record utility helping to log to Slack webhooks or API.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.Slack.SlackRecord.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SlackRecordTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SlackRecordTest .collapse">
+        <h1>SlackRecordTest<a href="../classes/Monolog.Handler.Slack.SlackRecordTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.Slack.SlackRecordTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.html">Monolog</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Handler.html">Handler</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Handler.Curl.html">Curl</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Util" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Util .collapse">
+        <h1>Util<a href="../classes/Monolog.Handler.Curl.Util.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.Curl.Util.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.html">Monolog</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Handler.html">Handler</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Handler.FingersCrossed.html">FingersCrossed</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_ActivationStrategyInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ActivationStrategyInterface .collapse">
+        <h1>ActivationStrategyInterface<a href="../classes/Monolog.Handler.FingersCrossed.ActivationStrategyInterface.html">¶</a></h1>
+        <p class="short_description">Interface for activation strategies for the FingersCrossedHandler.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.FingersCrossed.ActivationStrategyInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_ChannelLevelActivationStrategy" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChannelLevelActivationStrategy .collapse">
+        <h1>ChannelLevelActivationStrategy<a href="../classes/Monolog.Handler.FingersCrossed.ChannelLevelActivationStrategy.html">¶</a></h1>
+        <p class="short_description">Channel and Error level based monolog activation strategy. Allows to trigger activation
+based on level per channel. e.g. trigger activation on level &#039;ERROR&#039; by default, except
+for records of the &#039;sql&#039; channel; those should trigger activation on level &#039;WARN&#039;.</p>
+        <div class="details collapse">
+                            <p>Example:</p>
+<p><code>
+$activationStrategy = new ChannelLevelActivationStrategy(
+Logger::CRITICAL,
+array(
+'request' =&gt; Logger::ALERT,
+'sensitive' =&gt; Logger::ERROR,
+)
+);
+$handler = new FingersCrossedHandler(new StreamHandler('php://stderr'), $activationStrategy);
+</code></p>
+                    </div>
+        <a href="../classes/Monolog.Handler.FingersCrossed.ChannelLevelActivationStrategy.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ErrorLevelActivationStrategy" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ErrorLevelActivationStrategy .collapse">
+        <h1>ErrorLevelActivationStrategy<a href="../classes/Monolog.Handler.FingersCrossed.ErrorLevelActivationStrategy.html">¶</a></h1>
+        <p class="short_description">Error level based activation strategy.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.FingersCrossed.ErrorLevelActivationStrategy.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.html">Monolog</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Handler.html">Handler</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Handler.SyslogUdp.html">SyslogUdp</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_UdpSocket" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UdpSocket .collapse">
+        <h1>UdpSocket<a href="../classes/Monolog.Handler.SyslogUdp.UdpSocket.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Handler.SyslogUdp.UdpSocket.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.html">Monolog</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Formatter.html">Formatter</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_FormatterInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_FormatterInterface .collapse">
+        <h1>FormatterInterface<a href="../classes/Monolog.Formatter.FormatterInterface.html">¶</a></h1>
+        <p class="short_description">Interface for formatters</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.FormatterInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_ChromePHPFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChromePHPFormatter .collapse">
+        <h1>ChromePHPFormatter<a href="../classes/Monolog.Formatter.ChromePHPFormatter.html">¶</a></h1>
+        <p class="short_description">Formats a log message according to the ChromePHP array format</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ChromePHPFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChromePHPFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChromePHPFormatterTest .collapse">
+        <h1>ChromePHPFormatterTest<a href="../classes/Monolog.Formatter.ChromePHPFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ChromePHPFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ElasticaFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ElasticaFormatter .collapse">
+        <h1>ElasticaFormatter<a href="../classes/Monolog.Formatter.ElasticaFormatter.html">¶</a></h1>
+        <p class="short_description">Format a log message into an Elastica Document</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ElasticaFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ElasticaFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ElasticaFormatterTest .collapse">
+        <h1>ElasticaFormatterTest<a href="../classes/Monolog.Formatter.ElasticaFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ElasticaFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FlowdockFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FlowdockFormatter .collapse">
+        <h1>FlowdockFormatter<a href="../classes/Monolog.Formatter.FlowdockFormatter.html">¶</a></h1>
+        <p class="short_description">formats the record to be used in the FlowdockHandler</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.FlowdockFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FlowdockFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FlowdockFormatterTest .collapse">
+        <h1>FlowdockFormatterTest<a href="../classes/Monolog.Formatter.FlowdockFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.FlowdockFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FluentdFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FluentdFormatter .collapse">
+        <h1>FluentdFormatter<a href="../classes/Monolog.Formatter.FluentdFormatter.html">¶</a></h1>
+        <p class="short_description">Class FluentdFormatter</p>
+        <div class="details collapse">
+                            <p>Serializes a log message to Fluentd unix socket protocol</p>
+<p>Fluentd config:</p>
+<source>
+<p>type unix
+path /var/run/td-agent/td-agent.sock
+</source></p>
+<p>Monolog setup:</p>
+<p>$logger = new Monolog\Logger('fluent.tag');
+$fluentHandler = new Monolog\Handler\SocketHandler('unix:///var/run/td-agent/td-agent.sock');
+$fluentHandler-&gt;setFormatter(new Monolog\Formatter\FluentdFormatter());
+$logger-&gt;pushHandler($fluentHandler);</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.FluentdFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FluentdFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FluentdFormatterTest .collapse">
+        <h1>FluentdFormatterTest<a href="../classes/Monolog.Formatter.FluentdFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.FluentdFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GelfMessageFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GelfMessageFormatter .collapse">
+        <h1>GelfMessageFormatter<a href="../classes/Monolog.Formatter.GelfMessageFormatter.html">¶</a></h1>
+        <p class="short_description">Serializes a log message to GELF</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.GelfMessageFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GelfMessageFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GelfMessageFormatterTest .collapse">
+        <h1>GelfMessageFormatterTest<a href="../classes/Monolog.Formatter.GelfMessageFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.GelfMessageFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_HtmlFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HtmlFormatter .collapse">
+        <h1>HtmlFormatter<a href="../classes/Monolog.Formatter.HtmlFormatter.html">¶</a></h1>
+        <p class="short_description">Formats incoming records into an HTML table</p>
+        <div class="details collapse">
+                            <p>This is especially useful for html email logging</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.HtmlFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_JsonFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_JsonFormatter .collapse">
+        <h1>JsonFormatter<a href="../classes/Monolog.Formatter.JsonFormatter.html">¶</a></h1>
+        <p class="short_description">Encodes whatever record data is passed to it as json</p>
+        <div class="details collapse">
+                            <p>This can be useful to log to databases or remote APIs</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.JsonFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_JsonFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_JsonFormatterTest .collapse">
+        <h1>JsonFormatterTest<a href="../classes/Monolog.Formatter.JsonFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.JsonFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LineFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LineFormatter .collapse">
+        <h1>LineFormatter<a href="../classes/Monolog.Formatter.LineFormatter.html">¶</a></h1>
+        <p class="short_description">Formats incoming records into a one-line string</p>
+        <div class="details collapse">
+                            <p>This is especially useful for logging to files</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.LineFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LineFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LineFormatterTest .collapse">
+        <h1>LineFormatterTest<a href="../classes/Monolog.Formatter.LineFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.LineFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogglyFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogglyFormatter .collapse">
+        <h1>LogglyFormatter<a href="../classes/Monolog.Formatter.LogglyFormatter.html">¶</a></h1>
+        <p class="short_description">Encodes message information into JSON in a format compatible with Loggly.</p>
+        <div class="details collapse">
+                            <p>This can be useful to log to databases or remote APIs</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.LogglyFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogglyFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogglyFormatterTest .collapse">
+        <h1>LogglyFormatterTest<a href="../classes/Monolog.Formatter.LogglyFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.LogglyFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogstashFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogstashFormatter .collapse">
+        <h1>LogstashFormatter<a href="../classes/Monolog.Formatter.LogstashFormatter.html">¶</a></h1>
+        <p class="short_description">Serializes a log message to Logstash Event Format</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.LogstashFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogstashFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogstashFormatterTest .collapse">
+        <h1>LogstashFormatterTest<a href="../classes/Monolog.Formatter.LogstashFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.LogstashFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MongoDBFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MongoDBFormatter .collapse">
+        <h1>MongoDBFormatter<a href="../classes/Monolog.Formatter.MongoDBFormatter.html">¶</a></h1>
+        <p class="short_description">Formats a record for use with the MongoDBHandler.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.MongoDBFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MongoDBFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MongoDBFormatterTest .collapse">
+        <h1>MongoDBFormatterTest<a href="../classes/Monolog.Formatter.MongoDBFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.MongoDBFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NormalizerFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NormalizerFormatter .collapse">
+        <h1>NormalizerFormatter<a href="../classes/Monolog.Formatter.NormalizerFormatter.html">¶</a></h1>
+        <p class="short_description">Normalizes incoming records to remove objects/resources so it&#039;s easier to dump to various targets</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.NormalizerFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NormalizerFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NormalizerFormatterTest .collapse">
+        <h1>NormalizerFormatterTest<a href="../classes/Monolog.Formatter.NormalizerFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.NormalizerFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ScalarFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ScalarFormatter .collapse">
+        <h1>ScalarFormatter<a href="../classes/Monolog.Formatter.ScalarFormatter.html">¶</a></h1>
+        <p class="short_description">Formats data into an associative array of scalar values.</p>
+        <div class="details collapse">
+                            <p>Objects and arrays will be JSON encoded.</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.ScalarFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ScalarFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ScalarFormatterTest .collapse">
+        <h1>ScalarFormatterTest<a href="../classes/Monolog.Formatter.ScalarFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ScalarFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestBar" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestBar .collapse">
+        <h1>TestBar<a href="../classes/Monolog.Formatter.TestBar.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestBar.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestBarNorm" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestBarNorm .collapse">
+        <h1>TestBarNorm<a href="../classes/Monolog.Formatter.TestBarNorm.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestBarNorm.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestFoo" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestFoo .collapse">
+        <h1>TestFoo<a href="../classes/Monolog.Formatter.TestFoo.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestFoo.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestFooNorm" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestFooNorm .collapse">
+        <h1>TestFooNorm<a href="../classes/Monolog.Formatter.TestFooNorm.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestFooNorm.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestStreamFoo" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestStreamFoo .collapse">
+        <h1>TestStreamFoo<a href="../classes/Monolog.Formatter.TestStreamFoo.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestStreamFoo.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestToStringError" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestToStringError .collapse">
+        <h1>TestToStringError<a href="../classes/Monolog.Formatter.TestToStringError.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestToStringError.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_WildfireFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_WildfireFormatter .collapse">
+        <h1>WildfireFormatter<a href="../classes/Monolog.Formatter.WildfireFormatter.html">¶</a></h1>
+        <p class="short_description">Serializes a log message according to Wildfire&#039;s header requirements</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.WildfireFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_WildfireFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_WildfireFormatterTest .collapse">
+        <h1>WildfireFormatterTest<a href="../classes/Monolog.Formatter.WildfireFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.WildfireFormatterTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.html">Monolog</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Processor.html">Processor</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_GitProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GitProcessor .collapse">
+        <h1>GitProcessor<a href="../classes/Monolog.Processor.GitProcessor.html">¶</a></h1>
+        <p class="short_description">Injects Git branch and Git commit SHA in all records</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.GitProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GitProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GitProcessorTest .collapse">
+        <h1>GitProcessorTest<a href="../classes/Monolog.Processor.GitProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.GitProcessorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IntrospectionProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IntrospectionProcessor .collapse">
+        <h1>IntrospectionProcessor<a href="../classes/Monolog.Processor.IntrospectionProcessor.html">¶</a></h1>
+        <p class="short_description">Injects line/file:class/function where the log message came from</p>
+        <div class="details collapse">
+                            <p>Warning: This only works if the handler processes the logs directly.
+If you put the processor on a handler that is behind a FingersCrossedHandler
+for example, the processor will only be called once the trigger level is reached,
+and all the log records will have the same file/line/.. data from the call that
+triggered the FingersCrossedHandler.</p>
+                    </div>
+        <a href="../classes/Monolog.Processor.IntrospectionProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IntrospectionProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IntrospectionProcessorTest .collapse">
+        <h1>IntrospectionProcessorTest<a href="../classes/Monolog.Processor.IntrospectionProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.IntrospectionProcessorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemoryPeakUsageProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemoryPeakUsageProcessor .collapse">
+        <h1>MemoryPeakUsageProcessor<a href="../classes/Monolog.Processor.MemoryPeakUsageProcessor.html">¶</a></h1>
+        <p class="short_description">Injects memory_get_peak_usage in all records</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.MemoryPeakUsageProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemoryPeakUsageProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemoryPeakUsageProcessorTest .collapse">
+        <h1>MemoryPeakUsageProcessorTest<a href="../classes/Monolog.Processor.MemoryPeakUsageProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.MemoryPeakUsageProcessorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemoryProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemoryProcessor .collapse">
+        <h1>MemoryProcessor<a href="../classes/Monolog.Processor.MemoryProcessor.html">¶</a></h1>
+        <p class="short_description">Some methods that are common for all memory processors</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.MemoryProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemoryUsageProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemoryUsageProcessor .collapse">
+        <h1>MemoryUsageProcessor<a href="../classes/Monolog.Processor.MemoryUsageProcessor.html">¶</a></h1>
+        <p class="short_description">Injects memory_get_usage in all records</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.MemoryUsageProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemoryUsageProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemoryUsageProcessorTest .collapse">
+        <h1>MemoryUsageProcessorTest<a href="../classes/Monolog.Processor.MemoryUsageProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.MemoryUsageProcessorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MercurialProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MercurialProcessor .collapse">
+        <h1>MercurialProcessor<a href="../classes/Monolog.Processor.MercurialProcessor.html">¶</a></h1>
+        <p class="short_description">Injects Hg branch and Hg revision number in all records</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.MercurialProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MercurialProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MercurialProcessorTest .collapse">
+        <h1>MercurialProcessorTest<a href="../classes/Monolog.Processor.MercurialProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.MercurialProcessorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ProcessIdProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ProcessIdProcessor .collapse">
+        <h1>ProcessIdProcessor<a href="../classes/Monolog.Processor.ProcessIdProcessor.html">¶</a></h1>
+        <p class="short_description">Adds value of getmypid into records</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.ProcessIdProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ProcessIdProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ProcessIdProcessorTest .collapse">
+        <h1>ProcessIdProcessorTest<a href="../classes/Monolog.Processor.ProcessIdProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.ProcessIdProcessorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PsrLogMessageProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PsrLogMessageProcessor .collapse">
+        <h1>PsrLogMessageProcessor<a href="../classes/Monolog.Processor.PsrLogMessageProcessor.html">¶</a></h1>
+        <p class="short_description">Processes a record&#039;s message according to PSR-3 rules</p>
+        <div class="details collapse">
+                            <p>It replaces {foo} with the value from $context['foo']</p>
+                    </div>
+        <a href="../classes/Monolog.Processor.PsrLogMessageProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PsrLogMessageProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PsrLogMessageProcessorTest .collapse">
+        <h1>PsrLogMessageProcessorTest<a href="../classes/Monolog.Processor.PsrLogMessageProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.PsrLogMessageProcessorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TagProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TagProcessor .collapse">
+        <h1>TagProcessor<a href="../classes/Monolog.Processor.TagProcessor.html">¶</a></h1>
+        <p class="short_description">Adds a tags array into record</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.TagProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TagProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TagProcessorTest .collapse">
+        <h1>TagProcessorTest<a href="../classes/Monolog.Processor.TagProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.TagProcessorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UidProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UidProcessor .collapse">
+        <h1>UidProcessor<a href="../classes/Monolog.Processor.UidProcessor.html">¶</a></h1>
+        <p class="short_description">Adds a unique identifier into records</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.UidProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UidProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UidProcessorTest .collapse">
+        <h1>UidProcessorTest<a href="../classes/Monolog.Processor.UidProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.UidProcessorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_WebProcessor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_WebProcessor .collapse">
+        <h1>WebProcessor<a href="../classes/Monolog.Processor.WebProcessor.html">¶</a></h1>
+        <p class="short_description">Injects url/method and remote IP of the current web request in all records</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.WebProcessor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_WebProcessorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_WebProcessorTest .collapse">
+        <h1>WebProcessorTest<a href="../classes/Monolog.Processor.WebProcessorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Processor.WebProcessorTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:57 +0200.<br/>
+    </footer>
+    </body>
+</html>

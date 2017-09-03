@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \React\Tests\EventLoop\ExtEventLoopTest
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                                                                                                                                    <li class="method public inherited">
+        <a href="#method_createLoop" title="createLoop :: ">
+            <span class="description"></span><pre>createLoop</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_createSocketPair" title="createSocketPair :: ">
+            <span class="description"></span><pre>createSocketPair</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_createStream" title="createStream :: ">
+            <span class="description"></span><pre>createStream</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_emptyRunShouldSimplyReturn" title="emptyRunShouldSimplyReturn :: ">
+            <span class="description"></span><pre>emptyRunShouldSimplyReturn</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                <li class="method public inherited">
+        <a href="#method_runShouldReturnWhenNoMoreFds" title="runShouldReturnWhenNoMoreFds :: ">
+            <span class="description"></span><pre>runShouldReturnWhenNoMoreFds</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_setUp" title="setUp :: ">
+            <span class="description"></span><pre>setUp</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_stopShouldStopRunningLoop" title="stopShouldStopRunningLoop :: ">
+            <span class="description"></span><pre>stopShouldStopRunningLoop</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testAddReadStream" title="testAddReadStream :: ">
+            <span class="description"></span><pre>testAddReadStream</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testAddReadStreamIgnoresSecondCallable" title="testAddReadStreamIgnoresSecondCallable :: ">
+            <span class="description"></span><pre>testAddReadStreamIgnoresSecondCallable</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testAddWriteStream" title="testAddWriteStream :: ">
+            <span class="description"></span><pre>testAddWriteStream</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testAddWriteStreamIgnoresSecondCallable" title="testAddWriteStreamIgnoresSecondCallable :: ">
+            <span class="description"></span><pre>testAddWriteStreamIgnoresSecondCallable</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_testCanUseReadableStreamWithFeatureFds" title="testCanUseReadableStreamWithFeatureFds :: ">
+            <span class="description"></span><pre>testCanUseReadableStreamWithFeatureFds</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testFutureTick" title="testFutureTick :: ">
+            <span class="description"></span><pre>testFutureTick</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testFutureTickEventGeneratedByNextTick" title="testFutureTickEventGeneratedByNextTick :: ">
+            <span class="description"></span><pre>testFutureTickEventGeneratedByNextTick</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testFutureTickEventGeneratedByTimer" title="testFutureTickEventGeneratedByTimer :: ">
+            <span class="description"></span><pre>testFutureTickEventGeneratedByTimer</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testFutureTickFiresBeforeIO" title="testFutureTickFiresBeforeIO :: ">
+            <span class="description"></span><pre>testFutureTickFiresBeforeIO</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testIgnoreRemovedCallback" title="testIgnoreRemovedCallback :: ">
+            <span class="description"></span><pre>testIgnoreRemovedCallback</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testNextTick" title="testNextTick :: ">
+            <span class="description"></span><pre>testNextTick</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testNextTickEventGeneratedByFutureTick" title="testNextTickEventGeneratedByFutureTick :: ">
+            <span class="description"></span><pre>testNextTickEventGeneratedByFutureTick</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testNextTickEventGeneratedByTimer" title="testNextTickEventGeneratedByTimer :: ">
+            <span class="description"></span><pre>testNextTickEventGeneratedByTimer</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testNextTickFiresBeforeIO" title="testNextTickFiresBeforeIO :: ">
+            <span class="description"></span><pre>testNextTickFiresBeforeIO</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRecursiveFutureTick" title="testRecursiveFutureTick :: ">
+            <span class="description"></span><pre>testRecursiveFutureTick</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRecursiveNextTick" title="testRecursiveNextTick :: ">
+            <span class="description"></span><pre>testRecursiveNextTick</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRemoveInvalid" title="testRemoveInvalid :: ">
+            <span class="description"></span><pre>testRemoveInvalid</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRemoveReadStreamAfterReading" title="testRemoveReadStreamAfterReading :: ">
+            <span class="description"></span><pre>testRemoveReadStreamAfterReading</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRemoveReadStreamInstantly" title="testRemoveReadStreamInstantly :: ">
+            <span class="description"></span><pre>testRemoveReadStreamInstantly</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRemoveStream" title="testRemoveStream :: ">
+            <span class="description"></span><pre>testRemoveStream</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRemoveStreamForReadOnly" title="testRemoveStreamForReadOnly :: ">
+            <span class="description"></span><pre>testRemoveStreamForReadOnly</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRemoveStreamForWriteOnly" title="testRemoveStreamForWriteOnly :: ">
+            <span class="description"></span><pre>testRemoveStreamForWriteOnly</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRemoveStreamInstantly" title="testRemoveStreamInstantly :: ">
+            <span class="description"></span><pre>testRemoveStreamInstantly</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRemoveWriteStreamAfterWriting" title="testRemoveWriteStreamAfterWriting :: ">
+            <span class="description"></span><pre>testRemoveWriteStreamAfterWriting</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRemoveWriteStreamInstantly" title="testRemoveWriteStreamInstantly :: ">
+            <span class="description"></span><pre>testRemoveWriteStreamInstantly</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRunWaitsForFutureTickEvents" title="testRunWaitsForFutureTickEvents :: ">
+            <span class="description"></span><pre>testRunWaitsForFutureTickEvents</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testRunWaitsForNextTickEvents" title="testRunWaitsForNextTickEvents :: ">
+            <span class="description"></span><pre>testRunWaitsForNextTickEvents</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_testStopShouldPreventRunFromBlocking" title="testStopShouldPreventRunFromBlocking :: ">
+            <span class="description"></span><pre>testStopShouldPreventRunFromBlocking</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_writeToStream" title="writeToStream :: ">
+            <span class="description"></span><pre>writeToStream</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                <li class="method protected inherited">
+                            <a href="#method_createCallableMock" title="createCallableMock :: ">
+                                <span class="description"></span><pre>createCallableMock</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method protected inherited">
+                            <a href="#method_expectCallableExactly" title="expectCallableExactly :: ">
+                                <span class="description"></span><pre>expectCallableExactly</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_expectCallableNever" title="expectCallableNever :: ">
+                                <span class="description"></span><pre>expectCallableNever</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_expectCallableOnce" title="expectCallableOnce :: ">
+                                <span class="description"></span><pre>expectCallableOnce</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                            <li class="method private inherited">
+                            <a href="#method_assertRunFasterThan" title="assertRunFasterThan :: ">
+                                <span class="description"></span><pre>assertRunFasterThan</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>ExtEventLoopTest</h1>
+                <small style="display: block; text-align: right">
+                                            Extends <a href="../classes/React.Tests.EventLoop.AbstractLoopTest.html">\React\Tests\EventLoop\AbstractLoopTest</a>
+                                                        </small>
+                <p class="short_description"></p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method_assertRunFasterThan"></a>
+                        <div class="element clickable method private  method_assertRunFasterThan inherited" data-toggle="collapse" data-target=".method_assertRunFasterThan .collapse">
+                            <h2>assertRunFasterThan</h2>
+                            <pre>assertRunFasterThan( $maxInterval) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$maxInterval</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_createCallableMock"></a>
+                        <div class="element clickable method protected  method_createCallableMock inherited" data-toggle="collapse" data-target=".method_createCallableMock .collapse">
+                            <h2>createCallableMock</h2>
+                            <pre>createCallableMock() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_createLoop"></a>
+                        <div class="element clickable method public  method_createLoop inherited" data-toggle="collapse" data-target=".method_createLoop .collapse">
+                            <h2>createLoop</h2>
+                            <pre>createLoop() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_createSocketPair"></a>
+                        <div class="element clickable method public  method_createSocketPair inherited" data-toggle="collapse" data-target=".method_createSocketPair .collapse">
+                            <h2>createSocketPair</h2>
+                            <pre>createSocketPair() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_createStream"></a>
+                        <div class="element clickable method public  method_createStream" data-toggle="collapse" data-target=".method_createStream .collapse">
+                            <h2>createStream</h2>
+                            <pre>createStream() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_emptyRunShouldSimplyReturn"></a>
+                        <div class="element clickable method public  method_emptyRunShouldSimplyReturn inherited" data-toggle="collapse" data-target=".method_emptyRunShouldSimplyReturn .collapse">
+                            <h2>emptyRunShouldSimplyReturn</h2>
+                            <pre>emptyRunShouldSimplyReturn() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    test
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_expectCallableExactly"></a>
+                        <div class="element clickable method protected  method_expectCallableExactly inherited" data-toggle="collapse" data-target=".method_expectCallableExactly .collapse">
+                            <h2>expectCallableExactly</h2>
+                            <pre>expectCallableExactly( $amount) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$amount</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_expectCallableNever"></a>
+                        <div class="element clickable method protected  method_expectCallableNever inherited" data-toggle="collapse" data-target=".method_expectCallableNever .collapse">
+                            <h2>expectCallableNever</h2>
+                            <pre>expectCallableNever() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_expectCallableOnce"></a>
+                        <div class="element clickable method protected  method_expectCallableOnce inherited" data-toggle="collapse" data-target=".method_expectCallableOnce .collapse">
+                            <h2>expectCallableOnce</h2>
+                            <pre>expectCallableOnce() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_runShouldReturnWhenNoMoreFds"></a>
+                        <div class="element clickable method public  method_runShouldReturnWhenNoMoreFds inherited" data-toggle="collapse" data-target=".method_runShouldReturnWhenNoMoreFds .collapse">
+                            <h2>runShouldReturnWhenNoMoreFds</h2>
+                            <pre>runShouldReturnWhenNoMoreFds() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    test
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setUp"></a>
+                        <div class="element clickable method public  method_setUp inherited" data-toggle="collapse" data-target=".method_setUp .collapse">
+                            <h2>setUp</h2>
+                            <pre>setUp() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_stopShouldStopRunningLoop"></a>
+                        <div class="element clickable method public  method_stopShouldStopRunningLoop inherited" data-toggle="collapse" data-target=".method_stopShouldStopRunningLoop .collapse">
+                            <h2>stopShouldStopRunningLoop</h2>
+                            <pre>stopShouldStopRunningLoop() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    test
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testAddReadStream"></a>
+                        <div class="element clickable method public  method_testAddReadStream inherited" data-toggle="collapse" data-target=".method_testAddReadStream .collapse">
+                            <h2>testAddReadStream</h2>
+                            <pre>testAddReadStream() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testAddReadStreamIgnoresSecondCallable"></a>
+                        <div class="element clickable method public  method_testAddReadStreamIgnoresSecondCallable inherited" data-toggle="collapse" data-target=".method_testAddReadStreamIgnoresSecondCallable .collapse">
+                            <h2>testAddReadStreamIgnoresSecondCallable</h2>
+                            <pre>testAddReadStreamIgnoresSecondCallable() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testAddWriteStream"></a>
+                        <div class="element clickable method public  method_testAddWriteStream inherited" data-toggle="collapse" data-target=".method_testAddWriteStream .collapse">
+                            <h2>testAddWriteStream</h2>
+                            <pre>testAddWriteStream() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testAddWriteStreamIgnoresSecondCallable"></a>
+                        <div class="element clickable method public  method_testAddWriteStreamIgnoresSecondCallable inherited" data-toggle="collapse" data-target=".method_testAddWriteStreamIgnoresSecondCallable .collapse">
+                            <h2>testAddWriteStreamIgnoresSecondCallable</h2>
+                            <pre>testAddWriteStreamIgnoresSecondCallable() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testCanUseReadableStreamWithFeatureFds"></a>
+                        <div class="element clickable method public  method_testCanUseReadableStreamWithFeatureFds" data-toggle="collapse" data-target=".method_testCanUseReadableStreamWithFeatureFds .collapse">
+                            <h2>testCanUseReadableStreamWithFeatureFds</h2>
+                            <pre>testCanUseReadableStreamWithFeatureFds() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    group
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>epoll-readable-error</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testFutureTick"></a>
+                        <div class="element clickable method public  method_testFutureTick inherited" data-toggle="collapse" data-target=".method_testFutureTick .collapse">
+                            <h2>testFutureTick</h2>
+                            <pre>testFutureTick() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testFutureTickEventGeneratedByNextTick"></a>
+                        <div class="element clickable method public  method_testFutureTickEventGeneratedByNextTick inherited" data-toggle="collapse" data-target=".method_testFutureTickEventGeneratedByNextTick .collapse">
+                            <h2>testFutureTickEventGeneratedByNextTick</h2>
+                            <pre>testFutureTickEventGeneratedByNextTick() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testFutureTickEventGeneratedByTimer"></a>
+                        <div class="element clickable method public  method_testFutureTickEventGeneratedByTimer inherited" data-toggle="collapse" data-target=".method_testFutureTickEventGeneratedByTimer .collapse">
+                            <h2>testFutureTickEventGeneratedByTimer</h2>
+                            <pre>testFutureTickEventGeneratedByTimer() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testFutureTickFiresBeforeIO"></a>
+                        <div class="element clickable method public  method_testFutureTickFiresBeforeIO inherited" data-toggle="collapse" data-target=".method_testFutureTickFiresBeforeIO .collapse">
+                            <h2>testFutureTickFiresBeforeIO</h2>
+                            <pre>testFutureTickFiresBeforeIO() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testIgnoreRemovedCallback"></a>
+                        <div class="element clickable method public  method_testIgnoreRemovedCallback inherited" data-toggle="collapse" data-target=".method_testIgnoreRemovedCallback .collapse">
+                            <h2>testIgnoreRemovedCallback</h2>
+                            <pre>testIgnoreRemovedCallback() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testNextTick"></a>
+                        <div class="element clickable method public  method_testNextTick inherited" data-toggle="collapse" data-target=".method_testNextTick .collapse">
+                            <h2>testNextTick</h2>
+                            <pre>testNextTick() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testNextTickEventGeneratedByFutureTick"></a>
+                        <div class="element clickable method public  method_testNextTickEventGeneratedByFutureTick inherited" data-toggle="collapse" data-target=".method_testNextTickEventGeneratedByFutureTick .collapse">
+                            <h2>testNextTickEventGeneratedByFutureTick</h2>
+                            <pre>testNextTickEventGeneratedByFutureTick() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testNextTickEventGeneratedByTimer"></a>
+                        <div class="element clickable method public  method_testNextTickEventGeneratedByTimer inherited" data-toggle="collapse" data-target=".method_testNextTickEventGeneratedByTimer .collapse">
+                            <h2>testNextTickEventGeneratedByTimer</h2>
+                            <pre>testNextTickEventGeneratedByTimer() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testNextTickFiresBeforeIO"></a>
+                        <div class="element clickable method public  method_testNextTickFiresBeforeIO inherited" data-toggle="collapse" data-target=".method_testNextTickFiresBeforeIO .collapse">
+                            <h2>testNextTickFiresBeforeIO</h2>
+                            <pre>testNextTickFiresBeforeIO() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRecursiveFutureTick"></a>
+                        <div class="element clickable method public  method_testRecursiveFutureTick inherited" data-toggle="collapse" data-target=".method_testRecursiveFutureTick .collapse">
+                            <h2>testRecursiveFutureTick</h2>
+                            <pre>testRecursiveFutureTick() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRecursiveNextTick"></a>
+                        <div class="element clickable method public  method_testRecursiveNextTick inherited" data-toggle="collapse" data-target=".method_testRecursiveNextTick .collapse">
+                            <h2>testRecursiveNextTick</h2>
+                            <pre>testRecursiveNextTick() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRemoveInvalid"></a>
+                        <div class="element clickable method public  method_testRemoveInvalid inherited" data-toggle="collapse" data-target=".method_testRemoveInvalid .collapse">
+                            <h2>testRemoveInvalid</h2>
+                            <pre>testRemoveInvalid() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRemoveReadStreamAfterReading"></a>
+                        <div class="element clickable method public  method_testRemoveReadStreamAfterReading inherited" data-toggle="collapse" data-target=".method_testRemoveReadStreamAfterReading .collapse">
+                            <h2>testRemoveReadStreamAfterReading</h2>
+                            <pre>testRemoveReadStreamAfterReading() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRemoveReadStreamInstantly"></a>
+                        <div class="element clickable method public  method_testRemoveReadStreamInstantly inherited" data-toggle="collapse" data-target=".method_testRemoveReadStreamInstantly .collapse">
+                            <h2>testRemoveReadStreamInstantly</h2>
+                            <pre>testRemoveReadStreamInstantly() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRemoveStream"></a>
+                        <div class="element clickable method public  method_testRemoveStream inherited" data-toggle="collapse" data-target=".method_testRemoveStream .collapse">
+                            <h2>testRemoveStream</h2>
+                            <pre>testRemoveStream() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRemoveStreamForReadOnly"></a>
+                        <div class="element clickable method public  method_testRemoveStreamForReadOnly inherited" data-toggle="collapse" data-target=".method_testRemoveStreamForReadOnly .collapse">
+                            <h2>testRemoveStreamForReadOnly</h2>
+                            <pre>testRemoveStreamForReadOnly() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRemoveStreamForWriteOnly"></a>
+                        <div class="element clickable method public  method_testRemoveStreamForWriteOnly inherited" data-toggle="collapse" data-target=".method_testRemoveStreamForWriteOnly .collapse">
+                            <h2>testRemoveStreamForWriteOnly</h2>
+                            <pre>testRemoveStreamForWriteOnly() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRemoveStreamInstantly"></a>
+                        <div class="element clickable method public  method_testRemoveStreamInstantly inherited" data-toggle="collapse" data-target=".method_testRemoveStreamInstantly .collapse">
+                            <h2>testRemoveStreamInstantly</h2>
+                            <pre>testRemoveStreamInstantly() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRemoveWriteStreamAfterWriting"></a>
+                        <div class="element clickable method public  method_testRemoveWriteStreamAfterWriting inherited" data-toggle="collapse" data-target=".method_testRemoveWriteStreamAfterWriting .collapse">
+                            <h2>testRemoveWriteStreamAfterWriting</h2>
+                            <pre>testRemoveWriteStreamAfterWriting() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRemoveWriteStreamInstantly"></a>
+                        <div class="element clickable method public  method_testRemoveWriteStreamInstantly inherited" data-toggle="collapse" data-target=".method_testRemoveWriteStreamInstantly .collapse">
+                            <h2>testRemoveWriteStreamInstantly</h2>
+                            <pre>testRemoveWriteStreamInstantly() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRunWaitsForFutureTickEvents"></a>
+                        <div class="element clickable method public  method_testRunWaitsForFutureTickEvents inherited" data-toggle="collapse" data-target=".method_testRunWaitsForFutureTickEvents .collapse">
+                            <h2>testRunWaitsForFutureTickEvents</h2>
+                            <pre>testRunWaitsForFutureTickEvents() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testRunWaitsForNextTickEvents"></a>
+                        <div class="element clickable method public  method_testRunWaitsForNextTickEvents inherited" data-toggle="collapse" data-target=".method_testRunWaitsForNextTickEvents .collapse">
+                            <h2>testRunWaitsForNextTickEvents</h2>
+                            <pre>testRunWaitsForNextTickEvents() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_testStopShouldPreventRunFromBlocking"></a>
+                        <div class="element clickable method public  method_testStopShouldPreventRunFromBlocking inherited" data-toggle="collapse" data-target=".method_testStopShouldPreventRunFromBlocking .collapse">
+                            <h2>testStopShouldPreventRunFromBlocking</h2>
+                            <pre>testStopShouldPreventRunFromBlocking() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_writeToStream"></a>
+                        <div class="element clickable method public  method_writeToStream" data-toggle="collapse" data-target=".method_writeToStream .collapse">
+                            <h2>writeToStream</h2>
+                            <pre>writeToStream( $stream,  $content) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$stream</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$content</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_loop"> </a>
+                            <div class="element clickable property  protected property_loop inherited" data-toggle="collapse" data-target=".property_loop .collapse">
+                                <h2>loop</h2>
+                                <pre>loop : \React\EventLoop\LoopInterface</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/React.EventLoop.LoopInterface.html">\React\EventLoop\LoopInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_tickTimeout"> </a>
+                            <div class="element clickable property  private property_tickTimeout inherited" data-toggle="collapse" data-target=".property_tickTimeout .collapse">
+                                <h2>tickTimeout</h2>
+                                <pre>tickTimeout : </pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\React\Tests\EventLoop\ExtEventLoopTest"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/React.Tests.EventLoop.html">EventLoop</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/React.Tests.EventLoop.ExtEventLoopTest.html">ExtEventLoopTest</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:05 +0200.<br/>
+    </footer>
+    </body>
+</html>

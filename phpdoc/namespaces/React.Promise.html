@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \React\Promise
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/React.Promise.html" title="Promise">
+                    <i class="icon-th"></i> Promise
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/React.Promise.Exception.html" title="Exception">
+            <i class="icon-th"></i> Exception
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Promise.PromiseAdapter.html" title="PromiseAdapter">
+            <i class="icon-th"></i> PromiseAdapter
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Promise.PromiseTest.html" title="PromiseTest">
+            <i class="icon-th"></i> PromiseTest
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Promise.Stub.html" title="Stub">
+            <i class="icon-th"></i> Stub
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Promise.Timer.html" title="Timer">
+            <i class="icon-th"></i> Timer
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.html">Promise</a>
+    </li>
+
+        </ul>
+
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-function"></i> Functions</h3>
+                                        <div id="function__checkTypehint" class="element ajax clickable function" data-toggle="collapse" data-target="#function__checkTypehint .collapse">
+        <h1>_checkTypehint<a href="../namespaces/React.Promise.html#function__checkTypehint">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$object</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function__checkTypehint" class="more">« More »</a>    </div>
+
+                                        <div id="function_all" class="element ajax clickable function" data-toggle="collapse" data-target="#function_all .collapse">
+        <h1>all<a href="../namespaces/React.Promise.html#function_all">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promisesOrValues</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_all" class="more">« More »</a>    </div>
+
+                                        <div id="function_any" class="element ajax clickable function" data-toggle="collapse" data-target="#function_any .collapse">
+        <h1>any<a href="../namespaces/React.Promise.html#function_any">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promisesOrValues</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_any" class="more">« More »</a>    </div>
+
+                                        <div id="function_map" class="element ajax clickable function" data-toggle="collapse" data-target="#function_map .collapse">
+        <h1>map<a href="../namespaces/React.Promise.html#function_map">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promisesOrValues</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mapFunc</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_map" class="more">« More »</a>    </div>
+
+                                        <div id="function_race" class="element ajax clickable function" data-toggle="collapse" data-target="#function_race .collapse">
+        <h1>race<a href="../namespaces/React.Promise.html#function_race">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promisesOrValues</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_race" class="more">« More »</a>    </div>
+
+                                        <div id="function_reduce" class="element ajax clickable function" data-toggle="collapse" data-target="#function_reduce .collapse">
+        <h1>reduce<a href="../namespaces/React.Promise.html#function_reduce">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promisesOrValues</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$reduceFunc</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$initialValue</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_reduce" class="more">« More »</a>    </div>
+
+                                        <div id="function_reject" class="element ajax clickable function" data-toggle="collapse" data-target="#function_reject .collapse">
+        <h1>reject<a href="../namespaces/React.Promise.html#function_reject">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promiseOrValue</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_reject" class="more">« More »</a>    </div>
+
+                                        <div id="function_resolve" class="element ajax clickable function" data-toggle="collapse" data-target="#function_resolve .collapse">
+        <h1>resolve<a href="../namespaces/React.Promise.html#function_resolve">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promiseOrValue</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_resolve" class="more">« More »</a>    </div>
+
+                                        <div id="function_some" class="element ajax clickable function" data-toggle="collapse" data-target="#function_some .collapse">
+        <h1>some<a href="../namespaces/React.Promise.html#function_some">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promisesOrValues</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$howMany</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_some" class="more">« More »</a>    </div>
+
+                                        <div id="function_testCallbackWithoutTypehint" class="element ajax clickable function" data-toggle="collapse" data-target="#function_testCallbackWithoutTypehint .collapse">
+        <h1>testCallbackWithoutTypehint<a href="../namespaces/React.Promise.html#function_testCallbackWithoutTypehint">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_testCallbackWithoutTypehint" class="more">« More »</a>    </div>
+
+                                        <div id="function_testCallbackWithTypehint" class="element ajax clickable function" data-toggle="collapse" data-target="#function_testCallbackWithTypehint .collapse">
+        <h1>testCallbackWithTypehint<a href="../namespaces/React.Promise.html#function_testCallbackWithTypehint">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$e</h4>
+                                                <code>\InvalidArgumentException</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.html#function_testCallbackWithTypehint" class="more">« More »</a>    </div>
+
+                            </div>
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_CancellablePromiseInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_CancellablePromiseInterface .collapse">
+        <h1>CancellablePromiseInterface<a href="../classes/React.Promise.CancellablePromiseInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.CancellablePromiseInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_ExtendedPromiseInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ExtendedPromiseInterface .collapse">
+        <h1>ExtendedPromiseInterface<a href="../classes/React.Promise.ExtendedPromiseInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.ExtendedPromiseInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_PromiseInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_PromiseInterface .collapse">
+        <h1>PromiseInterface<a href="../classes/React.Promise.PromiseInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_PromisorInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_PromisorInterface .collapse">
+        <h1>PromisorInterface<a href="../classes/React.Promise.PromisorInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromisorInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_CancellationQueue" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CancellationQueue .collapse">
+        <h1>CancellationQueue<a href="../classes/React.Promise.CancellationQueue.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.CancellationQueue.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CancellationQueueTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CancellationQueueTest .collapse">
+        <h1>CancellationQueueTest<a href="../classes/React.Promise.CancellationQueueTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.CancellationQueueTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Deferred" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Deferred .collapse">
+        <h1>Deferred<a href="../classes/React.Promise.Deferred.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.Deferred.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DeferredTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DeferredTest .collapse">
+        <h1>DeferredTest<a href="../classes/React.Promise.DeferredTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.DeferredTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FulfilledPromise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FulfilledPromise .collapse">
+        <h1>FulfilledPromise<a href="../classes/React.Promise.FulfilledPromise.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FulfilledPromise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FulfilledPromiseTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FulfilledPromiseTest .collapse">
+        <h1>FulfilledPromiseTest<a href="../classes/React.Promise.FulfilledPromiseTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FulfilledPromiseTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionAllTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionAllTest .collapse">
+        <h1>FunctionAllTest<a href="../classes/React.Promise.FunctionAllTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FunctionAllTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionAnyTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionAnyTest .collapse">
+        <h1>FunctionAnyTest<a href="../classes/React.Promise.FunctionAnyTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FunctionAnyTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionCheckTypehintTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionCheckTypehintTest .collapse">
+        <h1>FunctionCheckTypehintTest<a href="../classes/React.Promise.FunctionCheckTypehintTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FunctionCheckTypehintTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionMapTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionMapTest .collapse">
+        <h1>FunctionMapTest<a href="../classes/React.Promise.FunctionMapTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FunctionMapTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionRaceTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionRaceTest .collapse">
+        <h1>FunctionRaceTest<a href="../classes/React.Promise.FunctionRaceTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FunctionRaceTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionReduceTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionReduceTest .collapse">
+        <h1>FunctionReduceTest<a href="../classes/React.Promise.FunctionReduceTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FunctionReduceTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionRejectTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionRejectTest .collapse">
+        <h1>FunctionRejectTest<a href="../classes/React.Promise.FunctionRejectTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FunctionRejectTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionResolveTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionResolveTest .collapse">
+        <h1>FunctionResolveTest<a href="../classes/React.Promise.FunctionResolveTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FunctionResolveTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionSomeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionSomeTest .collapse">
+        <h1>FunctionSomeTest<a href="../classes/React.Promise.FunctionSomeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.FunctionSomeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LazyPromise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LazyPromise .collapse">
+        <h1>LazyPromise<a href="../classes/React.Promise.LazyPromise.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.LazyPromise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LazyPromiseTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LazyPromiseTest .collapse">
+        <h1>LazyPromiseTest<a href="../classes/React.Promise.LazyPromiseTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.LazyPromiseTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Promise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Promise .collapse">
+        <h1>Promise<a href="../classes/React.Promise.Promise.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.Promise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PromiseTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PromiseTest .collapse">
+        <h1>PromiseTest<a href="../classes/React.Promise.PromiseTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RejectedPromise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RejectedPromise .collapse">
+        <h1>RejectedPromise<a href="../classes/React.Promise.RejectedPromise.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.RejectedPromise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RejectedPromiseTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RejectedPromiseTest .collapse">
+        <h1>RejectedPromiseTest<a href="../classes/React.Promise.RejectedPromiseTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.RejectedPromiseTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SimpleFulfilledTestPromise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SimpleFulfilledTestPromise .collapse">
+        <h1>SimpleFulfilledTestPromise<a href="../classes/React.Promise.SimpleFulfilledTestPromise.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.SimpleFulfilledTestPromise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SimpleFulfilledTestThenable" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SimpleFulfilledTestThenable .collapse">
+        <h1>SimpleFulfilledTestThenable<a href="../classes/React.Promise.SimpleFulfilledTestThenable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.SimpleFulfilledTestThenable.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SimpleRejectedTestPromise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SimpleRejectedTestPromise .collapse">
+        <h1>SimpleRejectedTestPromise<a href="../classes/React.Promise.SimpleRejectedTestPromise.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.SimpleRejectedTestPromise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SimpleTestCancellable" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SimpleTestCancellable .collapse">
+        <h1>SimpleTestCancellable<a href="../classes/React.Promise.SimpleTestCancellable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.SimpleTestCancellable.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SimpleTestCancellableThenable" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SimpleTestCancellableThenable .collapse">
+        <h1>SimpleTestCancellableThenable<a href="../classes/React.Promise.SimpleTestCancellableThenable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.SimpleTestCancellableThenable.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCallbackWithoutTypehintClass" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCallbackWithoutTypehintClass .collapse">
+        <h1>TestCallbackWithoutTypehintClass<a href="../classes/React.Promise.TestCallbackWithoutTypehintClass.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.TestCallbackWithoutTypehintClass.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCallbackWithTypehintClass" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCallbackWithTypehintClass .collapse">
+        <h1>TestCallbackWithTypehintClass<a href="../classes/React.Promise.TestCallbackWithTypehintClass.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.TestCallbackWithTypehintClass.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/React.Promise.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.TestCase.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UnhandledRejectionException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UnhandledRejectionException .collapse">
+        <h1>UnhandledRejectionException<a href="../classes/React.Promise.UnhandledRejectionException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.UnhandledRejectionException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.html">Promise</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.PromiseTest.html">PromiseTest</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                                        <div id="trait_CancelTestTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_CancelTestTrait .collapse">
+        <h1>CancelTestTrait<a href="../classes/React.Promise.PromiseTest.CancelTestTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.CancelTestTrait.html" class="more">« More »</a>    </div>
+
+                                        <div id="trait_FullTestTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_FullTestTrait .collapse">
+        <h1>FullTestTrait<a href="../classes/React.Promise.PromiseTest.FullTestTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.FullTestTrait.html" class="more">« More »</a>    </div>
+
+                                        <div id="trait_NotifyTestTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_NotifyTestTrait .collapse">
+        <h1>NotifyTestTrait<a href="../classes/React.Promise.PromiseTest.NotifyTestTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.NotifyTestTrait.html" class="more">« More »</a>    </div>
+
+                                        <div id="trait_PromiseFulfilledTestTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_PromiseFulfilledTestTrait .collapse">
+        <h1>PromiseFulfilledTestTrait<a href="../classes/React.Promise.PromiseTest.PromiseFulfilledTestTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.PromiseFulfilledTestTrait.html" class="more">« More »</a>    </div>
+
+                                        <div id="trait_PromisePendingTestTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_PromisePendingTestTrait .collapse">
+        <h1>PromisePendingTestTrait<a href="../classes/React.Promise.PromiseTest.PromisePendingTestTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.PromisePendingTestTrait.html" class="more">« More »</a>    </div>
+
+                                        <div id="trait_PromiseRejectedTestTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_PromiseRejectedTestTrait .collapse">
+        <h1>PromiseRejectedTestTrait<a href="../classes/React.Promise.PromiseTest.PromiseRejectedTestTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.PromiseRejectedTestTrait.html" class="more">« More »</a>    </div>
+
+                                        <div id="trait_PromiseSettledTestTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_PromiseSettledTestTrait .collapse">
+        <h1>PromiseSettledTestTrait<a href="../classes/React.Promise.PromiseTest.PromiseSettledTestTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.PromiseSettledTestTrait.html" class="more">« More »</a>    </div>
+
+                                        <div id="trait_RejectTestTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_RejectTestTrait .collapse">
+        <h1>RejectTestTrait<a href="../classes/React.Promise.PromiseTest.RejectTestTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.RejectTestTrait.html" class="more">« More »</a>    </div>
+
+                                        <div id="trait_ResolveTestTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_ResolveTestTrait .collapse">
+        <h1>ResolveTestTrait<a href="../classes/React.Promise.PromiseTest.ResolveTestTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseTest.ResolveTestTrait.html" class="more">« More »</a>    </div>
+
+                
+                
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.html">Promise</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.Exception.html">Exception</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_LengthException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LengthException .collapse">
+        <h1>LengthException<a href="../classes/React.Promise.Exception.LengthException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.Exception.LengthException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.html">Promise</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.Stub.html">Stub</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CallableStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallableStub .collapse">
+        <h1>CallableStub<a href="../classes/React.Promise.Stub.CallableStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.Stub.CallableStub.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.html">Promise</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.PromiseAdapter.html">PromiseAdapter</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_PromiseAdapterInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_PromiseAdapterInterface .collapse">
+        <h1>PromiseAdapterInterface<a href="../classes/React.Promise.PromiseAdapter.PromiseAdapterInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseAdapter.PromiseAdapterInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_CallbackPromiseAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallbackPromiseAdapter .collapse">
+        <h1>CallbackPromiseAdapter<a href="../classes/React.Promise.PromiseAdapter.CallbackPromiseAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.PromiseAdapter.CallbackPromiseAdapter.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.html">Promise</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Promise.Timer.html">Timer</a>
+    </li>
+
+        </ul>
+
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-function"></i> Functions</h3>
+                                        <div id="function_reject" class="element ajax clickable function" data-toggle="collapse" data-target="#function_reject .collapse">
+        <h1>reject<a href="../namespaces/React.Promise.Timer.html#function_reject">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$time</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$loop</h4>
+                                                <code><a href="../classes/React.EventLoop.LoopInterface.html">\React\EventLoop\LoopInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.Timer.html#function_reject" class="more">« More »</a>    </div>
+
+                                        <div id="function_resolve" class="element ajax clickable function" data-toggle="collapse" data-target="#function_resolve .collapse">
+        <h1>resolve<a href="../namespaces/React.Promise.Timer.html#function_resolve">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$time</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$loop</h4>
+                                                <code><a href="../classes/React.EventLoop.LoopInterface.html">\React\EventLoop\LoopInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.Timer.html#function_resolve" class="more">« More »</a>    </div>
+
+                                        <div id="function_timeout" class="element ajax clickable function" data-toggle="collapse" data-target="#function_timeout .collapse">
+        <h1>timeout<a href="../namespaces/React.Promise.Timer.html#function_timeout">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promise</h4>
+                                                <code><a href="../classes/React.Promise.PromiseInterface.html">\React\Promise\PromiseInterface</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$time</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$loop</h4>
+                                                <code><a href="../classes/React.EventLoop.LoopInterface.html">\React\EventLoop\LoopInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/React.Promise.Timer.html#function_timeout" class="more">« More »</a>    </div>
+
+                            </div>
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_TimeoutException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TimeoutException .collapse">
+        <h1>TimeoutException<a href="../classes/React.Promise.Timer.TimeoutException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Promise.Timer.TimeoutException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:57 +0200.<br/>
+    </footer>
+    </body>
+</html>

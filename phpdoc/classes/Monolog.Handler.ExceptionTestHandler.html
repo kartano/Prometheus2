@@ -1,0 +1,2684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Monolog\Handler\ExceptionTestHandler
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public inherited">
+        <a href="#method___call" title="__call :: ">
+            <span class="description"></span><pre>__call</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method___construct" title="__construct :: ">
+            <span class="description"></span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method___destruct" title="__destruct :: ">
+            <span class="description"></span><pre>__destruct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_clear" title="clear :: ">
+            <span class="description"></span><pre>clear</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_close" title="close :: Closes the handler.">
+            <span class="description">Closes the handler.</span><pre>close</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_getBubble" title="getBubble :: Gets the bubbling behavior.">
+            <span class="description">Gets the bubbling behavior.</span><pre>getBubble</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public inherited">
+        <a href="#method_getFormatter" title="getFormatter :: Gets the formatter.">
+            <span class="description">Gets the formatter.</span><pre>getFormatter</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_getLevel" title="getLevel :: Gets minimum logging level at which this handler will be triggered.">
+            <span class="description">Gets minimum logging level at which this handler will be triggered.</span><pre>getLevel</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_getRecords" title="getRecords :: ">
+            <span class="description"></span><pre>getRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_handle" title="handle :: {@inheritdoc}">
+            <span class="description">{@inheritdoc}</span><pre>handle</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_handleBatch" title="handleBatch :: Handles a set of records at once.">
+            <span class="description">Handles a set of records at once.</span><pre>handleBatch</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasAlert" title="hasAlert :: ">
+            <span class="description"></span><pre>hasAlert</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasAlertRecords" title="hasAlertRecords :: ">
+            <span class="description"></span><pre>hasAlertRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasAlertThatContains" title="hasAlertThatContains :: ">
+            <span class="description"></span><pre>hasAlertThatContains</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasAlertThatMatches" title="hasAlertThatMatches :: ">
+            <span class="description"></span><pre>hasAlertThatMatches</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasAlertThatPasses" title="hasAlertThatPasses :: ">
+            <span class="description"></span><pre>hasAlertThatPasses</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasCritical" title="hasCritical :: ">
+            <span class="description"></span><pre>hasCritical</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasCriticalRecords" title="hasCriticalRecords :: ">
+            <span class="description"></span><pre>hasCriticalRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasCriticalThatContains" title="hasCriticalThatContains :: ">
+            <span class="description"></span><pre>hasCriticalThatContains</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasCriticalThatMatches" title="hasCriticalThatMatches :: ">
+            <span class="description"></span><pre>hasCriticalThatMatches</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasCriticalThatPasses" title="hasCriticalThatPasses :: ">
+            <span class="description"></span><pre>hasCriticalThatPasses</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasDebug" title="hasDebug :: ">
+            <span class="description"></span><pre>hasDebug</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasDebugRecords" title="hasDebugRecords :: ">
+            <span class="description"></span><pre>hasDebugRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasDebugThatContains" title="hasDebugThatContains :: ">
+            <span class="description"></span><pre>hasDebugThatContains</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasDebugThatMatches" title="hasDebugThatMatches :: ">
+            <span class="description"></span><pre>hasDebugThatMatches</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasDebugThatPasses" title="hasDebugThatPasses :: ">
+            <span class="description"></span><pre>hasDebugThatPasses</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasEmergency" title="hasEmergency :: ">
+            <span class="description"></span><pre>hasEmergency</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasEmergencyRecords" title="hasEmergencyRecords :: ">
+            <span class="description"></span><pre>hasEmergencyRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasEmergencyThatContains" title="hasEmergencyThatContains :: ">
+            <span class="description"></span><pre>hasEmergencyThatContains</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasEmergencyThatMatches" title="hasEmergencyThatMatches :: ">
+            <span class="description"></span><pre>hasEmergencyThatMatches</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasEmergencyThatPasses" title="hasEmergencyThatPasses :: ">
+            <span class="description"></span><pre>hasEmergencyThatPasses</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasError" title="hasError :: ">
+            <span class="description"></span><pre>hasError</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasErrorRecords" title="hasErrorRecords :: ">
+            <span class="description"></span><pre>hasErrorRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasErrorThatContains" title="hasErrorThatContains :: ">
+            <span class="description"></span><pre>hasErrorThatContains</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasErrorThatMatches" title="hasErrorThatMatches :: ">
+            <span class="description"></span><pre>hasErrorThatMatches</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasErrorThatPasses" title="hasErrorThatPasses :: ">
+            <span class="description"></span><pre>hasErrorThatPasses</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasInfo" title="hasInfo :: ">
+            <span class="description"></span><pre>hasInfo</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasInfoRecords" title="hasInfoRecords :: ">
+            <span class="description"></span><pre>hasInfoRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasInfoThatContains" title="hasInfoThatContains :: ">
+            <span class="description"></span><pre>hasInfoThatContains</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasInfoThatMatches" title="hasInfoThatMatches :: ">
+            <span class="description"></span><pre>hasInfoThatMatches</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasInfoThatPasses" title="hasInfoThatPasses :: ">
+            <span class="description"></span><pre>hasInfoThatPasses</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasNotice" title="hasNotice :: ">
+            <span class="description"></span><pre>hasNotice</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasNoticeRecords" title="hasNoticeRecords :: ">
+            <span class="description"></span><pre>hasNoticeRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasNoticeThatContains" title="hasNoticeThatContains :: ">
+            <span class="description"></span><pre>hasNoticeThatContains</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasNoticeThatMatches" title="hasNoticeThatMatches :: ">
+            <span class="description"></span><pre>hasNoticeThatMatches</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasNoticeThatPasses" title="hasNoticeThatPasses :: ">
+            <span class="description"></span><pre>hasNoticeThatPasses</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasRecord" title="hasRecord :: ">
+            <span class="description"></span><pre>hasRecord</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasRecords" title="hasRecords :: ">
+            <span class="description"></span><pre>hasRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasRecordThatContains" title="hasRecordThatContains :: ">
+            <span class="description"></span><pre>hasRecordThatContains</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasRecordThatMatches" title="hasRecordThatMatches :: ">
+            <span class="description"></span><pre>hasRecordThatMatches</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasRecordThatPasses" title="hasRecordThatPasses :: ">
+            <span class="description"></span><pre>hasRecordThatPasses</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasWarning" title="hasWarning :: ">
+            <span class="description"></span><pre>hasWarning</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasWarningRecords" title="hasWarningRecords :: ">
+            <span class="description"></span><pre>hasWarningRecords</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasWarningThatContains" title="hasWarningThatContains :: ">
+            <span class="description"></span><pre>hasWarningThatContains</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasWarningThatMatches" title="hasWarningThatMatches :: ">
+            <span class="description"></span><pre>hasWarningThatMatches</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_hasWarningThatPasses" title="hasWarningThatPasses :: ">
+            <span class="description"></span><pre>hasWarningThatPasses</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_isHandling" title="isHandling :: Checks whether the given record will be handled by this handler.">
+            <span class="description">Checks whether the given record will be handled by this handler.</span><pre>isHandling</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_popProcessor" title="popProcessor :: Removes the processor on top of the stack and returns it.">
+            <span class="description">Removes the processor on top of the stack and returns it.</span><pre>popProcessor</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public inherited">
+        <a href="#method_pushProcessor" title="pushProcessor :: Adds a processor in the stack.">
+            <span class="description">Adds a processor in the stack.</span><pre>pushProcessor</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_setBubble" title="setBubble :: Sets the bubbling behavior.">
+            <span class="description">Sets the bubbling behavior.</span><pre>setBubble</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_setFormatter" title="setFormatter :: Sets the formatter.">
+            <span class="description">Sets the formatter.</span><pre>setFormatter</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_setLevel" title="setLevel :: Sets minimum logging level at which this handler will be triggered.">
+            <span class="description">Sets minimum logging level at which this handler will be triggered.</span><pre>setLevel</pre>
+        </a>
+    </li>
+
+                                                                                                        </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                    <li class="method protected inherited">
+                            <a href="#method_getDefaultFormatter" title="getDefaultFormatter :: Gets the default formatter.">
+                                <span class="description">Gets the default formatter.</span><pre>getDefaultFormatter</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method protected inherited">
+                            <a href="#method_processRecord" title="processRecord :: Processes a record.">
+                                <span class="description">Processes a record.</span><pre>processRecord</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method protected inherited">
+                            <a href="#method_write" title="write :: Writes the record down to the log of the implementing handler">
+                                <span class="description">Writes the record down to the log of the implementing handler</span><pre>write</pre>
+                            </a>
+                        </li>
+                                                </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>ExceptionTestHandler</h1>
+                <small style="display: block; text-align: right">
+                                            Extends <a href="../classes/Monolog.Handler.TestHandler.html">\Monolog\Handler\TestHandler</a>
+                                                        </small>
+                <p class="short_description">Used for testing purposes.</p>
+                <div class="details">
+                    <div class="long_description">
+                        <p>It records all records and gives you access to them for verification.</p>
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___call"></a>
+                        <div class="element clickable method public  method___call inherited" data-toggle="collapse" data-target=".method___call .collapse">
+                            <h2>__call</h2>
+                            <pre>__call( $method,  $args) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$args</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>__construct</h2>
+                            <pre>__construct(integer $level = \Monolog\Logger::DEBUG, Boolean $bubble = true) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$level</h4>
+                                                <code>integer</code><p><p>The minimum logging level at which this handler will be triggered</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$bubble</h4>
+                                                <code>Boolean</code><p><p>Whether the messages that are handled can bubble up the stack or not</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___destruct"></a>
+                        <div class="element clickable method public  method___destruct inherited" data-toggle="collapse" data-target=".method___destruct .collapse">
+                            <h2>__destruct</h2>
+                            <pre>__destruct() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_clear"></a>
+                        <div class="element clickable method public  method_clear inherited" data-toggle="collapse" data-target=".method_clear .collapse">
+                            <h2>clear</h2>
+                            <pre>clear() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_close"></a>
+                        <div class="element clickable method public  method_close inherited" data-toggle="collapse" data-target=".method_close .collapse">
+                            <h2>Closes the handler.</h2>
+                            <pre>close() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This will be called automatically when the object is destroyed</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getBubble"></a>
+                        <div class="element clickable method public  method_getBubble inherited" data-toggle="collapse" data-target=".method_getBubble .collapse">
+                            <h2>Gets the bubbling behavior.</h2>
+                            <pre>getBubble() : Boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>Boolean</code><p><p>true means that this handler allows bubbling.
+false means that bubbling is not permitted.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getDefaultFormatter"></a>
+                        <div class="element clickable method protected  method_getDefaultFormatter inherited" data-toggle="collapse" data-target=".method_getDefaultFormatter .collapse">
+                            <h2>Gets the default formatter.</h2>
+                            <pre>getDefaultFormatter() : \Monolog\Formatter\FormatterInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Monolog.Formatter.FormatterInterface.html">\Monolog\Formatter\FormatterInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getFormatter"></a>
+                        <div class="element clickable method public  method_getFormatter inherited" data-toggle="collapse" data-target=".method_getFormatter .collapse">
+                            <h2>Gets the formatter.</h2>
+                            <pre>getFormatter() : \Monolog\Formatter\FormatterInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Monolog.Formatter.FormatterInterface.html">\Monolog\Formatter\FormatterInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getLevel"></a>
+                        <div class="element clickable method public  method_getLevel inherited" data-toggle="collapse" data-target=".method_getLevel .collapse">
+                            <h2>Gets minimum logging level at which this handler will be triggered.</h2>
+                            <pre>getLevel() : integer</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getRecords"></a>
+                        <div class="element clickable method public  method_getRecords inherited" data-toggle="collapse" data-target=".method_getRecords .collapse">
+                            <h2>getRecords</h2>
+                            <pre>getRecords() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handle"></a>
+                        <div class="element clickable method public  method_handle inherited" data-toggle="collapse" data-target=".method_handle .collapse">
+                            <h2>{@inheritdoc}</h2>
+                            <pre>handle(array $record) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleBatch"></a>
+                        <div class="element clickable method public  method_handleBatch inherited" data-toggle="collapse" data-target=".method_handleBatch .collapse">
+                            <h2>Handles a set of records at once.</h2>
+                            <pre>handleBatch(array $records) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$records</h4>
+                                                <code>array</code><p><p>The records to handle (an array of record arrays)</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasAlert"></a>
+                        <div class="element clickable method public  method_hasAlert inherited" data-toggle="collapse" data-target=".method_hasAlert .collapse">
+                            <h2>hasAlert</h2>
+                            <pre>hasAlert(mixed $record) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasAlertRecords"></a>
+                        <div class="element clickable method public  method_hasAlertRecords inherited" data-toggle="collapse" data-target=".method_hasAlertRecords .collapse">
+                            <h2>hasAlertRecords</h2>
+                            <pre>hasAlertRecords() : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasAlertThatContains"></a>
+                        <div class="element clickable method public  method_hasAlertThatContains inherited" data-toggle="collapse" data-target=".method_hasAlertThatContains .collapse">
+                            <h2>hasAlertThatContains</h2>
+                            <pre>hasAlertThatContains(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasAlertThatMatches"></a>
+                        <div class="element clickable method public  method_hasAlertThatMatches inherited" data-toggle="collapse" data-target=".method_hasAlertThatMatches .collapse">
+                            <h2>hasAlertThatMatches</h2>
+                            <pre>hasAlertThatMatches(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasAlertThatPasses"></a>
+                        <div class="element clickable method public  method_hasAlertThatPasses inherited" data-toggle="collapse" data-target=".method_hasAlertThatPasses .collapse">
+                            <h2>hasAlertThatPasses</h2>
+                            <pre>hasAlertThatPasses(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasCritical"></a>
+                        <div class="element clickable method public  method_hasCritical inherited" data-toggle="collapse" data-target=".method_hasCritical .collapse">
+                            <h2>hasCritical</h2>
+                            <pre>hasCritical(mixed $record) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasCriticalRecords"></a>
+                        <div class="element clickable method public  method_hasCriticalRecords inherited" data-toggle="collapse" data-target=".method_hasCriticalRecords .collapse">
+                            <h2>hasCriticalRecords</h2>
+                            <pre>hasCriticalRecords() : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasCriticalThatContains"></a>
+                        <div class="element clickable method public  method_hasCriticalThatContains inherited" data-toggle="collapse" data-target=".method_hasCriticalThatContains .collapse">
+                            <h2>hasCriticalThatContains</h2>
+                            <pre>hasCriticalThatContains(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasCriticalThatMatches"></a>
+                        <div class="element clickable method public  method_hasCriticalThatMatches inherited" data-toggle="collapse" data-target=".method_hasCriticalThatMatches .collapse">
+                            <h2>hasCriticalThatMatches</h2>
+                            <pre>hasCriticalThatMatches(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasCriticalThatPasses"></a>
+                        <div class="element clickable method public  method_hasCriticalThatPasses inherited" data-toggle="collapse" data-target=".method_hasCriticalThatPasses .collapse">
+                            <h2>hasCriticalThatPasses</h2>
+                            <pre>hasCriticalThatPasses(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasDebug"></a>
+                        <div class="element clickable method public  method_hasDebug inherited" data-toggle="collapse" data-target=".method_hasDebug .collapse">
+                            <h2>hasDebug</h2>
+                            <pre>hasDebug(mixed $record) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasDebugRecords"></a>
+                        <div class="element clickable method public  method_hasDebugRecords inherited" data-toggle="collapse" data-target=".method_hasDebugRecords .collapse">
+                            <h2>hasDebugRecords</h2>
+                            <pre>hasDebugRecords() : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasDebugThatContains"></a>
+                        <div class="element clickable method public  method_hasDebugThatContains inherited" data-toggle="collapse" data-target=".method_hasDebugThatContains .collapse">
+                            <h2>hasDebugThatContains</h2>
+                            <pre>hasDebugThatContains(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasDebugThatMatches"></a>
+                        <div class="element clickable method public  method_hasDebugThatMatches inherited" data-toggle="collapse" data-target=".method_hasDebugThatMatches .collapse">
+                            <h2>hasDebugThatMatches</h2>
+                            <pre>hasDebugThatMatches(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasDebugThatPasses"></a>
+                        <div class="element clickable method public  method_hasDebugThatPasses inherited" data-toggle="collapse" data-target=".method_hasDebugThatPasses .collapse">
+                            <h2>hasDebugThatPasses</h2>
+                            <pre>hasDebugThatPasses(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasEmergency"></a>
+                        <div class="element clickable method public  method_hasEmergency inherited" data-toggle="collapse" data-target=".method_hasEmergency .collapse">
+                            <h2>hasEmergency</h2>
+                            <pre>hasEmergency(mixed $record) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasEmergencyRecords"></a>
+                        <div class="element clickable method public  method_hasEmergencyRecords inherited" data-toggle="collapse" data-target=".method_hasEmergencyRecords .collapse">
+                            <h2>hasEmergencyRecords</h2>
+                            <pre>hasEmergencyRecords() : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasEmergencyThatContains"></a>
+                        <div class="element clickable method public  method_hasEmergencyThatContains inherited" data-toggle="collapse" data-target=".method_hasEmergencyThatContains .collapse">
+                            <h2>hasEmergencyThatContains</h2>
+                            <pre>hasEmergencyThatContains(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasEmergencyThatMatches"></a>
+                        <div class="element clickable method public  method_hasEmergencyThatMatches inherited" data-toggle="collapse" data-target=".method_hasEmergencyThatMatches .collapse">
+                            <h2>hasEmergencyThatMatches</h2>
+                            <pre>hasEmergencyThatMatches(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasEmergencyThatPasses"></a>
+                        <div class="element clickable method public  method_hasEmergencyThatPasses inherited" data-toggle="collapse" data-target=".method_hasEmergencyThatPasses .collapse">
+                            <h2>hasEmergencyThatPasses</h2>
+                            <pre>hasEmergencyThatPasses(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasError"></a>
+                        <div class="element clickable method public  method_hasError inherited" data-toggle="collapse" data-target=".method_hasError .collapse">
+                            <h2>hasError</h2>
+                            <pre>hasError(mixed $record) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasErrorRecords"></a>
+                        <div class="element clickable method public  method_hasErrorRecords inherited" data-toggle="collapse" data-target=".method_hasErrorRecords .collapse">
+                            <h2>hasErrorRecords</h2>
+                            <pre>hasErrorRecords() : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasErrorThatContains"></a>
+                        <div class="element clickable method public  method_hasErrorThatContains inherited" data-toggle="collapse" data-target=".method_hasErrorThatContains .collapse">
+                            <h2>hasErrorThatContains</h2>
+                            <pre>hasErrorThatContains(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasErrorThatMatches"></a>
+                        <div class="element clickable method public  method_hasErrorThatMatches inherited" data-toggle="collapse" data-target=".method_hasErrorThatMatches .collapse">
+                            <h2>hasErrorThatMatches</h2>
+                            <pre>hasErrorThatMatches(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasErrorThatPasses"></a>
+                        <div class="element clickable method public  method_hasErrorThatPasses inherited" data-toggle="collapse" data-target=".method_hasErrorThatPasses .collapse">
+                            <h2>hasErrorThatPasses</h2>
+                            <pre>hasErrorThatPasses(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasInfo"></a>
+                        <div class="element clickable method public  method_hasInfo inherited" data-toggle="collapse" data-target=".method_hasInfo .collapse">
+                            <h2>hasInfo</h2>
+                            <pre>hasInfo(mixed $record) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasInfoRecords"></a>
+                        <div class="element clickable method public  method_hasInfoRecords inherited" data-toggle="collapse" data-target=".method_hasInfoRecords .collapse">
+                            <h2>hasInfoRecords</h2>
+                            <pre>hasInfoRecords() : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasInfoThatContains"></a>
+                        <div class="element clickable method public  method_hasInfoThatContains inherited" data-toggle="collapse" data-target=".method_hasInfoThatContains .collapse">
+                            <h2>hasInfoThatContains</h2>
+                            <pre>hasInfoThatContains(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasInfoThatMatches"></a>
+                        <div class="element clickable method public  method_hasInfoThatMatches inherited" data-toggle="collapse" data-target=".method_hasInfoThatMatches .collapse">
+                            <h2>hasInfoThatMatches</h2>
+                            <pre>hasInfoThatMatches(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasInfoThatPasses"></a>
+                        <div class="element clickable method public  method_hasInfoThatPasses inherited" data-toggle="collapse" data-target=".method_hasInfoThatPasses .collapse">
+                            <h2>hasInfoThatPasses</h2>
+                            <pre>hasInfoThatPasses(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasNotice"></a>
+                        <div class="element clickable method public  method_hasNotice inherited" data-toggle="collapse" data-target=".method_hasNotice .collapse">
+                            <h2>hasNotice</h2>
+                            <pre>hasNotice(mixed $record) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasNoticeRecords"></a>
+                        <div class="element clickable method public  method_hasNoticeRecords inherited" data-toggle="collapse" data-target=".method_hasNoticeRecords .collapse">
+                            <h2>hasNoticeRecords</h2>
+                            <pre>hasNoticeRecords() : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasNoticeThatContains"></a>
+                        <div class="element clickable method public  method_hasNoticeThatContains inherited" data-toggle="collapse" data-target=".method_hasNoticeThatContains .collapse">
+                            <h2>hasNoticeThatContains</h2>
+                            <pre>hasNoticeThatContains(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasNoticeThatMatches"></a>
+                        <div class="element clickable method public  method_hasNoticeThatMatches inherited" data-toggle="collapse" data-target=".method_hasNoticeThatMatches .collapse">
+                            <h2>hasNoticeThatMatches</h2>
+                            <pre>hasNoticeThatMatches(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasNoticeThatPasses"></a>
+                        <div class="element clickable method public  method_hasNoticeThatPasses inherited" data-toggle="collapse" data-target=".method_hasNoticeThatPasses .collapse">
+                            <h2>hasNoticeThatPasses</h2>
+                            <pre>hasNoticeThatPasses(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasRecord"></a>
+                        <div class="element clickable method public  method_hasRecord inherited" data-toggle="collapse" data-target=".method_hasRecord .collapse">
+                            <h2>hasRecord</h2>
+                            <pre>hasRecord( $record,  $level) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$level</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasRecords"></a>
+                        <div class="element clickable method public  method_hasRecords inherited" data-toggle="collapse" data-target=".method_hasRecords .collapse">
+                            <h2>hasRecords</h2>
+                            <pre>hasRecords( $level) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$level</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasRecordThatContains"></a>
+                        <div class="element clickable method public  method_hasRecordThatContains inherited" data-toggle="collapse" data-target=".method_hasRecordThatContains .collapse">
+                            <h2>hasRecordThatContains</h2>
+                            <pre>hasRecordThatContains( $message,  $level) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$level</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasRecordThatMatches"></a>
+                        <div class="element clickable method public  method_hasRecordThatMatches inherited" data-toggle="collapse" data-target=".method_hasRecordThatMatches .collapse">
+                            <h2>hasRecordThatMatches</h2>
+                            <pre>hasRecordThatMatches( $regex,  $level) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$regex</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$level</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasRecordThatPasses"></a>
+                        <div class="element clickable method public  method_hasRecordThatPasses inherited" data-toggle="collapse" data-target=".method_hasRecordThatPasses .collapse">
+                            <h2>hasRecordThatPasses</h2>
+                            <pre>hasRecordThatPasses( $predicate,  $level) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$predicate</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$level</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasWarning"></a>
+                        <div class="element clickable method public  method_hasWarning inherited" data-toggle="collapse" data-target=".method_hasWarning .collapse">
+                            <h2>hasWarning</h2>
+                            <pre>hasWarning(mixed $record) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasWarningRecords"></a>
+                        <div class="element clickable method public  method_hasWarningRecords inherited" data-toggle="collapse" data-target=".method_hasWarningRecords .collapse">
+                            <h2>hasWarningRecords</h2>
+                            <pre>hasWarningRecords() : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasWarningThatContains"></a>
+                        <div class="element clickable method public  method_hasWarningThatContains inherited" data-toggle="collapse" data-target=".method_hasWarningThatContains .collapse">
+                            <h2>hasWarningThatContains</h2>
+                            <pre>hasWarningThatContains(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasWarningThatMatches"></a>
+                        <div class="element clickable method public  method_hasWarningThatMatches inherited" data-toggle="collapse" data-target=".method_hasWarningThatMatches .collapse">
+                            <h2>hasWarningThatMatches</h2>
+                            <pre>hasWarningThatMatches(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasWarningThatPasses"></a>
+                        <div class="element clickable method public  method_hasWarningThatPasses inherited" data-toggle="collapse" data-target=".method_hasWarningThatPasses .collapse">
+                            <h2>hasWarningThatPasses</h2>
+                            <pre>hasWarningThatPasses(mixed $message) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isHandling"></a>
+                        <div class="element clickable method public  method_isHandling inherited" data-toggle="collapse" data-target=".method_isHandling .collapse">
+                            <h2>Checks whether the given record will be handled by this handler.</h2>
+                            <pre>isHandling(array $record) : Boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This is mostly done for performance reasons, to avoid calling processors for nothing.</p>
+<p>Handlers should still check the record levels within handle(), returning false in isHandling()
+is no guarantee that handle() will not be called, and isHandling() might not be called
+for a given record.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>array</code><p><p>Partial log record containing only a level key</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>Boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_popProcessor"></a>
+                        <div class="element clickable method public  method_popProcessor inherited" data-toggle="collapse" data-target=".method_popProcessor .collapse">
+                            <h2>Removes the processor on top of the stack and returns it.</h2>
+                            <pre>popProcessor() : callable</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>callable</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_processRecord"></a>
+                        <div class="element clickable method protected  method_processRecord inherited" data-toggle="collapse" data-target=".method_processRecord .collapse">
+                            <h2>Processes a record.</h2>
+                            <pre>processRecord(array $record) : array</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_pushProcessor"></a>
+                        <div class="element clickable method public  method_pushProcessor inherited" data-toggle="collapse" data-target=".method_pushProcessor .collapse">
+                            <h2>Adds a processor in the stack.</h2>
+                            <pre>pushProcessor(callable $callback) : self</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>self</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setBubble"></a>
+                        <div class="element clickable method public  method_setBubble inherited" data-toggle="collapse" data-target=".method_setBubble .collapse">
+                            <h2>Sets the bubbling behavior.</h2>
+                            <pre>setBubble(Boolean $bubble) : self</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$bubble</h4>
+                                                <code>Boolean</code><p><p>true means that this handler allows bubbling.
+false means that bubbling is not permitted.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>self</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setFormatter"></a>
+                        <div class="element clickable method public  method_setFormatter inherited" data-toggle="collapse" data-target=".method_setFormatter .collapse">
+                            <h2>Sets the formatter.</h2>
+                            <pre>setFormatter(\Monolog\Formatter\FormatterInterface $formatter) : self</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$formatter</h4>
+                                                <code><a href="../classes/Monolog.Formatter.FormatterInterface.html">\Monolog\Formatter\FormatterInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>self</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setLevel"></a>
+                        <div class="element clickable method public  method_setLevel inherited" data-toggle="collapse" data-target=".method_setLevel .collapse">
+                            <h2>Sets minimum logging level at which this handler will be triggered.</h2>
+                            <pre>setLevel(integer|string $level) : self</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$level</h4>
+                                                <code>integer|string</code><p><p>Level or level name</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>self</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_write"></a>
+                        <div class="element clickable method protected  method_write inherited" data-toggle="collapse" data-target=".method_write .collapse">
+                            <h2>Writes the record down to the log of the implementing handler</h2>
+                            <pre>write(array $record) : void</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$record</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_records"> </a>
+                            <div class="element clickable property  protected property_records inherited" data-toggle="collapse" data-target=".property_records .collapse">
+                                <h2>records</h2>
+                                <pre>records : </pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_recordsByLevel"> </a>
+                            <div class="element clickable property  protected property_recordsByLevel inherited" data-toggle="collapse" data-target=".property_recordsByLevel .collapse">
+                                <h2>recordsByLevel</h2>
+                                <pre>recordsByLevel : </pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_level"> </a>
+                            <div class="element clickable property  protected property_level inherited" data-toggle="collapse" data-target=".property_level .collapse">
+                                <h2>level</h2>
+                                <pre>level : </pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_bubble"> </a>
+                            <div class="element clickable property  protected property_bubble inherited" data-toggle="collapse" data-target=".property_bubble .collapse">
+                                <h2>bubble</h2>
+                                <pre>bubble : </pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_formatter"> </a>
+                            <div class="element clickable property  protected property_formatter inherited" data-toggle="collapse" data-target=".property_formatter .collapse">
+                                <h2>formatter</h2>
+                                <pre>formatter : \Monolog\Formatter\FormatterInterface</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Monolog.Formatter.FormatterInterface.html">\Monolog\Formatter\FormatterInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_processors"> </a>
+                            <div class="element clickable property  protected property_processors inherited" data-toggle="collapse" data-target=".property_processors .collapse">
+                                <h2>processors</h2>
+                                <pre>processors : </pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Monolog\Handler\ExceptionTestHandler"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Monolog.Handler.html">Handler</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Monolog.Handler.ExceptionTestHandler.html">ExceptionTestHandler</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:01 +0200.<br/>
+    </footer>
+    </body>
+</html>

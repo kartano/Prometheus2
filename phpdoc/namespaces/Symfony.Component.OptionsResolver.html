@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Symfony\Component\OptionsResolver
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Symfony.Component.OptionsResolver.html" title="OptionsResolver">
+                    <i class="icon-th"></i> OptionsResolver
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/Symfony.Component.OptionsResolver.Exception.html" title="Exception">
+            <i class="icon-th"></i> Exception
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.OptionsResolver.Tests.html" title="Tests">
+            <i class="icon-th"></i> Tests
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.OptionsResolver.html">OptionsResolver</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_Options" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_Options .collapse">
+        <h1>Options<a href="../classes/Symfony.Component.OptionsResolver.Options.html">¶</a></h1>
+        <p class="short_description">Contains resolved option values.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Options.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_OptionsResolver" class="element ajax clickable class" data-toggle="collapse" data-target="#class_OptionsResolver .collapse">
+        <h1>OptionsResolver<a href="../classes/Symfony.Component.OptionsResolver.OptionsResolver.html">¶</a></h1>
+        <p class="short_description">Validates options and merges them with default values.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.OptionsResolver.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.OptionsResolver.html">OptionsResolver</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.OptionsResolver.Exception.html">Exception</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_ExceptionInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ExceptionInterface .collapse">
+        <h1>ExceptionInterface<a href="../classes/Symfony.Component.OptionsResolver.Exception.ExceptionInterface.html">¶</a></h1>
+        <p class="short_description">Marker interface for all exceptions thrown by the OptionsResolver component.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Exception.ExceptionInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_AccessException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AccessException .collapse">
+        <h1>AccessException<a href="../classes/Symfony.Component.OptionsResolver.Exception.AccessException.html">¶</a></h1>
+        <p class="short_description">Thrown when trying to read an option outside of or write it inside of
+{@link \Symfony\Component\OptionsResolver\Options::resolve()}.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Exception.AccessException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_InvalidArgumentException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InvalidArgumentException .collapse">
+        <h1>InvalidArgumentException<a href="../classes/Symfony.Component.OptionsResolver.Exception.InvalidArgumentException.html">¶</a></h1>
+        <p class="short_description">Thrown when an argument is invalid.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Exception.InvalidArgumentException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_InvalidOptionsException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InvalidOptionsException .collapse">
+        <h1>InvalidOptionsException<a href="../classes/Symfony.Component.OptionsResolver.Exception.InvalidOptionsException.html">¶</a></h1>
+        <p class="short_description">Thrown when the value of an option does not match its validation rules.</p>
+        <div class="details collapse">
+                            <p>You should make sure a valid value is passed to the option.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Exception.InvalidOptionsException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MissingOptionsException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MissingOptionsException .collapse">
+        <h1>MissingOptionsException<a href="../classes/Symfony.Component.OptionsResolver.Exception.MissingOptionsException.html">¶</a></h1>
+        <p class="short_description">Exception thrown when a required option is missing.</p>
+        <div class="details collapse">
+                            <p>Add the option to the passed options array.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Exception.MissingOptionsException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NoSuchOptionException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NoSuchOptionException .collapse">
+        <h1>NoSuchOptionException<a href="../classes/Symfony.Component.OptionsResolver.Exception.NoSuchOptionException.html">¶</a></h1>
+        <p class="short_description">Thrown when trying to read an option that has no value set.</p>
+        <div class="details collapse">
+                            <p>When accessing optional options from within a lazy option or normalizer you should first
+check whether the optional option is set. You can do this with <code>isset($options['optional'])</code>.
+In contrast to the <a href="../classes/Symfony.Component.OptionsResolver.Exception.UndefinedOptionsException.html">UndefinedOptionsException</a>, this is a runtime exception that can
+occur when evaluating lazy options.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Exception.NoSuchOptionException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_OptionDefinitionException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_OptionDefinitionException .collapse">
+        <h1>OptionDefinitionException<a href="../classes/Symfony.Component.OptionsResolver.Exception.OptionDefinitionException.html">¶</a></h1>
+        <p class="short_description">Thrown when two lazy options have a cyclic dependency.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Exception.OptionDefinitionException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UndefinedOptionsException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UndefinedOptionsException .collapse">
+        <h1>UndefinedOptionsException<a href="../classes/Symfony.Component.OptionsResolver.Exception.UndefinedOptionsException.html">¶</a></h1>
+        <p class="short_description">Exception thrown when an undefined option is passed.</p>
+        <div class="details collapse">
+                            <p>You should remove the options in question from your code or define them
+beforehand.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Exception.UndefinedOptionsException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.OptionsResolver.html">OptionsResolver</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.OptionsResolver.Tests.html">Tests</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_OptionsResolverTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_OptionsResolverTest .collapse">
+        <h1>OptionsResolverTest<a href="../classes/Symfony.Component.OptionsResolver.Tests.OptionsResolverTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.OptionsResolver.Tests.OptionsResolverTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:58 +0200.<br/>
+    </footer>
+    </body>
+</html>

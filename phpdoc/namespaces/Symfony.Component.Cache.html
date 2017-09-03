@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Symfony\Component\Cache
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Symfony.Component.Cache.html" title="Cache">
+                    <i class="icon-th"></i> Cache
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/Symfony.Component.Cache.Adapter.html" title="Adapter">
+            <i class="icon-th"></i> Adapter
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Cache.DataCollector.html" title="DataCollector">
+            <i class="icon-th"></i> DataCollector
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Cache.Exception.html" title="Exception">
+            <i class="icon-th"></i> Exception
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Cache.Simple.html" title="Simple">
+            <i class="icon-th"></i> Simple
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Cache.Tests.html" title="Tests">
+            <i class="icon-th"></i> Tests
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Symfony.Component.Cache.Tests.Adapter.html" title="Adapter">
+            <i class="icon-th"></i> Adapter
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Cache.Tests.Fixtures.html" title="Fixtures">
+            <i class="icon-th"></i> Fixtures
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Cache.Tests.Simple.html" title="Simple">
+            <i class="icon-th"></i> Simple
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.html">Cache</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CacheItem" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CacheItem .collapse">
+        <h1>CacheItem<a href="../classes/Symfony.Component.Cache.CacheItem.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.CacheItem.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DoctrineProvider" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DoctrineProvider .collapse">
+        <h1>DoctrineProvider<a href="../classes/Symfony.Component.Cache.DoctrineProvider.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.DoctrineProvider.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Simple.html">Simple</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_AbstractCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractCache .collapse">
+        <h1>AbstractCache<a href="../classes/Symfony.Component.Cache.Simple.AbstractCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.AbstractCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ApcuCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ApcuCache .collapse">
+        <h1>ApcuCache<a href="../classes/Symfony.Component.Cache.Simple.ApcuCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.ApcuCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ArrayCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayCache .collapse">
+        <h1>ArrayCache<a href="../classes/Symfony.Component.Cache.Simple.ArrayCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.ArrayCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChainCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChainCache .collapse">
+        <h1>ChainCache<a href="../classes/Symfony.Component.Cache.Simple.ChainCache.html">¶</a></h1>
+        <p class="short_description">Chains several caches together.</p>
+        <div class="details collapse">
+                            <p>Cached items are fetched from the first cache having them in its data store.
+They are saved and deleted in all caches at once.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.ChainCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DoctrineCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DoctrineCache .collapse">
+        <h1>DoctrineCache<a href="../classes/Symfony.Component.Cache.Simple.DoctrineCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.DoctrineCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FilesystemCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FilesystemCache .collapse">
+        <h1>FilesystemCache<a href="../classes/Symfony.Component.Cache.Simple.FilesystemCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.FilesystemCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemcachedCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemcachedCache .collapse">
+        <h1>MemcachedCache<a href="../classes/Symfony.Component.Cache.Simple.MemcachedCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.MemcachedCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NullCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NullCache .collapse">
+        <h1>NullCache<a href="../classes/Symfony.Component.Cache.Simple.NullCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.NullCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PdoCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PdoCache .collapse">
+        <h1>PdoCache<a href="../classes/Symfony.Component.Cache.Simple.PdoCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.PdoCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpArrayCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpArrayCache .collapse">
+        <h1>PhpArrayCache<a href="../classes/Symfony.Component.Cache.Simple.PhpArrayCache.html">¶</a></h1>
+        <p class="short_description">Caches items at warm up time using a PHP array that is stored in shared memory by OPCache since PHP 7.0.</p>
+        <div class="details collapse">
+                            <p>Warmed up items are read-only and run-time discovered items are cached using a fallback adapter.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.PhpArrayCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpFilesCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpFilesCache .collapse">
+        <h1>PhpFilesCache<a href="../classes/Symfony.Component.Cache.Simple.PhpFilesCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.PhpFilesCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Psr6Cache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Psr6Cache .collapse">
+        <h1>Psr6Cache<a href="../classes/Symfony.Component.Cache.Simple.Psr6Cache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.Psr6Cache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RedisCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RedisCache .collapse">
+        <h1>RedisCache<a href="../classes/Symfony.Component.Cache.Simple.RedisCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.RedisCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TraceableCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TraceableCache .collapse">
+        <h1>TraceableCache<a href="../classes/Symfony.Component.Cache.Simple.TraceableCache.html">¶</a></h1>
+        <p class="short_description">An adapter that collects data about all cache calls.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.TraceableCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TraceableCacheEvent" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TraceableCacheEvent .collapse">
+        <h1>TraceableCacheEvent<a href="../classes/Symfony.Component.Cache.Simple.TraceableCacheEvent.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Simple.TraceableCacheEvent.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Tests.html">Tests</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CacheItemTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CacheItemTest .collapse">
+        <h1>CacheItemTest<a href="../classes/Symfony.Component.Cache.Tests.CacheItemTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.CacheItemTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DoctrineProviderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DoctrineProviderTest .collapse">
+        <h1>DoctrineProviderTest<a href="../classes/Symfony.Component.Cache.Tests.DoctrineProviderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.DoctrineProviderTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Tests.Simple.html">Simple</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_AbstractRedisCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractRedisCacheTest .collapse">
+        <h1>AbstractRedisCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.AbstractRedisCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.AbstractRedisCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ApcuCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ApcuCacheTest .collapse">
+        <h1>ApcuCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.ApcuCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.ApcuCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ArrayCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayCacheTest .collapse">
+        <h1>ArrayCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.ArrayCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.ArrayCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CacheTestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CacheTestCase .collapse">
+        <h1>CacheTestCase<a href="../classes/Symfony.Component.Cache.Tests.Simple.CacheTestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.CacheTestCase.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChainCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChainCacheTest .collapse">
+        <h1>ChainCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.ChainCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.ChainCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DoctrineCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DoctrineCacheTest .collapse">
+        <h1>DoctrineCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.DoctrineCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.DoctrineCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FilesystemCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FilesystemCacheTest .collapse">
+        <h1>FilesystemCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.FilesystemCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.FilesystemCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemcachedCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemcachedCacheTest .collapse">
+        <h1>MemcachedCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.MemcachedCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.MemcachedCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NotUnserializable" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NotUnserializable .collapse">
+        <h1>NotUnserializable<a href="../classes/Symfony.Component.Cache.Tests.Simple.NotUnserializable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.NotUnserializable.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NullCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NullCacheTest .collapse">
+        <h1>NullCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.NullCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.NullCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PdoCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PdoCacheTest .collapse">
+        <h1>PdoCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.PdoCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.PdoCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PdoDbalCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PdoDbalCacheTest .collapse">
+        <h1>PdoDbalCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.PdoDbalCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.PdoDbalCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpArrayCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpArrayCacheTest .collapse">
+        <h1>PhpArrayCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.PhpArrayCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.PhpArrayCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpArrayCacheWithFallbackTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpArrayCacheWithFallbackTest .collapse">
+        <h1>PhpArrayCacheWithFallbackTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.PhpArrayCacheWithFallbackTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.PhpArrayCacheWithFallbackTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpArrayCacheWrapper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpArrayCacheWrapper .collapse">
+        <h1>PhpArrayCacheWrapper<a href="../classes/Symfony.Component.Cache.Tests.Simple.PhpArrayCacheWrapper.html">¶</a></h1>
+        <p class="short_description">Caches items at warm up time using a PHP array that is stored in shared memory by OPCache since PHP 7.0.</p>
+        <div class="details collapse">
+                            <p>Warmed up items are read-only and run-time discovered items are cached using a fallback adapter.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.PhpArrayCacheWrapper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpFilesCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpFilesCacheTest .collapse">
+        <h1>PhpFilesCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.PhpFilesCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.PhpFilesCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Psr6CacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Psr6CacheTest .collapse">
+        <h1>Psr6CacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.Psr6CacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.Psr6CacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RedisArrayCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RedisArrayCacheTest .collapse">
+        <h1>RedisArrayCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.RedisArrayCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.RedisArrayCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RedisCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RedisCacheTest .collapse">
+        <h1>RedisCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.RedisCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.RedisCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TraceableCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TraceableCacheTest .collapse">
+        <h1>TraceableCacheTest<a href="../classes/Symfony.Component.Cache.Tests.Simple.TraceableCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Simple.TraceableCacheTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Tests.Adapter.html">Adapter</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_AbstractRedisAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractRedisAdapterTest .collapse">
+        <h1>AbstractRedisAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.AbstractRedisAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.AbstractRedisAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_AdapterTestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AdapterTestCase .collapse">
+        <h1>AdapterTestCase<a href="../classes/Symfony.Component.Cache.Tests.Adapter.AdapterTestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.AdapterTestCase.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ApcuAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ApcuAdapterTest .collapse">
+        <h1>ApcuAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.ApcuAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.ApcuAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ArrayAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayAdapterTest .collapse">
+        <h1>ArrayAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.ArrayAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.ArrayAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChainAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChainAdapterTest .collapse">
+        <h1>ChainAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.ChainAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.ChainAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DoctrineAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DoctrineAdapterTest .collapse">
+        <h1>DoctrineAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.DoctrineAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.DoctrineAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FilesystemAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FilesystemAdapterTest .collapse">
+        <h1>FilesystemAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.FilesystemAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.FilesystemAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MaxIdLengthAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MaxIdLengthAdapter .collapse">
+        <h1>MaxIdLengthAdapter<a href="../classes/Symfony.Component.Cache.Tests.Adapter.MaxIdLengthAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.MaxIdLengthAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MaxIdLengthAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MaxIdLengthAdapterTest .collapse">
+        <h1>MaxIdLengthAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.MaxIdLengthAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.MaxIdLengthAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemcachedAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemcachedAdapterTest .collapse">
+        <h1>MemcachedAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.MemcachedAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.MemcachedAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NamespacedProxyAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NamespacedProxyAdapterTest .collapse">
+        <h1>NamespacedProxyAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.NamespacedProxyAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.NamespacedProxyAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NotUnserializable" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NotUnserializable .collapse">
+        <h1>NotUnserializable<a href="../classes/Symfony.Component.Cache.Tests.Adapter.NotUnserializable.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.NotUnserializable.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NullAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NullAdapterTest .collapse">
+        <h1>NullAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.NullAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.NullAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PdoAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PdoAdapterTest .collapse">
+        <h1>PdoAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.PdoAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.PdoAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PdoDbalAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PdoDbalAdapterTest .collapse">
+        <h1>PdoDbalAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.PdoDbalAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.PdoDbalAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpArrayAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpArrayAdapterTest .collapse">
+        <h1>PhpArrayAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.PhpArrayAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.PhpArrayAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpArrayAdapterWithFallbackTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpArrayAdapterWithFallbackTest .collapse">
+        <h1>PhpArrayAdapterWithFallbackTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.PhpArrayAdapterWithFallbackTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.PhpArrayAdapterWithFallbackTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpArrayAdapterWrapper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpArrayAdapterWrapper .collapse">
+        <h1>PhpArrayAdapterWrapper<a href="../classes/Symfony.Component.Cache.Tests.Adapter.PhpArrayAdapterWrapper.html">¶</a></h1>
+        <p class="short_description">Caches items at warm up time using a PHP array that is stored in shared memory by OPCache since PHP 7.0.</p>
+        <div class="details collapse">
+                            <p>Warmed up items are read-only and run-time discovered items are cached using a fallback adapter.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.PhpArrayAdapterWrapper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpFilesAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpFilesAdapterTest .collapse">
+        <h1>PhpFilesAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.PhpFilesAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.PhpFilesAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PredisAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PredisAdapterTest .collapse">
+        <h1>PredisAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.PredisAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.PredisAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PredisClusterAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PredisClusterAdapterTest .collapse">
+        <h1>PredisClusterAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.PredisClusterAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.PredisClusterAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ProxyAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ProxyAdapterTest .collapse">
+        <h1>ProxyAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.ProxyAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.ProxyAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RedisAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RedisAdapterTest .collapse">
+        <h1>RedisAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.RedisAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.RedisAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RedisArrayAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RedisArrayAdapterTest .collapse">
+        <h1>RedisArrayAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.RedisArrayAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.RedisArrayAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SimpleCacheAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SimpleCacheAdapterTest .collapse">
+        <h1>SimpleCacheAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.SimpleCacheAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.SimpleCacheAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TagAwareAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TagAwareAdapterTest .collapse">
+        <h1>TagAwareAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.TagAwareAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.TagAwareAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestingArrayAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestingArrayAdapter .collapse">
+        <h1>TestingArrayAdapter<a href="../classes/Symfony.Component.Cache.Tests.Adapter.TestingArrayAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.TestingArrayAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TraceableAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TraceableAdapterTest .collapse">
+        <h1>TraceableAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.TraceableAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.TraceableAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TraceableTagAwareAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TraceableTagAwareAdapterTest .collapse">
+        <h1>TraceableTagAwareAdapterTest<a href="../classes/Symfony.Component.Cache.Tests.Adapter.TraceableTagAwareAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Adapter.TraceableTagAwareAdapterTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Tests.Fixtures.html">Fixtures</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ExternalAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExternalAdapter .collapse">
+        <h1>ExternalAdapter<a href="../classes/Symfony.Component.Cache.Tests.Fixtures.ExternalAdapter.html">¶</a></h1>
+        <p class="short_description">Adapter not implementing the {@see \Symfony\Component\Cache\Adapter\AdapterInterface}.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Tests.Fixtures.ExternalAdapter.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Adapter.html">Adapter</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_AdapterInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_AdapterInterface .collapse">
+        <h1>AdapterInterface<a href="../classes/Symfony.Component.Cache.Adapter.AdapterInterface.html">¶</a></h1>
+        <p class="short_description">Interface for adapters managing instances of Symfony&#039;s CacheItem.</p>
+        <div class="details collapse">
+                            <p>The primary purpose of Cache\CacheItemPoolInterface is to accept a key from
+the Calling Library and return the associated Cache\CacheItemInterface object.
+It is also the primary point of interaction with the entire cache collection.
+All configuration and initialization of the Pool is left up to an
+Implementing Library.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.AdapterInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_TagAwareAdapterInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_TagAwareAdapterInterface .collapse">
+        <h1>TagAwareAdapterInterface<a href="../classes/Symfony.Component.Cache.Adapter.TagAwareAdapterInterface.html">¶</a></h1>
+        <p class="short_description">Interface for invalidating cached items using tags.</p>
+        <div class="details collapse">
+                            <p>The primary purpose of Cache\CacheItemPoolInterface is to accept a key from
+the Calling Library and return the associated Cache\CacheItemInterface object.
+It is also the primary point of interaction with the entire cache collection.
+All configuration and initialization of the Pool is left up to an
+Implementing Library.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.TagAwareAdapterInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_AbstractAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractAdapter .collapse">
+        <h1>AbstractAdapter<a href="../classes/Symfony.Component.Cache.Adapter.AbstractAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.AbstractAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ApcuAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ApcuAdapter .collapse">
+        <h1>ApcuAdapter<a href="../classes/Symfony.Component.Cache.Adapter.ApcuAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.ApcuAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ArrayAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayAdapter .collapse">
+        <h1>ArrayAdapter<a href="../classes/Symfony.Component.Cache.Adapter.ArrayAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.ArrayAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChainAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChainAdapter .collapse">
+        <h1>ChainAdapter<a href="../classes/Symfony.Component.Cache.Adapter.ChainAdapter.html">¶</a></h1>
+        <p class="short_description">Chains several adapters together.</p>
+        <div class="details collapse">
+                            <p>Cached items are fetched from the first adapter having them in its data store.
+They are saved and deleted in all adapters at once.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.ChainAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DoctrineAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DoctrineAdapter .collapse">
+        <h1>DoctrineAdapter<a href="../classes/Symfony.Component.Cache.Adapter.DoctrineAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.DoctrineAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FilesystemAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FilesystemAdapter .collapse">
+        <h1>FilesystemAdapter<a href="../classes/Symfony.Component.Cache.Adapter.FilesystemAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.FilesystemAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemcachedAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemcachedAdapter .collapse">
+        <h1>MemcachedAdapter<a href="../classes/Symfony.Component.Cache.Adapter.MemcachedAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.MemcachedAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NullAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NullAdapter .collapse">
+        <h1>NullAdapter<a href="../classes/Symfony.Component.Cache.Adapter.NullAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.NullAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PdoAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PdoAdapter .collapse">
+        <h1>PdoAdapter<a href="../classes/Symfony.Component.Cache.Adapter.PdoAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.PdoAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpArrayAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpArrayAdapter .collapse">
+        <h1>PhpArrayAdapter<a href="../classes/Symfony.Component.Cache.Adapter.PhpArrayAdapter.html">¶</a></h1>
+        <p class="short_description">Caches items at warm up time using a PHP array that is stored in shared memory by OPCache since PHP 7.0.</p>
+        <div class="details collapse">
+                            <p>Warmed up items are read-only and run-time discovered items are cached using a fallback adapter.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.PhpArrayAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpFilesAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpFilesAdapter .collapse">
+        <h1>PhpFilesAdapter<a href="../classes/Symfony.Component.Cache.Adapter.PhpFilesAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.PhpFilesAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ProxyAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ProxyAdapter .collapse">
+        <h1>ProxyAdapter<a href="../classes/Symfony.Component.Cache.Adapter.ProxyAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.ProxyAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RedisAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RedisAdapter .collapse">
+        <h1>RedisAdapter<a href="../classes/Symfony.Component.Cache.Adapter.RedisAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.RedisAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SimpleCacheAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SimpleCacheAdapter .collapse">
+        <h1>SimpleCacheAdapter<a href="../classes/Symfony.Component.Cache.Adapter.SimpleCacheAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.SimpleCacheAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TagAwareAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TagAwareAdapter .collapse">
+        <h1>TagAwareAdapter<a href="../classes/Symfony.Component.Cache.Adapter.TagAwareAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.TagAwareAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TraceableAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TraceableAdapter .collapse">
+        <h1>TraceableAdapter<a href="../classes/Symfony.Component.Cache.Adapter.TraceableAdapter.html">¶</a></h1>
+        <p class="short_description">An adapter that collects data about all cache calls.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.TraceableAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TraceableAdapterEvent" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TraceableAdapterEvent .collapse">
+        <h1>TraceableAdapterEvent<a href="../classes/Symfony.Component.Cache.Adapter.TraceableAdapterEvent.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.TraceableAdapterEvent.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TraceableTagAwareAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TraceableTagAwareAdapter .collapse">
+        <h1>TraceableTagAwareAdapter<a href="../classes/Symfony.Component.Cache.Adapter.TraceableTagAwareAdapter.html">¶</a></h1>
+        <p class="short_description">An adapter that collects data about all cache calls.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Adapter.TraceableTagAwareAdapter.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.Exception.html">Exception</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CacheException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CacheException .collapse">
+        <h1>CacheException<a href="../classes/Symfony.Component.Cache.Exception.CacheException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Exception.CacheException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_InvalidArgumentException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InvalidArgumentException .collapse">
+        <h1>InvalidArgumentException<a href="../classes/Symfony.Component.Cache.Exception.InvalidArgumentException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.Exception.InvalidArgumentException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Cache.DataCollector.html">DataCollector</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CacheDataCollector" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CacheDataCollector .collapse">
+        <h1>CacheDataCollector<a href="../classes/Symfony.Component.Cache.DataCollector.CacheDataCollector.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Cache.DataCollector.CacheDataCollector.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:57 +0200.<br/>
+    </footer>
+    </body>
+</html>

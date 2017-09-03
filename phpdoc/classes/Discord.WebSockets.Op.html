@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Discord\WebSockets\Op
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                            </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                            </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                            </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_ABNORMAL" title="CLOSE_ABNORMAL :: ">
+                        <span class="description"></span><pre>CLOSE_ABNORMAL</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_INVALID_MESSAGE" title="CLOSE_INVALID_MESSAGE :: ">
+                        <span class="description"></span><pre>CLOSE_INVALID_MESSAGE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_INVALID_OPCODE" title="CLOSE_INVALID_OPCODE :: ">
+                        <span class="description"></span><pre>CLOSE_INVALID_OPCODE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_INVALID_SEQ" title="CLOSE_INVALID_SEQ :: ">
+                        <span class="description"></span><pre>CLOSE_INVALID_SEQ</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_INVALID_SESSION" title="CLOSE_INVALID_SESSION :: ">
+                        <span class="description"></span><pre>CLOSE_INVALID_SESSION</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_INVALID_SHARD" title="CLOSE_INVALID_SHARD :: ">
+                        <span class="description"></span><pre>CLOSE_INVALID_SHARD</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_INVALID_TOKEN" title="CLOSE_INVALID_TOKEN :: ">
+                        <span class="description"></span><pre>CLOSE_INVALID_TOKEN</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_NORMAL" title="CLOSE_NORMAL :: ">
+                        <span class="description"></span><pre>CLOSE_NORMAL</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_NOT_AUTHENTICATED" title="CLOSE_NOT_AUTHENTICATED :: ">
+                        <span class="description"></span><pre>CLOSE_NOT_AUTHENTICATED</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_SESSION_TIMEOUT" title="CLOSE_SESSION_TIMEOUT :: ">
+                        <span class="description"></span><pre>CLOSE_SESSION_TIMEOUT</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_TOO_MANY_MSG" title="CLOSE_TOO_MANY_MSG :: ">
+                        <span class="description"></span><pre>CLOSE_TOO_MANY_MSG</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_UNKNOWN_ERROR" title="CLOSE_UNKNOWN_ERROR :: ">
+                        <span class="description"></span><pre>CLOSE_UNKNOWN_ERROR</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CONST_ALREADY_AUTHD" title="CONST_ALREADY_AUTHD :: ">
+                        <span class="description"></span><pre>CONST_ALREADY_AUTHD</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_DISPATCH" title="OP_DISPATCH :: ">
+                        <span class="description"></span><pre>OP_DISPATCH</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_GUILD_MEMBER_CHUNK" title="OP_GUILD_MEMBER_CHUNK :: ">
+                        <span class="description"></span><pre>OP_GUILD_MEMBER_CHUNK</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_HEARTBEAT" title="OP_HEARTBEAT :: ">
+                        <span class="description"></span><pre>OP_HEARTBEAT</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_HEARTBEAT_ACK" title="OP_HEARTBEAT_ACK :: ">
+                        <span class="description"></span><pre>OP_HEARTBEAT_ACK</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_HELLO" title="OP_HELLO :: ">
+                        <span class="description"></span><pre>OP_HELLO</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_IDENTIFY" title="OP_IDENTIFY :: ">
+                        <span class="description"></span><pre>OP_IDENTIFY</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_INVALID_SESSION" title="OP_INVALID_SESSION :: ">
+                        <span class="description"></span><pre>OP_INVALID_SESSION</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_PRESENCE_UPDATE" title="OP_PRESENCE_UPDATE :: ">
+                        <span class="description"></span><pre>OP_PRESENCE_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_RECONNECT" title="OP_RECONNECT :: ">
+                        <span class="description"></span><pre>OP_RECONNECT</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_RESUME" title="OP_RESUME :: ">
+                        <span class="description"></span><pre>OP_RESUME</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_VOICE_SERVER_PING" title="OP_VOICE_SERVER_PING :: ">
+                        <span class="description"></span><pre>OP_VOICE_SERVER_PING</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_VOICE_STATE_UPDATE" title="OP_VOICE_STATE_UPDATE :: ">
+                        <span class="description"></span><pre>OP_VOICE_STATE_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_VOICE_DESCRIPTION" title="VOICE_DESCRIPTION :: ">
+                        <span class="description"></span><pre>VOICE_DESCRIPTION</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_VOICE_HEARTBEAT" title="VOICE_HEARTBEAT :: ">
+                        <span class="description"></span><pre>VOICE_HEARTBEAT</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_VOICE_IDENTIFY" title="VOICE_IDENTIFY :: ">
+                        <span class="description"></span><pre>VOICE_IDENTIFY</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_VOICE_READY" title="VOICE_READY :: ">
+                        <span class="description"></span><pre>VOICE_READY</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_VOICE_SELECT_PROTO" title="VOICE_SELECT_PROTO :: ">
+                        <span class="description"></span><pre>VOICE_SELECT_PROTO</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_VOICE_SPEAKING" title="VOICE_SPEAKING :: ">
+                        <span class="description"></span><pre>VOICE_SPEAKING</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Op</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">Contains constants used in websockets.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                        
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_OP_DISPATCH"> </a>
+                            <div class="element clickable constant  constant_OP_DISPATCH" data-toggle="collapse" data-target=".constant_OP_DISPATCH .collapse">
+                                <h2>OP_DISPATCH</h2>
+                                <pre>OP_DISPATCH</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_HEARTBEAT"> </a>
+                            <div class="element clickable constant  constant_OP_HEARTBEAT" data-toggle="collapse" data-target=".constant_OP_HEARTBEAT .collapse">
+                                <h2>OP_HEARTBEAT</h2>
+                                <pre>OP_HEARTBEAT</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_IDENTIFY"> </a>
+                            <div class="element clickable constant  constant_OP_IDENTIFY" data-toggle="collapse" data-target=".constant_OP_IDENTIFY .collapse">
+                                <h2>OP_IDENTIFY</h2>
+                                <pre>OP_IDENTIFY</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_PRESENCE_UPDATE"> </a>
+                            <div class="element clickable constant  constant_OP_PRESENCE_UPDATE" data-toggle="collapse" data-target=".constant_OP_PRESENCE_UPDATE .collapse">
+                                <h2>OP_PRESENCE_UPDATE</h2>
+                                <pre>OP_PRESENCE_UPDATE</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_VOICE_STATE_UPDATE"> </a>
+                            <div class="element clickable constant  constant_OP_VOICE_STATE_UPDATE" data-toggle="collapse" data-target=".constant_OP_VOICE_STATE_UPDATE .collapse">
+                                <h2>OP_VOICE_STATE_UPDATE</h2>
+                                <pre>OP_VOICE_STATE_UPDATE</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_VOICE_SERVER_PING"> </a>
+                            <div class="element clickable constant  constant_OP_VOICE_SERVER_PING" data-toggle="collapse" data-target=".constant_OP_VOICE_SERVER_PING .collapse">
+                                <h2>OP_VOICE_SERVER_PING</h2>
+                                <pre>OP_VOICE_SERVER_PING</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_RESUME"> </a>
+                            <div class="element clickable constant  constant_OP_RESUME" data-toggle="collapse" data-target=".constant_OP_RESUME .collapse">
+                                <h2>OP_RESUME</h2>
+                                <pre>OP_RESUME</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_RECONNECT"> </a>
+                            <div class="element clickable constant  constant_OP_RECONNECT" data-toggle="collapse" data-target=".constant_OP_RECONNECT .collapse">
+                                <h2>OP_RECONNECT</h2>
+                                <pre>OP_RECONNECT</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_GUILD_MEMBER_CHUNK"> </a>
+                            <div class="element clickable constant  constant_OP_GUILD_MEMBER_CHUNK" data-toggle="collapse" data-target=".constant_OP_GUILD_MEMBER_CHUNK .collapse">
+                                <h2>OP_GUILD_MEMBER_CHUNK</h2>
+                                <pre>OP_GUILD_MEMBER_CHUNK</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_INVALID_SESSION"> </a>
+                            <div class="element clickable constant  constant_OP_INVALID_SESSION" data-toggle="collapse" data-target=".constant_OP_INVALID_SESSION .collapse">
+                                <h2>OP_INVALID_SESSION</h2>
+                                <pre>OP_INVALID_SESSION</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_HELLO"> </a>
+                            <div class="element clickable constant  constant_OP_HELLO" data-toggle="collapse" data-target=".constant_OP_HELLO .collapse">
+                                <h2>OP_HELLO</h2>
+                                <pre>OP_HELLO</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_HEARTBEAT_ACK"> </a>
+                            <div class="element clickable constant  constant_OP_HEARTBEAT_ACK" data-toggle="collapse" data-target=".constant_OP_HEARTBEAT_ACK .collapse">
+                                <h2>OP_HEARTBEAT_ACK</h2>
+                                <pre>OP_HEARTBEAT_ACK</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_VOICE_IDENTIFY"> </a>
+                            <div class="element clickable constant  constant_VOICE_IDENTIFY" data-toggle="collapse" data-target=".constant_VOICE_IDENTIFY .collapse">
+                                <h2>VOICE_IDENTIFY</h2>
+                                <pre>VOICE_IDENTIFY</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_VOICE_SELECT_PROTO"> </a>
+                            <div class="element clickable constant  constant_VOICE_SELECT_PROTO" data-toggle="collapse" data-target=".constant_VOICE_SELECT_PROTO .collapse">
+                                <h2>VOICE_SELECT_PROTO</h2>
+                                <pre>VOICE_SELECT_PROTO</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_VOICE_READY"> </a>
+                            <div class="element clickable constant  constant_VOICE_READY" data-toggle="collapse" data-target=".constant_VOICE_READY .collapse">
+                                <h2>VOICE_READY</h2>
+                                <pre>VOICE_READY</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_VOICE_HEARTBEAT"> </a>
+                            <div class="element clickable constant  constant_VOICE_HEARTBEAT" data-toggle="collapse" data-target=".constant_VOICE_HEARTBEAT .collapse">
+                                <h2>VOICE_HEARTBEAT</h2>
+                                <pre>VOICE_HEARTBEAT</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_VOICE_DESCRIPTION"> </a>
+                            <div class="element clickable constant  constant_VOICE_DESCRIPTION" data-toggle="collapse" data-target=".constant_VOICE_DESCRIPTION .collapse">
+                                <h2>VOICE_DESCRIPTION</h2>
+                                <pre>VOICE_DESCRIPTION</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_VOICE_SPEAKING"> </a>
+                            <div class="element clickable constant  constant_VOICE_SPEAKING" data-toggle="collapse" data-target=".constant_VOICE_SPEAKING .collapse">
+                                <h2>VOICE_SPEAKING</h2>
+                                <pre>VOICE_SPEAKING</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_NORMAL"> </a>
+                            <div class="element clickable constant  constant_CLOSE_NORMAL" data-toggle="collapse" data-target=".constant_CLOSE_NORMAL .collapse">
+                                <h2>CLOSE_NORMAL</h2>
+                                <pre>CLOSE_NORMAL</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_ABNORMAL"> </a>
+                            <div class="element clickable constant  constant_CLOSE_ABNORMAL" data-toggle="collapse" data-target=".constant_CLOSE_ABNORMAL .collapse">
+                                <h2>CLOSE_ABNORMAL</h2>
+                                <pre>CLOSE_ABNORMAL</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_UNKNOWN_ERROR"> </a>
+                            <div class="element clickable constant  constant_CLOSE_UNKNOWN_ERROR" data-toggle="collapse" data-target=".constant_CLOSE_UNKNOWN_ERROR .collapse">
+                                <h2>CLOSE_UNKNOWN_ERROR</h2>
+                                <pre>CLOSE_UNKNOWN_ERROR</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_INVALID_OPCODE"> </a>
+                            <div class="element clickable constant  constant_CLOSE_INVALID_OPCODE" data-toggle="collapse" data-target=".constant_CLOSE_INVALID_OPCODE .collapse">
+                                <h2>CLOSE_INVALID_OPCODE</h2>
+                                <pre>CLOSE_INVALID_OPCODE</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_INVALID_MESSAGE"> </a>
+                            <div class="element clickable constant  constant_CLOSE_INVALID_MESSAGE" data-toggle="collapse" data-target=".constant_CLOSE_INVALID_MESSAGE .collapse">
+                                <h2>CLOSE_INVALID_MESSAGE</h2>
+                                <pre>CLOSE_INVALID_MESSAGE</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_NOT_AUTHENTICATED"> </a>
+                            <div class="element clickable constant  constant_CLOSE_NOT_AUTHENTICATED" data-toggle="collapse" data-target=".constant_CLOSE_NOT_AUTHENTICATED .collapse">
+                                <h2>CLOSE_NOT_AUTHENTICATED</h2>
+                                <pre>CLOSE_NOT_AUTHENTICATED</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_INVALID_TOKEN"> </a>
+                            <div class="element clickable constant  constant_CLOSE_INVALID_TOKEN" data-toggle="collapse" data-target=".constant_CLOSE_INVALID_TOKEN .collapse">
+                                <h2>CLOSE_INVALID_TOKEN</h2>
+                                <pre>CLOSE_INVALID_TOKEN</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CONST_ALREADY_AUTHD"> </a>
+                            <div class="element clickable constant  constant_CONST_ALREADY_AUTHD" data-toggle="collapse" data-target=".constant_CONST_ALREADY_AUTHD .collapse">
+                                <h2>CONST_ALREADY_AUTHD</h2>
+                                <pre>CONST_ALREADY_AUTHD</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_INVALID_SESSION"> </a>
+                            <div class="element clickable constant  constant_CLOSE_INVALID_SESSION" data-toggle="collapse" data-target=".constant_CLOSE_INVALID_SESSION .collapse">
+                                <h2>CLOSE_INVALID_SESSION</h2>
+                                <pre>CLOSE_INVALID_SESSION</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_INVALID_SEQ"> </a>
+                            <div class="element clickable constant  constant_CLOSE_INVALID_SEQ" data-toggle="collapse" data-target=".constant_CLOSE_INVALID_SEQ .collapse">
+                                <h2>CLOSE_INVALID_SEQ</h2>
+                                <pre>CLOSE_INVALID_SEQ</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_TOO_MANY_MSG"> </a>
+                            <div class="element clickable constant  constant_CLOSE_TOO_MANY_MSG" data-toggle="collapse" data-target=".constant_CLOSE_TOO_MANY_MSG .collapse">
+                                <h2>CLOSE_TOO_MANY_MSG</h2>
+                                <pre>CLOSE_TOO_MANY_MSG</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_SESSION_TIMEOUT"> </a>
+                            <div class="element clickable constant  constant_CLOSE_SESSION_TIMEOUT" data-toggle="collapse" data-target=".constant_CLOSE_SESSION_TIMEOUT .collapse">
+                                <h2>CLOSE_SESSION_TIMEOUT</h2>
+                                <pre>CLOSE_SESSION_TIMEOUT</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_INVALID_SHARD"> </a>
+                            <div class="element clickable constant  constant_CLOSE_INVALID_SHARD" data-toggle="collapse" data-target=".constant_CLOSE_INVALID_SHARD .collapse">
+                                <h2>CLOSE_INVALID_SHARD</h2>
+                                <pre>CLOSE_INVALID_SHARD</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                        </div>
+            </div>
+            <a id="\Discord\WebSockets\Op"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Discord.WebSockets.html">WebSockets</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Discord.WebSockets.Op.html">Op</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:03 +0200.<br/>
+    </footer>
+    </body>
+</html>

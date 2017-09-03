@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Symfony\Component\OptionsResolver\OptionsResolver
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method_addAllowedTypes" title="addAllowedTypes :: Adds allowed types for an option.">
+            <span class="description">Adds allowed types for an option.</span><pre>addAllowedTypes</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_addAllowedValues" title="addAllowedValues :: Adds allowed values for an option.">
+            <span class="description">Adds allowed values for an option.</span><pre>addAllowedValues</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_clear" title="clear :: Removes all options.">
+            <span class="description">Removes all options.</span><pre>clear</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_count" title="count :: Returns the number of set options.">
+            <span class="description">Returns the number of set options.</span><pre>count</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                <li class="method public">
+        <a href="#method_getDefinedOptions" title="getDefinedOptions :: Returns the names of all defined options.">
+            <span class="description">Returns the names of all defined options.</span><pre>getDefinedOptions</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getMissingOptions" title="getMissingOptions :: Returns the names of all options missing a default value.">
+            <span class="description">Returns the names of all options missing a default value.</span><pre>getMissingOptions</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getRequiredOptions" title="getRequiredOptions :: Returns the names of all required options.">
+            <span class="description">Returns the names of all required options.</span><pre>getRequiredOptions</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_hasDefault" title="hasDefault :: Returns whether a default value is set for an option.">
+            <span class="description">Returns whether a default value is set for an option.</span><pre>hasDefault</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isDefined" title="isDefined :: Returns whether an option is defined.">
+            <span class="description">Returns whether an option is defined.</span><pre>isDefined</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isMissing" title="isMissing :: Returns whether an option is missing a default value.">
+            <span class="description">Returns whether an option is missing a default value.</span><pre>isMissing</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isRequired" title="isRequired :: Returns whether an option is required.">
+            <span class="description">Returns whether an option is required.</span><pre>isRequired</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_offsetExists" title="offsetExists :: Returns whether a resolved option with the given name exists.">
+            <span class="description">Returns whether a resolved option with the given name exists.</span><pre>offsetExists</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_offsetGet" title="offsetGet :: Returns the resolved value of an option.">
+            <span class="description">Returns the resolved value of an option.</span><pre>offsetGet</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_offsetSet" title="offsetSet :: Not supported.">
+            <span class="description">Not supported.</span><pre>offsetSet</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_offsetUnset" title="offsetUnset :: Not supported.">
+            <span class="description">Not supported.</span><pre>offsetUnset</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_remove" title="remove :: Removes the option with the given name.">
+            <span class="description">Removes the option with the given name.</span><pre>remove</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_resolve" title="resolve :: Merges options with the default values stored in the container and
+validates them.">
+            <span class="description">Merges options with the default values stored in the container and
+validates them.</span><pre>resolve</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setAllowedTypes" title="setAllowedTypes :: Sets allowed types for an option.">
+            <span class="description">Sets allowed types for an option.</span><pre>setAllowedTypes</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setAllowedValues" title="setAllowedValues :: Sets allowed values for an option.">
+            <span class="description">Sets allowed values for an option.</span><pre>setAllowedValues</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setDefault" title="setDefault :: Sets the default value of a given option.">
+            <span class="description">Sets the default value of a given option.</span><pre>setDefault</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setDefaults" title="setDefaults :: Sets a list of default values.">
+            <span class="description">Sets a list of default values.</span><pre>setDefaults</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setDefined" title="setDefined :: Defines a valid option name.">
+            <span class="description">Defines a valid option name.</span><pre>setDefined</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setNormalizer" title="setNormalizer :: Sets the normalizer for an option.">
+            <span class="description">Sets the normalizer for an option.</span><pre>setNormalizer</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setRequired" title="setRequired :: Marks one or more options as required.">
+            <span class="description">Marks one or more options as required.</span><pre>setRequired</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                            <li class="method private">
+                            <a href="#method_formatTypeOf" title="formatTypeOf :: Returns a string representation of the type of the value.">
+                                <span class="description">Returns a string representation of the type of the value.</span><pre>formatTypeOf</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_formatValue" title="formatValue :: Returns a string representation of the value.">
+                                <span class="description">Returns a string representation of the value.</span><pre>formatValue</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_formatValues" title="formatValues :: Returns a string representation of a list of values.">
+                                <span class="description">Returns a string representation of a list of values.</span><pre>formatValues</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>OptionsResolver</h1>
+                <small style="display: block; text-align: right">
+                                                                Implements <a href="../classes/Symfony.Component.OptionsResolver.Options.html">\Symfony\Component\OptionsResolver\Options</a>
+                                    </small>
+                <p class="short_description">Validates options and merges them with default values.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        author
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Bernhard Schussek <a href="mailto:bschussek@gmail.com">bschussek@gmail.com</a></p>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                    <th>
+                                        author
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Tobias Schultze <a href="http://tobion.de">http://tobion.de</a></p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method_addAllowedTypes"></a>
+                        <div class="element clickable method public  method_addAllowedTypes" data-toggle="collapse" data-target=".method_addAllowedTypes .collapse">
+                            <h2>Adds allowed types for an option.</h2>
+                            <pre>addAllowedTypes(string $option, string|array&lt;mixed,string&gt; $allowedTypes) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The types are merged with the allowed types defined previously.</p>
+<p>Any type for which a corresponding is_<type>() function exists is
+acceptable. Additionally, fully-qualified class or interface names may
+be passed.</p></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException</dt>
+                                                        <dd><p>If the option is undefined</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The option name</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$allowedTypes</h4>
+                                                <code>string|array&lt;mixed,string&gt;</code><p><p>One or more accepted types</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_addAllowedValues"></a>
+                        <div class="element clickable method public  method_addAllowedValues" data-toggle="collapse" data-target=".method_addAllowedValues .collapse">
+                            <h2>Adds allowed values for an option.</h2>
+                            <pre>addAllowedValues(string $option, mixed $allowedValues) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The values are merged with the allowed values defined previously.</p>
+<p>Instead of passing values, you may also pass a closures with the
+following signature:</p>
+<pre><code>function ($value) {
+    // return true or false
+}</code></pre>
+<p>The closure receives the value as argument and should return true to
+accept the value and false to reject the value.</p></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException</dt>
+                                                        <dd><p>If the option is undefined</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The option name</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$allowedValues</h4>
+                                                <code>mixed</code><p><p>One or more acceptable values/closures</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_clear"></a>
+                        <div class="element clickable method public  method_clear" data-toggle="collapse" data-target=".method_clear .collapse">
+                            <h2>Removes all options.</h2>
+                            <pre>clear() : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_count"></a>
+                        <div class="element clickable method public  method_count" data-toggle="collapse" data-target=".method_count .collapse">
+                            <h2>Returns the number of set options.</h2>
+                            <pre>count() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This may be only a subset of the defined options.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            \Countable::count()
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If accessing this method outside of {@link resolve()}</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p><p>Number of options</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_formatTypeOf"></a>
+                        <div class="element clickable method private  method_formatTypeOf" data-toggle="collapse" data-target=".method_formatTypeOf .collapse">
+                            <h2>Returns a string representation of the type of the value.</h2>
+                            <pre>formatTypeOf(mixed $value) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This method should be used if you pass the type of a value as
+message parameter to a constraint violation. Note that such
+parameters should usually not be included in messages aimed at
+non-technical people.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>mixed</code><p><p>The value to return the type of</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The type of the value</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_formatValue"></a>
+                        <div class="element clickable method private  method_formatValue" data-toggle="collapse" data-target=".method_formatValue .collapse">
+                            <h2>Returns a string representation of the value.</h2>
+                            <pre>formatValue(mixed $value) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This method returns the equivalent PHP tokens for most scalar types
+(i.e. &quot;false&quot; for false, &quot;1&quot; for 1 etc.). Strings are always wrapped
+in double quotes (&quot;).</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>mixed</code><p><p>The value to format as string</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The string representation of the passed value</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_formatValues"></a>
+                        <div class="element clickable method private  method_formatValues" data-toggle="collapse" data-target=".method_formatValues .collapse">
+                            <h2>Returns a string representation of a list of values.</h2>
+                            <pre>formatValues(array $values) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Each of the values is converted to a string using
+\formatValue(). The values are then concatenated with commas.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            <a href="../classes/Symfony.Component.OptionsResolver.OptionsResolver.html#method_formatValue">\Symfony\Component\OptionsResolver\OptionsResolver::formatValue()</a>
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$values</h4>
+                                                <code>array</code><p><p>A list of values</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The string representation of the value list</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getDefinedOptions"></a>
+                        <div class="element clickable method public  method_getDefinedOptions" data-toggle="collapse" data-target=".method_getDefinedOptions .collapse">
+                            <h2>Returns the names of all defined options.</h2>
+                            <pre>getDefinedOptions() : array&lt;mixed,string&gt;</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            <a href="../classes/Symfony.Component.OptionsResolver.OptionsResolver.html#method_isDefined">\Symfony\Component\OptionsResolver\OptionsResolver::isDefined()</a>
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array&lt;mixed,string&gt;</code><p><p>The names of the defined options</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getMissingOptions"></a>
+                        <div class="element clickable method public  method_getMissingOptions" data-toggle="collapse" data-target=".method_getMissingOptions .collapse">
+                            <h2>Returns the names of all options missing a default value.</h2>
+                            <pre>getMissingOptions() : array&lt;mixed,string&gt;</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            <a href="../classes/Symfony.Component.OptionsResolver.OptionsResolver.html#method_isMissing">\Symfony\Component\OptionsResolver\OptionsResolver::isMissing()</a>
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array&lt;mixed,string&gt;</code><p><p>The names of the missing options</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getRequiredOptions"></a>
+                        <div class="element clickable method public  method_getRequiredOptions" data-toggle="collapse" data-target=".method_getRequiredOptions .collapse">
+                            <h2>Returns the names of all required options.</h2>
+                            <pre>getRequiredOptions() : array&lt;mixed,string&gt;</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            <a href="../classes/Symfony.Component.OptionsResolver.OptionsResolver.html#method_isRequired">\Symfony\Component\OptionsResolver\OptionsResolver::isRequired()</a>
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array&lt;mixed,string&gt;</code><p><p>The names of the required options</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasDefault"></a>
+                        <div class="element clickable method public  method_hasDefault" data-toggle="collapse" data-target=".method_hasDefault .collapse">
+                            <h2>Returns whether a default value is set for an option.</h2>
+                            <pre>hasDefault(string $option) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Returns true if \setDefault() was called for this option.
+An option is also considered set if it was set to null.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The option name</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p><p>Whether a default value is set</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isDefined"></a>
+                        <div class="element clickable method public  method_isDefined" data-toggle="collapse" data-target=".method_isDefined .collapse">
+                            <h2>Returns whether an option is defined.</h2>
+                            <pre>isDefined(string $option) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Returns true for any option passed to \setDefault(),
+\setRequired() or \setDefined().</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The option name</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p><p>Whether the option is defined</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isMissing"></a>
+                        <div class="element clickable method public  method_isMissing" data-toggle="collapse" data-target=".method_isMissing .collapse">
+                            <h2>Returns whether an option is missing a default value.</h2>
+                            <pre>isMissing(string $option) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>An option is missing if it was passed to \setRequired(), but not
+to \setDefault(). This option must be passed explicitly to
+\resolve(), otherwise an exception will be thrown.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The name of the option</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p><p>Whether the option is missing</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isRequired"></a>
+                        <div class="element clickable method public  method_isRequired" data-toggle="collapse" data-target=".method_isRequired .collapse">
+                            <h2>Returns whether an option is required.</h2>
+                            <pre>isRequired(string $option) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>An option is required if it was passed to \setRequired().</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The name of the option</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p><p>Whether the option is required</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_offsetExists"></a>
+                        <div class="element clickable method public  method_offsetExists" data-toggle="collapse" data-target=".method_offsetExists .collapse">
+                            <h2>Returns whether a resolved option with the given name exists.</h2>
+                            <pre>offsetExists(string $option) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            \ArrayAccess::offsetExists()
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If accessing this method outside of {@link resolve()}</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The option name</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p><p>Whether the option is set</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_offsetGet"></a>
+                        <div class="element clickable method public  method_offsetGet" data-toggle="collapse" data-target=".method_offsetGet .collapse">
+                            <h2>Returns the resolved value of an option.</h2>
+                            <pre>offsetGet(string $option) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If accessing this method outside of
+{@link resolve()}</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\NoSuchOptionException</dt>
+                                                        <dd><p>If the option is not set</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\InvalidOptionsException</dt>
+                                                        <dd><p>If the option doesn't fulfill the
+specified validation rules</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\OptionDefinitionException</dt>
+                                                        <dd><p>If there is a cyclic dependency between
+lazy options and/or normalizers</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The option name</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>The option value</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_offsetSet"></a>
+                        <div class="element clickable method public  method_offsetSet" data-toggle="collapse" data-target=".method_offsetSet .collapse">
+                            <h2>Not supported.</h2>
+                            <pre>offsetSet( $option,  $value) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_offsetUnset"></a>
+                        <div class="element clickable method public  method_offsetUnset" data-toggle="collapse" data-target=".method_offsetUnset .collapse">
+                            <h2>Not supported.</h2>
+                            <pre>offsetUnset( $option) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_remove"></a>
+                        <div class="element clickable method public  method_remove" data-toggle="collapse" data-target=".method_remove .collapse">
+                            <h2>Removes the option with the given name.</h2>
+                            <pre>remove(string|array&lt;mixed,string&gt; $optionNames) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Undefined options are ignored.</p></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$optionNames</h4>
+                                                <code>string|array&lt;mixed,string&gt;</code><p><p>One or more option names</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_resolve"></a>
+                        <div class="element clickable method public  method_resolve" data-toggle="collapse" data-target=".method_resolve .collapse">
+                            <h2>Merges options with the default values stored in the container and
+validates them.</h2>
+                            <pre>resolve(array $options = array()) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Exceptions are thrown if:</p>
+<ul>
+<li>Undefined options are passed;</li>
+<li>Required options are missing;</li>
+<li>Options have invalid types;</li>
+<li>Options have invalid values.</li>
+</ul></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException</dt>
+                                                        <dd><p>If an option name is undefined</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\InvalidOptionsException</dt>
+                                                        <dd><p>If an option doesn't fulfill the
+specified validation rules</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\MissingOptionsException</dt>
+                                                        <dd><p>If a required option is missing</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\OptionDefinitionException</dt>
+                                                        <dd><p>If there is a cyclic dependency between
+lazy options and/or normalizers</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\NoSuchOptionException</dt>
+                                                        <dd><p>If a lazy option reads an unavailable option</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>A map of option names to values</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>The merged and validated options</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setAllowedTypes"></a>
+                        <div class="element clickable method public  method_setAllowedTypes" data-toggle="collapse" data-target=".method_setAllowedTypes .collapse">
+                            <h2>Sets allowed types for an option.</h2>
+                            <pre>setAllowedTypes(string $option, string|array&lt;mixed,string&gt; $allowedTypes) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Any type for which a corresponding is_<type>() function exists is
+acceptable. Additionally, fully-qualified class or interface names may
+be passed.</p></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException</dt>
+                                                        <dd><p>If the option is undefined</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The option name</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$allowedTypes</h4>
+                                                <code>string|array&lt;mixed,string&gt;</code><p><p>One or more accepted types</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setAllowedValues"></a>
+                        <div class="element clickable method public  method_setAllowedValues" data-toggle="collapse" data-target=".method_setAllowedValues .collapse">
+                            <h2>Sets allowed values for an option.</h2>
+                            <pre>setAllowedValues(string $option, mixed $allowedValues) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Instead of passing values, you may also pass a closures with the
+following signature:</p>
+<pre><code>function ($value) {
+    // return true or false
+}</code></pre>
+<p>The closure receives the value as argument and should return true to
+accept the value and false to reject the value.</p></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException</dt>
+                                                        <dd><p>If the option is undefined</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The option name</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$allowedValues</h4>
+                                                <code>mixed</code><p><p>One or more acceptable values/closures</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setDefault"></a>
+                        <div class="element clickable method public  method_setDefault" data-toggle="collapse" data-target=".method_setDefault .collapse">
+                            <h2>Sets the default value of a given option.</h2>
+                            <pre>setDefault(string $option, mixed $value) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>If the default value should be set based on other options, you can pass
+a closure with the following signature:</p>
+<pre><code>function (Options $options) {
+    // ...
+}</code></pre>
+<p>The closure will be evaluated when \resolve() is called. The
+closure has access to the resolved values of other options through the
+passed \Options instance:</p>
+<pre><code>function (Options $options) {
+    if (isset($options['port'])) {
+        // ...
+    }
+}</code></pre>
+<p>If you want to access the previously set default value, add a second
+argument to the closure's signature:</p>
+<pre><code>$options-&gt;setDefault('name', 'Default Name');
+
+$options-&gt;setDefault('name', function (Options $options, $previousValue) {
+    // 'Default Name' === $previousValue
+});</code></pre>
+<p>This is mostly useful if the configuration of the \Options object
+is spread across different locations of your code, such as base and
+sub-classes.</p></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The name of the option</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>mixed</code><p><p>The default value of the option</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setDefaults"></a>
+                        <div class="element clickable method public  method_setDefaults" data-toggle="collapse" data-target=".method_setDefaults .collapse">
+                            <h2>Sets a list of default values.</h2>
+                            <pre>setDefaults(array $defaults) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$defaults</h4>
+                                                <code>array</code><p><p>The default values to set</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setDefined"></a>
+                        <div class="element clickable method public  method_setDefined" data-toggle="collapse" data-target=".method_setDefined .collapse">
+                            <h2>Defines a valid option name.</h2>
+                            <pre>setDefined(string|array&lt;mixed,string&gt; $optionNames) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Defines an option name without setting a default value. The option will
+be accepted when passed to \resolve(). When not passed, the
+option will not be included in the resolved options.</p></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$optionNames</h4>
+                                                <code>string|array&lt;mixed,string&gt;</code><p><p>One or more option names</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setNormalizer"></a>
+                        <div class="element clickable method public  method_setNormalizer" data-toggle="collapse" data-target=".method_setNormalizer .collapse">
+                            <h2>Sets the normalizer for an option.</h2>
+                            <pre>setNormalizer(string $option, \Closure $normalizer) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The normalizer should be a closure with the following signature:</p>
+<pre><code class="language-php">function (Options $options, $value) {
+    // ...
+}</code></pre>
+<p>The closure is invoked when \resolve() is called. The closure
+has access to the resolved values of other options through the passed
+\Options instance.</p>
+<p>The second parameter passed to the closure is the value of
+the option.</p>
+<p>The resolved option value is set to the return value of the closure.</p></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException</dt>
+                                                        <dd><p>If the option is undefined</p></dd>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string</code><p><p>The option name</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$normalizer</h4>
+                                                <code>\Closure</code><p><p>The normalizer</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setRequired"></a>
+                        <div class="element clickable method public  method_setRequired" data-toggle="collapse" data-target=".method_setRequired .collapse">
+                            <h2>Marks one or more options as required.</h2>
+                            <pre>setRequired(string|array&lt;mixed,string&gt; $optionNames) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Symfony\Component\OptionsResolver\Exception\AccessException</dt>
+                                                        <dd><p>If called from a lazy option or normalizer</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$optionNames</h4>
+                                                <code>string|array&lt;mixed,string&gt;</code><p><p>One or more option names</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_defined"> </a>
+                            <div class="element clickable property  private property_defined" data-toggle="collapse" data-target=".property_defined .collapse">
+                                <h2>The names of all defined options.</h2>
+                                <pre>defined : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_defaults"> </a>
+                            <div class="element clickable property  private property_defaults" data-toggle="collapse" data-target=".property_defaults .collapse">
+                                <h2>The default option values.</h2>
+                                <pre>defaults : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_required"> </a>
+                            <div class="element clickable property  private property_required" data-toggle="collapse" data-target=".property_required .collapse">
+                                <h2>The names of required options.</h2>
+                                <pre>required : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_resolved"> </a>
+                            <div class="element clickable property  private property_resolved" data-toggle="collapse" data-target=".property_resolved .collapse">
+                                <h2>The resolved option values.</h2>
+                                <pre>resolved : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_normalizers"> </a>
+                            <div class="element clickable property  private property_normalizers" data-toggle="collapse" data-target=".property_normalizers .collapse">
+                                <h2>A list of normalizer closures.</h2>
+                                <pre>normalizers : array&lt;mixed,\Closure&gt;</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array&lt;mixed,\Closure&gt;</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_allowedValues"> </a>
+                            <div class="element clickable property  private property_allowedValues" data-toggle="collapse" data-target=".property_allowedValues .collapse">
+                                <h2>A list of accepted values for each option.</h2>
+                                <pre>allowedValues : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_allowedTypes"> </a>
+                            <div class="element clickable property  private property_allowedTypes" data-toggle="collapse" data-target=".property_allowedTypes .collapse">
+                                <h2>A list of accepted types for each option.</h2>
+                                <pre>allowedTypes : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_lazy"> </a>
+                            <div class="element clickable property  private property_lazy" data-toggle="collapse" data-target=".property_lazy .collapse">
+                                <h2>A list of closures for evaluating lazy options.</h2>
+                                <pre>lazy : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_calling"> </a>
+                            <div class="element clickable property  private property_calling" data-toggle="collapse" data-target=".property_calling .collapse">
+                                <h2>A list of lazy options whose closure is currently being called.</h2>
+                                <pre>calling : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>This list helps detecting circular dependencies between lazy options.</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_locked"> </a>
+                            <div class="element clickable property  private property_locked" data-toggle="collapse" data-target=".property_locked .collapse">
+                                <h2>Whether the instance is locked for reading.</h2>
+                                <pre>locked : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Once locked, the options cannot be changed anymore. This is
+necessary in order to avoid inconsistencies during the resolving
+process. If any option is changed after being read, all evaluated
+lazy options that depend on this option would become invalid.</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_typeAliases"> </a>
+                            <div class="element clickable property  private property_typeAliases" data-toggle="collapse" data-target=".property_typeAliases .collapse">
+                                <h2>typeAliases</h2>
+                                <pre>typeAliases : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Symfony\Component\OptionsResolver\OptionsResolver"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Symfony.Component.OptionsResolver.html">OptionsResolver</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Symfony.Component.OptionsResolver.OptionsResolver.html">OptionsResolver</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:02 +0200.<br/>
+    </footer>
+    </body>
+</html>

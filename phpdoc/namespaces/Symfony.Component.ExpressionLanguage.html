@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Symfony\Component\ExpressionLanguage
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Symfony.Component.ExpressionLanguage.html" title="ExpressionLanguage">
+                    <i class="icon-th"></i> ExpressionLanguage
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/Symfony.Component.ExpressionLanguage.Node.html" title="Node">
+            <i class="icon-th"></i> Node
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.ExpressionLanguage.ParserCache.html" title="ParserCache">
+            <i class="icon-th"></i> ParserCache
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.html" title="Tests">
+            <i class="icon-th"></i> Tests
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.Fixtures.html" title="Fixtures">
+            <i class="icon-th"></i> Fixtures
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.Node.html" title="Node">
+            <i class="icon-th"></i> Node
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.html">ExpressionLanguage</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_ExpressionFunctionProviderInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ExpressionFunctionProviderInterface .collapse">
+        <h1>ExpressionFunctionProviderInterface<a href="../classes/Symfony.Component.ExpressionLanguage.ExpressionFunctionProviderInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.ExpressionFunctionProviderInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_Compiler" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Compiler .collapse">
+        <h1>Compiler<a href="../classes/Symfony.Component.ExpressionLanguage.Compiler.html">¶</a></h1>
+        <p class="short_description">Compiles a node to PHP code.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Compiler.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Expression" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Expression .collapse">
+        <h1>Expression<a href="../classes/Symfony.Component.ExpressionLanguage.Expression.html">¶</a></h1>
+        <p class="short_description">Represents an expression.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Expression.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ExpressionFunction" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExpressionFunction .collapse">
+        <h1>ExpressionFunction<a href="../classes/Symfony.Component.ExpressionLanguage.ExpressionFunction.html">¶</a></h1>
+        <p class="short_description">Represents a function that can be used in an expression.</p>
+        <div class="details collapse">
+                            <p>A function is defined by two PHP callables. The callables are used
+by the language to compile and/or evaluate the function.</p>
+<p>The &quot;compiler&quot; function is used at compilation time and must return a
+PHP representation of the function call (it receives the function
+arguments as arguments).</p>
+<p>The &quot;evaluator&quot; function is used for expression evaluation and must return
+the value of the function call based on the values defined for the
+expression (it receives the values as a first argument and the function
+arguments as remaining arguments).</p>
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.ExpressionFunction.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ExpressionLanguage" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExpressionLanguage .collapse">
+        <h1>ExpressionLanguage<a href="../classes/Symfony.Component.ExpressionLanguage.ExpressionLanguage.html">¶</a></h1>
+        <p class="short_description">Allows to compile and evaluate expressions written in your own DSL.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.ExpressionLanguage.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Lexer" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Lexer .collapse">
+        <h1>Lexer<a href="../classes/Symfony.Component.ExpressionLanguage.Lexer.html">¶</a></h1>
+        <p class="short_description">Lexes an expression.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Lexer.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ParsedExpression" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ParsedExpression .collapse">
+        <h1>ParsedExpression<a href="../classes/Symfony.Component.ExpressionLanguage.ParsedExpression.html">¶</a></h1>
+        <p class="short_description">Represents an already parsed expression.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.ParsedExpression.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Parser" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Parser .collapse">
+        <h1>Parser<a href="../classes/Symfony.Component.ExpressionLanguage.Parser.html">¶</a></h1>
+        <p class="short_description">Parsers a token stream.</p>
+        <div class="details collapse">
+                            <p>This parser implements a &quot;Precedence climbing&quot; algorithm.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Parser.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SerializedParsedExpression" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SerializedParsedExpression .collapse">
+        <h1>SerializedParsedExpression<a href="../classes/Symfony.Component.ExpressionLanguage.SerializedParsedExpression.html">¶</a></h1>
+        <p class="short_description">Represents an already parsed expression.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.SerializedParsedExpression.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SyntaxError" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SyntaxError .collapse">
+        <h1>SyntaxError<a href="../classes/Symfony.Component.ExpressionLanguage.SyntaxError.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.SyntaxError.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Token" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Token .collapse">
+        <h1>Token<a href="../classes/Symfony.Component.ExpressionLanguage.Token.html">¶</a></h1>
+        <p class="short_description">Represents a Token.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Token.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TokenStream" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TokenStream .collapse">
+        <h1>TokenStream<a href="../classes/Symfony.Component.ExpressionLanguage.TokenStream.html">¶</a></h1>
+        <p class="short_description">Represents a token stream.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.TokenStream.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.html">ExpressionLanguage</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.ParserCache.html">ParserCache</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_ParserCacheInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ParserCacheInterface .collapse">
+        <h1>ParserCacheInterface<a href="../classes/Symfony.Component.ExpressionLanguage.ParserCache.ParserCacheInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.ParserCache.ParserCacheInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_ArrayParserCache" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayParserCache .collapse">
+        <h1>ArrayParserCache<a href="../classes/Symfony.Component.ExpressionLanguage.ParserCache.ArrayParserCache.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.ParserCache.ArrayParserCache.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ParserCacheAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ParserCacheAdapter .collapse">
+        <h1>ParserCacheAdapter<a href="../classes/Symfony.Component.ExpressionLanguage.ParserCache.ParserCacheAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.ParserCache.ParserCacheAdapter.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.html">ExpressionLanguage</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.Node.html">Node</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ArgumentsNode" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArgumentsNode .collapse">
+        <h1>ArgumentsNode<a href="../classes/Symfony.Component.ExpressionLanguage.Node.ArgumentsNode.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.ArgumentsNode.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ArrayNode" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayNode .collapse">
+        <h1>ArrayNode<a href="../classes/Symfony.Component.ExpressionLanguage.Node.ArrayNode.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.ArrayNode.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_BinaryNode" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BinaryNode .collapse">
+        <h1>BinaryNode<a href="../classes/Symfony.Component.ExpressionLanguage.Node.BinaryNode.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.BinaryNode.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ConditionalNode" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ConditionalNode .collapse">
+        <h1>ConditionalNode<a href="../classes/Symfony.Component.ExpressionLanguage.Node.ConditionalNode.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.ConditionalNode.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ConstantNode" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ConstantNode .collapse">
+        <h1>ConstantNode<a href="../classes/Symfony.Component.ExpressionLanguage.Node.ConstantNode.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.ConstantNode.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionNode" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionNode .collapse">
+        <h1>FunctionNode<a href="../classes/Symfony.Component.ExpressionLanguage.Node.FunctionNode.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.FunctionNode.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GetAttrNode" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GetAttrNode .collapse">
+        <h1>GetAttrNode<a href="../classes/Symfony.Component.ExpressionLanguage.Node.GetAttrNode.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.GetAttrNode.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NameNode" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NameNode .collapse">
+        <h1>NameNode<a href="../classes/Symfony.Component.ExpressionLanguage.Node.NameNode.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.NameNode.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Node" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Node .collapse">
+        <h1>Node<a href="../classes/Symfony.Component.ExpressionLanguage.Node.Node.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.Node.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UnaryNode" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UnaryNode .collapse">
+        <h1>UnaryNode<a href="../classes/Symfony.Component.ExpressionLanguage.Node.UnaryNode.html">¶</a></h1>
+        <p class="short_description">Represents a node in the AST.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Node.UnaryNode.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.html">ExpressionLanguage</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.html">Tests</a>
+    </li>
+
+        </ul>
+
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-function"></i> Functions</h3>
+                                        <div id="function_fn_namespaced" class="element ajax clickable function" data-toggle="collapse" data-target="#function_fn_namespaced .collapse">
+        <h1>fn_namespaced<a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.html#function_fn_namespaced">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.html#function_fn_namespaced" class="more">« More »</a>    </div>
+
+                            </div>
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ExpressionFunctionTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExpressionFunctionTest .collapse">
+        <h1>ExpressionFunctionTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ExpressionFunctionTest.html">¶</a></h1>
+        <p class="short_description">Tests ExpressionFunction.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ExpressionFunctionTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ExpressionLanguageTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExpressionLanguageTest .collapse">
+        <h1>ExpressionLanguageTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ExpressionLanguageTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ExpressionLanguageTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ExpressionTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExpressionTest .collapse">
+        <h1>ExpressionTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ExpressionTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ExpressionTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LexerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LexerTest .collapse">
+        <h1>LexerTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.LexerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.LexerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ParsedExpressionTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ParsedExpressionTest .collapse">
+        <h1>ParsedExpressionTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ParsedExpressionTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ParsedExpressionTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ParserCacheAdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ParserCacheAdapterTest .collapse">
+        <h1>ParserCacheAdapterTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ParserCacheAdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ParserCacheAdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ParserTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ParserTest .collapse">
+        <h1>ParserTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ParserTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.ParserTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.html">ExpressionLanguage</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.Node.html">Node</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_AbstractNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractNodeTest .collapse">
+        <h1>AbstractNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.AbstractNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.AbstractNodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ArgumentsNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArgumentsNodeTest .collapse">
+        <h1>ArgumentsNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.ArgumentsNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.ArgumentsNodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ArrayNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayNodeTest .collapse">
+        <h1>ArrayNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.ArrayNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.ArrayNodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_BinaryNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BinaryNodeTest .collapse">
+        <h1>BinaryNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.BinaryNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.BinaryNodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ConditionalNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ConditionalNodeTest .collapse">
+        <h1>ConditionalNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.ConditionalNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.ConditionalNodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ConstantNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ConstantNodeTest .collapse">
+        <h1>ConstantNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.ConstantNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.ConstantNodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionNodeTest .collapse">
+        <h1>FunctionNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.FunctionNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.FunctionNodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GetAttrNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GetAttrNodeTest .collapse">
+        <h1>GetAttrNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.GetAttrNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.GetAttrNodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NameNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NameNodeTest .collapse">
+        <h1>NameNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.NameNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.NameNodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NodeTest .collapse">
+        <h1>NodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.NodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.NodeTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Obj" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Obj .collapse">
+        <h1>Obj<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.Obj.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.Obj.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UnaryNodeTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UnaryNodeTest .collapse">
+        <h1>UnaryNodeTest<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.UnaryNodeTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Node.UnaryNodeTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.html">ExpressionLanguage</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.Fixtures.html">Fixtures</a>
+    </li>
+
+        </ul>
+
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-function"></i> Functions</h3>
+                                        <div id="function_fn_namespaced" class="element ajax clickable function" data-toggle="collapse" data-target="#function_fn_namespaced .collapse">
+        <h1>fn_namespaced<a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.Fixtures.html#function_fn_namespaced">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/Symfony.Component.ExpressionLanguage.Tests.Fixtures.html#function_fn_namespaced" class="more">« More »</a>    </div>
+
+                            </div>
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_TestProvider" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestProvider .collapse">
+        <h1>TestProvider<a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Fixtures.TestProvider.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.ExpressionLanguage.Tests.Fixtures.TestProvider.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:58 +0200.<br/>
+    </footer>
+    </body>
+</html>

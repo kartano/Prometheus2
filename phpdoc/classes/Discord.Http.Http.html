@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Discord\Http\Http
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___call" title="__call :: Handles dynamic calls to the class.">
+            <span class="description">Handles dynamic calls to the class.</span><pre>__call</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method___construct" title="__construct :: Guzzle constructor.">
+            <span class="description">Guzzle constructor.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getUserAgent" title="getUserAgent :: Returns the User-Agent of the API.">
+            <span class="description">Returns the User-Agent of the API.</span><pre>getUserAgent</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_handleError" title="handleError :: Handles an error code.">
+            <span class="description">Handles an error code.</span><pre>handleError</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_sendFile" title="sendFile :: Uploads a file to a channel.">
+            <span class="description">Uploads a file to a channel.</span><pre>sendFile</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setDriver" title="setDriver :: Sets the HTTP driver.">
+            <span class="description">Sets the HTTP driver.</span><pre>setDriver</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                            <li class="method private">
+                            <a href="#method_runRequest" title="runRequest :: Runs http calls.">
+                                <span class="description">Runs http calls.</span><pre>runRequest</pre>
+                            </a>
+                        </li>
+                                                                                                                        </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_BASE_URL" title="BASE_URL :: The Base URL of the API.">
+                        <span class="description">The Base URL of the API.</span><pre>BASE_URL</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CACHE_TTL" title="CACHE_TTL :: The length of time requests will be cached for.">
+                        <span class="description">The length of time requests will be cached for.</span><pre>CACHE_TTL</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Http</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">Provides an easy wrapper for HTTP requests, allows for interchangable connectors.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___call"></a>
+                        <div class="element clickable method public  method___call" data-toggle="collapse" data-target=".method___call .collapse">
+                            <h2>Handles dynamic calls to the class.</h2>
+                            <pre>__call(string $name, array $params) : \React\Promise\Promise</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            \Discord\Helpers\Guzzle::runRequest()
+                                                                                                                <p>This function will be forwareded onto runRequest.</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>The endpoint that will be queried.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>array</code><p><p>Parameters that will be encoded into JSON and sent with the request.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/React.Promise.Promise.html">\React\Promise\Promise</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Guzzle constructor.</h2>
+                            <pre>__construct(\Discord\Wrapper\CacheWrapper $cache, string $token, string $version, \Discord\Http\HttpDriver $driver = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$cache</h4>
+                                                <code><a href="../classes/Discord.Wrapper.CacheWrapper.html">\Discord\Wrapper\CacheWrapper</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$token</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$version</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$driver</h4>
+                                                <code><a href="../classes/Discord.Http.HttpDriver.html">\Discord\Http\HttpDriver</a></code><p><p>The request driver.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getUserAgent"></a>
+                        <div class="element clickable method public  method_getUserAgent" data-toggle="collapse" data-target=".method_getUserAgent .collapse">
+                            <h2>Returns the User-Agent of the API.</h2>
+                            <pre>getUserAgent() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleError"></a>
+                        <div class="element clickable method public  method_handleError" data-toggle="collapse" data-target=".method_handleError .collapse">
+                            <h2>Handles an error code.</h2>
+                            <pre>handleError(integer $errorCode, string|\GuzzleHttp\Psr7\Response $message, string $content, string $url) : \Discord\Exceptions\DiscordRequestFailedException</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$errorCode</h4>
+                                                <code>integer</code><p><p>The HTTP status code.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code>string|<a href="../classes/GuzzleHttp.Psr7.Response.html">\GuzzleHttp\Psr7\Response</a></code><p><p>The HTTP reason phrase.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$content</h4>
+                                                <code>string</code><p><p>The HTTP response content.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$url</h4>
+                                                <code>string</code><p><p>The HTTP url.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Discord.Exceptions.DiscordRequestFailedException.html">\Discord\Exceptions\DiscordRequestFailedException</a></code><p><p>Returned when the request fails.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_runRequest"></a>
+                        <div class="element clickable method private  method_runRequest" data-toggle="collapse" data-target=".method_runRequest .collapse">
+                            <h2>Runs http calls.</h2>
+                            <pre>runRequest(string $method, string $url, array $content, array $extraHeaders, boolean|integer|null $cache, boolean $blocking, array $options) : \React\Promise\Promise</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Discord\Exceptions\Rest\ContentTooLongException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Discord\Exceptions\DiscordRequestFailedException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Discord\Exceptions\Rest\NoPermissionsException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Discord\Exceptions\Rest\NotFoundException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code>string</code><p><p>The request method.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$url</h4>
+                                                <code>string</code><p><p>The endpoint that will be queried.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$content</h4>
+                                                <code>array</code><p><p>Parameters that will be encoded into JSON and sent with the request.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$extraHeaders</h4>
+                                                <code>array</code><p><p>Extra headers to send with the request.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$cache</h4>
+                                                <code>boolean|integer|null</code><p><p>If an integer is passed, used as cache TTL, if null is passed, default TTL is
+used, if false, cache is disabled</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$blocking</h4>
+                                                <code>boolean</code><p><p>Whether the request should be sent as blocking.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>Array of options to pass to Guzzle.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/React.Promise.Promise.html">\React\Promise\Promise</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_sendFile"></a>
+                        <div class="element clickable method public  method_sendFile" data-toggle="collapse" data-target=".method_sendFile .collapse">
+                            <h2>Uploads a file to a channel.</h2>
+                            <pre>sendFile(\Discord\Parts\Channel\Channel $channel, string $filepath, string $filename, string $content, boolean $tts) : \React\Promise\Promise</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$channel</h4>
+                                                <code><a href="../classes/Discord.Parts.Channel.Channel.html">\Discord\Parts\Channel\Channel</a></code><p><p>The channel to send to.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$filepath</h4>
+                                                <code>string</code><p><p>The path to the file.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$filename</h4>
+                                                <code>string</code><p><p>The name to upload the file as.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$content</h4>
+                                                <code>string</code><p><p>Extra text content to go with the file.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$tts</h4>
+                                                <code>boolean</code><p><p>Whether the message should be TTS.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/React.Promise.Promise.html">\React\Promise\Promise</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setDriver"></a>
+                        <div class="element clickable method public  method_setDriver" data-toggle="collapse" data-target=".method_setDriver .collapse">
+                            <h2>Sets the HTTP driver.</h2>
+                            <pre>setDriver(\Discord\Http\HttpDriver $driver) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$driver</h4>
+                                                <code><a href="../classes/Discord.Http.HttpDriver.html">\Discord\Http\HttpDriver</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_BASE_URL"> </a>
+                            <div class="element clickable constant  constant_BASE_URL" data-toggle="collapse" data-target=".constant_BASE_URL .collapse">
+                                <h2>The Base URL of the API.</h2>
+                                <pre>BASE_URL</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CACHE_TTL"> </a>
+                            <div class="element clickable constant  constant_CACHE_TTL" data-toggle="collapse" data-target=".constant_CACHE_TTL .collapse">
+                                <h2>The length of time requests will be cached for.</h2>
+                                <pre>CACHE_TTL</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Length of time to cache requests.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_cache"> </a>
+                            <div class="element clickable property  private property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
+                                <h2>cache</h2>
+                                <pre>cache : \Discord\Wrapper\CacheWrapper</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Wrapper.CacheWrapper.html">\Discord\Wrapper\CacheWrapper</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_token"> </a>
+                            <div class="element clickable property  private property_token" data-toggle="collapse" data-target=".property_token .collapse">
+                                <h2>token</h2>
+                                <pre>token : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_version"> </a>
+                            <div class="element clickable property  private property_version" data-toggle="collapse" data-target=".property_version .collapse">
+                                <h2>version</h2>
+                                <pre>version : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_driver"> </a>
+                            <div class="element clickable property  protected property_driver" data-toggle="collapse" data-target=".property_driver .collapse">
+                                <h2>The request driver.</h2>
+                                <pre>driver : \Discord\Http\HttpDriver</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Http.HttpDriver.html">\Discord\Http\HttpDriver</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Discord\Http\Http"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Discord.Http.html">Http</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Discord.Http.Http.html">Http</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:04 +0200.<br/>
+    </footer>
+    </body>
+</html>

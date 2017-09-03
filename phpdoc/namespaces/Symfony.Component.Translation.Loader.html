@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Symfony\Component\Translation\Loader
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Symfony.Component.Translation.Loader.html" title="Loader">
+                    <i class="icon-th"></i> Loader
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Loader.html">Loader</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_LoaderInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_LoaderInterface .collapse">
+        <h1>LoaderInterface<a href="../classes/Symfony.Component.Translation.Loader.LoaderInterface.html">¶</a></h1>
+        <p class="short_description">LoaderInterface is the interface implemented by all translation loaders.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.LoaderInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_ArrayLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayLoader .collapse">
+        <h1>ArrayLoader<a href="../classes/Symfony.Component.Translation.Loader.ArrayLoader.html">¶</a></h1>
+        <p class="short_description">ArrayLoader loads translations from a PHP array.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.ArrayLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CsvFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CsvFileLoader .collapse">
+        <h1>CsvFileLoader<a href="../classes/Symfony.Component.Translation.Loader.CsvFileLoader.html">¶</a></h1>
+        <p class="short_description">CsvFileLoader loads translations from CSV files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.CsvFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FileLoader .collapse">
+        <h1>FileLoader<a href="../classes/Symfony.Component.Translation.Loader.FileLoader.html">¶</a></h1>
+        <p class="short_description">ArrayLoader loads translations from a PHP array.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.FileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IcuDatFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IcuDatFileLoader .collapse">
+        <h1>IcuDatFileLoader<a href="../classes/Symfony.Component.Translation.Loader.IcuDatFileLoader.html">¶</a></h1>
+        <p class="short_description">IcuResFileLoader loads translations from a resource bundle.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.IcuDatFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IcuResFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IcuResFileLoader .collapse">
+        <h1>IcuResFileLoader<a href="../classes/Symfony.Component.Translation.Loader.IcuResFileLoader.html">¶</a></h1>
+        <p class="short_description">IcuResFileLoader loads translations from a resource bundle.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.IcuResFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IniFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IniFileLoader .collapse">
+        <h1>IniFileLoader<a href="../classes/Symfony.Component.Translation.Loader.IniFileLoader.html">¶</a></h1>
+        <p class="short_description">IniFileLoader loads translations from an ini file.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.IniFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_JsonFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_JsonFileLoader .collapse">
+        <h1>JsonFileLoader<a href="../classes/Symfony.Component.Translation.Loader.JsonFileLoader.html">¶</a></h1>
+        <p class="short_description">JsonFileLoader loads translations from an json file.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.JsonFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MoFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MoFileLoader .collapse">
+        <h1>MoFileLoader<a href="../classes/Symfony.Component.Translation.Loader.MoFileLoader.html">¶</a></h1>
+        <p class="short_description">ArrayLoader loads translations from a PHP array.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.MoFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpFileLoader .collapse">
+        <h1>PhpFileLoader<a href="../classes/Symfony.Component.Translation.Loader.PhpFileLoader.html">¶</a></h1>
+        <p class="short_description">PhpFileLoader loads translations from PHP files returning an array of translations.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.PhpFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PoFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PoFileLoader .collapse">
+        <h1>PoFileLoader<a href="../classes/Symfony.Component.Translation.Loader.PoFileLoader.html">¶</a></h1>
+        <p class="short_description">ArrayLoader loads translations from a PHP array.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.PoFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_QtFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_QtFileLoader .collapse">
+        <h1>QtFileLoader<a href="../classes/Symfony.Component.Translation.Loader.QtFileLoader.html">¶</a></h1>
+        <p class="short_description">QtFileLoader loads translations from QT Translations XML files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.QtFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_XliffFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_XliffFileLoader .collapse">
+        <h1>XliffFileLoader<a href="../classes/Symfony.Component.Translation.Loader.XliffFileLoader.html">¶</a></h1>
+        <p class="short_description">XliffFileLoader loads translations from XLIFF files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.XliffFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_YamlFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_YamlFileLoader .collapse">
+        <h1>YamlFileLoader<a href="../classes/Symfony.Component.Translation.Loader.YamlFileLoader.html">¶</a></h1>
+        <p class="short_description">YamlFileLoader loads translations from Yaml files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.YamlFileLoader.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:58 +0200.<br/>
+    </footer>
+    </body>
+</html>

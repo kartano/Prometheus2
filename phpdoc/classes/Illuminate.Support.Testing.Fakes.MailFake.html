@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Illuminate\Support\Testing\Fakes\MailFake
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method_assertNothingQueued" title="assertNothingQueued :: Assert that no mailables were queued.">
+            <span class="description">Assert that no mailables were queued.</span><pre>assertNothingQueued</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_assertNothingSent" title="assertNothingSent :: Assert that no mailables were sent.">
+            <span class="description">Assert that no mailables were sent.</span><pre>assertNothingSent</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_assertNotQueued" title="assertNotQueued :: Determine if a mailable was not queued based on a truth-test callback.">
+            <span class="description">Determine if a mailable was not queued based on a truth-test callback.</span><pre>assertNotQueued</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_assertNotSent" title="assertNotSent :: Determine if a mailable was not sent based on a truth-test callback.">
+            <span class="description">Determine if a mailable was not sent based on a truth-test callback.</span><pre>assertNotSent</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_assertQueued" title="assertQueued :: Assert if a mailable was queued based on a truth-test callback.">
+            <span class="description">Assert if a mailable was queued based on a truth-test callback.</span><pre>assertQueued</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_assertSent" title="assertSent :: Assert if a mailable was sent based on a truth-test callback.">
+            <span class="description">Assert if a mailable was sent based on a truth-test callback.</span><pre>assertSent</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_bcc" title="bcc :: Begin the process of mailing a mailable class instance.">
+            <span class="description">Begin the process of mailing a mailable class instance.</span><pre>bcc</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_failures" title="failures :: Get the array of failed recipients.">
+            <span class="description">Get the array of failed recipients.</span><pre>failures</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_hasQueued" title="hasQueued :: Determine if the given mailable has been queued.">
+            <span class="description">Determine if the given mailable has been queued.</span><pre>hasQueued</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_hasSent" title="hasSent :: Determine if the given mailable has been sent.">
+            <span class="description">Determine if the given mailable has been sent.</span><pre>hasSent</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_queue" title="queue :: Queue a new e-mail message for sending.">
+            <span class="description">Queue a new e-mail message for sending.</span><pre>queue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_queued" title="queued :: Get all of the queued mailables matching a truth-test callback.">
+            <span class="description">Get all of the queued mailables matching a truth-test callback.</span><pre>queued</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_raw" title="raw :: Send a new message when only a raw text part.">
+            <span class="description">Send a new message when only a raw text part.</span><pre>raw</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_send" title="send :: Send a new message using a view.">
+            <span class="description">Send a new message using a view.</span><pre>send</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_sent" title="sent :: Get all of the mailables matching a truth-test callback.">
+            <span class="description">Get all of the mailables matching a truth-test callback.</span><pre>sent</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_to" title="to :: Begin the process of mailing a mailable class instance.">
+            <span class="description">Begin the process of mailing a mailable class instance.</span><pre>to</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                <li class="method protected">
+                            <a href="#method_assertQueuedTimes" title="assertQueuedTimes :: Assert if a mailable was queued a number of times.">
+                                <span class="description">Assert if a mailable was queued a number of times.</span><pre>assertQueuedTimes</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
+                            <a href="#method_assertSentTimes" title="assertSentTimes :: Assert if a mailable was sent a number of times.">
+                                <span class="description">Assert if a mailable was sent a number of times.</span><pre>assertSentTimes</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method protected">
+                            <a href="#method_mailablesOf" title="mailablesOf :: Get all of the mailed mailables for a given type.">
+                                <span class="description">Get all of the mailed mailables for a given type.</span><pre>mailablesOf</pre>
+                            </a>
+                        </li>
+                                                                                                                                                        <li class="method protected">
+                            <a href="#method_queuedMailablesOf" title="queuedMailablesOf :: Get all of the mailed mailables for a given type.">
+                                <span class="description">Get all of the mailed mailables for a given type.</span><pre>queuedMailablesOf</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>MailFake</h1>
+                <small style="display: block; text-align: right">
+                                                                Implements <a href="../classes/Illuminate.Contracts.Mail.Mailer.html">\Illuminate\Contracts\Mail\Mailer</a>
+                                    </small>
+                <p class="short_description"></p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method_assertNothingQueued"></a>
+                        <div class="element clickable method public  method_assertNothingQueued" data-toggle="collapse" data-target=".method_assertNothingQueued .collapse">
+                            <h2>Assert that no mailables were queued.</h2>
+                            <pre>assertNothingQueued() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_assertNothingSent"></a>
+                        <div class="element clickable method public  method_assertNothingSent" data-toggle="collapse" data-target=".method_assertNothingSent .collapse">
+                            <h2>Assert that no mailables were sent.</h2>
+                            <pre>assertNothingSent() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_assertNotQueued"></a>
+                        <div class="element clickable method public  method_assertNotQueued" data-toggle="collapse" data-target=".method_assertNotQueued .collapse">
+                            <h2>Determine if a mailable was not queued based on a truth-test callback.</h2>
+                            <pre>assertNotQueued(string $mailable, callable|null $callback = null) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>callable|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_assertNotSent"></a>
+                        <div class="element clickable method public  method_assertNotSent" data-toggle="collapse" data-target=".method_assertNotSent .collapse">
+                            <h2>Determine if a mailable was not sent based on a truth-test callback.</h2>
+                            <pre>assertNotSent(string $mailable, callable|null $callback = null) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>callable|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_assertQueued"></a>
+                        <div class="element clickable method public  method_assertQueued" data-toggle="collapse" data-target=".method_assertQueued .collapse">
+                            <h2>Assert if a mailable was queued based on a truth-test callback.</h2>
+                            <pre>assertQueued(string $mailable, callable|integer|null $callback = null) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>callable|integer|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_assertQueuedTimes"></a>
+                        <div class="element clickable method protected  method_assertQueuedTimes" data-toggle="collapse" data-target=".method_assertQueuedTimes .collapse">
+                            <h2>Assert if a mailable was queued a number of times.</h2>
+                            <pre>assertQueuedTimes(string $mailable, integer $times = 1) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$times</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_assertSent"></a>
+                        <div class="element clickable method public  method_assertSent" data-toggle="collapse" data-target=".method_assertSent .collapse">
+                            <h2>Assert if a mailable was sent based on a truth-test callback.</h2>
+                            <pre>assertSent(string $mailable, callable|integer|null $callback = null) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>callable|integer|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_assertSentTimes"></a>
+                        <div class="element clickable method protected  method_assertSentTimes" data-toggle="collapse" data-target=".method_assertSentTimes .collapse">
+                            <h2>Assert if a mailable was sent a number of times.</h2>
+                            <pre>assertSentTimes(string $mailable, integer $times = 1) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$times</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_bcc"></a>
+                        <div class="element clickable method public  method_bcc" data-toggle="collapse" data-target=".method_bcc .collapse">
+                            <h2>Begin the process of mailing a mailable class instance.</h2>
+                            <pre>bcc(mixed $users) : \Illuminate\Mail\PendingMail</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$users</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Illuminate\Mail\PendingMail</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_failures"></a>
+                        <div class="element clickable method public  method_failures" data-toggle="collapse" data-target=".method_failures .collapse">
+                            <h2>Get the array of failed recipients.</h2>
+                            <pre>failures() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasQueued"></a>
+                        <div class="element clickable method public  method_hasQueued" data-toggle="collapse" data-target=".method_hasQueued .collapse">
+                            <h2>Determine if the given mailable has been queued.</h2>
+                            <pre>hasQueued(string $mailable) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasSent"></a>
+                        <div class="element clickable method public  method_hasSent" data-toggle="collapse" data-target=".method_hasSent .collapse">
+                            <h2>Determine if the given mailable has been sent.</h2>
+                            <pre>hasSent(string $mailable) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_mailablesOf"></a>
+                        <div class="element clickable method protected  method_mailablesOf" data-toggle="collapse" data-target=".method_mailablesOf .collapse">
+                            <h2>Get all of the mailed mailables for a given type.</h2>
+                            <pre>mailablesOf(string $type) : \Illuminate\Support\Collection</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$type</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Illuminate\Support\Collection</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_queue"></a>
+                        <div class="element clickable method public  method_queue" data-toggle="collapse" data-target=".method_queue .collapse">
+                            <h2>Queue a new e-mail message for sending.</h2>
+                            <pre>queue(string|array $view, array $data = array(), \Closure|string $callback = null, string|null $queue = null) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$view</h4>
+                                                <code>string|array</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>\Closure|string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$queue</h4>
+                                                <code>string|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_queued"></a>
+                        <div class="element clickable method public  method_queued" data-toggle="collapse" data-target=".method_queued .collapse">
+                            <h2>Get all of the queued mailables matching a truth-test callback.</h2>
+                            <pre>queued(string $mailable, callable|null $callback = null) : \Illuminate\Support\Collection</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>callable|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Illuminate\Support\Collection</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_queuedMailablesOf"></a>
+                        <div class="element clickable method protected  method_queuedMailablesOf" data-toggle="collapse" data-target=".method_queuedMailablesOf .collapse">
+                            <h2>Get all of the mailed mailables for a given type.</h2>
+                            <pre>queuedMailablesOf(string $type) : \Illuminate\Support\Collection</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$type</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Illuminate\Support\Collection</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_raw"></a>
+                        <div class="element clickable method public  method_raw" data-toggle="collapse" data-target=".method_raw .collapse">
+                            <h2>Send a new message when only a raw text part.</h2>
+                            <pre>raw(string $text, \Closure|string $callback) : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$text</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>\Closure|string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_send"></a>
+                        <div class="element clickable method public  method_send" data-toggle="collapse" data-target=".method_send .collapse">
+                            <h2>Send a new message using a view.</h2>
+                            <pre>send(string|array $view, array $data = array(), \Closure|string $callback = null) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$view</h4>
+                                                <code>string|array</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>\Closure|string</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_sent"></a>
+                        <div class="element clickable method public  method_sent" data-toggle="collapse" data-target=".method_sent .collapse">
+                            <h2>Get all of the mailables matching a truth-test callback.</h2>
+                            <pre>sent(string $mailable, callable|null $callback = null) : \Illuminate\Support\Collection</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mailable</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$callback</h4>
+                                                <code>callable|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Illuminate\Support\Collection</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_to"></a>
+                        <div class="element clickable method public  method_to" data-toggle="collapse" data-target=".method_to .collapse">
+                            <h2>Begin the process of mailing a mailable class instance.</h2>
+                            <pre>to(mixed $users) : \Illuminate\Mail\PendingMail</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$users</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Illuminate\Mail\PendingMail</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_mailables"> </a>
+                            <div class="element clickable property  protected property_mailables" data-toggle="collapse" data-target=".property_mailables .collapse">
+                                <h2>All of the mailables that have been sent.</h2>
+                                <pre>mailables : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_queuedMailables"> </a>
+                            <div class="element clickable property  protected property_queuedMailables" data-toggle="collapse" data-target=".property_queuedMailables .collapse">
+                                <h2>All of the mailables that have been queued.</h2>
+                                <pre>queuedMailables : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Illuminate\Support\Testing\Fakes\MailFake"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Illuminate.Support.Testing.Fakes.html">Fakes</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Illuminate.Support.Testing.Fakes.MailFake.html">MailFake</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:06 +0200.<br/>
+    </footer>
+    </body>
+</html>

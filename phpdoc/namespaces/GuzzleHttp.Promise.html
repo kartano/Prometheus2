@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \GuzzleHttp\Promise
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/GuzzleHttp.Promise.html" title="Promise">
+                    <i class="icon-th"></i> Promise
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/GuzzleHttp.Promise.html">Promise</a>
+    </li>
+
+        </ul>
+
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-function"></i> Functions</h3>
+                                        <div id="function_all" class="element ajax clickable function" data-toggle="collapse" data-target="#function_all .collapse">
+        <h1>all<a href="../namespaces/GuzzleHttp.Promise.html#function_all">¶</a></h1>
+        <p class="short_description">Given an array of promises, return a promise that is fulfilled when all the
+items in the array are fulfilled.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The promise's fulfillment value is an array with fulfillment values at
+respective positions to the original array. If any promise in the array
+rejects, the returned promise is rejected with the rejection reason.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promises</h4>
+                                                <code>mixed</code><p><p>Promises or values.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_all" class="more">« More »</a>    </div>
+
+                                        <div id="function_any" class="element ajax clickable function" data-toggle="collapse" data-target="#function_any .collapse">
+        <h1>any<a href="../namespaces/GuzzleHttp.Promise.html#function_any">¶</a></h1>
+        <p class="short_description">Like some(), with 1 as count. However, if the promise fulfills, the
+fulfillment value is not an array of 1 but the value directly.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promises</h4>
+                                                <code>mixed</code><p><p>Promises or values.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_any" class="more">« More »</a>    </div>
+
+                                        <div id="function_coroutine" class="element ajax clickable function" data-toggle="collapse" data-target="#function_coroutine .collapse">
+        <h1>coroutine<a href="../namespaces/GuzzleHttp.Promise.html#function_coroutine">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            \Coroutine
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$generatorFn</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_coroutine" class="more">« More »</a>    </div>
+
+                                        <div id="function_each" class="element ajax clickable function" data-toggle="collapse" data-target="#function_each .collapse">
+        <h1>each<a href="../namespaces/GuzzleHttp.Promise.html#function_each">¶</a></h1>
+        <p class="short_description">Given an iterator that yields promises or values, returns a promise that is
+fulfilled with a null value when the iterator has been consumed or the
+aggregate promise has been fulfilled or rejected.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>$onFulfilled is a function that accepts the fulfilled value, iterator
+index, and the aggregate promise. The callback can invoke any necessary side
+effects and choose to resolve or reject the aggregate promise if needed.</p>
+<p>$onRejected is a function that accepts the rejection reason, iterator
+index, and the aggregate promise. The callback can invoke any necessary side
+effects and choose to resolve or reject the aggregate promise if needed.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$iterable</h4>
+                                                <code>mixed</code><p><p>Iterator or array to iterate over.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$onFulfilled</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$onRejected</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_each" class="more">« More »</a>    </div>
+
+                                        <div id="function_each_limit" class="element ajax clickable function" data-toggle="collapse" data-target="#function_each_limit .collapse">
+        <h1>each_limit<a href="../namespaces/GuzzleHttp.Promise.html#function_each_limit">¶</a></h1>
+        <p class="short_description">Like each, but only allows a certain number of outstanding promises at any
+given time.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>$concurrency may be an integer or a function that accepts the number of
+pending promises and returns a numeric concurrency limit value to allow for
+dynamic a concurrency size.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$iterable</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$concurrency</h4>
+                                                <code>integer|callable</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$onFulfilled</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$onRejected</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_each_limit" class="more">« More »</a>    </div>
+
+                                        <div id="function_each_limit_all" class="element ajax clickable function" data-toggle="collapse" data-target="#function_each_limit_all .collapse">
+        <h1>each_limit_all<a href="../namespaces/GuzzleHttp.Promise.html#function_each_limit_all">¶</a></h1>
+        <p class="short_description">Like each_limit, but ensures that no promise in the given $iterable argument
+is rejected. If any promise is rejected, then the aggregate promise is
+rejected with the encountered rejection.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$iterable</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$concurrency</h4>
+                                                <code>integer|callable</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$onFulfilled</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_each_limit_all" class="more">« More »</a>    </div>
+
+                                        <div id="function_exception_for" class="element ajax clickable function" data-toggle="collapse" data-target="#function_exception_for .collapse">
+        <h1>exception_for<a href="../namespaces/GuzzleHttp.Promise.html#function_exception_for">¶</a></h1>
+        <p class="short_description">Create an exception for a rejected promise value.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$reason</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Exception|\Throwable</code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_exception_for" class="more">« More »</a>    </div>
+
+                                        <div id="function_inspect" class="element ajax clickable function" data-toggle="collapse" data-target="#function_inspect .collapse">
+        <h1>inspect<a href="../namespaces/GuzzleHttp.Promise.html#function_inspect">¶</a></h1>
+        <p class="short_description">Synchronously waits on a promise to resolve and returns an inspection state
+array.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Returns a state associative array containing a &quot;state&quot; key mapping to a
+valid promise state. If the state of the promise is &quot;fulfilled&quot;, the array
+will contain a &quot;value&quot; key mapping to the fulfilled value of the promise. If
+the promise is rejected, the array will contain a &quot;reason&quot; key mapping to
+the rejection reason of the promise.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promise</h4>
+                                                <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p><p>Promise or value.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_inspect" class="more">« More »</a>    </div>
+
+                                        <div id="function_inspect_all" class="element ajax clickable function" data-toggle="collapse" data-target="#function_inspect_all .collapse">
+        <h1>inspect_all<a href="../namespaces/GuzzleHttp.Promise.html#function_inspect_all">¶</a></h1>
+        <p class="short_description">Waits on all of the provided promises, but does not unwrap rejected promises
+as thrown exception.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Returns an array of inspection state arrays.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            \GuzzleHttp\Promise\inspect
+                                                                                                                <p>for the inspection state array format.</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promises</h4>
+                                                <code>array&lt;mixed,<a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a>&gt;</code><p><p>Traversable of promises to wait upon.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_inspect_all" class="more">« More »</a>    </div>
+
+                                        <div id="function_is_fulfilled" class="element ajax clickable function" data-toggle="collapse" data-target="#function_is_fulfilled .collapse">
+        <h1>is_fulfilled<a href="../namespaces/GuzzleHttp.Promise.html#function_is_fulfilled">¶</a></h1>
+        <p class="short_description">Returns true if a promise is fulfilled.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promise</h4>
+                                                <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_is_fulfilled" class="more">« More »</a>    </div>
+
+                                        <div id="function_is_rejected" class="element ajax clickable function" data-toggle="collapse" data-target="#function_is_rejected .collapse">
+        <h1>is_rejected<a href="../namespaces/GuzzleHttp.Promise.html#function_is_rejected">¶</a></h1>
+        <p class="short_description">Returns true if a promise is rejected.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promise</h4>
+                                                <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_is_rejected" class="more">« More »</a>    </div>
+
+                                        <div id="function_is_settled" class="element ajax clickable function" data-toggle="collapse" data-target="#function_is_settled .collapse">
+        <h1>is_settled<a href="../namespaces/GuzzleHttp.Promise.html#function_is_settled">¶</a></h1>
+        <p class="short_description">Returns true if a promise is fulfilled or rejected.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promise</h4>
+                                                <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_is_settled" class="more">« More »</a>    </div>
+
+                                        <div id="function_iter_for" class="element ajax clickable function" data-toggle="collapse" data-target="#function_iter_for .collapse">
+        <h1>iter_for<a href="../namespaces/GuzzleHttp.Promise.html#function_iter_for">¶</a></h1>
+        <p class="short_description">Returns an iterator for the given value.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Iterator</code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_iter_for" class="more">« More »</a>    </div>
+
+                                        <div id="function_promise_for" class="element ajax clickable function" data-toggle="collapse" data-target="#function_promise_for .collapse">
+        <h1>promise_for<a href="../namespaces/GuzzleHttp.Promise.html#function_promise_for">¶</a></h1>
+        <p class="short_description">Creates a promise for a value if the value is not a promise.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>mixed</code><p><p>Promise or value.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_promise_for" class="more">« More »</a>    </div>
+
+                                        <div id="function_queue" class="element ajax clickable function" data-toggle="collapse" data-target="#function_queue .collapse">
+        <h1>queue<a href="../namespaces/GuzzleHttp.Promise.html#function_queue">¶</a></h1>
+        <p class="short_description">Get the global task queue used for promise resolution.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This task queue MUST be run in an event loop in order for promises to be
+settled asynchronously. It will be automatically run when synchronously
+waiting on a promise.</p>
+<p><code>
+while ($eventLoop-&gt;isRunning()) {
+GuzzleHttp\Promise\queue()-&gt;run();
+}
+</code></p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$assign</h4>
+                                                <code><a href="../classes/GuzzleHttp.Promise.TaskQueueInterface.html">\GuzzleHttp\Promise\TaskQueueInterface</a></code><p><p>Optionally specify a new queue instance.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.TaskQueueInterface.html">\GuzzleHttp\Promise\TaskQueueInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_queue" class="more">« More »</a>    </div>
+
+                                        <div id="function_rejection_for" class="element ajax clickable function" data-toggle="collapse" data-target="#function_rejection_for .collapse">
+        <h1>rejection_for<a href="../namespaces/GuzzleHttp.Promise.html#function_rejection_for">¶</a></h1>
+        <p class="short_description">Creates a rejected promise for a reason if the reason is not a promise. If
+the provided reason is a promise, then it is returned as-is.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$reason</h4>
+                                                <code>mixed</code><p><p>Promise or reason.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_rejection_for" class="more">« More »</a>    </div>
+
+                                        <div id="function_settle" class="element ajax clickable function" data-toggle="collapse" data-target="#function_settle .collapse">
+        <h1>settle<a href="../namespaces/GuzzleHttp.Promise.html#function_settle">¶</a></h1>
+        <p class="short_description">Returns a promise that is fulfilled when all of the provided promises have
+been fulfilled or rejected.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The returned promise is fulfilled with an array of inspection state arrays.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            \GuzzleHttp\Promise\inspect
+                                                                                                                <p>for the inspection state array format.</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promises</h4>
+                                                <code>mixed</code><p><p>Promises or values.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_settle" class="more">« More »</a>    </div>
+
+                                        <div id="function_some" class="element ajax clickable function" data-toggle="collapse" data-target="#function_some .collapse">
+        <h1>some<a href="../namespaces/GuzzleHttp.Promise.html#function_some">¶</a></h1>
+        <p class="short_description">Initiate a competitive race between multiple promises or values (values will
+become immediately fulfilled promises).</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>When count amount of promises have been fulfilled, the returned promise is
+fulfilled with an array that contains the fulfillment values of the winners
+in order of resolution.</p>
+<p>This prommise is rejected with a \GuzzleHttp\Promise\GuzzleHttp\Promise\AggregateException
+if the number of fulfilled promises is less than the desired $count.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$count</h4>
+                                                <code>integer</code><p><p>Total number of promises.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promises</h4>
+                                                <code>mixed</code><p><p>Promises or values.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_some" class="more">« More »</a>    </div>
+
+                                        <div id="function_task" class="element ajax clickable function" data-toggle="collapse" data-target="#function_task .collapse">
+        <h1>task<a href="../namespaces/GuzzleHttp.Promise.html#function_task">¶</a></h1>
+        <p class="short_description">Adds a function to run in the task queue when it is next `run()` and returns
+a promise that is fulfilled or rejected with the result.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$task</h4>
+                                                <code>callable</code><p><p>Task function to run.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_task" class="more">« More »</a>    </div>
+
+                                        <div id="function_unwrap" class="element ajax clickable function" data-toggle="collapse" data-target="#function_unwrap .collapse">
+        <h1>unwrap<a href="../namespaces/GuzzleHttp.Promise.html#function_unwrap">¶</a></h1>
+        <p class="short_description">Waits on all of the provided promises and returns the fulfilled values.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Returns an array that contains the value of each promise (in the same order
+the promises were provided). An exception is thrown if any of the promises
+are rejected.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Exception</dt>
+                                                        <dd><p>on error</p></dd>
+                                                                                                            <dt>\Throwable</dt>
+                                                        <dd><p>on error in PHP &gt;=7</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$promises</h4>
+                                                <code>mixed</code><p><p>Iterable of PromiseInterface objects to wait on.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/GuzzleHttp.Promise.html#function_unwrap" class="more">« More »</a>    </div>
+
+                            </div>
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_PromiseInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_PromiseInterface .collapse">
+        <h1>PromiseInterface<a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">¶</a></h1>
+        <p class="short_description">A promise represents the eventual result of an asynchronous operation.</p>
+        <div class="details collapse">
+                            <p>The primary way of interacting with a promise is through its then method,
+which registers callbacks to receive either a promise’s eventual value or
+the reason why the promise cannot be fulfilled.</p>
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.PromiseInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_PromisorInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_PromisorInterface .collapse">
+        <h1>PromisorInterface<a href="../classes/GuzzleHttp.Promise.PromisorInterface.html">¶</a></h1>
+        <p class="short_description">Interface used with classes that return a promise.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.PromisorInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_TaskQueueInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_TaskQueueInterface .collapse">
+        <h1>TaskQueueInterface<a href="../classes/GuzzleHttp.Promise.TaskQueueInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.TaskQueueInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_AggregateException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AggregateException .collapse">
+        <h1>AggregateException<a href="../classes/GuzzleHttp.Promise.AggregateException.html">¶</a></h1>
+        <p class="short_description">Exception thrown when too many errors occur in the some() or any() methods.</p>
+        <div class="details collapse">
+                            <p>The reason value is available via the getReason() method.</p>
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.AggregateException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CancellationException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CancellationException .collapse">
+        <h1>CancellationException<a href="../classes/GuzzleHttp.Promise.CancellationException.html">¶</a></h1>
+        <p class="short_description">Exception that is set as the reason for a promise that has been cancelled.</p>
+        <div class="details collapse">
+                            <p>The reason value is available via the getReason() method.</p>
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.CancellationException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Coroutine" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Coroutine .collapse">
+        <h1>Coroutine<a href="../classes/GuzzleHttp.Promise.Coroutine.html">¶</a></h1>
+        <p class="short_description">Creates a promise that is resolved using a generator that yields values or
+promises (somewhat similar to C#&#039;s async keyword).</p>
+        <div class="details collapse">
+                            <p>When called, the coroutine function will start an instance of the generator
+and returns a promise that is fulfilled with its final yielded value.</p>
+<p>Control is returned back to the generator when the yielded promise settles.
+This can lead to less verbose code when doing lots of sequential async calls
+with minimal processing in between.</p>
+<pre><code>use GuzzleHttp\Promise;
+
+function createPromise($value) {
+    return new Promise\FulfilledPromise($value);
+}
+
+$promise = Promise\coroutine(function () {
+    $value = (yield createPromise('a'));
+    try {
+        $value = (yield createPromise($value . 'b'));
+    } catch (\Exception $e) {
+        // The promise was rejected.
+    }
+    yield $value . 'c';
+});
+
+// Outputs "abc"
+$promise-&gt;then(function ($v) { echo $v; });</code></pre>
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.Coroutine.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_EachPromise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_EachPromise .collapse">
+        <h1>EachPromise<a href="../classes/GuzzleHttp.Promise.EachPromise.html">¶</a></h1>
+        <p class="short_description">Represents a promise that iterates over many promises and invokes
+side-effect functions in the process.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.EachPromise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FulfilledPromise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FulfilledPromise .collapse">
+        <h1>FulfilledPromise<a href="../classes/GuzzleHttp.Promise.FulfilledPromise.html">¶</a></h1>
+        <p class="short_description">A promise that has been fulfilled.</p>
+        <div class="details collapse">
+                            <p>Thenning off of this promise will invoke the onFulfilled callback
+immediately and ignore other callbacks.</p>
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.FulfilledPromise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Promise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Promise .collapse">
+        <h1>Promise<a href="../classes/GuzzleHttp.Promise.Promise.html">¶</a></h1>
+        <p class="short_description">Promises/A+ implementation that avoids recursion when possible.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.Promise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RejectedPromise" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RejectedPromise .collapse">
+        <h1>RejectedPromise<a href="../classes/GuzzleHttp.Promise.RejectedPromise.html">¶</a></h1>
+        <p class="short_description">A promise that has been rejected.</p>
+        <div class="details collapse">
+                            <p>Thenning off of this promise will invoke the onRejected callback
+immediately and ignore other callbacks.</p>
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.RejectedPromise.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RejectionException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RejectionException .collapse">
+        <h1>RejectionException<a href="../classes/GuzzleHttp.Promise.RejectionException.html">¶</a></h1>
+        <p class="short_description">A special exception that is thrown when waiting on a rejected promise.</p>
+        <div class="details collapse">
+                            <p>The reason value is available via the getReason() method.</p>
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.RejectionException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TaskQueue" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TaskQueue .collapse">
+        <h1>TaskQueue<a href="../classes/GuzzleHttp.Promise.TaskQueue.html">¶</a></h1>
+        <p class="short_description">A task queue that executes tasks in a FIFO order.</p>
+        <div class="details collapse">
+                            <p>This task queue class is used to settle promises asynchronously and
+maintains a constant stack size. You can use the task queue asynchronously
+by calling the <code>run()</code> function of the global task queue in an event loop.</p>
+<pre><code>GuzzleHttp\Promise\queue()-&gt;run();</code></pre>
+                    </div>
+        <a href="../classes/GuzzleHttp.Promise.TaskQueue.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:58 +0200.<br/>
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Ratchet\RFC6455\Messaging\Frame
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: ">
+            <span class="description"></span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method___toString" title="__toString :: ">
+            <span class="description"></span><pre>__toString</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_addBuffer" title="addBuffer :: Add incoming data to the frame from peer">
+            <span class="description">Add incoming data to the frame from peer</span><pre>addBuffer</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_applyMask" title="applyMask :: Apply a mask to a string or the payload of the instance">
+            <span class="description">Apply a mask to a string or the payload of the instance</span><pre>applyMask</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_extractOverflow" title="extractOverflow :: Sometimes clients will concatenate more than one frame over the wire
+This method will take the extra bytes off the end and return them">
+            <span class="description">Sometimes clients will concatenate more than one frame over the wire
+This method will take the extra bytes off the end and return them</span><pre>extractOverflow</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_generateMaskingKey" title="generateMaskingKey :: Create a 4 byte masking key">
+            <span class="description">Create a 4 byte masking key</span><pre>generateMaskingKey</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getContents" title="getContents :: Get the raw contents of the frame">
+            <span class="description">Get the raw contents of the frame</span><pre>getContents</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_getMaskingKey" title="getMaskingKey :: 32-big string">
+            <span class="description">32-big string</span><pre>getMaskingKey</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_getOpcode" title="getOpcode :: ">
+            <span class="description"></span><pre>getOpcode</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getPayload" title="getPayload :: {@inheritdoc}">
+            <span class="description">{@inheritdoc}</span><pre>getPayload</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getPayloadLength" title="getPayloadLength :: {@inheritdoc}">
+            <span class="description">{@inheritdoc}</span><pre>getPayloadLength</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getPayloadStartingByte" title="getPayloadStartingByte :: {@inheritdoc}">
+            <span class="description">{@inheritdoc}</span><pre>getPayloadStartingByte</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getRsv1" title="getRsv1 :: ">
+            <span class="description"></span><pre>getRsv1</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getRsv2" title="getRsv2 :: ">
+            <span class="description"></span><pre>getRsv2</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getRsv3" title="getRsv3 :: ">
+            <span class="description"></span><pre>getRsv3</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isCoalesced" title="isCoalesced :: {@inheritdoc}">
+            <span class="description">{@inheritdoc}</span><pre>isCoalesced</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isFinal" title="isFinal :: Is this the final frame in a fragmented message?">
+            <span class="description">Is this the final frame in a fragmented message?</span><pre>isFinal</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isMasked" title="isMasked :: Is the payload masked?">
+            <span class="description">Is the payload masked?</span><pre>isMasked</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_maskPayload" title="maskPayload :: Apply a mask to the payload">
+            <span class="description">Apply a mask to the payload</span><pre>maskPayload</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_unMaskPayload" title="unMaskPayload :: Remove a mask from the payload">
+            <span class="description">Remove a mask from the payload</span><pre>unMaskPayload</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                        <li class="method protected">
+                            <a href="#method_getFirstPayloadVal" title="getFirstPayloadVal :: Gets the decimal value of bits 9 (10th) through 15 inclusive">
+                                <span class="description">Gets the decimal value of bits 9 (10th) through 15 inclusive</span><pre>getFirstPayloadVal</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
+                            <a href="#method_getNumPayloadBits" title="getNumPayloadBits :: ">
+                                <span class="description"></span><pre>getNumPayloadBits</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_getNumPayloadBytes" title="getNumPayloadBytes :: This just returns the number of bytes used in the frame to describe the payload length (as opposed to # of bits)">
+                                <span class="description">This just returns the number of bytes used in the frame to describe the payload length (as opposed to # of bits)</span><pre>getNumPayloadBytes</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_ABNORMAL" title="CLOSE_ABNORMAL :: ">
+                        <span class="description"></span><pre>CLOSE_ABNORMAL</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_BAD_DATA" title="CLOSE_BAD_DATA :: ">
+                        <span class="description"></span><pre>CLOSE_BAD_DATA</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_BAD_PAYLOAD" title="CLOSE_BAD_PAYLOAD :: ">
+                        <span class="description"></span><pre>CLOSE_BAD_PAYLOAD</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_GOING_AWAY" title="CLOSE_GOING_AWAY :: ">
+                        <span class="description"></span><pre>CLOSE_GOING_AWAY</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_MAND_EXT" title="CLOSE_MAND_EXT :: ">
+                        <span class="description"></span><pre>CLOSE_MAND_EXT</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_NO_STATUS" title="CLOSE_NO_STATUS :: ">
+                        <span class="description"></span><pre>CLOSE_NO_STATUS</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_NORMAL" title="CLOSE_NORMAL :: ">
+                        <span class="description"></span><pre>CLOSE_NORMAL</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_POLICY" title="CLOSE_POLICY :: ">
+                        <span class="description"></span><pre>CLOSE_POLICY</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_PROTOCOL" title="CLOSE_PROTOCOL :: ">
+                        <span class="description"></span><pre>CLOSE_PROTOCOL</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_SRV_ERR" title="CLOSE_SRV_ERR :: ">
+                        <span class="description"></span><pre>CLOSE_SRV_ERR</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_TLS" title="CLOSE_TLS :: ">
+                        <span class="description"></span><pre>CLOSE_TLS</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CLOSE_TOO_BIG" title="CLOSE_TOO_BIG :: ">
+                        <span class="description"></span><pre>CLOSE_TOO_BIG</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_MASK_LENGTH" title="MASK_LENGTH :: ">
+                        <span class="description"></span><pre>MASK_LENGTH</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_BINARY" title="OP_BINARY :: ">
+                        <span class="description"></span><pre>OP_BINARY</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_CLOSE" title="OP_CLOSE :: ">
+                        <span class="description"></span><pre>OP_CLOSE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_CONTINUE" title="OP_CONTINUE :: ">
+                        <span class="description"></span><pre>OP_CONTINUE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_PING" title="OP_PING :: ">
+                        <span class="description"></span><pre>OP_PING</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_PONG" title="OP_PONG :: ">
+                        <span class="description"></span><pre>OP_PONG</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_OP_TEXT" title="OP_TEXT :: ">
+                        <span class="description"></span><pre>OP_TEXT</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Frame</h1>
+                <small style="display: block; text-align: right">
+                                                                Implements <a href="../classes/Ratchet.RFC6455.Messaging.FrameInterface.html">\Ratchet\RFC6455\Messaging\FrameInterface</a>
+                                    </small>
+                <p class="short_description"></p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>__construct</h2>
+                            <pre>__construct(string|null $payload = null, boolean $final = true, integer $opcode = 1, \Ratchet\RFC6455\Messaging\callable&lt;\UnderflowException&gt; $ufExceptionFactory = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$payload</h4>
+                                                <code>string|null</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$final</h4>
+                                                <code>boolean</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$opcode</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$ufExceptionFactory</h4>
+                                                <code>\Ratchet\RFC6455\Messaging\callable<\UnderflowException></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___toString"></a>
+                        <div class="element clickable method public  method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+                            <h2>__toString</h2>
+                            <pre>__toString() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_addBuffer"></a>
+                        <div class="element clickable method public  method_addBuffer" data-toggle="collapse" data-target=".method_addBuffer .collapse">
+                            <h2>Add incoming data to the frame from peer</h2>
+                            <pre>addBuffer( $buf) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$buf</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_applyMask"></a>
+                        <div class="element clickable method public  method_applyMask" data-toggle="collapse" data-target=".method_applyMask .collapse">
+                            <h2>Apply a mask to a string or the payload of the instance</h2>
+                            <pre>applyMask(string $maskingKey, string|null $payload = null) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\UnderflowException</dt>
+                                                        <dd><p>If using the payload but enough hasn't been buffered</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$maskingKey</h4>
+                                                <code>string</code><p><p>The 4 character masking key to be applied</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$payload</h4>
+                                                <code>string|null</code><p><p>A string to mask or null to use the payload</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The masked string</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_extractOverflow"></a>
+                        <div class="element clickable method public  method_extractOverflow" data-toggle="collapse" data-target=".method_extractOverflow .collapse">
+                            <h2>Sometimes clients will concatenate more than one frame over the wire
+This method will take the extra bytes off the end and return them</h2>
+                            <pre>extractOverflow() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_generateMaskingKey"></a>
+                        <div class="element clickable method public  method_generateMaskingKey" data-toggle="collapse" data-target=".method_generateMaskingKey .collapse">
+                            <h2>Create a 4 byte masking key</h2>
+                            <pre>generateMaskingKey() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getContents"></a>
+                        <div class="element clickable method public  method_getContents" data-toggle="collapse" data-target=".method_getContents .collapse">
+                            <h2>Get the raw contents of the frame</h2>
+                            <pre>getContents() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    todo
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>This is untested, make sure the substr is right - trying to return the frame w/o the overflow</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getFirstPayloadVal"></a>
+                        <div class="element clickable method protected  method_getFirstPayloadVal" data-toggle="collapse" data-target=".method_getFirstPayloadVal .collapse">
+                            <h2>Gets the decimal value of bits 9 (10th) through 15 inclusive</h2>
+                            <pre>getFirstPayloadVal() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\UnderflowException</dt>
+                                                        <dd><p>If the buffer doesn't have enough data to determine this</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getMaskingKey"></a>
+                        <div class="element clickable method public  method_getMaskingKey" data-toggle="collapse" data-target=".method_getMaskingKey .collapse">
+                            <h2>32-big string</h2>
+                            <pre>getMaskingKey() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getNumPayloadBits"></a>
+                        <div class="element clickable method protected  method_getNumPayloadBits" data-toggle="collapse" data-target=".method_getNumPayloadBits .collapse">
+                            <h2>getNumPayloadBits</h2>
+                            <pre>getNumPayloadBits() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\UnderflowException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p><p>(7|23|71) Number of bits defined for the payload length in the fame</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getNumPayloadBytes"></a>
+                        <div class="element clickable method protected  method_getNumPayloadBytes" data-toggle="collapse" data-target=".method_getNumPayloadBytes .collapse">
+                            <h2>This just returns the number of bytes used in the frame to describe the payload length (as opposed to # of bits)</h2>
+                            <pre>getNumPayloadBytes() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            \Ratchet\RFC6455\Messaging\getNumPayloadBits
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getOpcode"></a>
+                        <div class="element clickable method public  method_getOpcode" data-toggle="collapse" data-target=".method_getOpcode .collapse">
+                            <h2>getOpcode</h2>
+                            <pre>getOpcode() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getPayload"></a>
+                        <div class="element clickable method public  method_getPayload" data-toggle="collapse" data-target=".method_getPayload .collapse">
+                            <h2>{@inheritdoc}</h2>
+                            <pre>getPayload() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    todo
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Consider not checking mask, always returning the payload, masked or not</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getPayloadLength"></a>
+                        <div class="element clickable method public  method_getPayloadLength" data-toggle="collapse" data-target=".method_getPayloadLength .collapse">
+                            <h2>{@inheritdoc}</h2>
+                            <pre>getPayloadLength() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getPayloadStartingByte"></a>
+                        <div class="element clickable method public  method_getPayloadStartingByte" data-toggle="collapse" data-target=".method_getPayloadStartingByte .collapse">
+                            <h2>{@inheritdoc}</h2>
+                            <pre>getPayloadStartingByte() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getRsv1"></a>
+                        <div class="element clickable method public  method_getRsv1" data-toggle="collapse" data-target=".method_getRsv1 .collapse">
+                            <h2>getRsv1</h2>
+                            <pre>getRsv1() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\UnderflowException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getRsv2"></a>
+                        <div class="element clickable method public  method_getRsv2" data-toggle="collapse" data-target=".method_getRsv2 .collapse">
+                            <h2>getRsv2</h2>
+                            <pre>getRsv2() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\UnderflowException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getRsv3"></a>
+                        <div class="element clickable method public  method_getRsv3" data-toggle="collapse" data-target=".method_getRsv3 .collapse">
+                            <h2>getRsv3</h2>
+                            <pre>getRsv3() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\UnderflowException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isCoalesced"></a>
+                        <div class="element clickable method public  method_isCoalesced" data-toggle="collapse" data-target=".method_isCoalesced .collapse">
+                            <h2>{@inheritdoc}</h2>
+                            <pre>isCoalesced() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isFinal"></a>
+                        <div class="element clickable method public  method_isFinal" data-toggle="collapse" data-target=".method_isFinal .collapse">
+                            <h2>Is this the final frame in a fragmented message?</h2>
+                            <pre>isFinal() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isMasked"></a>
+                        <div class="element clickable method public  method_isMasked" data-toggle="collapse" data-target=".method_isMasked .collapse">
+                            <h2>Is the payload masked?</h2>
+                            <pre>isMasked() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_maskPayload"></a>
+                        <div class="element clickable method public  method_maskPayload" data-toggle="collapse" data-target=".method_maskPayload .collapse">
+                            <h2>Apply a mask to the payload</h2>
+                            <pre>maskPayload( $maskingKey = null) : \Ratchet\RFC6455\Messaging\Frame</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\OutOfBoundsException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\InvalidArgumentException</dt>
+                                                        <dd><p>If there is an issue with the given masking key</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$maskingKey</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Ratchet.RFC6455.Messaging.Frame.html">\Ratchet\RFC6455\Messaging\Frame</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_unMaskPayload"></a>
+                        <div class="element clickable method public  method_unMaskPayload" data-toggle="collapse" data-target=".method_unMaskPayload .collapse">
+                            <h2>Remove a mask from the payload</h2>
+                            <pre>unMaskPayload() : \Ratchet\RFC6455\Messaging\Frame</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\UnderFlowException</dt>
+                                                        <dd><p>If the frame is not coalesced</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Ratchet.RFC6455.Messaging.Frame.html">\Ratchet\RFC6455\Messaging\Frame</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_OP_CONTINUE"> </a>
+                            <div class="element clickable constant  constant_OP_CONTINUE" data-toggle="collapse" data-target=".constant_OP_CONTINUE .collapse">
+                                <h2>OP_CONTINUE</h2>
+                                <pre>OP_CONTINUE</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_TEXT"> </a>
+                            <div class="element clickable constant  constant_OP_TEXT" data-toggle="collapse" data-target=".constant_OP_TEXT .collapse">
+                                <h2>OP_TEXT</h2>
+                                <pre>OP_TEXT</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_BINARY"> </a>
+                            <div class="element clickable constant  constant_OP_BINARY" data-toggle="collapse" data-target=".constant_OP_BINARY .collapse">
+                                <h2>OP_BINARY</h2>
+                                <pre>OP_BINARY</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_CLOSE"> </a>
+                            <div class="element clickable constant  constant_OP_CLOSE" data-toggle="collapse" data-target=".constant_OP_CLOSE .collapse">
+                                <h2>OP_CLOSE</h2>
+                                <pre>OP_CLOSE</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_PING"> </a>
+                            <div class="element clickable constant  constant_OP_PING" data-toggle="collapse" data-target=".constant_OP_PING .collapse">
+                                <h2>OP_PING</h2>
+                                <pre>OP_PING</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_OP_PONG"> </a>
+                            <div class="element clickable constant  constant_OP_PONG" data-toggle="collapse" data-target=".constant_OP_PONG .collapse">
+                                <h2>OP_PONG</h2>
+                                <pre>OP_PONG</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_NORMAL"> </a>
+                            <div class="element clickable constant  constant_CLOSE_NORMAL" data-toggle="collapse" data-target=".constant_CLOSE_NORMAL .collapse">
+                                <h2>CLOSE_NORMAL</h2>
+                                <pre>CLOSE_NORMAL</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_GOING_AWAY"> </a>
+                            <div class="element clickable constant  constant_CLOSE_GOING_AWAY" data-toggle="collapse" data-target=".constant_CLOSE_GOING_AWAY .collapse">
+                                <h2>CLOSE_GOING_AWAY</h2>
+                                <pre>CLOSE_GOING_AWAY</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_PROTOCOL"> </a>
+                            <div class="element clickable constant  constant_CLOSE_PROTOCOL" data-toggle="collapse" data-target=".constant_CLOSE_PROTOCOL .collapse">
+                                <h2>CLOSE_PROTOCOL</h2>
+                                <pre>CLOSE_PROTOCOL</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_BAD_DATA"> </a>
+                            <div class="element clickable constant  constant_CLOSE_BAD_DATA" data-toggle="collapse" data-target=".constant_CLOSE_BAD_DATA .collapse">
+                                <h2>CLOSE_BAD_DATA</h2>
+                                <pre>CLOSE_BAD_DATA</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_NO_STATUS"> </a>
+                            <div class="element clickable constant  constant_CLOSE_NO_STATUS" data-toggle="collapse" data-target=".constant_CLOSE_NO_STATUS .collapse">
+                                <h2>CLOSE_NO_STATUS</h2>
+                                <pre>CLOSE_NO_STATUS</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_ABNORMAL"> </a>
+                            <div class="element clickable constant  constant_CLOSE_ABNORMAL" data-toggle="collapse" data-target=".constant_CLOSE_ABNORMAL .collapse">
+                                <h2>CLOSE_ABNORMAL</h2>
+                                <pre>CLOSE_ABNORMAL</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_BAD_PAYLOAD"> </a>
+                            <div class="element clickable constant  constant_CLOSE_BAD_PAYLOAD" data-toggle="collapse" data-target=".constant_CLOSE_BAD_PAYLOAD .collapse">
+                                <h2>CLOSE_BAD_PAYLOAD</h2>
+                                <pre>CLOSE_BAD_PAYLOAD</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_POLICY"> </a>
+                            <div class="element clickable constant  constant_CLOSE_POLICY" data-toggle="collapse" data-target=".constant_CLOSE_POLICY .collapse">
+                                <h2>CLOSE_POLICY</h2>
+                                <pre>CLOSE_POLICY</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_TOO_BIG"> </a>
+                            <div class="element clickable constant  constant_CLOSE_TOO_BIG" data-toggle="collapse" data-target=".constant_CLOSE_TOO_BIG .collapse">
+                                <h2>CLOSE_TOO_BIG</h2>
+                                <pre>CLOSE_TOO_BIG</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_MAND_EXT"> </a>
+                            <div class="element clickable constant  constant_CLOSE_MAND_EXT" data-toggle="collapse" data-target=".constant_CLOSE_MAND_EXT .collapse">
+                                <h2>CLOSE_MAND_EXT</h2>
+                                <pre>CLOSE_MAND_EXT</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_SRV_ERR"> </a>
+                            <div class="element clickable constant  constant_CLOSE_SRV_ERR" data-toggle="collapse" data-target=".constant_CLOSE_SRV_ERR .collapse">
+                                <h2>CLOSE_SRV_ERR</h2>
+                                <pre>CLOSE_SRV_ERR</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CLOSE_TLS"> </a>
+                            <div class="element clickable constant  constant_CLOSE_TLS" data-toggle="collapse" data-target=".constant_CLOSE_TLS .collapse">
+                                <h2>CLOSE_TLS</h2>
+                                <pre>CLOSE_TLS</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_MASK_LENGTH"> </a>
+                            <div class="element clickable constant  constant_MASK_LENGTH" data-toggle="collapse" data-target=".constant_MASK_LENGTH .collapse">
+                                <h2>MASK_LENGTH</h2>
+                                <pre>MASK_LENGTH</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_data"> </a>
+                            <div class="element clickable property  protected property_data" data-toggle="collapse" data-target=".property_data .collapse">
+                                <h2>The contents of the frame</h2>
+                                <pre>data : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_bytesRecvd"> </a>
+                            <div class="element clickable property  public property_bytesRecvd" data-toggle="collapse" data-target=".property_bytesRecvd .collapse">
+                                <h2>Number of bytes received from the frame</h2>
+                                <pre>bytesRecvd : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_defPayLen"> </a>
+                            <div class="element clickable property  protected property_defPayLen" data-toggle="collapse" data-target=".property_defPayLen .collapse">
+                                <h2>Number of bytes in the payload (as per framing protocol)</h2>
+                                <pre>defPayLen : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_isCoalesced"> </a>
+                            <div class="element clickable property  private property_isCoalesced" data-toggle="collapse" data-target=".property_isCoalesced .collapse">
+                                <h2>If the frame is coalesced this is true
+This is to prevent doing math every time ::isCoalesced is called</h2>
+                                <pre>isCoalesced : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_firstByte"> </a>
+                            <div class="element clickable property  protected property_firstByte" data-toggle="collapse" data-target=".property_firstByte .collapse">
+                                <h2>The unpacked first byte of the frame</h2>
+                                <pre>firstByte : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_secondByte"> </a>
+                            <div class="element clickable property  protected property_secondByte" data-toggle="collapse" data-target=".property_secondByte .collapse">
+                                <h2>The unpacked second byte of the frame</h2>
+                                <pre>secondByte : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_ufeg"> </a>
+                            <div class="element clickable property  private property_ufeg" data-toggle="collapse" data-target=".property_ufeg .collapse">
+                                <h2>ufeg</h2>
+                                <pre>ufeg : callable</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        returns
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>\UnderflowException</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>callable</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Ratchet\RFC6455\Messaging\Frame"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Ratchet.RFC6455.Messaging.html">Messaging</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Ratchet.RFC6455.Messaging.Frame.html">Frame</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:04 +0200.<br/>
+    </footer>
+    </body>
+</html>

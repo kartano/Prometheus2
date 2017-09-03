@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Discord\Http\Guzzle
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public inherited">
+        <a href="#method___call" title="__call :: ">
+            <span class="description"></span><pre>__call</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method___construct" title="__construct :: Clients accept an array of constructor parameters.">
+            <span class="description">Clients accept an array of constructor parameters.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_blocking" title="blocking :: {@inheritdoc}">
+            <span class="description">{@inheritdoc}</span><pre>blocking</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public inherited">
+        <a href="#method_delete" title="delete :: ">
+            <span class="description"></span><pre>delete</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_deleteAsync" title="deleteAsync :: ">
+            <span class="description"></span><pre>deleteAsync</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_get" title="get :: ">
+            <span class="description"></span><pre>get</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_getAsync" title="getAsync :: ">
+            <span class="description"></span><pre>getAsync</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_getConfig" title="getConfig :: Get a client configuration option.">
+            <span class="description">Get a client configuration option.</span><pre>getConfig</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_head" title="head :: ">
+            <span class="description"></span><pre>head</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_headAsync" title="headAsync :: ">
+            <span class="description"></span><pre>headAsync</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public inherited">
+        <a href="#method_patch" title="patch :: ">
+            <span class="description"></span><pre>patch</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_patchAsync" title="patchAsync :: ">
+            <span class="description"></span><pre>patchAsync</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_post" title="post :: ">
+            <span class="description"></span><pre>post</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_postAsync" title="postAsync :: ">
+            <span class="description"></span><pre>postAsync</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public inherited">
+        <a href="#method_put" title="put :: ">
+            <span class="description"></span><pre>put</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_putAsync" title="putAsync :: ">
+            <span class="description"></span><pre>putAsync</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_request" title="request :: Create and send an HTTP request.">
+            <span class="description">Create and send an HTTP request.</span><pre>request</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_requestAsync" title="requestAsync :: Create and send an asynchronous HTTP request.">
+            <span class="description">Create and send an asynchronous HTTP request.</span><pre>requestAsync</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_runRequest" title="runRequest :: Runs an HTTP request.">
+            <span class="description">Runs an HTTP request.</span><pre>runRequest</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_send" title="send :: Send an HTTP request.">
+            <span class="description">Send an HTTP request.</span><pre>send</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_sendAsync" title="sendAsync :: Asynchronously send an HTTP request.">
+            <span class="description">Asynchronously send an HTTP request.</span><pre>sendAsync</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_sendFile" title="sendFile :: {@inheritdoc}">
+            <span class="description">{@inheritdoc}</span><pre>sendFile</pre>
+        </a>
+    </li>
+
+                                                                                                        </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                    <li class="method private inherited">
+                            <a href="#method_applyOptions" title="applyOptions :: Applies the array of request options to a request.">
+                                <span class="description">Applies the array of request options to a request.</span><pre>applyOptions</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method private inherited">
+                            <a href="#method_buildUri" title="buildUri :: ">
+                                <span class="description"></span><pre>buildUri</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private inherited">
+                            <a href="#method_configureDefaults" title="configureDefaults :: Configures the default options for a client.">
+                                <span class="description">Configures the default options for a client.</span><pre>configureDefaults</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                            <li class="method private inherited">
+                            <a href="#method_invalidBody" title="invalidBody :: ">
+                                <span class="description"></span><pre>invalidBody</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method private inherited">
+                            <a href="#method_prepareDefaults" title="prepareDefaults :: Merges default options into the array.">
+                                <span class="description">Merges default options into the array.</span><pre>prepareDefaults</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                <li class="method private inherited">
+                            <a href="#method_transfer" title="transfer :: Transfers the given request and applies request options.">
+                                <span class="description">Transfers the given request and applies request options.</span><pre>transfer</pre>
+                            </a>
+                        </li>
+                                                </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Guzzle</h1>
+                <small style="display: block; text-align: right">
+                                            Extends <a href="../classes/GuzzleHttp.Client.html">\GuzzleHttp\Client</a>
+                                                                Implements <a href="../classes/Discord.Http.HttpDriver.html">\Discord\Http\HttpDriver</a>
+                                    </small>
+                <p class="short_description">The Guzzle PHP library driver for the HTTP client.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        author
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>David Cole <a href="mailto:david@team-reflex.com">david@team-reflex.com</a></p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___call"></a>
+                        <div class="element clickable method public  method___call inherited" data-toggle="collapse" data-target=".method___call .collapse">
+                            <h2>__call</h2>
+                            <pre>__call( $method,  $args) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$args</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Clients accept an array of constructor parameters.</h2>
+                            <pre>__construct(array $config = array()) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Here's an example of creating a client using a base_uri and an array of
+default request options to apply to each request:</p>
+<pre><code>$client = new Client([
+    'base_uri'        =&gt; 'http://www.foo.com/1.0/',
+    'timeout'         =&gt; 0,
+    'allow_redirects' =&gt; false,
+    'proxy'           =&gt; '192.168.16.1:10'
+]);</code></pre>
+<p>Client configuration settings include the following options:</p>
+<ul>
+<li>handler: (callable) Function that transfers HTTP requests over the
+wire. The function is called with a Psr7\Http\Message\RequestInterface
+and array of transfer options, and must return a
+GuzzleHttp\Promise\PromiseInterface that is fulfilled with a
+Psr7\Http\Message\ResponseInterface on success. &quot;handler&quot; is a
+constructor only option that cannot be overridden in per/request
+options. If no handler is provided, a default handler will be created
+that enables all of the request options below by attaching all of the
+default middleware to the handler.</li>
+<li>base_uri: (string|UriInterface) Base URI of the client that is merged
+into relative URIs. Can be a string or instance of UriInterface.</li>
+<li>**: any request option</li>
+</ul></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            <a href="../classes/GuzzleHttp.RequestOptions.html">\GuzzleHttp\RequestOptions</a>
+                                                                                                                <p>for a list of available request options.</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code>array</code><p><p>Client configuration settings.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_applyOptions"></a>
+                        <div class="element clickable method private  method_applyOptions inherited" data-toggle="collapse" data-target=".method_applyOptions .collapse">
+                            <h2>Applies the array of request options to a request.</h2>
+                            <pre>applyOptions(\Psr\Http\Message\RequestInterface $request, array &$options) : \Psr\Http\Message\RequestInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$request</h4>
+                                                <code><a href="../classes/Psr.Http.Message.RequestInterface.html">\Psr\Http\Message\RequestInterface</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Psr.Http.Message.RequestInterface.html">\Psr\Http\Message\RequestInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_blocking"></a>
+                        <div class="element clickable method public  method_blocking" data-toggle="collapse" data-target=".method_blocking .collapse">
+                            <h2>{@inheritdoc}</h2>
+                            <pre>blocking( $method,  $url,  $headers,  $body) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$url</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$headers</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$body</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_buildUri"></a>
+                        <div class="element clickable method private  method_buildUri inherited" data-toggle="collapse" data-target=".method_buildUri .collapse">
+                            <h2>buildUri</h2>
+                            <pre>buildUri( $uri, array $config) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_configureDefaults"></a>
+                        <div class="element clickable method private  method_configureDefaults inherited" data-toggle="collapse" data-target=".method_configureDefaults .collapse">
+                            <h2>Configures the default options for a client.</h2>
+                            <pre>configureDefaults(array $config) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_delete"></a>
+                        <div class="element clickable method public  method_delete inherited" data-toggle="collapse" data-target=".method_delete .collapse">
+                            <h2>delete</h2>
+                            <pre>delete(string|\UriInterface $uri, array $options = []) : \Psr\Http\Message\ResponseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Psr\Http\Message\ResponseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_deleteAsync"></a>
+                        <div class="element clickable method public  method_deleteAsync inherited" data-toggle="collapse" data-target=".method_deleteAsync .collapse">
+                            <h2>deleteAsync</h2>
+                            <pre>deleteAsync(string|\UriInterface $uri, array $options = []) : \GuzzleHttp\Promise\PromiseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\GuzzleHttp\Promise\PromiseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_get"></a>
+                        <div class="element clickable method public  method_get inherited" data-toggle="collapse" data-target=".method_get .collapse">
+                            <h2>get</h2>
+                            <pre>get(string|\UriInterface $uri, array $options = []) : \Psr\Http\Message\ResponseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Psr\Http\Message\ResponseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getAsync"></a>
+                        <div class="element clickable method public  method_getAsync inherited" data-toggle="collapse" data-target=".method_getAsync .collapse">
+                            <h2>getAsync</h2>
+                            <pre>getAsync(string|\UriInterface $uri, array $options = []) : \GuzzleHttp\Promise\PromiseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\GuzzleHttp\Promise\PromiseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getConfig"></a>
+                        <div class="element clickable method public  method_getConfig inherited" data-toggle="collapse" data-target=".method_getConfig .collapse">
+                            <h2>Get a client configuration option.</h2>
+                            <pre>getConfig(string|null $option = null) : mixed</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>These options include default request options of the client, a &quot;handler&quot;
+(if utilized by the concrete client), and a &quot;base_uri&quot; if utilized by
+the concrete client.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$option</h4>
+                                                <code>string|null</code><p><p>The config option to retrieve.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_head"></a>
+                        <div class="element clickable method public  method_head inherited" data-toggle="collapse" data-target=".method_head .collapse">
+                            <h2>head</h2>
+                            <pre>head(string|\UriInterface $uri, array $options = []) : \Psr\Http\Message\ResponseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Psr\Http\Message\ResponseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_headAsync"></a>
+                        <div class="element clickable method public  method_headAsync inherited" data-toggle="collapse" data-target=".method_headAsync .collapse">
+                            <h2>headAsync</h2>
+                            <pre>headAsync(string|\UriInterface $uri, array $options = []) : \GuzzleHttp\Promise\PromiseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\GuzzleHttp\Promise\PromiseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_invalidBody"></a>
+                        <div class="element clickable method private  method_invalidBody inherited" data-toggle="collapse" data-target=".method_invalidBody .collapse">
+                            <h2>invalidBody</h2>
+                            <pre>invalidBody() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_patch"></a>
+                        <div class="element clickable method public  method_patch inherited" data-toggle="collapse" data-target=".method_patch .collapse">
+                            <h2>patch</h2>
+                            <pre>patch(string|\UriInterface $uri, array $options = []) : \Psr\Http\Message\ResponseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Psr\Http\Message\ResponseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_patchAsync"></a>
+                        <div class="element clickable method public  method_patchAsync inherited" data-toggle="collapse" data-target=".method_patchAsync .collapse">
+                            <h2>patchAsync</h2>
+                            <pre>patchAsync(string|\UriInterface $uri, array $options = []) : \GuzzleHttp\Promise\PromiseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\GuzzleHttp\Promise\PromiseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_post"></a>
+                        <div class="element clickable method public  method_post inherited" data-toggle="collapse" data-target=".method_post .collapse">
+                            <h2>post</h2>
+                            <pre>post(string|\UriInterface $uri, array $options = []) : \Psr\Http\Message\ResponseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Psr\Http\Message\ResponseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_postAsync"></a>
+                        <div class="element clickable method public  method_postAsync inherited" data-toggle="collapse" data-target=".method_postAsync .collapse">
+                            <h2>postAsync</h2>
+                            <pre>postAsync(string|\UriInterface $uri, array $options = []) : \GuzzleHttp\Promise\PromiseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\GuzzleHttp\Promise\PromiseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_prepareDefaults"></a>
+                        <div class="element clickable method private  method_prepareDefaults inherited" data-toggle="collapse" data-target=".method_prepareDefaults .collapse">
+                            <h2>Merges default options into the array.</h2>
+                            <pre>prepareDefaults(array $options) : array</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>Options to modify by reference</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_put"></a>
+                        <div class="element clickable method public  method_put inherited" data-toggle="collapse" data-target=".method_put .collapse">
+                            <h2>put</h2>
+                            <pre>put(string|\UriInterface $uri, array $options = []) : \Psr\Http\Message\ResponseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\Psr\Http\Message\ResponseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_putAsync"></a>
+                        <div class="element clickable method public  method_putAsync inherited" data-toggle="collapse" data-target=".method_putAsync .collapse">
+                            <h2>putAsync</h2>
+                            <pre>putAsync(string|\UriInterface $uri, array $options = []) : \GuzzleHttp\Promise\PromiseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|\UriInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\GuzzleHttp\Promise\PromiseInterface</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_request"></a>
+                        <div class="element clickable method public  method_request inherited" data-toggle="collapse" data-target=".method_request .collapse">
+                            <h2>Create and send an HTTP request.</h2>
+                            <pre>request(string $method, string|\Psr\Http\Message\UriInterface $uri = &#039;&#039;, array $options = array()) : \Psr\Http\Message\ResponseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Use an absolute path to override the base path of the client, or a
+relative path to append to the base path of the client. The URL can
+contain the query string as well.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code>string</code><p><p>HTTP method.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|<a href="../classes/Psr.Http.Message.UriInterface.html">\Psr\Http\Message\UriInterface</a></code><p><p>URI object or string.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>Request options to apply.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Psr.Http.Message.ResponseInterface.html">\Psr\Http\Message\ResponseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_requestAsync"></a>
+                        <div class="element clickable method public  method_requestAsync inherited" data-toggle="collapse" data-target=".method_requestAsync .collapse">
+                            <h2>Create and send an asynchronous HTTP request.</h2>
+                            <pre>requestAsync(string $method, string|\Psr\Http\Message\UriInterface $uri = &#039;&#039;, array $options = array()) : \GuzzleHttp\Promise\PromiseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Use an absolute path to override the base path of the client, or a
+relative path to append to the base path of the client. The URL can
+contain the query string as well. Use an array to provide a URL
+template and additional variables to use in the URL template expansion.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code>string</code><p><p>HTTP method</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code>string|<a href="../classes/Psr.Http.Message.UriInterface.html">\Psr\Http\Message\UriInterface</a></code><p><p>URI object or string.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>Request options to apply.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_runRequest"></a>
+                        <div class="element clickable method public  method_runRequest" data-toggle="collapse" data-target=".method_runRequest .collapse">
+                            <h2>Runs an HTTP request.</h2>
+                            <pre>runRequest(string $method, string $url, array $headers, string $body, array $options = array()) : \React\Promise\Promise</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code>string</code><p><p>The HTTP method to use.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$url</h4>
+                                                <code>string</code><p><p>The endpoint that will be queried.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$headers</h4>
+                                                <code>array</code><p><p>The headers to send in the request.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$body</h4>
+                                                <code>string</code><p><p>The request content.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>An array of Guzzle options.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/React.Promise.Promise.html">\React\Promise\Promise</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_send"></a>
+                        <div class="element clickable method public  method_send inherited" data-toggle="collapse" data-target=".method_send .collapse">
+                            <h2>Send an HTTP request.</h2>
+                            <pre>send(\Psr\Http\Message\RequestInterface $request, array $options = array()) : \Psr\Http\Message\ResponseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$request</h4>
+                                                <code><a href="../classes/Psr.Http.Message.RequestInterface.html">\Psr\Http\Message\RequestInterface</a></code><p><p>Request to send</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>Request options to apply to the given
+request and to the transfer.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Psr.Http.Message.ResponseInterface.html">\Psr\Http\Message\ResponseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_sendAsync"></a>
+                        <div class="element clickable method public  method_sendAsync inherited" data-toggle="collapse" data-target=".method_sendAsync .collapse">
+                            <h2>Asynchronously send an HTTP request.</h2>
+                            <pre>sendAsync(\Psr\Http\Message\RequestInterface $request, array $options = array()) : \GuzzleHttp\Promise\PromiseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$request</h4>
+                                                <code><a href="../classes/Psr.Http.Message.RequestInterface.html">\Psr\Http\Message\RequestInterface</a></code><p><p>Request to send</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>Request options to apply to the given
+request and to the transfer.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_sendFile"></a>
+                        <div class="element clickable method public  method_sendFile" data-toggle="collapse" data-target=".method_sendFile .collapse">
+                            <h2>{@inheritdoc}</h2>
+                            <pre>sendFile(\Discord\Http\Http $http, \Discord\Parts\Channel\Channel $channel,  $filepath,  $filename,  $content,  $tts,  $token) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$http</h4>
+                                                <code><a href="../classes/Discord.Http.Http.html">\Discord\Http\Http</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$channel</h4>
+                                                <code><a href="../classes/Discord.Parts.Channel.Channel.html">\Discord\Parts\Channel\Channel</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$filepath</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$filename</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$content</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$tts</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$token</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_transfer"></a>
+                        <div class="element clickable method private  method_transfer inherited" data-toggle="collapse" data-target=".method_transfer .collapse">
+                            <h2>Transfers the given request and applies request options.</h2>
+                            <pre>transfer(\Psr\Http\Message\RequestInterface $request, array $options) : \GuzzleHttp\Promise\PromiseInterface</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The URI of the request is not modified and the request options are used
+as-is without merging in default options.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$request</h4>
+                                                <code><a href="../classes/Psr.Http.Message.RequestInterface.html">\Psr\Http\Message\RequestInterface</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/GuzzleHttp.Promise.PromiseInterface.html">\GuzzleHttp\Promise\PromiseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_async"> </a>
+                            <div class="element clickable property  protected property_async" data-toggle="collapse" data-target=".property_async .collapse">
+                                <h2>Whether we are operating as async.</h2>
+                                <pre>async : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Async.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_cache"> </a>
+                            <div class="element clickable property  protected property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
+                                <h2>The cache wrapper.</h2>
+                                <pre>cache : \Discord\Wrapper\CacheWrapper</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Wrapper.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Wrapper.CacheWrapper.html">\Discord\Wrapper\CacheWrapper</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_loop"> </a>
+                            <div class="element clickable property  protected property_loop" data-toggle="collapse" data-target=".property_loop .collapse">
+                                <h2>The ReactPHP event loop.</h2>
+                                <pre>loop : \React\EventLoop\LoopInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Event loop.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/React.EventLoop.LoopInterface.html">\React\EventLoop\LoopInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_adapter"> </a>
+                            <div class="element clickable property  protected property_adapter" data-toggle="collapse" data-target=".property_adapter .collapse">
+                                <h2>The GuzzleHTTP -&gt; ReactPHP connector.</h2>
+                                <pre>adapter : \WyriHaximus\React\GuzzlePsr7\HttpClientAdapter</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>The connector.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/WyriHaximus.React.GuzzlePsr7.HttpClientAdapter.html">\WyriHaximus\React\GuzzlePsr7\HttpClientAdapter</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_rateLimited"> </a>
+                            <div class="element clickable property  protected property_rateLimited" data-toggle="collapse" data-target=".property_rateLimited .collapse">
+                                <h2>Whether the HTTP client has been rate limited.</h2>
+                                <pre>rateLimited : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Rate limited.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_rateLimits"> </a>
+                            <div class="element clickable property  protected property_rateLimits" data-toggle="collapse" data-target=".property_rateLimits .collapse">
+                                <h2>Array of rate limit promises.</h2>
+                                <pre>rateLimits : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Rate Limits.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_config"> </a>
+                            <div class="element clickable property  private property_config inherited" data-toggle="collapse" data-target=".property_config .collapse">
+                                <h2>Default request options</h2>
+                                <pre>config : array</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Default request options</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Discord\Http\Guzzle"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Discord.Http.html">Http</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Discord.Http.Guzzle.html">Guzzle</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:02 +0200.<br/>
+    </footer>
+    </body>
+</html>

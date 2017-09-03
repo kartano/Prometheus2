@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \React\Tests
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/React.Tests.html" title="Tests">
+                    <i class="icon-th"></i> Tests
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/React.Tests.Cache.html" title="Cache">
+            <i class="icon-th"></i> Cache
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.Dns.html" title="Dns">
+            <i class="icon-th"></i> Dns
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/React.Tests.Dns.Config.html" title="Config">
+            <i class="icon-th"></i> Config
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.Dns.Model.html" title="Model">
+            <i class="icon-th"></i> Model
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.Dns.Protocol.html" title="Protocol">
+            <i class="icon-th"></i> Protocol
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.Dns.Query.html" title="Query">
+            <i class="icon-th"></i> Query
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.Dns.Resolver.html" title="Resolver">
+            <i class="icon-th"></i> Resolver
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.EventLoop.html" title="EventLoop">
+            <i class="icon-th"></i> EventLoop
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/React.Tests.EventLoop.Timer.html" title="Timer">
+            <i class="icon-th"></i> Timer
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.HttpClient.html" title="HttpClient">
+            <i class="icon-th"></i> HttpClient
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.Promise.html" title="Promise">
+            <i class="icon-th"></i> Promise
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/React.Tests.Promise.Timer.html" title="Timer">
+            <i class="icon-th"></i> Timer
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.Socket.html" title="Socket">
+            <i class="icon-th"></i> Socket
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/React.Tests.Socket.Stub.html" title="Stub">
+            <i class="icon-th"></i> Stub
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.SocketClient.html" title="SocketClient">
+            <i class="icon-th"></i> SocketClient
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/React.Tests.Stream.html" title="Stream">
+            <i class="icon-th"></i> Stream
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/React.Tests.Stream.Stub.html" title="Stub">
+            <i class="icon-th"></i> Stub
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.html">Dns</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CallableStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallableStub .collapse">
+        <h1>CallableStub<a href="../classes/React.Tests.Dns.CallableStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.CallableStub.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionalTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionalTest .collapse">
+        <h1>FunctionalTest<a href="../classes/React.Tests.Dns.FunctionalTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.FunctionalTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/React.Tests.Dns.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.TestCase.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.Query.html">Query</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CachedExecutorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CachedExecutorTest .collapse">
+        <h1>CachedExecutorTest<a href="../classes/React.Tests.Dns.Query.CachedExecutorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Query.CachedExecutorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ExecutorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExecutorTest .collapse">
+        <h1>ExecutorTest<a href="../classes/React.Tests.Dns.Query.ExecutorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Query.ExecutorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_HostsFileExecutorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HostsFileExecutorTest .collapse">
+        <h1>HostsFileExecutorTest<a href="../classes/React.Tests.Dns.Query.HostsFileExecutorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Query.HostsFileExecutorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RecordBagTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RecordBagTest .collapse">
+        <h1>RecordBagTest<a href="../classes/React.Tests.Dns.Query.RecordBagTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Query.RecordBagTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RecordCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RecordCacheTest .collapse">
+        <h1>RecordCacheTest<a href="../classes/React.Tests.Dns.Query.RecordCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Query.RecordCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RetryExecutorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RetryExecutorTest .collapse">
+        <h1>RetryExecutorTest<a href="../classes/React.Tests.Dns.Query.RetryExecutorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Query.RetryExecutorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TimeoutExecutorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TimeoutExecutorTest .collapse">
+        <h1>TimeoutExecutorTest<a href="../classes/React.Tests.Dns.Query.TimeoutExecutorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Query.TimeoutExecutorTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.Resolver.html">Resolver</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_FactoryTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FactoryTest .collapse">
+        <h1>FactoryTest<a href="../classes/React.Tests.Dns.Resolver.FactoryTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Resolver.FactoryTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ResolveAliasesTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ResolveAliasesTest .collapse">
+        <h1>ResolveAliasesTest<a href="../classes/React.Tests.Dns.Resolver.ResolveAliasesTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Resolver.ResolveAliasesTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ResolverTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ResolverTest .collapse">
+        <h1>ResolverTest<a href="../classes/React.Tests.Dns.Resolver.ResolverTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Resolver.ResolverTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.Model.html">Model</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_MessageTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageTest .collapse">
+        <h1>MessageTest<a href="../classes/React.Tests.Dns.Model.MessageTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Model.MessageTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.Config.html">Config</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_HostsFileTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HostsFileTest .collapse">
+        <h1>HostsFileTest<a href="../classes/React.Tests.Dns.Config.HostsFileTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Config.HostsFileTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.html">Dns</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Dns.Protocol.html">Protocol</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_BinaryDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BinaryDumperTest .collapse">
+        <h1>BinaryDumperTest<a href="../classes/React.Tests.Dns.Protocol.BinaryDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Protocol.BinaryDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ParserTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ParserTest .collapse">
+        <h1>ParserTest<a href="../classes/React.Tests.Dns.Protocol.ParserTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Dns.Protocol.ParserTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.SocketClient.html">SocketClient</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CallableStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallableStub .collapse">
+        <h1>CallableStub<a href="../classes/React.Tests.SocketClient.CallableStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.SocketClient.CallableStub.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ConnectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ConnectorTest .collapse">
+        <h1>ConnectorTest<a href="../classes/React.Tests.SocketClient.ConnectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.SocketClient.ConnectorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IntegrationTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IntegrationTest .collapse">
+        <h1>IntegrationTest<a href="../classes/React.Tests.SocketClient.IntegrationTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.SocketClient.IntegrationTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/React.Tests.SocketClient.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.SocketClient.TestCase.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UnixConnectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UnixConnectorTest .collapse">
+        <h1>UnixConnectorTest<a href="../classes/React.Tests.SocketClient.UnixConnectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.SocketClient.UnixConnectorTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Socket.html">Socket</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ConnectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ConnectorTest .collapse">
+        <h1>ConnectorTest<a href="../classes/React.Tests.Socket.ConnectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.ConnectorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DnsConnectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DnsConnectorTest .collapse">
+        <h1>DnsConnectorTest<a href="../classes/React.Tests.Socket.DnsConnectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.DnsConnectorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionalConnectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionalConnectorTest .collapse">
+        <h1>FunctionalConnectorTest<a href="../classes/React.Tests.Socket.FunctionalConnectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.FunctionalConnectorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionalSecureServerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionalSecureServerTest .collapse">
+        <h1>FunctionalSecureServerTest<a href="../classes/React.Tests.Socket.FunctionalSecureServerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.FunctionalSecureServerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionalTcpServerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionalTcpServerTest .collapse">
+        <h1>FunctionalTcpServerTest<a href="../classes/React.Tests.Socket.FunctionalTcpServerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.FunctionalTcpServerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IntegrationTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IntegrationTest .collapse">
+        <h1>IntegrationTest<a href="../classes/React.Tests.Socket.IntegrationTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.IntegrationTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LimitingServerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LimitingServerTest .collapse">
+        <h1>LimitingServerTest<a href="../classes/React.Tests.Socket.LimitingServerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.LimitingServerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SecureConnectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SecureConnectorTest .collapse">
+        <h1>SecureConnectorTest<a href="../classes/React.Tests.Socket.SecureConnectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.SecureConnectorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SecureIntegrationTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SecureIntegrationTest .collapse">
+        <h1>SecureIntegrationTest<a href="../classes/React.Tests.Socket.SecureIntegrationTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.SecureIntegrationTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SecureServerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SecureServerTest .collapse">
+        <h1>SecureServerTest<a href="../classes/React.Tests.Socket.SecureServerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.SecureServerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ServerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ServerTest .collapse">
+        <h1>ServerTest<a href="../classes/React.Tests.Socket.ServerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.ServerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TcpConnectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TcpConnectorTest .collapse">
+        <h1>TcpConnectorTest<a href="../classes/React.Tests.Socket.TcpConnectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.TcpConnectorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TcpServerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TcpServerTest .collapse">
+        <h1>TcpServerTest<a href="../classes/React.Tests.Socket.TcpServerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.TcpServerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/React.Tests.Socket.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.TestCase.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TimeoutConnectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TimeoutConnectorTest .collapse">
+        <h1>TimeoutConnectorTest<a href="../classes/React.Tests.Socket.TimeoutConnectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.TimeoutConnectorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UnixConnectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UnixConnectorTest .collapse">
+        <h1>UnixConnectorTest<a href="../classes/React.Tests.Socket.UnixConnectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.UnixConnectorTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Socket.html">Socket</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Socket.Stub.html">Stub</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CallableStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallableStub .collapse">
+        <h1>CallableStub<a href="../classes/React.Tests.Socket.Stub.CallableStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.Stub.CallableStub.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ConnectionStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ConnectionStub .collapse">
+        <h1>ConnectionStub<a href="../classes/React.Tests.Socket.Stub.ConnectionStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.Stub.ConnectionStub.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ServerStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ServerStub .collapse">
+        <h1>ServerStub<a href="../classes/React.Tests.Socket.Stub.ServerStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Socket.Stub.ServerStub.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Stream.html">Stream</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_BufferedSinkTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BufferedSinkTest .collapse">
+        <h1>BufferedSinkTest<a href="../classes/React.Tests.Stream.BufferedSinkTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.BufferedSinkTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_BufferTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BufferTest .collapse">
+        <h1>BufferTest<a href="../classes/React.Tests.Stream.BufferTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.BufferTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CallableStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallableStub .collapse">
+        <h1>CallableStub<a href="../classes/React.Tests.Stream.CallableStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.CallableStub.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CompositeStreamTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CompositeStreamTest .collapse">
+        <h1>CompositeStreamTest<a href="../classes/React.Tests.Stream.CompositeStreamTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.CompositeStreamTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ReadableStreamTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ReadableStreamTest .collapse">
+        <h1>ReadableStreamTest<a href="../classes/React.Tests.Stream.ReadableStreamTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.ReadableStreamTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StreamIntegrationTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StreamIntegrationTest .collapse">
+        <h1>StreamIntegrationTest<a href="../classes/React.Tests.Stream.StreamIntegrationTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.StreamIntegrationTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StreamTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StreamTest .collapse">
+        <h1>StreamTest<a href="../classes/React.Tests.Stream.StreamTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.StreamTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/React.Tests.Stream.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.TestCase.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ThroughStreamTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ThroughStreamTest .collapse">
+        <h1>ThroughStreamTest<a href="../classes/React.Tests.Stream.ThroughStreamTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.ThroughStreamTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UtilTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UtilTest .collapse">
+        <h1>UtilTest<a href="../classes/React.Tests.Stream.UtilTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.UtilTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_WritableStreamTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_WritableStreamTest .collapse">
+        <h1>WritableStreamTest<a href="../classes/React.Tests.Stream.WritableStreamTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.WritableStreamTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Stream.html">Stream</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Stream.Stub.html">Stub</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ReadableStreamStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ReadableStreamStub .collapse">
+        <h1>ReadableStreamStub<a href="../classes/React.Tests.Stream.Stub.ReadableStreamStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Stream.Stub.ReadableStreamStub.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.EventLoop.html">EventLoop</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_AbstractLoopTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractLoopTest .collapse">
+        <h1>AbstractLoopTest<a href="../classes/React.Tests.EventLoop.AbstractLoopTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.AbstractLoopTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CallableStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallableStub .collapse">
+        <h1>CallableStub<a href="../classes/React.Tests.EventLoop.CallableStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.CallableStub.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ExtEventLoopTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExtEventLoopTest .collapse">
+        <h1>ExtEventLoopTest<a href="../classes/React.Tests.EventLoop.ExtEventLoopTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.ExtEventLoopTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LibEventLoopTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LibEventLoopTest .collapse">
+        <h1>LibEventLoopTest<a href="../classes/React.Tests.EventLoop.LibEventLoopTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.LibEventLoopTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LibEvLoopTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LibEvLoopTest .collapse">
+        <h1>LibEvLoopTest<a href="../classes/React.Tests.EventLoop.LibEvLoopTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.LibEvLoopTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StreamSelectLoopTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StreamSelectLoopTest .collapse">
+        <h1>StreamSelectLoopTest<a href="../classes/React.Tests.EventLoop.StreamSelectLoopTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.StreamSelectLoopTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/React.Tests.EventLoop.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.TestCase.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.EventLoop.html">EventLoop</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.EventLoop.Timer.html">Timer</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_AbstractTimerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractTimerTest .collapse">
+        <h1>AbstractTimerTest<a href="../classes/React.Tests.EventLoop.Timer.AbstractTimerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.Timer.AbstractTimerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ExtEventTimerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ExtEventTimerTest .collapse">
+        <h1>ExtEventTimerTest<a href="../classes/React.Tests.EventLoop.Timer.ExtEventTimerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.Timer.ExtEventTimerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LibEventTimerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LibEventTimerTest .collapse">
+        <h1>LibEventTimerTest<a href="../classes/React.Tests.EventLoop.Timer.LibEventTimerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.Timer.LibEventTimerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LibEvTimerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LibEvTimerTest .collapse">
+        <h1>LibEvTimerTest<a href="../classes/React.Tests.EventLoop.Timer.LibEvTimerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.Timer.LibEvTimerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StreamSelectTimerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StreamSelectTimerTest .collapse">
+        <h1>StreamSelectTimerTest<a href="../classes/React.Tests.EventLoop.Timer.StreamSelectTimerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.Timer.StreamSelectTimerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TimersTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TimersTest .collapse">
+        <h1>TimersTest<a href="../classes/React.Tests.EventLoop.Timer.TimersTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.EventLoop.Timer.TimersTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Cache.html">Cache</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ArrayCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayCacheTest .collapse">
+        <h1>ArrayCacheTest<a href="../classes/React.Tests.Cache.ArrayCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Cache.ArrayCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CallableStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallableStub .collapse">
+        <h1>CallableStub<a href="../classes/React.Tests.Cache.CallableStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Cache.CallableStub.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/React.Tests.Cache.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Cache.TestCase.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.HttpClient.html">HttpClient</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CallableStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallableStub .collapse">
+        <h1>CallableStub<a href="../classes/React.Tests.HttpClient.CallableStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.HttpClient.CallableStub.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DecodeChunkedStreamTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DecodeChunkedStreamTest .collapse">
+        <h1>DecodeChunkedStreamTest<a href="../classes/React.Tests.HttpClient.DecodeChunkedStreamTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.HttpClient.DecodeChunkedStreamTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RequestDataTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RequestDataTest .collapse">
+        <h1>RequestDataTest<a href="../classes/React.Tests.HttpClient.RequestDataTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.HttpClient.RequestDataTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RequestTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RequestTest .collapse">
+        <h1>RequestTest<a href="../classes/React.Tests.HttpClient.RequestTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.HttpClient.RequestTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ResponseTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ResponseTest .collapse">
+        <h1>ResponseTest<a href="../classes/React.Tests.HttpClient.ResponseTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.HttpClient.ResponseTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/React.Tests.HttpClient.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.HttpClient.TestCase.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.html">React</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Promise.html">Promise</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/React.Tests.Promise.Timer.html">Timer</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CallableStub" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CallableStub .collapse">
+        <h1>CallableStub<a href="../classes/React.Tests.Promise.Timer.CallableStub.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Promise.Timer.CallableStub.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionRejectTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionRejectTest .collapse">
+        <h1>FunctionRejectTest<a href="../classes/React.Tests.Promise.Timer.FunctionRejectTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Promise.Timer.FunctionRejectTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionResolveTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionResolveTest .collapse">
+        <h1>FunctionResolveTest<a href="../classes/React.Tests.Promise.Timer.FunctionResolveTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Promise.Timer.FunctionResolveTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FunctionTimerTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FunctionTimerTest .collapse">
+        <h1>FunctionTimerTest<a href="../classes/React.Tests.Promise.Timer.FunctionTimerTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Promise.Timer.FunctionTimerTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestCase .collapse">
+        <h1>TestCase<a href="../classes/React.Tests.Promise.Timer.TestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Promise.Timer.TestCase.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TimeoutExceptionTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TimeoutExceptionTest .collapse">
+        <h1>TimeoutExceptionTest<a href="../classes/React.Tests.Promise.Timer.TimeoutExceptionTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/React.Tests.Promise.Timer.TimeoutExceptionTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:57 +0200.<br/>
+    </footer>
+    </body>
+</html>

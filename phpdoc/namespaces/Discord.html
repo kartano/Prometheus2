@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Discord
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Discord.html" title="Discord">
+                    <i class="icon-th"></i> Discord
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/Discord.CommandClient.html" title="CommandClient">
+            <i class="icon-th"></i> CommandClient
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Exceptions.html" title="Exceptions">
+            <i class="icon-th"></i> Exceptions
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Discord.Exceptions.Rest.html" title="Rest">
+            <i class="icon-th"></i> Rest
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Factory.html" title="Factory">
+            <i class="icon-th"></i> Factory
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Helpers.html" title="Helpers">
+            <i class="icon-th"></i> Helpers
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Http.html" title="Http">
+            <i class="icon-th"></i> Http
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Parts.html" title="Parts">
+            <i class="icon-th"></i> Parts
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Discord.Parts.Channel.html" title="Channel">
+            <i class="icon-th"></i> Channel
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Parts.Embed.html" title="Embed">
+            <i class="icon-th"></i> Embed
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Parts.Guild.html" title="Guild">
+            <i class="icon-th"></i> Guild
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Parts.OAuth.html" title="OAuth">
+            <i class="icon-th"></i> OAuth
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Parts.Permissions.html" title="Permissions">
+            <i class="icon-th"></i> Permissions
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Parts.User.html" title="User">
+            <i class="icon-th"></i> User
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Parts.WebSockets.html" title="WebSockets">
+            <i class="icon-th"></i> WebSockets
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Repository.html" title="Repository">
+            <i class="icon-th"></i> Repository
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Discord.Repository.Channel.html" title="Channel">
+            <i class="icon-th"></i> Channel
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Repository.Guild.html" title="Guild">
+            <i class="icon-th"></i> Guild
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Voice.html" title="Voice">
+            <i class="icon-th"></i> Voice
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.WebSockets.html" title="WebSockets">
+            <i class="icon-th"></i> WebSockets
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Discord.WebSockets.Events.html" title="Events">
+            <i class="icon-th"></i> Events
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Discord.Wrapper.html" title="Wrapper">
+            <i class="icon-th"></i> Wrapper
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+        </ul>
+
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-function"></i> Functions</h3>
+                                        <div id="function_mentioned" class="element ajax clickable function" data-toggle="collapse" data-target="#function_mentioned .collapse">
+        <h1>mentioned<a href="../namespaces/Discord.html#function_mentioned">¶</a></h1>
+        <p class="short_description">Checks to see if a part has been mentioned.</p>
+        <div class="details collapse">
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    package
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Default</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$part</h4>
+                                                <code><a href="../classes/Discord.Parts.Part.html">\Discord\Parts\Part</a>|string</code><p><p>The part or mention to look for.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$message</h4>
+                                                <code><a href="../classes/Discord.Parts.Channel.Message.html">\Discord\Parts\Channel\Message</a></code><p><p>The message to check.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p><p>Whether the part was mentioned.</p></p>
+                                                                    </div>
+                            </div>
+                    </div>
+        <a href="../namespaces/Discord.html#function_mentioned" class="more">« More »</a>    </div>
+
+                            </div>
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Discord" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Discord .collapse">
+        <h1>Discord<a href="../classes/Discord.Discord.html">¶</a></h1>
+        <p class="short_description">The Discord client class.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Discord.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DiscordCommandClient" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DiscordCommandClient .collapse">
+        <h1>DiscordCommandClient<a href="../classes/Discord.DiscordCommandClient.html">¶</a></h1>
+        <p class="short_description">Provides an easy way to have triggerable commands.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.DiscordCommandClient.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.html">Parts</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Part" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Part .collapse">
+        <h1>Part<a href="../classes/Discord.Parts.Part.html">¶</a></h1>
+        <p class="short_description">This class is the base of all objects that are returned. All &quot;Parts&quot; extend off this
+base class.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Part.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.html">Parts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.User.html">User</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Client" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Client .collapse">
+        <h1>Client<a href="../classes/Discord.Parts.User.Client.html">¶</a></h1>
+        <p class="short_description">The client is the main interface for the client. Most calls on the main class are forwarded here.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.User.Client.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Game" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Game .collapse">
+        <h1>Game<a href="../classes/Discord.Parts.User.Game.html">¶</a></h1>
+        <p class="short_description">The Game part defines what game the user is playing at the moment.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.User.Game.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Member" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Member .collapse">
+        <h1>Member<a href="../classes/Discord.Parts.User.Member.html">¶</a></h1>
+        <p class="short_description">A member is a relationship between a user and a guild. It contains user-to-guild specific data like roles.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.User.Member.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_User" class="element ajax clickable class" data-toggle="collapse" data-target="#class_User .collapse">
+        <h1>User<a href="../classes/Discord.Parts.User.User.html">¶</a></h1>
+        <p class="short_description">A user is a general user that is not attached to a guild.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.User.User.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.html">Parts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.Channel.html">Channel</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Channel" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Channel .collapse">
+        <h1>Channel<a href="../classes/Discord.Parts.Channel.Channel.html">¶</a></h1>
+        <p class="short_description">A Channel can be either a text or voice channel on a Discord guild.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Channel.Channel.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Message" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Message .collapse">
+        <h1>Message<a href="../classes/Discord.Parts.Channel.Message.html">¶</a></h1>
+        <p class="short_description">A message which is posted to a Discord text channel.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Channel.Message.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Overwrite" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Overwrite .collapse">
+        <h1>Overwrite<a href="../classes/Discord.Parts.Channel.Overwrite.html">¶</a></h1>
+        <p class="short_description">Overwrite Class.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Channel.Overwrite.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.html">Parts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.OAuth.html">OAuth</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Application" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Application .collapse">
+        <h1>Application<a href="../classes/Discord.Parts.OAuth.Application.html">¶</a></h1>
+        <p class="short_description">The OAuth2 application of the bot.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.OAuth.Application.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.html">Parts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.Embed.html">Embed</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Author" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Author .collapse">
+        <h1>Author<a href="../classes/Discord.Parts.Embed.Author.html">¶</a></h1>
+        <p class="short_description">The author of an embed object.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Embed.Author.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Embed" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Embed .collapse">
+        <h1>Embed<a href="../classes/Discord.Parts.Embed.Embed.html">¶</a></h1>
+        <p class="short_description">An embed object to be sent with a message.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Embed.Embed.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Field" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Field .collapse">
+        <h1>Field<a href="../classes/Discord.Parts.Embed.Field.html">¶</a></h1>
+        <p class="short_description">A field of an embed object.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Embed.Field.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Footer" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Footer .collapse">
+        <h1>Footer<a href="../classes/Discord.Parts.Embed.Footer.html">¶</a></h1>
+        <p class="short_description">The footer section of an embed.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Embed.Footer.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Image" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Image .collapse">
+        <h1>Image<a href="../classes/Discord.Parts.Embed.Image.html">¶</a></h1>
+        <p class="short_description">An image for an embed.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Embed.Image.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Video" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Video .collapse">
+        <h1>Video<a href="../classes/Discord.Parts.Embed.Video.html">¶</a></h1>
+        <p class="short_description">A video for an embed.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Embed.Video.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.html">Parts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.Permissions.html">Permissions</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ChannelPermission" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChannelPermission .collapse">
+        <h1>ChannelPermission<a href="../classes/Discord.Parts.Permissions.ChannelPermission.html">¶</a></h1>
+        <p class="short_description">The permissions object of a role or channel.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Permissions.ChannelPermission.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Permission" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Permission .collapse">
+        <h1>Permission<a href="../classes/Discord.Parts.Permissions.Permission.html">¶</a></h1>
+        <p class="short_description">The permissions object of a role or channel.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Permissions.Permission.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RolePermission" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RolePermission .collapse">
+        <h1>RolePermission<a href="../classes/Discord.Parts.Permissions.RolePermission.html">¶</a></h1>
+        <p class="short_description">The permissions object of a role or channel.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Permissions.RolePermission.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.html">Parts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.Guild.html">Guild</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Ban" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Ban .collapse">
+        <h1>Ban<a href="../classes/Discord.Parts.Guild.Ban.html">¶</a></h1>
+        <p class="short_description">A Ban is a ban on a user specific to a guild. It is also IP based.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Guild.Ban.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Emoji" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Emoji .collapse">
+        <h1>Emoji<a href="../classes/Discord.Parts.Guild.Emoji.html">¶</a></h1>
+        <p class="short_description">An emoji object represents a custom emoji.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Guild.Emoji.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Guild" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Guild .collapse">
+        <h1>Guild<a href="../classes/Discord.Parts.Guild.Guild.html">¶</a></h1>
+        <p class="short_description">A Guild is Discord&#039;s equivalent of a server. It contains all the Members, Channels, Roles, Bans etc.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Guild.Guild.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Invite" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Invite .collapse">
+        <h1>Invite<a href="../classes/Discord.Parts.Guild.Invite.html">¶</a></h1>
+        <p class="short_description">An invite to a Channel and Guild.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.Guild.Invite.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.html">Parts</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Parts.WebSockets.html">WebSockets</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_PresenceUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PresenceUpdate .collapse">
+        <h1>PresenceUpdate<a href="../classes/Discord.Parts.WebSockets.PresenceUpdate.html">¶</a></h1>
+        <p class="short_description">A PresenceUpdate part is used when the `PRESENCE_UPDATE` event is fired on the WebSocket. It contains
+information about the users presence suck as their status (online/away) and their current game.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.WebSockets.PresenceUpdate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TypingStart" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TypingStart .collapse">
+        <h1>TypingStart<a href="../classes/Discord.Parts.WebSockets.TypingStart.html">¶</a></h1>
+        <p class="short_description">A TypingStart part is used when the `TYPING_START` event is fired on the WebSocket. It contains
+information such as when the event was fired and then channel it was fired in.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.WebSockets.TypingStart.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_VoiceServerUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_VoiceServerUpdate .collapse">
+        <h1>VoiceServerUpdate<a href="../classes/Discord.Parts.WebSockets.VoiceServerUpdate.html">¶</a></h1>
+        <p class="short_description">Tells the client that the voice channel&#039;s server has changed.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.WebSockets.VoiceServerUpdate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_VoiceStateUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_VoiceStateUpdate .collapse">
+        <h1>VoiceStateUpdate<a href="../classes/Discord.Parts.WebSockets.VoiceStateUpdate.html">¶</a></h1>
+        <p class="short_description">Notifies the client of voice state updates about users.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Parts.WebSockets.VoiceStateUpdate.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Voice.html">Voice</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Buffer" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Buffer .collapse">
+        <h1>Buffer<a href="../classes/Discord.Voice.Buffer.html">¶</a></h1>
+        <p class="short_description">A Byte Buffer similar to Buffer in NodeJS.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Voice.Buffer.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RecieveStream" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RecieveStream .collapse">
+        <h1>RecieveStream<a href="../classes/Discord.Voice.RecieveStream.html">¶</a></h1>
+        <p class="short_description">Handles recieving audio from Discord.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Voice.RecieveStream.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_VoiceClient" class="element ajax clickable class" data-toggle="collapse" data-target="#class_VoiceClient .collapse">
+        <h1>VoiceClient<a href="../classes/Discord.Voice.VoiceClient.html">¶</a></h1>
+        <p class="short_description">The Discord voice client.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Voice.VoiceClient.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_VoicePacket" class="element ajax clickable class" data-toggle="collapse" data-target="#class_VoicePacket .collapse">
+        <h1>VoicePacket<a href="../classes/Discord.Voice.VoicePacket.html">¶</a></h1>
+        <p class="short_description">A voice packet received from Discord.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Voice.VoicePacket.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Repository.html">Repository</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_RepositoryInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_RepositoryInterface .collapse">
+        <h1>RepositoryInterface<a href="../classes/Discord.Repository.RepositoryInterface.html">¶</a></h1>
+        <p class="short_description">Provides an interface for repositories.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.RepositoryInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_AbstractRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractRepository .collapse">
+        <h1>AbstractRepository<a href="../classes/Discord.Repository.AbstractRepository.html">¶</a></h1>
+        <p class="short_description">Repositories provide a way to store and update parts on the Discord server.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.AbstractRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildRepository .collapse">
+        <h1>GuildRepository<a href="../classes/Discord.Repository.GuildRepository.html">¶</a></h1>
+        <p class="short_description">Contains guilds that the user is in.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.GuildRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PrivateChannelRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PrivateChannelRepository .collapse">
+        <h1>PrivateChannelRepository<a href="../classes/Discord.Repository.PrivateChannelRepository.html">¶</a></h1>
+        <p class="short_description">Contains private channels and groups that the user has access to.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.PrivateChannelRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_UserRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UserRepository .collapse">
+        <h1>UserRepository<a href="../classes/Discord.Repository.UserRepository.html">¶</a></h1>
+        <p class="short_description">Contains users that the user shares guilds with.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.UserRepository.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Repository.html">Repository</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Repository.Guild.html">Guild</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_BanRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BanRepository .collapse">
+        <h1>BanRepository<a href="../classes/Discord.Repository.Guild.BanRepository.html">¶</a></h1>
+        <p class="short_description">Contains bans on users.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Guild.BanRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChannelRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChannelRepository .collapse">
+        <h1>ChannelRepository<a href="../classes/Discord.Repository.Guild.ChannelRepository.html">¶</a></h1>
+        <p class="short_description">Contains channels that belong to guilds.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Guild.ChannelRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_EmojiRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_EmojiRepository .collapse">
+        <h1>EmojiRepository<a href="../classes/Discord.Repository.Guild.EmojiRepository.html">¶</a></h1>
+        <p class="short_description">Contains emojis that belong to guilds.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Guild.EmojiRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_InviteRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InviteRepository .collapse">
+        <h1>InviteRepository<a href="../classes/Discord.Repository.Guild.InviteRepository.html">¶</a></h1>
+        <p class="short_description">Contains invites to guilds.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Guild.InviteRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MemberRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MemberRepository .collapse">
+        <h1>MemberRepository<a href="../classes/Discord.Repository.Guild.MemberRepository.html">¶</a></h1>
+        <p class="short_description">Contains members of a guild.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Guild.MemberRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RoleRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RoleRepository .collapse">
+        <h1>RoleRepository<a href="../classes/Discord.Repository.Guild.RoleRepository.html">¶</a></h1>
+        <p class="short_description">Contains roles that belong to the guild.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Guild.RoleRepository.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Repository.html">Repository</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Repository.Channel.html">Channel</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_InviteRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InviteRepository .collapse">
+        <h1>InviteRepository<a href="../classes/Discord.Repository.Channel.InviteRepository.html">¶</a></h1>
+        <p class="short_description">Contains invites for channels.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Channel.InviteRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MessageRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageRepository .collapse">
+        <h1>MessageRepository<a href="../classes/Discord.Repository.Channel.MessageRepository.html">¶</a></h1>
+        <p class="short_description">Contains messages sent to channels.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Channel.MessageRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_OverwriteRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_OverwriteRepository .collapse">
+        <h1>OverwriteRepository<a href="../classes/Discord.Repository.Channel.OverwriteRepository.html">¶</a></h1>
+        <p class="short_description">Contains permission overwrites for channels.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Channel.OverwriteRepository.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_VoiceMemberRepository" class="element ajax clickable class" data-toggle="collapse" data-target="#class_VoiceMemberRepository .collapse">
+        <h1>VoiceMemberRepository<a href="../classes/Discord.Repository.Channel.VoiceMemberRepository.html">¶</a></h1>
+        <p class="short_description">Contains voice states for users in the voice channel.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Repository.Channel.VoiceMemberRepository.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Exceptions.html">Exceptions</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ContentTooLongException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ContentTooLongException .collapse">
+        <h1>ContentTooLongException<a href="../classes/Discord.Exceptions.ContentTooLongException.html">¶</a></h1>
+        <p class="short_description">Thrown when the Discord servers return `content longer than 2000 characters` after
+a REST request. The user must use WebSockets to obtain this data if they need it.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.ContentTooLongException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DCANotFoundException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DCANotFoundException .collapse">
+        <h1>DCANotFoundException<a href="../classes/Discord.Exceptions.DCANotFoundException.html">¶</a></h1>
+        <p class="short_description">Thrown when DCA could not be found.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.DCANotFoundException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_DiscordRequestFailedException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DiscordRequestFailedException .collapse">
+        <h1>DiscordRequestFailedException<a href="../classes/Discord.Exceptions.DiscordRequestFailedException.html">¶</a></h1>
+        <p class="short_description">Thrown when the request to the Discord servers failed.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.DiscordRequestFailedException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FFmpegNotFoundException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FFmpegNotFoundException .collapse">
+        <h1>FFmpegNotFoundException<a href="../classes/Discord.Exceptions.FFmpegNotFoundException.html">¶</a></h1>
+        <p class="short_description">Thrown when the FFmpeg binary cannot be found in your PATH.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.FFmpegNotFoundException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FileNotFoundException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FileNotFoundException .collapse">
+        <h1>FileNotFoundException<a href="../classes/Discord.Exceptions.FileNotFoundException.html">¶</a></h1>
+        <p class="short_description">Thrown when the client cannot find the file that
+was specified.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.FileNotFoundException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_InviteInvalidException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InviteInvalidException .collapse">
+        <h1>InviteInvalidException<a href="../classes/Discord.Exceptions.InviteInvalidException.html">¶</a></h1>
+        <p class="short_description">Thrown when the invite provided does not exist or is now invalid.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.InviteInvalidException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LibSodiumNotFoundException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LibSodiumNotFoundException .collapse">
+        <h1>LibSodiumNotFoundException<a href="../classes/Discord.Exceptions.LibSodiumNotFoundException.html">¶</a></h1>
+        <p class="short_description">Thrown when libsodium or libsodium-php cannot be found.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.LibSodiumNotFoundException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LoginFailedException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LoginFailedException .collapse">
+        <h1>LoginFailedException<a href="../classes/Discord.Exceptions.LoginFailedException.html">¶</a></h1>
+        <p class="short_description">Thrown when the login attempt fails.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.LoginFailedException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_OpusNotFoundException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_OpusNotFoundException .collapse">
+        <h1>OpusNotFoundException<a href="../classes/Discord.Exceptions.OpusNotFoundException.html">¶</a></h1>
+        <p class="short_description">Thrown when FFmpeg is not compiled with libopus.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.OpusNotFoundException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_OutdatedDCAException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_OutdatedDCAException .collapse">
+        <h1>OutdatedDCAException<a href="../classes/Discord.Exceptions.OutdatedDCAException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.OutdatedDCAException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PartRequestFailedException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PartRequestFailedException .collapse">
+        <h1>PartRequestFailedException<a href="../classes/Discord.Exceptions.PartRequestFailedException.html">¶</a></h1>
+        <p class="short_description">Thrown when a request that was executed from a part failed.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.PartRequestFailedException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PasswordEmptyException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PasswordEmptyException .collapse">
+        <h1>PasswordEmptyException<a href="../classes/Discord.Exceptions.PasswordEmptyException.html">¶</a></h1>
+        <p class="short_description">Thrown when the user tries to update the Discord user without providing
+the account password.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.PasswordEmptyException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Exceptions.html">Exceptions</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Exceptions.Rest.html">Rest</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ContentTooLongException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ContentTooLongException .collapse">
+        <h1>ContentTooLongException<a href="../classes/Discord.Exceptions.Rest.ContentTooLongException.html">¶</a></h1>
+        <p class="short_description">Thrown when the Discord servers return `content longer than 2000 characters` after
+a REST request. The user must use WebSockets to obtain this data if they need it.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.Rest.ContentTooLongException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NoPermissionsException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NoPermissionsException .collapse">
+        <h1>NoPermissionsException<a href="../classes/Discord.Exceptions.Rest.NoPermissionsException.html">¶</a></h1>
+        <p class="short_description">Thrown when you do not have permissions to do something.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.Rest.NoPermissionsException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NotFoundException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NotFoundException .collapse">
+        <h1>NotFoundException<a href="../classes/Discord.Exceptions.Rest.NotFoundException.html">¶</a></h1>
+        <p class="short_description">Thrown when a 404 Not Found response is received.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Exceptions.Rest.NotFoundException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.WebSockets.html">WebSockets</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Event" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Event .collapse">
+        <h1>Event<a href="../classes/Discord.WebSockets.Event.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Event.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Handlers" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Handlers .collapse">
+        <h1>Handlers<a href="../classes/Discord.WebSockets.Handlers.html">¶</a></h1>
+        <p class="short_description">This class contains all the handlers for the individual WebSocket events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Handlers.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Op" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Op .collapse">
+        <h1>Op<a href="../classes/Discord.WebSockets.Op.html">¶</a></h1>
+        <p class="short_description">Contains constants used in websockets.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Op.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.WebSockets.html">WebSockets</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.WebSockets.Events.html">Events</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ChannelCreate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChannelCreate .collapse">
+        <h1>ChannelCreate<a href="../classes/Discord.WebSockets.Events.ChannelCreate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.ChannelCreate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChannelDelete" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChannelDelete .collapse">
+        <h1>ChannelDelete<a href="../classes/Discord.WebSockets.Events.ChannelDelete.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.ChannelDelete.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChannelUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChannelUpdate .collapse">
+        <h1>ChannelUpdate<a href="../classes/Discord.WebSockets.Events.ChannelUpdate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.ChannelUpdate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildBanAdd" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildBanAdd .collapse">
+        <h1>GuildBanAdd<a href="../classes/Discord.WebSockets.Events.GuildBanAdd.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildBanAdd.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildBanRemove" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildBanRemove .collapse">
+        <h1>GuildBanRemove<a href="../classes/Discord.WebSockets.Events.GuildBanRemove.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildBanRemove.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildCreate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildCreate .collapse">
+        <h1>GuildCreate<a href="../classes/Discord.WebSockets.Events.GuildCreate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildCreate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildDelete" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildDelete .collapse">
+        <h1>GuildDelete<a href="../classes/Discord.WebSockets.Events.GuildDelete.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildDelete.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildMemberAdd" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildMemberAdd .collapse">
+        <h1>GuildMemberAdd<a href="../classes/Discord.WebSockets.Events.GuildMemberAdd.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildMemberAdd.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildMemberRemove" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildMemberRemove .collapse">
+        <h1>GuildMemberRemove<a href="../classes/Discord.WebSockets.Events.GuildMemberRemove.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildMemberRemove.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildMemberUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildMemberUpdate .collapse">
+        <h1>GuildMemberUpdate<a href="../classes/Discord.WebSockets.Events.GuildMemberUpdate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildMemberUpdate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildRoleCreate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildRoleCreate .collapse">
+        <h1>GuildRoleCreate<a href="../classes/Discord.WebSockets.Events.GuildRoleCreate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildRoleCreate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildRoleDelete" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildRoleDelete .collapse">
+        <h1>GuildRoleDelete<a href="../classes/Discord.WebSockets.Events.GuildRoleDelete.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildRoleDelete.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildRoleUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildRoleUpdate .collapse">
+        <h1>GuildRoleUpdate<a href="../classes/Discord.WebSockets.Events.GuildRoleUpdate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildRoleUpdate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GuildUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GuildUpdate .collapse">
+        <h1>GuildUpdate<a href="../classes/Discord.WebSockets.Events.GuildUpdate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.GuildUpdate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MessageCreate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageCreate .collapse">
+        <h1>MessageCreate<a href="../classes/Discord.WebSockets.Events.MessageCreate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.MessageCreate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MessageDelete" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageDelete .collapse">
+        <h1>MessageDelete<a href="../classes/Discord.WebSockets.Events.MessageDelete.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.MessageDelete.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MessageDeleteBulk" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageDeleteBulk .collapse">
+        <h1>MessageDeleteBulk<a href="../classes/Discord.WebSockets.Events.MessageDeleteBulk.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.MessageDeleteBulk.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MessageUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageUpdate .collapse">
+        <h1>MessageUpdate<a href="../classes/Discord.WebSockets.Events.MessageUpdate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.MessageUpdate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PresenceUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PresenceUpdate .collapse">
+        <h1>PresenceUpdate<a href="../classes/Discord.WebSockets.Events.PresenceUpdate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.PresenceUpdate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TypingStart" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TypingStart .collapse">
+        <h1>TypingStart<a href="../classes/Discord.WebSockets.Events.TypingStart.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.TypingStart.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_VoiceServerUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_VoiceServerUpdate .collapse">
+        <h1>VoiceServerUpdate<a href="../classes/Discord.WebSockets.Events.VoiceServerUpdate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.VoiceServerUpdate.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_VoiceStateUpdate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_VoiceStateUpdate .collapse">
+        <h1>VoiceStateUpdate<a href="../classes/Discord.WebSockets.Events.VoiceStateUpdate.html">¶</a></h1>
+        <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.WebSockets.Events.VoiceStateUpdate.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Helpers.html">Helpers</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Collection" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Collection .collapse">
+        <h1>Collection<a href="../classes/Discord.Helpers.Collection.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Helpers.Collection.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Process" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Process .collapse">
+        <h1>Process<a href="../classes/Discord.Helpers.Process.html">¶</a></h1>
+        <p class="short_description">Process component.</p>
+        <div class="details collapse">
+                            <p>This class borrows logic from Symfony's Process component for ensuring
+compatibility when PHP is compiled with the --enable-sigchild option.</p>
+<p>Based off ReactPHP Child Process. Thanks to the crew over at ReactPHP!</p>
+                    </div>
+        <a href="../classes/Discord.Helpers.Process.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.CommandClient.html">CommandClient</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Command" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Command .collapse">
+        <h1>Command<a href="../classes/Discord.CommandClient.Command.html">¶</a></h1>
+        <p class="short_description">A command that the Command Client will listen for.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.CommandClient.Command.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Http.html">Http</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_HttpDriver" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_HttpDriver .collapse">
+        <h1>HttpDriver<a href="../classes/Discord.Http.HttpDriver.html">¶</a></h1>
+        <p class="short_description">Interface for HTTP drivers.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Http.HttpDriver.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_Guzzle" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Guzzle .collapse">
+        <h1>Guzzle<a href="../classes/Discord.Http.Guzzle.html">¶</a></h1>
+        <p class="short_description">The Guzzle PHP library driver for the HTTP client.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Http.Guzzle.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Http" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Http .collapse">
+        <h1>Http<a href="../classes/Discord.Http.Http.html">¶</a></h1>
+        <p class="short_description">Provides an easy wrapper for HTTP requests, allows for interchangable connectors.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Http.Http.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Wrapper.html">Wrapper</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CacheWrapper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CacheWrapper .collapse">
+        <h1>CacheWrapper<a href="../classes/Discord.Wrapper.CacheWrapper.html">¶</a></h1>
+        <p class="short_description">Provides an easy wrapper for the Cache Adapter.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Wrapper.CacheWrapper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LoggerWrapper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LoggerWrapper .collapse">
+        <h1>LoggerWrapper<a href="../classes/Discord.Wrapper.LoggerWrapper.html">¶</a></h1>
+        <p class="short_description">Provides an easy to use wrapper for the logger.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Wrapper.LoggerWrapper.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.html">Discord</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Discord.Factory.html">Factory</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Factory" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Factory .collapse">
+        <h1>Factory<a href="../classes/Discord.Factory.Factory.html">¶</a></h1>
+        <p class="short_description">Exposes an interface to build part objects without the other requirements.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Discord.Factory.Factory.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:57 +0200.<br/>
+    </footer>
+    </body>
+</html>

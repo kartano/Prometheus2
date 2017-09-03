@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Cache
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Cache.html" title="Cache">
+                    <i class="icon-th"></i> Cache
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/Cache.Adapter.html" title="Adapter">
+            <i class="icon-th"></i> Adapter
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Cache.Adapter.Common.html" title="Common">
+            <i class="icon-th"></i> Common
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Cache.Adapter.Common.Exception.html" title="Exception">
+            <i class="icon-th"></i> Exception
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Cache.Adapter.Common.Tests.html" title="Tests">
+            <i class="icon-th"></i> Tests
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Cache.Adapter.PHPArray.html" title="PHPArray">
+            <i class="icon-th"></i> PHPArray
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Cache.Adapter.PHPArray.Tests.html" title="Tests">
+            <i class="icon-th"></i> Tests
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Cache.Hierarchy.html" title="Hierarchy">
+            <i class="icon-th"></i> Hierarchy
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Cache.Hierarchy.Tests.html" title="Tests">
+            <i class="icon-th"></i> Tests
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Cache.Hierarchy.Tests.Helper.html" title="Helper">
+            <i class="icon-th"></i> Helper
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Cache.Taggable.html" title="Taggable">
+            <i class="icon-th"></i> Taggable
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Cache.Taggable.Tests.html" title="Tests">
+            <i class="icon-th"></i> Tests
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Hierarchy.html">Hierarchy</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                                        <div id="trait_HierarchicalCachePoolTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_HierarchicalCachePoolTrait .collapse">
+        <h1>HierarchicalCachePoolTrait<a href="../classes/Cache.Hierarchy.HierarchicalCachePoolTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Hierarchy.HierarchicalCachePoolTrait.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="interface_HierarchicalPoolInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_HierarchicalPoolInterface .collapse">
+        <h1>HierarchicalPoolInterface<a href="../classes/Cache.Hierarchy.HierarchicalPoolInterface.html">¶</a></h1>
+        <p class="short_description">Let you use hierarchy if you start your tag key with the HIERARCHY_SEPARATOR.</p>
+        <div class="details collapse">
+                            <p>The primary purpose of Cache\CacheItemPoolInterface is to accept a key from
+the Calling Library and return the associated Cache\CacheItemInterface object.
+It is also the primary point of interaction with the entire cache collection.
+All configuration and initialization of the Pool is left up to an
+Implementing Library.</p>
+                    </div>
+        <a href="../classes/Cache.Hierarchy.HierarchicalPoolInterface.html" class="more">« More »</a>    </div>
+
+                
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Hierarchy.html">Hierarchy</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Hierarchy.Tests.html">Tests</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_HierarchicalCachePoolTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HierarchicalCachePoolTest .collapse">
+        <h1>HierarchicalCachePoolTest<a href="../classes/Cache.Hierarchy.Tests.HierarchicalCachePoolTest.html">¶</a></h1>
+        <p class="short_description">We should not use constants on interfaces in the tests. Tests should break if the constant is changed.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Hierarchy.Tests.HierarchicalCachePoolTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Hierarchy.html">Hierarchy</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Hierarchy.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Hierarchy.Tests.Helper.html">Helper</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CachePool" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CachePool .collapse">
+        <h1>CachePool<a href="../classes/Cache.Hierarchy.Tests.Helper.CachePool.html">¶</a></h1>
+        <p class="short_description">A cache pool used in tests.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Hierarchy.Tests.Helper.CachePool.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+    
+                
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.html">Adapter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.PHPArray.html">PHPArray</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ArrayCachePool" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayCachePool .collapse">
+        <h1>ArrayCachePool<a href="../classes/Cache.Adapter.PHPArray.ArrayCachePool.html">¶</a></h1>
+        <p class="short_description">Array cache pool. You could set a limit of how many items you wantt to be stored to avoid memory leaks.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.PHPArray.ArrayCachePool.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.html">Adapter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.PHPArray.html">PHPArray</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.PHPArray.Tests.html">Tests</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                                        <div id="trait_CreatePoolTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_CreatePoolTrait .collapse">
+        <h1>CreatePoolTrait<a href="../classes/Cache.Adapter.PHPArray.Tests.CreatePoolTrait.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.PHPArray.Tests.CreatePoolTrait.html" class="more">« More »</a>    </div>
+
+                
+                
+                                        <div id="class_ArrayCachePoolTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayCachePoolTest .collapse">
+        <h1>ArrayCachePoolTest<a href="../classes/Cache.Adapter.PHPArray.Tests.ArrayCachePoolTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.PHPArray.Tests.ArrayCachePoolTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IntegrationHierarchicalTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IntegrationHierarchicalTest .collapse">
+        <h1>IntegrationHierarchicalTest<a href="../classes/Cache.Adapter.PHPArray.Tests.IntegrationHierarchicalTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.PHPArray.Tests.IntegrationHierarchicalTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IntegrationPoolTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IntegrationPoolTest .collapse">
+        <h1>IntegrationPoolTest<a href="../classes/Cache.Adapter.PHPArray.Tests.IntegrationPoolTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.PHPArray.Tests.IntegrationPoolTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IntegrationTagTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IntegrationTagTest .collapse">
+        <h1>IntegrationTagTest<a href="../classes/Cache.Adapter.PHPArray.Tests.IntegrationTagTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.PHPArray.Tests.IntegrationTagTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.html">Adapter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.Common.html">Common</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_HasExpirationDateInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_HasExpirationDateInterface .collapse">
+        <h1>HasExpirationDateInterface<a href="../classes/Cache.Adapter.Common.HasExpirationDateInterface.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.Common.HasExpirationDateInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_AbstractCachePool" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractCachePool .collapse">
+        <h1>AbstractCachePool<a href="../classes/Cache.Adapter.Common.AbstractCachePool.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.Common.AbstractCachePool.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CacheItem" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CacheItem .collapse">
+        <h1>CacheItem<a href="../classes/Cache.Adapter.Common.CacheItem.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.Common.CacheItem.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.html">Adapter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.Common.html">Common</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.Common.Exception.html">Exception</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CacheException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CacheException .collapse">
+        <h1>CacheException<a href="../classes/Cache.Adapter.Common.Exception.CacheException.html">¶</a></h1>
+        <p class="short_description">A base exception. All exceptions in this organization will extend this exception.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.Common.Exception.CacheException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CachePoolException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CachePoolException .collapse">
+        <h1>CachePoolException<a href="../classes/Cache.Adapter.Common.Exception.CachePoolException.html">¶</a></h1>
+        <p class="short_description">If an exception is caused by a pool or by the cache storage.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.Common.Exception.CachePoolException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_InvalidArgumentException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InvalidArgumentException .collapse">
+        <h1>InvalidArgumentException<a href="../classes/Cache.Adapter.Common.Exception.InvalidArgumentException.html">¶</a></h1>
+        <p class="short_description">A base exception. All exceptions in this organization will extend this exception.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.Common.Exception.InvalidArgumentException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.html">Adapter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.Common.html">Common</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Adapter.Common.Tests.html">Tests</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CacheItemTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CacheItemTest .collapse">
+        <h1>CacheItemTest<a href="../classes/Cache.Adapter.Common.Tests.CacheItemTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Adapter.Common.Tests.CacheItemTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Taggable.html">Taggable</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                                        <div id="trait_TaggablePoolTrait" class="element ajax clickable trait" data-toggle="collapse" data-target="#trait_TaggablePoolTrait .collapse">
+        <h1>TaggablePoolTrait<a href="../classes/Cache.Taggable.TaggablePoolTrait.html">¶</a></h1>
+        <p class="short_description">Use this trait with a CacheItemPoolInterface to support tagging.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Taggable.TaggablePoolTrait.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="interface_TaggableItemInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_TaggableItemInterface .collapse">
+        <h1>TaggableItemInterface<a href="../classes/Cache.Taggable.TaggableItemInterface.html">¶</a></h1>
+        <p class="short_description">CacheItemInterface defines an interface for interacting with objects inside a cache.</p>
+        <div class="details collapse">
+                            <p>Each Item object MUST be associated with a specific key, which can be set
+according to the implementing system and is typically passed by the
+Cache\CacheItemPoolInterface object.</p>
+<p>The Cache\CacheItemInterface object encapsulates the storage and retrieval of
+cache items. Each Cache\CacheItemInterface is generated by a
+Cache\CacheItemPoolInterface object, which is responsible for any required
+setup as well as associating the object with a unique Key.
+Cache\CacheItemInterface objects MUST be able to store and retrieve any type
+of PHP value defined in the Data section of the specification.</p>
+<p>Calling Libraries MUST NOT instantiate Item objects themselves. They may only
+be requested from a Pool object via the getItem() method.  Calling Libraries
+SHOULD NOT assume that an Item created by one Implementing Library is
+compatible with a Pool from another Implementing Library.</p>
+                    </div>
+        <a href="../classes/Cache.Taggable.TaggableItemInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_TaggablePoolInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_TaggablePoolInterface .collapse">
+        <h1>TaggablePoolInterface<a href="../classes/Cache.Taggable.TaggablePoolInterface.html">¶</a></h1>
+        <p class="short_description">Lets you add tags to your cache items. Prepend the PSR-6 function arguments with an array of tag names for
+functions not requiring an CacheItemInterface.</p>
+        <div class="details collapse">
+                            <p>The primary purpose of Cache\CacheItemPoolInterface is to accept a key from
+the Calling Library and return the associated Cache\CacheItemInterface object.
+It is also the primary point of interaction with the entire cache collection.
+All configuration and initialization of the Pool is left up to an
+Implementing Library.</p>
+                    </div>
+        <a href="../classes/Cache.Taggable.TaggablePoolInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_TaggablePSR6ItemAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TaggablePSR6ItemAdapter .collapse">
+        <h1>TaggablePSR6ItemAdapter<a href="../classes/Cache.Taggable.TaggablePSR6ItemAdapter.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Taggable.TaggablePSR6ItemAdapter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TaggablePSR6PoolAdapter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TaggablePSR6PoolAdapter .collapse">
+        <h1>TaggablePSR6PoolAdapter<a href="../classes/Cache.Taggable.TaggablePSR6PoolAdapter.html">¶</a></h1>
+        <p class="short_description">This adapter lets you make any PSR-6 cache pool taggable. If a pool is
+already taggable, it is simply returned by makeTaggable. Tags are stored
+either in the same cache pool, or a a separate pool, and both of these
+appoaches come with different caveats.</p>
+        <div class="details collapse">
+                            <p>A general caveat is that using this adapter reserves any cache key starting
+with '__tag.'.</p>
+<p>Using the same pool is precarious if your cache does LRU evictions of items
+even if they do not expire (as in e.g. memcached). If so, the tag item may
+be evicted without all of the tagged items having been evicted first,
+causing items to lose their tags.</p>
+<p>In order to mitigate this issue, you may use a separate, more persistent
+pool for your tag items. Do however note that if you are doing so, the
+entire pool is reserved for tags, as this pool is cleared whenever the
+main pool is cleared.</p>
+                    </div>
+        <a href="../classes/Cache.Taggable.TaggablePSR6PoolAdapter.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.html">Cache</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Taggable.html">Taggable</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Cache.Taggable.Tests.html">Tests</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_SameTagPoolTaggablePSR6AdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SameTagPoolTaggablePSR6AdapterTest .collapse">
+        <h1>SameTagPoolTaggablePSR6AdapterTest<a href="../classes/Cache.Taggable.Tests.SameTagPoolTaggablePSR6AdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Taggable.Tests.SameTagPoolTaggablePSR6AdapterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_SeparateTagPoolPSR6AdapterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_SeparateTagPoolPSR6AdapterTest .collapse">
+        <h1>SeparateTagPoolPSR6AdapterTest<a href="../classes/Cache.Taggable.Tests.SeparateTagPoolPSR6AdapterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Cache.Taggable.Tests.SeparateTagPoolPSR6AdapterTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:58 +0200.<br/>
+    </footer>
+    </body>
+</html>

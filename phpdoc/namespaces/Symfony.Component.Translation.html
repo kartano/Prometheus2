@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Symfony\Component\Translation
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Symfony.Component.Translation.html" title="Translation">
+                    <i class="icon-th"></i> Translation
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Catalogue.html" title="Catalogue">
+            <i class="icon-th"></i> Catalogue
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Command.html" title="Command">
+            <i class="icon-th"></i> Command
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.DataCollector.html" title="DataCollector">
+            <i class="icon-th"></i> DataCollector
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Dumper.html" title="Dumper">
+            <i class="icon-th"></i> Dumper
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Exception.html" title="Exception">
+            <i class="icon-th"></i> Exception
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Extractor.html" title="Extractor">
+            <i class="icon-th"></i> Extractor
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Loader.html" title="Loader">
+            <i class="icon-th"></i> Loader
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Tests.html" title="Tests">
+            <i class="icon-th"></i> Tests
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Tests.Catalogue.html" title="Catalogue">
+            <i class="icon-th"></i> Catalogue
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Tests.DataCollector.html" title="DataCollector">
+            <i class="icon-th"></i> DataCollector
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Tests.Dumper.html" title="Dumper">
+            <i class="icon-th"></i> Dumper
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Tests.Loader.html" title="Loader">
+            <i class="icon-th"></i> Loader
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Tests.Util.html" title="Util">
+            <i class="icon-th"></i> Util
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Tests.Writer.html" title="Writer">
+            <i class="icon-th"></i> Writer
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Util.html" title="Util">
+            <i class="icon-th"></i> Util
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/Symfony.Component.Translation.Writer.html" title="Writer">
+            <i class="icon-th"></i> Writer
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_MessageCatalogueInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_MessageCatalogueInterface .collapse">
+        <h1>MessageCatalogueInterface<a href="../classes/Symfony.Component.Translation.MessageCatalogueInterface.html">¶</a></h1>
+        <p class="short_description">MessageCatalogueInterface.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.MessageCatalogueInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_MetadataAwareInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_MetadataAwareInterface .collapse">
+        <h1>MetadataAwareInterface<a href="../classes/Symfony.Component.Translation.MetadataAwareInterface.html">¶</a></h1>
+        <p class="short_description">MetadataAwareInterface.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.MetadataAwareInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_TranslatorBagInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_TranslatorBagInterface .collapse">
+        <h1>TranslatorBagInterface<a href="../classes/Symfony.Component.Translation.TranslatorBagInterface.html">¶</a></h1>
+        <p class="short_description">TranslatorBagInterface.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.TranslatorBagInterface.html" class="more">« More »</a>    </div>
+
+                                        <div id="interface_TranslatorInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_TranslatorInterface .collapse">
+        <h1>TranslatorInterface<a href="../classes/Symfony.Component.Translation.TranslatorInterface.html">¶</a></h1>
+        <p class="short_description">TranslatorInterface.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.TranslatorInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_DataCollectorTranslator" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DataCollectorTranslator .collapse">
+        <h1>DataCollectorTranslator<a href="../classes/Symfony.Component.Translation.DataCollectorTranslator.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.DataCollectorTranslator.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IdentityTranslator" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IdentityTranslator .collapse">
+        <h1>IdentityTranslator<a href="../classes/Symfony.Component.Translation.IdentityTranslator.html">¶</a></h1>
+        <p class="short_description">IdentityTranslator does not translate anything.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.IdentityTranslator.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Interval" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Interval .collapse">
+        <h1>Interval<a href="../classes/Symfony.Component.Translation.Interval.html">¶</a></h1>
+        <p class="short_description">Tests if a given number belongs to a given math interval.</p>
+        <div class="details collapse">
+                            <p>An interval can represent a finite set of numbers:</p>
+<p>{1,2,3,4}</p>
+<p>An interval can represent numbers between two numbers:</p>
+<p>[1, +Inf]
+]-1,2[</p>
+<p>The left delimiter can be [ (inclusive) or ] (exclusive).
+The right delimiter can be [ (exclusive) or ] (inclusive).
+Beside numbers, you can use -Inf and +Inf for the infinite.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Interval.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LoggingTranslator" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LoggingTranslator .collapse">
+        <h1>LoggingTranslator<a href="../classes/Symfony.Component.Translation.LoggingTranslator.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.LoggingTranslator.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MessageCatalogue" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageCatalogue .collapse">
+        <h1>MessageCatalogue<a href="../classes/Symfony.Component.Translation.MessageCatalogue.html">¶</a></h1>
+        <p class="short_description">MessageCatalogue.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.MessageCatalogue.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MessageSelector" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageSelector .collapse">
+        <h1>MessageSelector<a href="../classes/Symfony.Component.Translation.MessageSelector.html">¶</a></h1>
+        <p class="short_description">MessageSelector.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.MessageSelector.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PluralizationRules" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PluralizationRules .collapse">
+        <h1>PluralizationRules<a href="../classes/Symfony.Component.Translation.PluralizationRules.html">¶</a></h1>
+        <p class="short_description">Returns the plural rules for a given locale.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.PluralizationRules.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Translator" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Translator .collapse">
+        <h1>Translator<a href="../classes/Symfony.Component.Translation.Translator.html">¶</a></h1>
+        <p class="short_description">Translator.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Translator.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Loader.html">Loader</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_LoaderInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_LoaderInterface .collapse">
+        <h1>LoaderInterface<a href="../classes/Symfony.Component.Translation.Loader.LoaderInterface.html">¶</a></h1>
+        <p class="short_description">LoaderInterface is the interface implemented by all translation loaders.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.LoaderInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_ArrayLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayLoader .collapse">
+        <h1>ArrayLoader<a href="../classes/Symfony.Component.Translation.Loader.ArrayLoader.html">¶</a></h1>
+        <p class="short_description">ArrayLoader loads translations from a PHP array.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.ArrayLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CsvFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CsvFileLoader .collapse">
+        <h1>CsvFileLoader<a href="../classes/Symfony.Component.Translation.Loader.CsvFileLoader.html">¶</a></h1>
+        <p class="short_description">CsvFileLoader loads translations from CSV files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.CsvFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FileLoader .collapse">
+        <h1>FileLoader<a href="../classes/Symfony.Component.Translation.Loader.FileLoader.html">¶</a></h1>
+        <p class="short_description">ArrayLoader loads translations from a PHP array.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.FileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IcuDatFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IcuDatFileLoader .collapse">
+        <h1>IcuDatFileLoader<a href="../classes/Symfony.Component.Translation.Loader.IcuDatFileLoader.html">¶</a></h1>
+        <p class="short_description">IcuResFileLoader loads translations from a resource bundle.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.IcuDatFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IcuResFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IcuResFileLoader .collapse">
+        <h1>IcuResFileLoader<a href="../classes/Symfony.Component.Translation.Loader.IcuResFileLoader.html">¶</a></h1>
+        <p class="short_description">IcuResFileLoader loads translations from a resource bundle.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.IcuResFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IniFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IniFileLoader .collapse">
+        <h1>IniFileLoader<a href="../classes/Symfony.Component.Translation.Loader.IniFileLoader.html">¶</a></h1>
+        <p class="short_description">IniFileLoader loads translations from an ini file.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.IniFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_JsonFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_JsonFileLoader .collapse">
+        <h1>JsonFileLoader<a href="../classes/Symfony.Component.Translation.Loader.JsonFileLoader.html">¶</a></h1>
+        <p class="short_description">JsonFileLoader loads translations from an json file.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.JsonFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MoFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MoFileLoader .collapse">
+        <h1>MoFileLoader<a href="../classes/Symfony.Component.Translation.Loader.MoFileLoader.html">¶</a></h1>
+        <p class="short_description">ArrayLoader loads translations from a PHP array.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.MoFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpFileLoader .collapse">
+        <h1>PhpFileLoader<a href="../classes/Symfony.Component.Translation.Loader.PhpFileLoader.html">¶</a></h1>
+        <p class="short_description">PhpFileLoader loads translations from PHP files returning an array of translations.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.PhpFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PoFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PoFileLoader .collapse">
+        <h1>PoFileLoader<a href="../classes/Symfony.Component.Translation.Loader.PoFileLoader.html">¶</a></h1>
+        <p class="short_description">ArrayLoader loads translations from a PHP array.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.PoFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_QtFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_QtFileLoader .collapse">
+        <h1>QtFileLoader<a href="../classes/Symfony.Component.Translation.Loader.QtFileLoader.html">¶</a></h1>
+        <p class="short_description">QtFileLoader loads translations from QT Translations XML files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.QtFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_XliffFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_XliffFileLoader .collapse">
+        <h1>XliffFileLoader<a href="../classes/Symfony.Component.Translation.Loader.XliffFileLoader.html">¶</a></h1>
+        <p class="short_description">XliffFileLoader loads translations from XLIFF files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.XliffFileLoader.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_YamlFileLoader" class="element ajax clickable class" data-toggle="collapse" data-target="#class_YamlFileLoader .collapse">
+        <h1>YamlFileLoader<a href="../classes/Symfony.Component.Translation.Loader.YamlFileLoader.html">¶</a></h1>
+        <p class="short_description">YamlFileLoader loads translations from Yaml files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Loader.YamlFileLoader.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Dumper.html">Dumper</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_DumperInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_DumperInterface .collapse">
+        <h1>DumperInterface<a href="../classes/Symfony.Component.Translation.Dumper.DumperInterface.html">¶</a></h1>
+        <p class="short_description">DumperInterface is the interface implemented by all translation dumpers.</p>
+        <div class="details collapse">
+                            <p>There is no common option.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.DumperInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_CsvFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CsvFileDumper .collapse">
+        <h1>CsvFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.CsvFileDumper.html">¶</a></h1>
+        <p class="short_description">CsvFileDumper generates a csv formatted string representation of a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.CsvFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FileDumper .collapse">
+        <h1>FileDumper<a href="../classes/Symfony.Component.Translation.Dumper.FileDumper.html">¶</a></h1>
+        <p class="short_description">FileDumper is an implementation of DumperInterface that dump a message catalogue to file(s).</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.FileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IcuResFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IcuResFileDumper .collapse">
+        <h1>IcuResFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.IcuResFileDumper.html">¶</a></h1>
+        <p class="short_description">IcuResDumper generates an ICU ResourceBundle formatted string representation of a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.IcuResFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IniFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IniFileDumper .collapse">
+        <h1>IniFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.IniFileDumper.html">¶</a></h1>
+        <p class="short_description">IniFileDumper generates an ini formatted string representation of a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.IniFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_JsonFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_JsonFileDumper .collapse">
+        <h1>JsonFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.JsonFileDumper.html">¶</a></h1>
+        <p class="short_description">JsonFileDumper generates an json formatted string representation of a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.JsonFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MoFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MoFileDumper .collapse">
+        <h1>MoFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.MoFileDumper.html">¶</a></h1>
+        <p class="short_description">MoFileDumper generates a gettext formatted string representation of a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.MoFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpFileDumper .collapse">
+        <h1>PhpFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.PhpFileDumper.html">¶</a></h1>
+        <p class="short_description">PhpFileDumper generates PHP files from a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.PhpFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PoFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PoFileDumper .collapse">
+        <h1>PoFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.PoFileDumper.html">¶</a></h1>
+        <p class="short_description">PoFileDumper generates a gettext formatted string representation of a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.PoFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_QtFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_QtFileDumper .collapse">
+        <h1>QtFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.QtFileDumper.html">¶</a></h1>
+        <p class="short_description">QtFileDumper generates ts files from a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.QtFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_XliffFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_XliffFileDumper .collapse">
+        <h1>XliffFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.XliffFileDumper.html">¶</a></h1>
+        <p class="short_description">XliffFileDumper generates xliff files from a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.XliffFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_YamlFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_YamlFileDumper .collapse">
+        <h1>YamlFileDumper<a href="../classes/Symfony.Component.Translation.Dumper.YamlFileDumper.html">¶</a></h1>
+        <p class="short_description">YamlFileDumper generates yaml files from a message catalogue.</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Dumper.YamlFileDumper.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.html">Tests</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_DataCollectorTranslatorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DataCollectorTranslatorTest .collapse">
+        <h1>DataCollectorTranslatorTest<a href="../classes/Symfony.Component.Translation.Tests.DataCollectorTranslatorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.DataCollectorTranslatorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IdentityTranslatorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IdentityTranslatorTest .collapse">
+        <h1>IdentityTranslatorTest<a href="../classes/Symfony.Component.Translation.Tests.IdentityTranslatorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.IdentityTranslatorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IntervalTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IntervalTest .collapse">
+        <h1>IntervalTest<a href="../classes/Symfony.Component.Translation.Tests.IntervalTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.IntervalTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LoggingTranslatorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LoggingTranslatorTest .collapse">
+        <h1>LoggingTranslatorTest<a href="../classes/Symfony.Component.Translation.Tests.LoggingTranslatorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.LoggingTranslatorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MessageCatalogueTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageCatalogueTest .collapse">
+        <h1>MessageCatalogueTest<a href="../classes/Symfony.Component.Translation.Tests.MessageCatalogueTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.MessageCatalogueTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MessageSelectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MessageSelectorTest .collapse">
+        <h1>MessageSelectorTest<a href="../classes/Symfony.Component.Translation.Tests.MessageSelectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.MessageSelectorTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PluralizationRulesTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PluralizationRulesTest .collapse">
+        <h1>PluralizationRulesTest<a href="../classes/Symfony.Component.Translation.Tests.PluralizationRulesTest.html">¶</a></h1>
+        <p class="short_description">Test should cover all languages mentioned on http://translate.sourceforge.net/wiki/l10n/pluralforms
+and Plural forms mentioned on http://www.gnu.org/software/gettext/manual/gettext.html#Plural-forms.</p>
+        <div class="details collapse">
+                            <p>See also <a href="https://developer.mozilla.org/en/Localization_and_Plurals">https://developer.mozilla.org/en/Localization_and_Plurals</a> which mentions 15 rules having a maximum of 6 forms.
+The mozilla code is also interesting to check for.</p>
+<p>As mentioned by chx <a href="http://drupal.org/node/1273968">http://drupal.org/node/1273968</a> we can cover all by testing number from 0 to 199</p>
+<p>The goal to cover all languages is to far fetched so this test case is smaller.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.PluralizationRulesTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StaleResource" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StaleResource .collapse">
+        <h1>StaleResource<a href="../classes/Symfony.Component.Translation.Tests.StaleResource.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.StaleResource.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_StringClass" class="element ajax clickable class" data-toggle="collapse" data-target="#class_StringClass .collapse">
+        <h1>StringClass<a href="../classes/Symfony.Component.Translation.Tests.StringClass.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.StringClass.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TranslatorCacheTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TranslatorCacheTest .collapse">
+        <h1>TranslatorCacheTest<a href="../classes/Symfony.Component.Translation.Tests.TranslatorCacheTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.TranslatorCacheTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TranslatorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TranslatorTest .collapse">
+        <h1>TranslatorTest<a href="../classes/Symfony.Component.Translation.Tests.TranslatorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.TranslatorTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.Dumper.html">Dumper</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ConcreteFileDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ConcreteFileDumper .collapse">
+        <h1>ConcreteFileDumper<a href="../classes/Symfony.Component.Translation.Tests.Dumper.ConcreteFileDumper.html">¶</a></h1>
+        <p class="short_description">FileDumper is an implementation of DumperInterface that dump a message catalogue to file(s).</p>
+        <div class="details collapse">
+                            <p>Performs backup of already existing files.</p>
+<p>Options:</p>
+<ul>
+<li>path (mandatory): the directory where the files should be saved</li>
+</ul>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.ConcreteFileDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_CsvFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CsvFileDumperTest .collapse">
+        <h1>CsvFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.CsvFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.CsvFileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FileDumperTest .collapse">
+        <h1>FileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.FileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.FileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IcuResFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IcuResFileDumperTest .collapse">
+        <h1>IcuResFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.IcuResFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.IcuResFileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IniFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IniFileDumperTest .collapse">
+        <h1>IniFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.IniFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.IniFileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_JsonFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_JsonFileDumperTest .collapse">
+        <h1>JsonFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.JsonFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.JsonFileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MoFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MoFileDumperTest .collapse">
+        <h1>MoFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.MoFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.MoFileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpFileDumperTest .collapse">
+        <h1>PhpFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.PhpFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.PhpFileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PoFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PoFileDumperTest .collapse">
+        <h1>PoFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.PoFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.PoFileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_QtFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_QtFileDumperTest .collapse">
+        <h1>QtFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.QtFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.QtFileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_XliffFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_XliffFileDumperTest .collapse">
+        <h1>XliffFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.XliffFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.XliffFileDumperTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_YamlFileDumperTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_YamlFileDumperTest .collapse">
+        <h1>YamlFileDumperTest<a href="../classes/Symfony.Component.Translation.Tests.Dumper.YamlFileDumperTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Dumper.YamlFileDumperTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.Writer.html">Writer</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_BackupDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_BackupDumper .collapse">
+        <h1>BackupDumper<a href="../classes/Symfony.Component.Translation.Tests.Writer.BackupDumper.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Writer.BackupDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NonBackupDumper" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NonBackupDumper .collapse">
+        <h1>NonBackupDumper<a href="../classes/Symfony.Component.Translation.Tests.Writer.NonBackupDumper.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Writer.NonBackupDumper.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TranslationWriterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TranslationWriterTest .collapse">
+        <h1>TranslationWriterTest<a href="../classes/Symfony.Component.Translation.Tests.Writer.TranslationWriterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Writer.TranslationWriterTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.Util.html">Util</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ArrayConverterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayConverterTest .collapse">
+        <h1>ArrayConverterTest<a href="../classes/Symfony.Component.Translation.Tests.Util.ArrayConverterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Util.ArrayConverterTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.Loader.html">Loader</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CsvFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CsvFileLoaderTest .collapse">
+        <h1>CsvFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.CsvFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.CsvFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IcuDatFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IcuDatFileLoaderTest .collapse">
+        <h1>IcuDatFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.IcuDatFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.IcuDatFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IcuResFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IcuResFileLoaderTest .collapse">
+        <h1>IcuResFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.IcuResFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.IcuResFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_IniFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IniFileLoaderTest .collapse">
+        <h1>IniFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.IniFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.IniFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_JsonFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_JsonFileLoaderTest .collapse">
+        <h1>JsonFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.JsonFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.JsonFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LocalizedTestCase" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LocalizedTestCase .collapse">
+        <h1>LocalizedTestCase<a href="../classes/Symfony.Component.Translation.Tests.Loader.LocalizedTestCase.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.LocalizedTestCase.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MoFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MoFileLoaderTest .collapse">
+        <h1>MoFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.MoFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.MoFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PhpFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PhpFileLoaderTest .collapse">
+        <h1>PhpFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.PhpFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.PhpFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_PoFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_PoFileLoaderTest .collapse">
+        <h1>PoFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.PoFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.PoFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_QtFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_QtFileLoaderTest .collapse">
+        <h1>QtFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.QtFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.QtFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_XliffFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_XliffFileLoaderTest .collapse">
+        <h1>XliffFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.XliffFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.XliffFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_YamlFileLoaderTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_YamlFileLoaderTest .collapse">
+        <h1>YamlFileLoaderTest<a href="../classes/Symfony.Component.Translation.Tests.Loader.YamlFileLoaderTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Loader.YamlFileLoaderTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.Catalogue.html">Catalogue</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_AbstractOperationTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractOperationTest .collapse">
+        <h1>AbstractOperationTest<a href="../classes/Symfony.Component.Translation.Tests.Catalogue.AbstractOperationTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Catalogue.AbstractOperationTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MergeOperationTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MergeOperationTest .collapse">
+        <h1>MergeOperationTest<a href="../classes/Symfony.Component.Translation.Tests.Catalogue.MergeOperationTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Catalogue.MergeOperationTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TargetOperationTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TargetOperationTest .collapse">
+        <h1>TargetOperationTest<a href="../classes/Symfony.Component.Translation.Tests.Catalogue.TargetOperationTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.Catalogue.TargetOperationTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.html">Tests</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Tests.DataCollector.html">DataCollector</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_TranslationDataCollectorTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TranslationDataCollectorTest .collapse">
+        <h1>TranslationDataCollectorTest<a href="../classes/Symfony.Component.Translation.Tests.DataCollector.TranslationDataCollectorTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Tests.DataCollector.TranslationDataCollectorTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Catalogue.html">Catalogue</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_OperationInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_OperationInterface .collapse">
+        <h1>OperationInterface<a href="../classes/Symfony.Component.Translation.Catalogue.OperationInterface.html">¶</a></h1>
+        <p class="short_description">Represents an operation on catalogue(s).</p>
+        <div class="details collapse">
+                            <p>An instance of this interface performs an operation on one or more catalogues and
+stores intermediate and final results of the operation.</p>
+<p>The first catalogue in its argument(s) is called the 'source catalogue' or 'source' and
+the following results are stored:</p>
+<p>Messages: also called 'all', are valid messages for the given domain after the operation is performed.</p>
+<p>New Messages: also called 'new' (new = all ∖ source = {x: x ∈ all ∧ x ∉ source}).</p>
+<p>Obsolete Messages: also called 'obsolete' (obsolete = source ∖ all = {x: x ∈ source ∧ x ∉ all}).</p>
+<p>Result: also called 'result', is the resulting catalogue for the given domain that holds the same messages as 'all'.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Catalogue.OperationInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_AbstractOperation" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractOperation .collapse">
+        <h1>AbstractOperation<a href="../classes/Symfony.Component.Translation.Catalogue.AbstractOperation.html">¶</a></h1>
+        <p class="short_description">Base catalogues binary operation class.</p>
+        <div class="details collapse">
+                            <p>A catalogue binary operation performs operation on
+source (the left argument) and target (the right argument) catalogues.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Catalogue.AbstractOperation.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MergeOperation" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MergeOperation .collapse">
+        <h1>MergeOperation<a href="../classes/Symfony.Component.Translation.Catalogue.MergeOperation.html">¶</a></h1>
+        <p class="short_description">Merge operation between two catalogues as follows:
+all = source ∪ target = {x: x ∈ source ∨ x ∈ target}
+new = all ∖ source = {x: x ∈ target ∧ x ∉ source}
+obsolete = source ∖ all = {x: x ∈ source ∧ x ∉ source ∧ x ∉ target} = ∅
+Basically, the result contains messages from both catalogues.</p>
+        <div class="details collapse">
+                            <p>A catalogue binary operation performs operation on
+source (the left argument) and target (the right argument) catalogues.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Catalogue.MergeOperation.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TargetOperation" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TargetOperation .collapse">
+        <h1>TargetOperation<a href="../classes/Symfony.Component.Translation.Catalogue.TargetOperation.html">¶</a></h1>
+        <p class="short_description">Target operation between two catalogues:
+intersection = source ∩ target = {x: x ∈ source ∧ x ∈ target}
+all = intersection ∪ (target ∖ intersection) = target
+new = all ∖ source = {x: x ∈ target ∧ x ∉ source}
+obsolete = source ∖ all = source ∖ target = {x: x ∈ source ∧ x ∉ target}
+Basically, the result contains messages from the target catalogue.</p>
+        <div class="details collapse">
+                            <p>A catalogue binary operation performs operation on
+source (the left argument) and target (the right argument) catalogues.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Catalogue.TargetOperation.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Writer.html">Writer</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_TranslationWriter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TranslationWriter .collapse">
+        <h1>TranslationWriter<a href="../classes/Symfony.Component.Translation.Writer.TranslationWriter.html">¶</a></h1>
+        <p class="short_description">TranslationWriter writes translation messages.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Writer.TranslationWriter.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Extractor.html">Extractor</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_ExtractorInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ExtractorInterface .collapse">
+        <h1>ExtractorInterface<a href="../classes/Symfony.Component.Translation.Extractor.ExtractorInterface.html">¶</a></h1>
+        <p class="short_description">Extracts translation messages from a directory or files to the catalogue.</p>
+        <div class="details collapse">
+                            <p>New found messages are injected to the catalogue using the prefix.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Extractor.ExtractorInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_AbstractFileExtractor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_AbstractFileExtractor .collapse">
+        <h1>AbstractFileExtractor<a href="../classes/Symfony.Component.Translation.Extractor.AbstractFileExtractor.html">¶</a></h1>
+        <p class="short_description">Base class used by classes that extract translation messages from files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Extractor.AbstractFileExtractor.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChainExtractor" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChainExtractor .collapse">
+        <h1>ChainExtractor<a href="../classes/Symfony.Component.Translation.Extractor.ChainExtractor.html">¶</a></h1>
+        <p class="short_description">ChainExtractor extracts translation messages from template files.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Extractor.ChainExtractor.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Util.html">Util</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_ArrayConverter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ArrayConverter .collapse">
+        <h1>ArrayConverter<a href="../classes/Symfony.Component.Translation.Util.ArrayConverter.html">¶</a></h1>
+        <p class="short_description">ArrayConverter generates tree like structure from a message catalogue.</p>
+        <div class="details collapse">
+                            <p>e.g. this
+'foo.bar1' =&gt; 'test1',
+'foo.bar2' =&gt; 'test2'
+converts to follows:
+foo:
+bar1: test1
+bar2: test2.</p>
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Util.ArrayConverter.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.DataCollector.html">DataCollector</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_TranslationDataCollector" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TranslationDataCollector .collapse">
+        <h1>TranslationDataCollector<a href="../classes/Symfony.Component.Translation.DataCollector.TranslationDataCollector.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.DataCollector.TranslationDataCollector.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Exception.html">Exception</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_ExceptionInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ExceptionInterface .collapse">
+        <h1>ExceptionInterface<a href="../classes/Symfony.Component.Translation.Exception.ExceptionInterface.html">¶</a></h1>
+        <p class="short_description">Exception interface for all exceptions thrown by the component.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Exception.ExceptionInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_InvalidArgumentException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InvalidArgumentException .collapse">
+        <h1>InvalidArgumentException<a href="../classes/Symfony.Component.Translation.Exception.InvalidArgumentException.html">¶</a></h1>
+        <p class="short_description">Base InvalidArgumentException for the Translation component.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Exception.InvalidArgumentException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_InvalidResourceException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_InvalidResourceException .collapse">
+        <h1>InvalidResourceException<a href="../classes/Symfony.Component.Translation.Exception.InvalidResourceException.html">¶</a></h1>
+        <p class="short_description">Thrown when a resource cannot be loaded.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Exception.InvalidResourceException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogicException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogicException .collapse">
+        <h1>LogicException<a href="../classes/Symfony.Component.Translation.Exception.LogicException.html">¶</a></h1>
+        <p class="short_description">Base LogicException for Translation component.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Exception.LogicException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NotFoundResourceException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NotFoundResourceException .collapse">
+        <h1>NotFoundResourceException<a href="../classes/Symfony.Component.Translation.Exception.NotFoundResourceException.html">¶</a></h1>
+        <p class="short_description">Thrown when a resource does not exist.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Exception.NotFoundResourceException.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_RuntimeException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RuntimeException .collapse">
+        <h1>RuntimeException<a href="../classes/Symfony.Component.Translation.Exception.RuntimeException.html">¶</a></h1>
+        <p class="short_description">Base RuntimeException for the Translation component.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Exception.RuntimeException.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.html">Symfony</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.html">Component</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.html">Translation</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Symfony.Component.Translation.Command.html">Command</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_XliffLintCommand" class="element ajax clickable class" data-toggle="collapse" data-target="#class_XliffLintCommand .collapse">
+        <h1>XliffLintCommand<a href="../classes/Symfony.Component.Translation.Command.XliffLintCommand.html">¶</a></h1>
+        <p class="short_description">Validates XLIFF files syntax and outputs encountered errors.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Symfony.Component.Translation.Command.XliffLintCommand.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:57 +0200.<br/>
+    </footer>
+    </body>
+</html>

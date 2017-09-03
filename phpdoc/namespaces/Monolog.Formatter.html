@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \Monolog\Formatter
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/Monolog.Formatter.html" title="Formatter">
+                    <i class="icon-th"></i> Formatter
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.html">Monolog</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/Monolog.Formatter.html">Formatter</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                                        <div id="interface_FormatterInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_FormatterInterface .collapse">
+        <h1>FormatterInterface<a href="../classes/Monolog.Formatter.FormatterInterface.html">¶</a></h1>
+        <p class="short_description">Interface for formatters</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.FormatterInterface.html" class="more">« More »</a>    </div>
+
+                
+                                        <div id="class_ChromePHPFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChromePHPFormatter .collapse">
+        <h1>ChromePHPFormatter<a href="../classes/Monolog.Formatter.ChromePHPFormatter.html">¶</a></h1>
+        <p class="short_description">Formats a log message according to the ChromePHP array format</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ChromePHPFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ChromePHPFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ChromePHPFormatterTest .collapse">
+        <h1>ChromePHPFormatterTest<a href="../classes/Monolog.Formatter.ChromePHPFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ChromePHPFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ElasticaFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ElasticaFormatter .collapse">
+        <h1>ElasticaFormatter<a href="../classes/Monolog.Formatter.ElasticaFormatter.html">¶</a></h1>
+        <p class="short_description">Format a log message into an Elastica Document</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ElasticaFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ElasticaFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ElasticaFormatterTest .collapse">
+        <h1>ElasticaFormatterTest<a href="../classes/Monolog.Formatter.ElasticaFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ElasticaFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FlowdockFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FlowdockFormatter .collapse">
+        <h1>FlowdockFormatter<a href="../classes/Monolog.Formatter.FlowdockFormatter.html">¶</a></h1>
+        <p class="short_description">formats the record to be used in the FlowdockHandler</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.FlowdockFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FlowdockFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FlowdockFormatterTest .collapse">
+        <h1>FlowdockFormatterTest<a href="../classes/Monolog.Formatter.FlowdockFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.FlowdockFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FluentdFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FluentdFormatter .collapse">
+        <h1>FluentdFormatter<a href="../classes/Monolog.Formatter.FluentdFormatter.html">¶</a></h1>
+        <p class="short_description">Class FluentdFormatter</p>
+        <div class="details collapse">
+                            <p>Serializes a log message to Fluentd unix socket protocol</p>
+<p>Fluentd config:</p>
+<source>
+<p>type unix
+path /var/run/td-agent/td-agent.sock
+</source></p>
+<p>Monolog setup:</p>
+<p>$logger = new Monolog\Logger('fluent.tag');
+$fluentHandler = new Monolog\Handler\SocketHandler('unix:///var/run/td-agent/td-agent.sock');
+$fluentHandler-&gt;setFormatter(new Monolog\Formatter\FluentdFormatter());
+$logger-&gt;pushHandler($fluentHandler);</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.FluentdFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_FluentdFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FluentdFormatterTest .collapse">
+        <h1>FluentdFormatterTest<a href="../classes/Monolog.Formatter.FluentdFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.FluentdFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GelfMessageFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GelfMessageFormatter .collapse">
+        <h1>GelfMessageFormatter<a href="../classes/Monolog.Formatter.GelfMessageFormatter.html">¶</a></h1>
+        <p class="short_description">Serializes a log message to GELF</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.GelfMessageFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_GelfMessageFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_GelfMessageFormatterTest .collapse">
+        <h1>GelfMessageFormatterTest<a href="../classes/Monolog.Formatter.GelfMessageFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.GelfMessageFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_HtmlFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HtmlFormatter .collapse">
+        <h1>HtmlFormatter<a href="../classes/Monolog.Formatter.HtmlFormatter.html">¶</a></h1>
+        <p class="short_description">Formats incoming records into an HTML table</p>
+        <div class="details collapse">
+                            <p>This is especially useful for html email logging</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.HtmlFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_JsonFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_JsonFormatter .collapse">
+        <h1>JsonFormatter<a href="../classes/Monolog.Formatter.JsonFormatter.html">¶</a></h1>
+        <p class="short_description">Encodes whatever record data is passed to it as json</p>
+        <div class="details collapse">
+                            <p>This can be useful to log to databases or remote APIs</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.JsonFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_JsonFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_JsonFormatterTest .collapse">
+        <h1>JsonFormatterTest<a href="../classes/Monolog.Formatter.JsonFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.JsonFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LineFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LineFormatter .collapse">
+        <h1>LineFormatter<a href="../classes/Monolog.Formatter.LineFormatter.html">¶</a></h1>
+        <p class="short_description">Formats incoming records into a one-line string</p>
+        <div class="details collapse">
+                            <p>This is especially useful for logging to files</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.LineFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LineFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LineFormatterTest .collapse">
+        <h1>LineFormatterTest<a href="../classes/Monolog.Formatter.LineFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.LineFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogglyFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogglyFormatter .collapse">
+        <h1>LogglyFormatter<a href="../classes/Monolog.Formatter.LogglyFormatter.html">¶</a></h1>
+        <p class="short_description">Encodes message information into JSON in a format compatible with Loggly.</p>
+        <div class="details collapse">
+                            <p>This can be useful to log to databases or remote APIs</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.LogglyFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogglyFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogglyFormatterTest .collapse">
+        <h1>LogglyFormatterTest<a href="../classes/Monolog.Formatter.LogglyFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.LogglyFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogstashFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogstashFormatter .collapse">
+        <h1>LogstashFormatter<a href="../classes/Monolog.Formatter.LogstashFormatter.html">¶</a></h1>
+        <p class="short_description">Serializes a log message to Logstash Event Format</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.LogstashFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_LogstashFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_LogstashFormatterTest .collapse">
+        <h1>LogstashFormatterTest<a href="../classes/Monolog.Formatter.LogstashFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.LogstashFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MongoDBFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MongoDBFormatter .collapse">
+        <h1>MongoDBFormatter<a href="../classes/Monolog.Formatter.MongoDBFormatter.html">¶</a></h1>
+        <p class="short_description">Formats a record for use with the MongoDBHandler.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.MongoDBFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MongoDBFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MongoDBFormatterTest .collapse">
+        <h1>MongoDBFormatterTest<a href="../classes/Monolog.Formatter.MongoDBFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.MongoDBFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NormalizerFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NormalizerFormatter .collapse">
+        <h1>NormalizerFormatter<a href="../classes/Monolog.Formatter.NormalizerFormatter.html">¶</a></h1>
+        <p class="short_description">Normalizes incoming records to remove objects/resources so it&#039;s easier to dump to various targets</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.NormalizerFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_NormalizerFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_NormalizerFormatterTest .collapse">
+        <h1>NormalizerFormatterTest<a href="../classes/Monolog.Formatter.NormalizerFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.NormalizerFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ScalarFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ScalarFormatter .collapse">
+        <h1>ScalarFormatter<a href="../classes/Monolog.Formatter.ScalarFormatter.html">¶</a></h1>
+        <p class="short_description">Formats data into an associative array of scalar values.</p>
+        <div class="details collapse">
+                            <p>Objects and arrays will be JSON encoded.</p>
+                    </div>
+        <a href="../classes/Monolog.Formatter.ScalarFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ScalarFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ScalarFormatterTest .collapse">
+        <h1>ScalarFormatterTest<a href="../classes/Monolog.Formatter.ScalarFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.ScalarFormatterTest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestBar" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestBar .collapse">
+        <h1>TestBar<a href="../classes/Monolog.Formatter.TestBar.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestBar.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestBarNorm" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestBarNorm .collapse">
+        <h1>TestBarNorm<a href="../classes/Monolog.Formatter.TestBarNorm.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestBarNorm.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestFoo" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestFoo .collapse">
+        <h1>TestFoo<a href="../classes/Monolog.Formatter.TestFoo.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestFoo.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestFooNorm" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestFooNorm .collapse">
+        <h1>TestFooNorm<a href="../classes/Monolog.Formatter.TestFooNorm.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestFooNorm.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestStreamFoo" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestStreamFoo .collapse">
+        <h1>TestStreamFoo<a href="../classes/Monolog.Formatter.TestStreamFoo.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestStreamFoo.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_TestToStringError" class="element ajax clickable class" data-toggle="collapse" data-target="#class_TestToStringError .collapse">
+        <h1>TestToStringError<a href="../classes/Monolog.Formatter.TestToStringError.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.TestToStringError.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_WildfireFormatter" class="element ajax clickable class" data-toggle="collapse" data-target="#class_WildfireFormatter .collapse">
+        <h1>WildfireFormatter<a href="../classes/Monolog.Formatter.WildfireFormatter.html">¶</a></h1>
+        <p class="short_description">Serializes a log message according to Wildfire&#039;s header requirements</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.WildfireFormatter.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_WildfireFormatterTest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_WildfireFormatterTest .collapse">
+        <h1>WildfireFormatterTest<a href="../classes/Monolog.Formatter.WildfireFormatterTest.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/Monolog.Formatter.WildfireFormatterTest.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:46:58 +0200.<br/>
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Discord\WebSockets\Events\ChannelCreate
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/React.html">React</a></li>
+                                                                        <li><a href="../namespaces/Symfony.html">Symfony</a></li>
+                                                                        <li><a href="../namespaces/Ratchet.html">Ratchet</a></li>
+                                                                        <li><a href="../namespaces/Illuminate.html">Illuminate</a></li>
+                                                                        <li><a href="../namespaces/TrafficCophp.html">TrafficCophp</a></li>
+                                                                        <li><a href="../namespaces/Discord.html">Discord</a></li>
+                                                                        <li><a href="../namespaces/GuzzleHttp.html">GuzzleHttp</a></li>
+                                                                        <li><a href="../namespaces/Monolog.html">Monolog</a></li>
+                                                                        <li><a href="../namespaces/Cache.html">Cache</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Prometheus2.html">Prometheus2</a></li>
+                                                                        <li><a href="../namespaces/WyriHaximus.html">WyriHaximus</a></li>
+                                                                        <li><a href="../namespaces/Evenement.html">Evenement</a></li>
+                                                                        <li><a href="../namespaces/Doctrine.html">Doctrine</a></li>
+                                                                        <li><a href="../namespaces/Composer.html">Composer</a></li>
+                                                                        <li><a href="../namespaces/Carbon.html">Carbon</a></li>
+                                                                        <li><a href="../namespaces/Acme.html">Acme</a></li>
+                                                                        <li><a href="../namespaces/Detection.html">Detection</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public inherited">
+        <a href="#method___construct" title="__construct :: Constructs an event.">
+            <span class="description">Constructs an event.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_emit" title="emit :: ">
+            <span class="description"></span><pre>emit</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_handle" title="handle :: Transforms the given data, and updates the
+Discord instance if necessary.">
+            <span class="description">Transforms the given data, and updates the
+Discord instance if necessary.</span><pre>handle</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_listeners" title="listeners :: ">
+            <span class="description"></span><pre>listeners</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_on" title="on :: ">
+            <span class="description"></span><pre>on</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_once" title="once :: ">
+            <span class="description"></span><pre>once</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_removeAllListeners" title="removeAllListeners :: ">
+            <span class="description"></span><pre>removeAllListeners</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_removeListener" title="removeListener :: ">
+            <span class="description"></span><pre>removeListener</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_CHANNEL_CREATE" title="CHANNEL_CREATE :: ">
+                        <span class="description"></span><pre>CHANNEL_CREATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CHANNEL_DELETE" title="CHANNEL_DELETE :: ">
+                        <span class="description"></span><pre>CHANNEL_DELETE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_CHANNEL_UPDATE" title="CHANNEL_UPDATE :: ">
+                        <span class="description"></span><pre>CHANNEL_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_BAN_ADD" title="GUILD_BAN_ADD :: ">
+                        <span class="description"></span><pre>GUILD_BAN_ADD</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_BAN_REMOVE" title="GUILD_BAN_REMOVE :: ">
+                        <span class="description"></span><pre>GUILD_BAN_REMOVE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_CREATE" title="GUILD_CREATE :: ">
+                        <span class="description"></span><pre>GUILD_CREATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_DELETE" title="GUILD_DELETE :: ">
+                        <span class="description"></span><pre>GUILD_DELETE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_MEMBER_ADD" title="GUILD_MEMBER_ADD :: ">
+                        <span class="description"></span><pre>GUILD_MEMBER_ADD</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_MEMBER_REMOVE" title="GUILD_MEMBER_REMOVE :: ">
+                        <span class="description"></span><pre>GUILD_MEMBER_REMOVE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_MEMBER_UPDATE" title="GUILD_MEMBER_UPDATE :: ">
+                        <span class="description"></span><pre>GUILD_MEMBER_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_MEMBERS_CHUNK" title="GUILD_MEMBERS_CHUNK :: ">
+                        <span class="description"></span><pre>GUILD_MEMBERS_CHUNK</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_ROLE_CREATE" title="GUILD_ROLE_CREATE :: ">
+                        <span class="description"></span><pre>GUILD_ROLE_CREATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_ROLE_DELETE" title="GUILD_ROLE_DELETE :: ">
+                        <span class="description"></span><pre>GUILD_ROLE_DELETE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_ROLE_UPDATE" title="GUILD_ROLE_UPDATE :: ">
+                        <span class="description"></span><pre>GUILD_ROLE_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_GUILD_UPDATE" title="GUILD_UPDATE :: ">
+                        <span class="description"></span><pre>GUILD_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_MESSAGE_CREATE" title="MESSAGE_CREATE :: ">
+                        <span class="description"></span><pre>MESSAGE_CREATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_MESSAGE_DELETE" title="MESSAGE_DELETE :: ">
+                        <span class="description"></span><pre>MESSAGE_DELETE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_MESSAGE_DELETE_BULK" title="MESSAGE_DELETE_BULK :: ">
+                        <span class="description"></span><pre>MESSAGE_DELETE_BULK</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_MESSAGE_UPDATE" title="MESSAGE_UPDATE :: ">
+                        <span class="description"></span><pre>MESSAGE_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_PRESENCE_UPDATE" title="PRESENCE_UPDATE :: ">
+                        <span class="description"></span><pre>PRESENCE_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_PRESENCES_REPLACE" title="PRESENCES_REPLACE :: ">
+                        <span class="description"></span><pre>PRESENCES_REPLACE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_READY" title="READY :: ">
+                        <span class="description"></span><pre>READY</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_RESUMED" title="RESUMED :: ">
+                        <span class="description"></span><pre>RESUMED</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_TYPING_START" title="TYPING_START :: ">
+                        <span class="description"></span><pre>TYPING_START</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_USER_SETTINGS_UPDATE" title="USER_SETTINGS_UPDATE :: ">
+                        <span class="description"></span><pre>USER_SETTINGS_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_VOICE_SERVER_UPDATE" title="VOICE_SERVER_UPDATE :: ">
+                        <span class="description"></span><pre>VOICE_SERVER_UPDATE</pre>
+                    </a>
+                </li>
+                                <li class="constant ">
+                    <a href="#constant_VOICE_STATE_UPDATE" title="VOICE_STATE_UPDATE :: ">
+                        <span class="description"></span><pre>VOICE_STATE_UPDATE</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>ChannelCreate</h1>
+                <small style="display: block; text-align: right">
+                                            Extends <a href="../classes/Discord.WebSockets.Event.html">\Discord\WebSockets\Event</a>
+                                                        </small>
+                <p class="short_description">Contains constants for WebSocket events as well as handlers
+for the events.</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Constructs an event.</h2>
+                            <pre>__construct(\Discord\Http\Http $http, \Discord\Factory\Factory $factory, \Discord\Wrapper\CacheWrapper $cache, \Discord\Discord $discord) : void</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$http</h4>
+                                                <code><a href="../classes/Discord.Http.Http.html">\Discord\Http\Http</a></code><p><p>The HTTP client.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$factory</h4>
+                                                <code><a href="../classes/Discord.Factory.Factory.html">\Discord\Factory\Factory</a></code><p><p>The factory.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$cache</h4>
+                                                <code><a href="../classes/Discord.Wrapper.CacheWrapper.html">\Discord\Wrapper\CacheWrapper</a></code><p><p>The cache.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$discord</h4>
+                                                <code><a href="../classes/Discord.Discord.html">\Discord\Discord</a></code><p><p>The Discord client.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_emit"></a>
+                        <div class="element clickable method public  method_emit inherited" data-toggle="collapse" data-target=".method_emit .collapse">
+                            <h2>emit</h2>
+                            <pre>emit( $event, array $arguments = array()) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$arguments</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handle"></a>
+                        <div class="element clickable method public  method_handle inherited" data-toggle="collapse" data-target=".method_handle .collapse">
+                            <h2>Transforms the given data, and updates the
+Discord instance if necessary.</h2>
+                            <pre>handle(\React\Promise\Deferred $deferred, array $data) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$deferred</h4>
+                                                <code><a href="../classes/React.Promise.Deferred.html">\React\Promise\Deferred</a></code><p><p>The promise to use</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p><p>The data that was sent with the WebSocket</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_listeners"></a>
+                        <div class="element clickable method public  method_listeners inherited" data-toggle="collapse" data-target=".method_listeners .collapse">
+                            <h2>listeners</h2>
+                            <pre>listeners( $event) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_on"></a>
+                        <div class="element clickable method public  method_on inherited" data-toggle="collapse" data-target=".method_on .collapse">
+                            <h2>on</h2>
+                            <pre>on( $event, callable $listener) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$listener</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_once"></a>
+                        <div class="element clickable method public  method_once inherited" data-toggle="collapse" data-target=".method_once .collapse">
+                            <h2>once</h2>
+                            <pre>once( $event, callable $listener) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$listener</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_removeAllListeners"></a>
+                        <div class="element clickable method public  method_removeAllListeners inherited" data-toggle="collapse" data-target=".method_removeAllListeners .collapse">
+                            <h2>removeAllListeners</h2>
+                            <pre>removeAllListeners( $event = null) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_removeListener"></a>
+                        <div class="element clickable method public  method_removeListener inherited" data-toggle="collapse" data-target=".method_removeListener .collapse">
+                            <h2>removeListener</h2>
+                            <pre>removeListener( $event, callable $listener) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$event</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$listener</h4>
+                                                <code>callable</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_READY"> </a>
+                            <div class="element clickable constant  constant_READY inherited" data-toggle="collapse" data-target=".constant_READY .collapse">
+                                <h2>READY</h2>
+                                <pre>READY</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_RESUMED"> </a>
+                            <div class="element clickable constant  constant_RESUMED inherited" data-toggle="collapse" data-target=".constant_RESUMED .collapse">
+                                <h2>RESUMED</h2>
+                                <pre>RESUMED</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_PRESENCE_UPDATE"> </a>
+                            <div class="element clickable constant  constant_PRESENCE_UPDATE inherited" data-toggle="collapse" data-target=".constant_PRESENCE_UPDATE .collapse">
+                                <h2>PRESENCE_UPDATE</h2>
+                                <pre>PRESENCE_UPDATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_PRESENCES_REPLACE"> </a>
+                            <div class="element clickable constant  constant_PRESENCES_REPLACE inherited" data-toggle="collapse" data-target=".constant_PRESENCES_REPLACE .collapse">
+                                <h2>PRESENCES_REPLACE</h2>
+                                <pre>PRESENCES_REPLACE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_TYPING_START"> </a>
+                            <div class="element clickable constant  constant_TYPING_START inherited" data-toggle="collapse" data-target=".constant_TYPING_START .collapse">
+                                <h2>TYPING_START</h2>
+                                <pre>TYPING_START</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_USER_SETTINGS_UPDATE"> </a>
+                            <div class="element clickable constant  constant_USER_SETTINGS_UPDATE inherited" data-toggle="collapse" data-target=".constant_USER_SETTINGS_UPDATE .collapse">
+                                <h2>USER_SETTINGS_UPDATE</h2>
+                                <pre>USER_SETTINGS_UPDATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_VOICE_STATE_UPDATE"> </a>
+                            <div class="element clickable constant  constant_VOICE_STATE_UPDATE inherited" data-toggle="collapse" data-target=".constant_VOICE_STATE_UPDATE .collapse">
+                                <h2>VOICE_STATE_UPDATE</h2>
+                                <pre>VOICE_STATE_UPDATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_VOICE_SERVER_UPDATE"> </a>
+                            <div class="element clickable constant  constant_VOICE_SERVER_UPDATE inherited" data-toggle="collapse" data-target=".constant_VOICE_SERVER_UPDATE .collapse">
+                                <h2>VOICE_SERVER_UPDATE</h2>
+                                <pre>VOICE_SERVER_UPDATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_MEMBERS_CHUNK"> </a>
+                            <div class="element clickable constant  constant_GUILD_MEMBERS_CHUNK inherited" data-toggle="collapse" data-target=".constant_GUILD_MEMBERS_CHUNK .collapse">
+                                <h2>GUILD_MEMBERS_CHUNK</h2>
+                                <pre>GUILD_MEMBERS_CHUNK</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_CREATE"> </a>
+                            <div class="element clickable constant  constant_GUILD_CREATE inherited" data-toggle="collapse" data-target=".constant_GUILD_CREATE .collapse">
+                                <h2>GUILD_CREATE</h2>
+                                <pre>GUILD_CREATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_DELETE"> </a>
+                            <div class="element clickable constant  constant_GUILD_DELETE inherited" data-toggle="collapse" data-target=".constant_GUILD_DELETE .collapse">
+                                <h2>GUILD_DELETE</h2>
+                                <pre>GUILD_DELETE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_UPDATE"> </a>
+                            <div class="element clickable constant  constant_GUILD_UPDATE inherited" data-toggle="collapse" data-target=".constant_GUILD_UPDATE .collapse">
+                                <h2>GUILD_UPDATE</h2>
+                                <pre>GUILD_UPDATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_BAN_ADD"> </a>
+                            <div class="element clickable constant  constant_GUILD_BAN_ADD inherited" data-toggle="collapse" data-target=".constant_GUILD_BAN_ADD .collapse">
+                                <h2>GUILD_BAN_ADD</h2>
+                                <pre>GUILD_BAN_ADD</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_BAN_REMOVE"> </a>
+                            <div class="element clickable constant  constant_GUILD_BAN_REMOVE inherited" data-toggle="collapse" data-target=".constant_GUILD_BAN_REMOVE .collapse">
+                                <h2>GUILD_BAN_REMOVE</h2>
+                                <pre>GUILD_BAN_REMOVE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_MEMBER_ADD"> </a>
+                            <div class="element clickable constant  constant_GUILD_MEMBER_ADD inherited" data-toggle="collapse" data-target=".constant_GUILD_MEMBER_ADD .collapse">
+                                <h2>GUILD_MEMBER_ADD</h2>
+                                <pre>GUILD_MEMBER_ADD</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_MEMBER_REMOVE"> </a>
+                            <div class="element clickable constant  constant_GUILD_MEMBER_REMOVE inherited" data-toggle="collapse" data-target=".constant_GUILD_MEMBER_REMOVE .collapse">
+                                <h2>GUILD_MEMBER_REMOVE</h2>
+                                <pre>GUILD_MEMBER_REMOVE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_MEMBER_UPDATE"> </a>
+                            <div class="element clickable constant  constant_GUILD_MEMBER_UPDATE inherited" data-toggle="collapse" data-target=".constant_GUILD_MEMBER_UPDATE .collapse">
+                                <h2>GUILD_MEMBER_UPDATE</h2>
+                                <pre>GUILD_MEMBER_UPDATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_ROLE_CREATE"> </a>
+                            <div class="element clickable constant  constant_GUILD_ROLE_CREATE inherited" data-toggle="collapse" data-target=".constant_GUILD_ROLE_CREATE .collapse">
+                                <h2>GUILD_ROLE_CREATE</h2>
+                                <pre>GUILD_ROLE_CREATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_ROLE_UPDATE"> </a>
+                            <div class="element clickable constant  constant_GUILD_ROLE_UPDATE inherited" data-toggle="collapse" data-target=".constant_GUILD_ROLE_UPDATE .collapse">
+                                <h2>GUILD_ROLE_UPDATE</h2>
+                                <pre>GUILD_ROLE_UPDATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_GUILD_ROLE_DELETE"> </a>
+                            <div class="element clickable constant  constant_GUILD_ROLE_DELETE inherited" data-toggle="collapse" data-target=".constant_GUILD_ROLE_DELETE .collapse">
+                                <h2>GUILD_ROLE_DELETE</h2>
+                                <pre>GUILD_ROLE_DELETE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CHANNEL_CREATE"> </a>
+                            <div class="element clickable constant  constant_CHANNEL_CREATE inherited" data-toggle="collapse" data-target=".constant_CHANNEL_CREATE .collapse">
+                                <h2>CHANNEL_CREATE</h2>
+                                <pre>CHANNEL_CREATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CHANNEL_DELETE"> </a>
+                            <div class="element clickable constant  constant_CHANNEL_DELETE inherited" data-toggle="collapse" data-target=".constant_CHANNEL_DELETE .collapse">
+                                <h2>CHANNEL_DELETE</h2>
+                                <pre>CHANNEL_DELETE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_CHANNEL_UPDATE"> </a>
+                            <div class="element clickable constant  constant_CHANNEL_UPDATE inherited" data-toggle="collapse" data-target=".constant_CHANNEL_UPDATE .collapse">
+                                <h2>CHANNEL_UPDATE</h2>
+                                <pre>CHANNEL_UPDATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_MESSAGE_CREATE"> </a>
+                            <div class="element clickable constant  constant_MESSAGE_CREATE inherited" data-toggle="collapse" data-target=".constant_MESSAGE_CREATE .collapse">
+                                <h2>MESSAGE_CREATE</h2>
+                                <pre>MESSAGE_CREATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_MESSAGE_DELETE"> </a>
+                            <div class="element clickable constant  constant_MESSAGE_DELETE inherited" data-toggle="collapse" data-target=".constant_MESSAGE_DELETE .collapse">
+                                <h2>MESSAGE_DELETE</h2>
+                                <pre>MESSAGE_DELETE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_MESSAGE_UPDATE"> </a>
+                            <div class="element clickable constant  constant_MESSAGE_UPDATE inherited" data-toggle="collapse" data-target=".constant_MESSAGE_UPDATE .collapse">
+                                <h2>MESSAGE_UPDATE</h2>
+                                <pre>MESSAGE_UPDATE</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                                    <a id="constant_MESSAGE_DELETE_BULK"> </a>
+                            <div class="element clickable constant  constant_MESSAGE_DELETE_BULK inherited" data-toggle="collapse" data-target=".constant_MESSAGE_DELETE_BULK .collapse">
+                                <h2>MESSAGE_DELETE_BULK</h2>
+                                <pre>MESSAGE_DELETE_BULK</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_http"> </a>
+                            <div class="element clickable property  protected property_http inherited" data-toggle="collapse" data-target=".property_http .collapse">
+                                <h2>The HTTP client.</h2>
+                                <pre>http : \Discord\Http\Http</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Client.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Http.Http.html">\Discord\Http\Http</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_factory"> </a>
+                            <div class="element clickable property  protected property_factory inherited" data-toggle="collapse" data-target=".property_factory .collapse">
+                                <h2>The Factory.</h2>
+                                <pre>factory : \Discord\Factory\Factory</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Factory.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Factory.Factory.html">\Discord\Factory\Factory</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_cache"> </a>
+                            <div class="element clickable property  protected property_cache inherited" data-toggle="collapse" data-target=".property_cache .collapse">
+                                <h2>The cache.</h2>
+                                <pre>cache : \Discord\Wrapper\CacheWrapper</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Cache.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Wrapper.CacheWrapper.html">\Discord\Wrapper\CacheWrapper</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_discord"> </a>
+                            <div class="element clickable property  protected property_discord inherited" data-toggle="collapse" data-target=".property_discord .collapse">
+                                <h2>The Discord client instance.</h2>
+                                <pre>discord : \Discord\Discord</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>Client.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Discord.Discord.html">\Discord\Discord</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_listeners"> </a>
+                            <div class="element clickable property  protected property_listeners inherited" data-toggle="collapse" data-target=".property_listeners .collapse">
+                                <h2>listeners</h2>
+                                <pre>listeners : </pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Discord\WebSockets\Events\ChannelCreate"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Discord.WebSockets.Events.html">Events</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Discord.WebSockets.Events.ChannelCreate.html">ChannelCreate</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Sun, 03 Sep 2017 21:47:04 +0200.<br/>
+    </footer>
+    </body>
+</html>
