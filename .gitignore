@@ -47,4 +47,4 @@ Temporary Items
 .apdisk
 
 #Ignore directories created by PHPStorm
-.idea
+.idea/

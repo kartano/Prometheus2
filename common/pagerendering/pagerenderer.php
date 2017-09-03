@@ -26,6 +26,7 @@ abstract class PageRenderer
      * @var DB\PromDB The database we use.
      */
     protected $database;
+
     /**
      * @var PageOptions The page options.
      */
@@ -33,14 +34,21 @@ abstract class PageRenderer
 
     /**
      * PageRenderer constructor.
-     *
-     * @param DB\PromDB   $database The DB connect to use.
-     * @param PageOptions $options  The page options to driver rendering.
+     * @param DB\PromDB $database  DB connection.
+     * @param PageOptions $options  Options for this page.
+     * @throws Exceptions\NotLoggedInException If the current user isn't logged in AND we require that for this page.
      */
     public function __construct(DB\PromDB $database, PageOptions $options)
     {
         $this->database = $database;
         $this->options = $options;
+
+        if ($this->options->requires_logged_in && !User\AuthenticationManager::userLoggedIn()) {
+            $loginoptions=new PageOptions();
+            $login = new LoginPage($database, $loginoptions);
+            $login->renderPage();
+            throw new Exceptions\NotLoggedInException();
+        }
     }
 
     /**
@@ -141,14 +149,9 @@ abstract class PageRenderer
             </header>
             <?php
         }
-        if ($this->options->requires_logged_in) {
-            if (!User\AuthenticationManager::userLoggedIn()) {
-                $loginform = new LoginForm($this->database);
-                $loginform->renderPage();
-            }
-        } else {
-            $this->renderContent();
-        }
+
+        $this->renderContent();
+
         $endtime = microtime(true);
         $timediff = $endtime - $starttime;
         if (CFG::get('app', 'debug')) {

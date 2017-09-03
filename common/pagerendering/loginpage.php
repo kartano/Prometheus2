@@ -1,39 +1,56 @@
 <?php
 /**
- * User Login form renderer
+ * Page that displays the login form.
  *
- * @author          Simon Mitchell <kartano@gmail.com>
+ * @author   Simon Mitchell <kartano@gmail.com>
  *
- * @namespace       Prometheus2\common\modules\admin
+ * @namespace   Prometheus2\common\pagerendering
  *
- * @version         1.0.0           2017-09-01 2017-09-01 Prototype
+ * @version         1.0.0        2017-09-02 21:20
  */
 
 namespace Prometheus2\common\pagerendering;
-
-use Prometheus2\common\pagerendering as Page;
 use Prometheus2\common\database as DB;
+use Prometheus2\common\modules\admin AS Admin;
+use Prometheus2\common\exceptions AS Exceptions;
 
-class LoginForm extends PageRenderer
+/**
+ * Class LoginPage
+ * @package Prometheus2\common\pagerendering
+ */
+class LoginPage extends PageRenderer
 {
+    protected $adminheader;
+
     /**
-     * Prom2AdminHeader constructor.
-     *
-     * @param DB\PromDB   $database The database
-     * @param PageOptions $options  Page options
+     * LoginPage constructor.
+     * @param DB\PromDB $database
+     * @param PageOptions $options
      */
-    public function __construct(DB\PromDB $database)
+    public function __construct(DB\PromDB $database, PageOptions $options)
     {
-        $options = new Page\PageOptions();
-        $options->render_body_only = true;
-        parent::__construct($database, $options);
+        $this->adminheader=new Admin\Prom2AdminHeader($database);
+        try {
+            parent::__construct($database, $options);
+        } catch(Exceptions\NotLoggedInException $exception) {
+            // Squash.  This is a login page. We already KNOW they're not logged in.
+        }
     }
 
     /**
-     * Render section content
+     * Render the header
      * @return void
      */
-    protected function renderSectionContent(): void
+    protected function renderHeader(): void
+    {
+        $this->adminheader->renderPage();
+    }
+
+    /**
+     * Render additional content within the HEAD of the document.
+     * @return void
+     */
+    protected function renderHeadContent(): void
     {
         ?>
         <style>
@@ -48,6 +65,16 @@ class LoginForm extends PageRenderer
                 .login-line input[type="submit"] { background-color: orange; padding: 20px; color: #fff; width: 800px; border-radius: 5px; border: none; margin: 5px;  font-size: 36pt;}
             }
         </style>
+        <?php
+    }
+
+    /**
+     * Render section content
+     * @return void
+     */
+    protected function renderSectionContent(): void
+    {
+        ?>
         <form method="POST" action="/admin">
             <div>Login Screen</div>
             <div><input type="text" name="userUsername" placeholder="enter username"></div>
@@ -55,5 +82,4 @@ class LoginForm extends PageRenderer
             <div><input type="submit" name="submit" value="submit"></div>
         <?php
     }
-
 }

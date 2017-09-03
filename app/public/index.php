@@ -15,6 +15,7 @@ use Prometheus2\common\modules\admin as Admin;
 use Prometheus2\common\database as DB;
 use Prometheus2\common\pagerendering as PR;
 use Prometheus2\app\content as Content;
+use Prometheus2\common\exceptions AS Exceptions;
 
 // TO DO:  Create an instance of the app.
 //         Determine what page is requested.
@@ -62,8 +63,13 @@ switch(strtolower($path)) {
     case '/admin':
         $options = new PR\PageOptions();
         $options->requires_logged_in=true;
-        $page = new Admin\Prom2Admin($database, $options);
-        $page->renderPage();
+        try {
+            $page = new Admin\Prom2Admin($database, $options);
+            $page->renderPage();
+        } catch (Exceptions\NotLoggedInException $exception) {
+            // Squash:  The abstract pagerenderer engine will automatically throw up the LOGIN screen if the user is not logged in.
+            //          If they ARE, it will render the Prom2Admin page.
+        }
         break;
     default:
         PR\PageHelper::throwHTTPError(404,'Page not found');

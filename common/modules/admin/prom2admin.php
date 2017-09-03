@@ -13,6 +13,7 @@ namespace Prometheus2\common\modules\admin;
 use Detection\MobileDetect as Mobile_Detect;
 use Prometheus2\common\database as DB;
 use Prometheus2\common\pagerendering as Page;
+use Prometheus2\common\exceptions AS Exceptions;
 
 /**
  * Class Prom2Admin
@@ -20,18 +21,24 @@ use Prometheus2\common\pagerendering as Page;
  */
 class Prom2Admin extends Page\PageRenderer
 {
+    /**
+     * @var Prom2AdminHeader The page render object that does nothing but render the HEADER section of the BODY document.
+     */
     protected $adminheader;
 
     /**
      * Prom2Admin constructor.
-     *
-     * @param \Prometheus2\common\database\PromDB           $database
-     * @param \Prometheus2\common\pagerendering\PageOptions $options
+     * @param DB\PromDB $database
+     * @param Page\PageOptions $options
      */
     public function __construct(DB\PromDB $database, Page\PageOptions $options)
     {
         $this->adminheader=new Prom2AdminHeader($database);
-        parent::__construct($database, $options);
+        try {
+            parent::__construct($database, $options);
+        } catch (Exceptions\NotLoggedInException $exception) {
+            throw $exception;
+        }
     }
 
     /**
@@ -77,7 +84,6 @@ class Prom2Admin extends Page\PageRenderer
      * Render custom JS.
      * @return void
      */
-
     protected function renderCustomJS(): void
     {
         // Render any custom JS code here - functions NOT executed within document ready.
