@@ -62,7 +62,7 @@ class PromDB extends \mysqli
      *
      * @return \Prometheus2\common\database\PromDB
      */
-    public static function create(): PromDB
+    public static function Create(): PromDB
     {
         $settings = CFG::get('db');
         return new PromDB($settings['host'], $settings['user'], $settings['pass'], $settings['catalogue'],

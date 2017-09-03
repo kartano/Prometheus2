@@ -54,6 +54,7 @@ switch(strtolower($path)) {
     case '/':
     case 'index.html':
     case 'index.php':
+    case '':
         $options=new PR\PageOptions();
         $page = new Content\HomePage($database,$options);
         $page->renderPage();
