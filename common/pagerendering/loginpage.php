@@ -32,7 +32,7 @@ class LoginPage extends PageRenderer
     public function __construct(DB\PromDB $database, PageOptions $options, bool $failedlogin)
     {
         $this->adminheader=new Admin\Prom2AdminHeader($database);
-        $this->failedlogin=$failedlogin;
+        $this->failedLogin=$failedlogin;
         try {
             parent::__construct($database, $options);
         } catch(Exceptions\NotLoggedInException $exception) {
@@ -60,17 +60,14 @@ class LoginPage extends PageRenderer
             body { background-color: #235e98; }
             .login-box { text-align: center; width: auto; padding: 10px; }
             .login-line { float: left; width: 100%; text-align: center;  }
-            .login-line input[type="text"], .login-line input[type="password"] { padding: 7px; width: 300px; margin: 5px; }
+            .login-line input[type="text"], .login-line input[type="password"]
+            .login_text_boxes{ padding: 7px; width: 300px; margin: 5px; }
+
             .login-line input[type="submit"] { background-color: orange; padding: 7px; color: #fff; width: 300px; border-radius: 5px; border: none; margin: 5px;}
             .failed_login {
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: large;
                 color: white;
-            }
-            @media only screen and (max-width: 1024px) {
-                .login-box img { width: 100%; }
-                .login-line input[type="text"], .login-line input[type="password"]  { width: 800px; height: 100px; padding: 20px; font-size: 36pt; }
-                .login-line input[type="submit"] { background-color: orange; padding: 20px; color: #fff; width: 800px; border-radius: 5px; border: none; margin: 5px;  font-size: 36pt;}
             }
         </style>
         <?php
@@ -82,17 +79,20 @@ class LoginPage extends PageRenderer
      */
     protected function renderSectionContent(): void
     {
-        if ($this->failedlogin) {
+        if ($this->failedLogin) {
             ?>
             <span class="failed_login">Invalid username or password combination</span>
             <?php
         }
         ?>
-        <form method="POST" action="/admin">
-            <div>Login Screen</div>
-            <div><input type="text" name="username" placeholder="Enter username"></div>
-            <div><input type="password" name="password" placeholder="Enter password"></div>
-            <div><input type="submit" name="submit" value="submit"></div>
+        <div id="login_form_div" class="center_screen">
+            <form method="POST" action="/admin">
+                <div>Login Screen</div>
+                <div><input class="login_text_boxes" type="text" name="username" placeholder="Enter username"></div>
+                <div><input class="login_text_boxes" type="password" name="password" placeholder="Enter password"></div>
+                <input class="ui-button ui-widget ui-corner-all" type="submit" value="A submit button">
+                </form>
+        </div>
         <?php
     }
 }
