@@ -92,5 +92,4 @@ class PageOptions
     {
         $this->data[$name] = $value;
     }
-
 }

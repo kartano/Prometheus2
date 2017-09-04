@@ -21,15 +21,18 @@ use Prometheus2\common\exceptions AS Exceptions;
 class LoginPage extends PageRenderer
 {
     protected $adminheader;
+    protected $failedLogin;
 
     /**
      * LoginPage constructor.
      * @param DB\PromDB $database
      * @param PageOptions $options
+     * @param bool $failedLogin True if a login attempt was made, but failed.
      */
-    public function __construct(DB\PromDB $database, PageOptions $options)
+    public function __construct(DB\PromDB $database, PageOptions $options, bool $failedlogin)
     {
         $this->adminheader=new Admin\Prom2AdminHeader($database);
+        $this->failedlogin=$failedlogin;
         try {
             parent::__construct($database, $options);
         } catch(Exceptions\NotLoggedInException $exception) {
@@ -59,6 +62,11 @@ class LoginPage extends PageRenderer
             .login-line { float: left; width: 100%; text-align: center;  }
             .login-line input[type="text"], .login-line input[type="password"] { padding: 7px; width: 300px; margin: 5px; }
             .login-line input[type="submit"] { background-color: orange; padding: 7px; color: #fff; width: 300px; border-radius: 5px; border: none; margin: 5px;}
+            .failed_login {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: large;
+                color: white;
+            }
             @media only screen and (max-width: 1024px) {
                 .login-box img { width: 100%; }
                 .login-line input[type="text"], .login-line input[type="password"]  { width: 800px; height: 100px; padding: 20px; font-size: 36pt; }
@@ -74,11 +82,16 @@ class LoginPage extends PageRenderer
      */
     protected function renderSectionContent(): void
     {
+        if ($this->failedlogin) {
+            ?>
+            <span class="failed_login">Invalid username or password combination</span>
+            <?php
+        }
         ?>
         <form method="POST" action="/admin">
             <div>Login Screen</div>
-            <div><input type="text" name="userUsername" placeholder="enter username"></div>
-            <div><input type="password" name="userPassword" placeholder="enter password"></div>
+            <div><input type="text" name="username" placeholder="Enter username"></div>
+            <div><input type="password" name="password" placeholder="Enter password"></div>
             <div><input type="submit" name="submit" value="submit"></div>
         <?php
     }

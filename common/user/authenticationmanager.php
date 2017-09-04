@@ -8,18 +8,22 @@
  *
  * @version         1.0.0        2017-08-31 09:51
  */
- namespace Prometheus2\common\user;
 
- /**
-  * Class AuthenticationManager
-  * @package Prometheus2\common\user
-  */
- class AuthenticationManager
- {
-     /**
-      * Determine if there is a user logged in.
-      * @return bool TRUE if user is logged in, FALSE if not.
-      */
+namespace Prometheus2\common\user;
+
+use Prometheus2\common\database AS DB;
+use Prometheus2\common\exceptions AS Exceptions;
+
+/**
+ * Class AuthenticationManager
+ * @package Prometheus2\common\user
+ */
+class AuthenticationManager
+{
+    /**
+     * Determine if there is a user logged in.
+     * @return bool TRUE if user is logged in, FALSE if not.
+     */
     public static function userLoggedIn(): bool
     {
         if (!SessionManager::sessionIsActive()) {
@@ -31,4 +35,52 @@
         }
         return true;
     }
- }
+
+    /**
+     * @param string $username The username (email)
+     * @param string $password The raw password (WITHOUT SALT).
+     * @return UserModel The User model representing the login.
+     * @throws Exceptions\DatabaseException Thrown is there was a DB error.
+     * @throws Exceptions\InvalidLogin Thrown if the login was invalid.
+     */
+    public static function verifyUser(string $username, string $password): UserModel
+    {
+        try {
+            $db = DB\PromDB::create();
+            $query = "SELECT
+prom2_user.cntPromUserID,
+prom2_user.enuSalutation,
+prom2_user.txtFirstname,
+prom2_user.txtLastname,
+prom2_user.txtPreferredName,
+prom2_user.txtSaltAdded,
+prom2_user.txtEncryptedPassword,
+prom2_user.datLastLogin,
+prom2_user.txtEmail
+FROM
+prom2_user
+WHERE txtEmail=?";
+            $statement = $db->prepare($query);
+            $statement->bind_param('s', $username);
+            $statement->execute();
+            $statement->store_result();
+            if ($statement->num_rows != 1) {
+                throw new Exceptions\InvalidLogin();
+            }
+            $result = $statement->get_result();
+            $row = $result->fetch_array();
+            $statement->close();
+            $encodedpassword = UserHelper::encryptPassword($password, $row['txtSaltAdded']);
+            if ($encodedpassword !== $row['txtEncryptedPassword']) {
+                throw new Exceptions\InvalidLogin();
+            } else {
+                $user = new UserModel();
+                $user->loadFromResultset($row);
+                $user->recordLastLogin();
+                return $user;
+            }
+        } catch (\mysqli_sql_exception $exception) {
+            throw new Exceptions\DatabaseException($exception->getMessage(), $exception->getMessage(), $exception);
+        }
+    }
+}

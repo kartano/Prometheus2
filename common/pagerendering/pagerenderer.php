@@ -44,8 +44,19 @@ abstract class PageRenderer
         $this->options = $options;
 
         if ($this->options->requires_logged_in && !User\AuthenticationManager::userLoggedIn()) {
+            $failedlogin=false;
+            if (isset($_POST['username']) && isset($_POST['password'])) {
+                try {
+                    $user=User\AuthenticationManager::verifyUser(strtolower($_POST['username']), $_POST['password']);
+                } catch(Exceptions\DatabaseException $exception) {
+                    $exception->display();
+                    die();
+                } catch( Exceptions\InvalidLogin $exception) {
+                    $failedlogin=true;
+                }
+            }
             $loginoptions=new PageOptions();
-            $login = new LoginPage($database, $loginoptions);
+            $login = new LoginPage($database, $loginoptions, $failedlogin);
             $login->renderPage();
             throw new Exceptions\NotLoggedInException();
         }
