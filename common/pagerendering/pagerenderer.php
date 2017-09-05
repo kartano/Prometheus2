@@ -11,6 +11,7 @@
 
 namespace Prometheus2\common\pagerendering;
 
+use Illuminate\Support\Facades\Session;
 use Prometheus2\common\database as DB;
 use Prometheus2\common\settings\Settings AS CFG;
 use Prometheus2\common\user AS User;
@@ -54,11 +55,16 @@ abstract class PageRenderer
                 } catch( Exceptions\InvalidLogin $exception) {
                     $failedlogin=true;
                 }
+                if (!$failedlogin) {
+                    User\SessionManager::secureSessionStart();
+                }
             }
             $loginoptions=new PageOptions();
             $login = new LoginPage($database, $loginoptions, $failedlogin);
             $login->renderPage();
             throw new Exceptions\NotLoggedInException();
+        } else {
+            User\SessionManager::secureSessionStart();
         }
     }
 
