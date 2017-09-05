@@ -56,7 +56,7 @@ abstract class PageRenderer
                     $failedlogin=true;
                 }
                 if (!$failedlogin) {
-                    User\SessionManager::secureSessionStart();
+                    User\SessionManager::secureSessionStart($this->options->requires_logged_in);
                 }
             }
             $loginoptions=new PageOptions();
@@ -64,7 +64,7 @@ abstract class PageRenderer
             $login->renderPage();
             throw new Exceptions\NotLoggedInException();
         } else {
-            User\SessionManager::secureSessionStart();
+            User\SessionManager::secureSessionStart($this->options->requires_logged_in);
         }
     }
 

@@ -22,14 +22,19 @@ class SessionManager
 {
     /**
      * Securely start a session, regenerate session ID as necessary.
+     * @param bool $loginNotRequired If TRUE then don't check login first.
      * @throws Prom2Exceptions\NotLoggedInException
      */
-    public static function secureSessionStart(): void
+    public static function secureSessionStart(bool $loginNotRequired): void
     {
-        session_start();
+        if (!self::sessionIsActive()) {
+            session_start();
+        }
 
-        if (!AuthenticationManager::userLoggedIn()) {
-            throw new Prom2Exceptions\NotLoggedInException();
+        if ($loginNotRequired) {
+            if (!AuthenticationManager::userLoggedIn()) {
+                throw new Prom2Exceptions\NotLoggedInException();
+            }
         }
 
         //------------------------------------------------------------------------------------------------------
@@ -37,11 +42,15 @@ class SessionManager
         //      If we do, MURDER this session and force a login.
         //------------------------------------------------------------------------------------------------------
 
-        if ($_SESSION['_USER_AGENT'] != $_SERVER['HTTP_USER_AGENT']
+        if (!isset($_SESSION['_USER_AGENT'])) {
+            $_SESSION['_USER_AGENT']=$_SERVER['HTTP_USER_AGENT'];
+            $_SESSION['_USER_ACCEPT'] = $_SERVER['HTTP_ACCEPT'];
+            $_SESSION['_USER_ACCEPT_ENCODING'] = $_SERVER['HTTP_ACCEPT_ENCODING'];
+            $_SESSION['_USER_ACCEPT_LANG'] = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+        } elseif ($_SESSION['_USER_AGENT'] != $_SERVER['HTTP_USER_AGENT']
             || $_SESSION['_USER_ACCEPT'] != $_SERVER['HTTP_ACCEPT']
             || $_SESSION['_USER_ACCEPT_ENCODING'] != $_SERVER['HTTP_ACCEPT_ENCODING']
-            || $_SESSION['_USER_ACCEPT_LANG'] != $_SERVER['HTTP_ACCEPT_LANGUAGE']
-            || $_SESSION['_USER_ACCEPT_CHARSET'] != $_SERVER['HTTP_ACCEPT_CHARSET']) {
+            || $_SESSION['_USER_ACCEPT_LANG'] != $_SERVER['HTTP_ACCEPT_LANGUAGE']) {
             self::MurderSession();
             throw new Prom2Exceptions\NotLoggedInException();
         }
@@ -51,7 +60,7 @@ class SessionManager
         //      This is a transparent process for the user.
         //------------------------------------------------------------------------------------------------------
 
-        if (($_SESSION['timeout'] + CFG::get('security', 'session_regenerate_mins') * 60) < time()) {
+        if (($_SESSION['timeout'] + CFG::get('security  ', 'session_regenerate_mins') * 60) < time()) {
             self::secureSessionRegenerate();
             $_SESSION['timeout'] = time();
         }

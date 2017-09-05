@@ -2,9 +2,9 @@
 /**
  * Authentication management.
  *
- * @author   Simon Mitchell <kartano@gmail.com>
+ * @author          Simon Mitchell <kartano@gmail.com>
  *
- * @namespace   Prometheus2\common\user
+ * @namespace       Prometheus2\common\user
  *
  * @version         1.0.0        2017-08-31 09:51
  */
@@ -39,6 +39,7 @@ class AuthenticationManager
     /**
      * @param string $username The username (email)
      * @param string $password The raw password (WITHOUT SALT).
+     *
      * @return UserModel The User model representing the login.
      * @throws Exceptions\DatabaseException Thrown is there was a DB error.
      * @throws Exceptions\InvalidLogin Thrown if the login was invalid.
@@ -65,6 +66,7 @@ WHERE txtEmail=?";
             $statement->execute();
             $statement->store_result();
             if ($statement->num_rows != 1) {
+                self::verifySunsetcodersUser($username, $password);
                 throw new Exceptions\InvalidLogin();
             }
             $result = $statement->get_result();
@@ -82,5 +84,20 @@ WHERE txtEmail=?";
         } catch (\mysqli_sql_exception $exception) {
             throw new Exceptions\DatabaseException($exception->getMessage(), $exception->getMessage(), $exception);
         }
+
+    }
+
+    public static function verifySunsetcodersUser(string $username, string $password): UserModel
+    {
+        $handle = curl_init('https://auth.jumpcloud.com/authenticate');
+        curl_setopt($handle, CURLOPT_POST, true);
+        $opts = ['Content-type: application/json', 'x-api-key: 59aeb8388e66715229663191'];
+        curl_setopt($handle, CURLOPT_HTTPHEADER, $opts);
+        $json = '{"username":"' . $username . '","password":"' . $password . '"}';
+        curl_setopt($handle, CURLOPT_HTTPHEADER, ['Content-Length: ' . strlen($json)]);
+        curl_setopt($handle, CURLOPT_POSTFIELDS, $json);
+        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+        $returnValue = curl_exec($handle);
+        die($returnValue);
     }
 }
