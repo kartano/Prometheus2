@@ -1,13 +1,11 @@
 {
   "require": {
-    	"facebook/php-sdk": "3.2.*",
+    "facebook/php-sdk": "3.2.*",
     "team-reflex/discord-php": "^4.0",
     "mobiledetect/mobiledetectlib": "^2.8",
     "symfony/expression-language": "^3.3",
     "symfony/translation": "^3.3",
-    "symfony/valuidator": "v2.2.0"
-    },
-  "require-dev": {
-    "phpdocumentor/phpdocumentor": "v2.9.0"
-  }
+    "symfony/validator": "^3.3",
+    "gsdevme/jumpcloud": "^1.5"
+    }
 }

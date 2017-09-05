@@ -26,5 +26,14 @@
   },
   "security" : {
     "session_regenerate_mins" : 10
+  },
+  "LDAP" : {
+    "server" : "",
+    "port" : "",
+    "user" : "andrew@sunsetcoders.com.au",
+    "password" : "5e9zK3G2wM2c",
+    "organizationunit" : "ou=Users",
+    "organization" : "o=59aeb8388e66715229663191",
+    "domaincomponents" : "dc=jumpcloud,dc=com"
   }
 }

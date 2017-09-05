@@ -9,5 +9,6 @@ return array(
     'TrafficCophp' => array($vendorDir . '/TrafficCophp/ByteBuffer/src'),
     'React\\Partial' => array($vendorDir . '/react/partial/src'),
     'Evenement' => array($vendorDir . '/evenement/evenement/src'),
+    'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
     'Detection' => array($vendorDir . '/mobiledetect/mobiledetectlib/namespaced'),
 );

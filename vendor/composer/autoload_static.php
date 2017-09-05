@@ -24,14 +24,19 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         array (
             'WyriHaximus\\React\\Guzzle\\HttpClient\\' => 36,
             'WyriHaximus\\React\\GuzzlePsr7\\' => 29,
+            'Webmozart\\PathUtil\\' => 19,
+            'Webmozart\\Json\\' => 15,
+            'Webmozart\\Assert\\' => 17,
         ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\Validator\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\ExpressionLanguage\\' => 37,
             'Symfony\\Component\\Cache\\' => 24,
+            'Seld\\JsonLint\\' => 14,
         ),
         'R' => 
         array (
@@ -59,6 +64,11 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         'M' => 
         array (
             'Monolog\\' => 8,
+        ),
+        'J' => 
+        array (
+            'JumpCloud\\' => 10,
+            'JsonSchema\\' => 11,
         ),
         'I' => 
         array (
@@ -95,9 +105,25 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         array (
             0 => __DIR__ . '/..' . '/wyrihaximus/react-guzzle-psr7/src',
         ),
+        'Webmozart\\PathUtil\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/path-util/src',
+        ),
+        'Webmozart\\Json\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/json/src',
+        ),
+        'Webmozart\\Assert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\Validator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/validator',
         ),
         'Symfony\\Component\\Translation\\' => 
         array (
@@ -114,6 +140,10 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         'Symfony\\Component\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/cache',
+        ),
+        'Seld\\JsonLint\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint',
         ),
         'React\\Stream\\' => 
         array (
@@ -186,6 +216,14 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'JumpCloud\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gsdevme/jumpcloud/src/JumpCloud',
+        ),
+        'JsonSchema\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
         ),
         'Illuminate\\Support\\' => 
         array (
@@ -261,6 +299,10 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         ),
         'D' => 
         array (
+            'Doctrine\\Common\\Collections\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
             'Detection' => 
             array (
                 0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
