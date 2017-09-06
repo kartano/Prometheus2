@@ -44,27 +44,39 @@ abstract class PageRenderer
         $this->database = $database;
         $this->options = $options;
 
+        if ($this->options->render_body_only) {
+            return;
+        }
+
+        // SM:  We need this to use the session vars to check for a logged in user.
+        if ($this->options->requires_logged_in) {
+            session_start();
+        }
+
         if ($this->options->requires_logged_in && !User\AuthenticationManager::userLoggedIn()) {
-            $failedlogin=false;
+            $success=false;
             if (isset($_POST['username']) && isset($_POST['password'])) {
+                echo "3";
                 try {
-                    $user=User\AuthenticationManager::verifyUser(strtolower($_POST['username']), $_POST['password']);
+                    $user=User\AuthenticationManager::verifyUser($_POST['username'], $_POST['password']);
+                    $success=true;
                 } catch(Exceptions\DatabaseException $exception) {
                     $exception->display();
                     die();
-                } catch( Exceptions\InvalidLogin $exception) {
-                    $failedlogin=true;
+                } catch(Exceptions\InvalidLogin $exception) {
+                    //
                 }
-                if (!$failedlogin) {
-                    User\SessionManager::secureSessionStart($this->options->requires_logged_in);
+                if ($success) {
+                    User\SessionManager::secureSessionStart($this->options->requires_logged_in, $success);
                 }
             }
-            $loginoptions=new PageOptions();
-            $login = new LoginPage($database, $loginoptions, $failedlogin);
-            $login->renderPage();
-            throw new Exceptions\NotLoggedInException();
-        } else {
-            User\SessionManager::secureSessionStart($this->options->requires_logged_in);
+            if (!$success) {
+                echo "5";
+                $loginoptions = new PageOptions();
+                $login = new LoginPage($database, $loginoptions, $success);
+                $login->renderPage();
+                throw new Exceptions\NotLoggedInException();
+            }
         }
     }
 

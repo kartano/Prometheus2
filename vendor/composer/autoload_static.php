@@ -17,9 +17,14 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         '3be16222a6efa6dd226a219eaaff823b' => __DIR__ . '/..' . '/ratchet/pawl/src/functions_include.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         '864b292aadc96fda0e2642b894a38d16' => __DIR__ . '/..' . '/team-reflex/discord-php/src/Discord/functions.php',
+        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'Z' => 
+        array (
+            'Zend\\Ldap\\' => 10,
+        ),
         'W' => 
         array (
             'WyriHaximus\\React\\Guzzle\\HttpClient\\' => 36,
@@ -81,6 +86,10 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
+        'F' => 
+        array (
+            'Facebook\\' => 9,
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 26,
@@ -97,6 +106,10 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
     );
 
     public static $prefixDirsPsr4 = array (
+        'Zend\\Ldap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-ldap/src',
+        ),
         'WyriHaximus\\React\\Guzzle\\HttpClient\\' => 
         array (
             0 => __DIR__ . '/..' . '/wyrihaximus/react-guzzle-http-client/src',
@@ -244,6 +257,10 @@ class ComposerStaticInit55293ae78c7f88b85684eea679382409
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Facebook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
         ),
         'Doctrine\\Common\\Inflector\\' => 
         array (

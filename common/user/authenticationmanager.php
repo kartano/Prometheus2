@@ -26,14 +26,11 @@ class AuthenticationManager
      */
     public static function userLoggedIn(): bool
     {
-        if (!SessionManager::sessionIsActive()) {
-            return false;
-        } elseif (!isset($_SESSION['authenticated'])) {
-            return false;
-        } elseif (!$_SESSION['authenticated'] == 'auth') {
+        if (isset($_SESSION['prom2authenticated'])) {
+            return true;
+        } else {
             return false;
         }
-        return true;
     }
 
     /**
@@ -66,8 +63,12 @@ WHERE txtEmail=?";
             $statement->execute();
             $statement->store_result();
             if ($statement->num_rows != 1) {
-                self::verifySunsetcodersUser($username, $password);
-                throw new Exceptions\InvalidLogin();
+                $user=self::verifySunsetcodersUser($username, $password);
+                if ($user===null) {
+                    throw new Exceptions\InvalidLogin();
+                } else {
+                    return $user;
+                }
             }
             $result = $statement->get_result();
             $row = $result->fetch_array();
@@ -84,20 +85,66 @@ WHERE txtEmail=?";
         } catch (\mysqli_sql_exception $exception) {
             throw new Exceptions\DatabaseException($exception->getMessage(), $exception->getMessage(), $exception);
         }
-
     }
 
     public static function verifySunsetcodersUser(string $username, string $password): UserModel
     {
-        $handle = curl_init('https://auth.jumpcloud.com/authenticate');
-        curl_setopt($handle, CURLOPT_POST, true);
-        $opts = ['Content-type: application/json', 'x-api-key: 59aeb8388e66715229663191'];
-        curl_setopt($handle, CURLOPT_HTTPHEADER, $opts);
-        $json = '{"username":"' . $username . '","password":"' . $password . '"}';
-        curl_setopt($handle, CURLOPT_HTTPHEADER, ['Content-Length: ' . strlen($json)]);
-        curl_setopt($handle, CURLOPT_POSTFIELDS, $json);
-        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-        $returnValue = curl_exec($handle);
-        die($returnValue);
+        // http://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/
+
+        $handle=ldap_connect('ldap.forumsys.com',389);
+        if ($handle===false) {
+            throw new Exceptions\InvalidLogin("LDAP connection failure");
+        }
+        ldap_set_option($handle, LDAP_OPT_PROTOCOL_VERSION, 3);
+        $dn="uid=$username,dc=example,dc=com";
+        if (ldap_bind($handle, $dn, $password)===false) {
+            throw new Exceptions\InvalidLogin(ldap_error($handle),ldap_errno($handle));
+        }
+        $result=ldap_search($handle,$dn, "(uid=*)");
+        if ($result===false) {
+            throw new Exceptions\InvalidLogin(ldap_error($handle),ldap_errno($handle));
+        }
+        $settings=ldap_get_entries($handle, $result);
+        if ($settings===false) {
+            throw new Exceptions\InvalidLogin(ldap_error($handle),ldap_errno($handle));
+        }
+        if($settings['count']!=1) {
+            throw new Exceptions\InvalidLogin("LDAP entries failure");
+        }
+        $user=new UserModel();
+        $user->email=$settings[0]['mail'][0];
+        $user->firstname=ucwords(explode(' ',$settings[0]['cn'][0])[0]);
+        $user->lastname=ucwords($settings[0]['uid'][0]);
+        $user->lastLogin=date('c');
+        $user->preferredName=$user->firstname.' '.$user->lastname;
+        $user->promUserID=0;
+        $user->salutation='';
+        $user->isSunsetcoders=true;
+        return $user;
+
+        /*
+        $client = new GH\Client();
+        try {
+            $body = [
+                'username' => $username,
+                'password' => $password
+            ];
+            $json = json_encode($body);
+            $response = $client->request('POST', 'https://auth.jumpcloud.com/authenticate',  ['body' => $json, 'headers' => [
+                'x-api-key' => CFG::get('LDAP','apikey'),
+                'Content-Type' => 'application/json',
+                'Content-Length' => strlen($json)
+            ]]);
+            echo "<pre>";
+            print_r($response);
+            echo "</pre>";
+            die();
+        } catch (GH\Exception\ClientException $exception) {
+            echo "<pre>";
+            print_r($exception);
+            echo "<pre>";
+            die();
+        }
+        */
     }
 }

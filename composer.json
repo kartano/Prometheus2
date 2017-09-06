@@ -6,6 +6,9 @@
     "symfony/expression-language": "^3.3",
     "symfony/translation": "^3.3",
     "symfony/validator": "^3.3",
-    "gsdevme/jumpcloud": "^1.5"
+    "gsdevme/jumpcloud": "^1.5",
+    "guzzlehttp/guzzle": "^6.3",
+    "zendframework/zend-ldap": "^2.8",
+    "facebook/graph-sdk": "^5.6"
     }
 }

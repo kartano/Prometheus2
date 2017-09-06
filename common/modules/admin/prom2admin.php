@@ -28,8 +28,11 @@ class Prom2Admin extends Page\PageRenderer
 
     /**
      * Prom2Admin constructor.
-     * @param DB\PromDB $database
-     * @param Page\PageOptions $options
+     *
+     * @param \Prometheus2\common\database\PromDB           $database
+     * @param \Prometheus2\common\pagerendering\PageOptions $options
+     *
+     * @throws \Prometheus2\common\exceptions\NotLoggedInException If login failed.
      */
     public function __construct(DB\PromDB $database, Page\PageOptions $options)
     {
@@ -42,11 +45,16 @@ class Prom2Admin extends Page\PageRenderer
     }
 
     /**
-     * Render addtional content within the HEAD of the document.
+     * Render additional content within the HEAD of the document.
      * @return void
      */
     protected function renderHeadContent(): void
     {
+        ?>
+        <style>
+            body { background-color: #235e98; }
+        </style>
+        <?php
         // Render the custom HEAD content.
     }
 

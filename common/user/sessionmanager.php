@@ -22,16 +22,25 @@ class SessionManager
 {
     /**
      * Securely start a session, regenerate session ID as necessary.
-     * @param bool $loginNotRequired If TRUE then don't check login first.
+     * @param bool $loginrequired If TRUE then we check the session.
      * @throws Prom2Exceptions\NotLoggedInException
      */
-    public static function secureSessionStart(bool $loginNotRequired): void
+    public static function secureSessionStart(bool $loginrequired, bool $success=false): void
     {
         if (!self::sessionIsActive()) {
             session_start();
         }
 
-        if ($loginNotRequired) {
+        if ($success) {
+            $_SESSION['prom2authenticated']=true;
+            $_SESSION['_USER_AGENT']=$_SERVER['HTTP_USER_AGENT'];
+            $_SESSION['_USER_ACCEPT'] = $_SERVER['HTTP_ACCEPT'];
+            $_SESSION['_USER_ACCEPT_ENCODING'] = $_SERVER['HTTP_ACCEPT_ENCODING'];
+            $_SESSION['_USER_ACCEPT_LANG'] = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+            $_SESSION['timeout']=time();
+        }
+
+        if ($loginrequired) {
             if (!AuthenticationManager::userLoggedIn()) {
                 throw new Prom2Exceptions\NotLoggedInException();
             }
@@ -42,12 +51,8 @@ class SessionManager
         //      If we do, MURDER this session and force a login.
         //------------------------------------------------------------------------------------------------------
 
-        if (!isset($_SESSION['_USER_AGENT'])) {
-            $_SESSION['_USER_AGENT']=$_SERVER['HTTP_USER_AGENT'];
-            $_SESSION['_USER_ACCEPT'] = $_SERVER['HTTP_ACCEPT'];
-            $_SESSION['_USER_ACCEPT_ENCODING'] = $_SERVER['HTTP_ACCEPT_ENCODING'];
-            $_SESSION['_USER_ACCEPT_LANG'] = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-        } elseif ($_SESSION['_USER_AGENT'] != $_SERVER['HTTP_USER_AGENT']
+
+        if ($_SESSION['_USER_AGENT'] != $_SERVER['HTTP_USER_AGENT']
             || $_SESSION['_USER_ACCEPT'] != $_SERVER['HTTP_ACCEPT']
             || $_SESSION['_USER_ACCEPT_ENCODING'] != $_SERVER['HTTP_ACCEPT_ENCODING']
             || $_SESSION['_USER_ACCEPT_LANG'] != $_SERVER['HTTP_ACCEPT_LANGUAGE']) {

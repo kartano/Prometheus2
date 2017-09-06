@@ -21,6 +21,7 @@ use Prometheus2\common\exceptions AS Exceptions;
  * @property string lastname The user's lastname.
  * @property string lastLogin The user's last login in ISO8601 format.
  * @property string email The user's email address, as used to log in.
+ * @property bool isSunsetcoders If TRUE then this user is a SunsetCoders operator.
  */
 
 /**
@@ -42,10 +43,11 @@ class UserModel
         $this->promUserID = 0;
         $this->salutation = '';
         $this->firstname = '';
-        $this->lastname;
+        $this->lastname='';
         $this->preferredName = '';
         $this->lastLogin = '';
         $this->email = '';
+        $this->isSunsetcoders=false;
     }
 
     /**

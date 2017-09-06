@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Zend\\Ldap\\' => array($vendorDir . '/zendframework/zend-ldap/src'),
     'WyriHaximus\\React\\Guzzle\\HttpClient\\' => array($vendorDir . '/wyrihaximus/react-guzzle-http-client/src'),
     'WyriHaximus\\React\\GuzzlePsr7\\' => array($vendorDir . '/wyrihaximus/react-guzzle-psr7/src'),
     'Webmozart\\PathUtil\\' => array($vendorDir . '/webmozart/path-util/src'),
@@ -43,6 +44,7 @@ return array(
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
+    'Facebook\\' => array($vendorDir . '/facebook/graph-sdk/src/Facebook'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),
     'Discord\\' => array($vendorDir . '/team-reflex/discord-php/src/Discord'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),

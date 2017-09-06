@@ -27,12 +27,12 @@ class LoginPage extends PageRenderer
      * LoginPage constructor.
      * @param DB\PromDB $database
      * @param PageOptions $options
-     * @param bool $failedLogin True if a login attempt was made, but failed.
+     * @param bool $successfullogin TRUE if the login to the page succeeeded.
      */
-    public function __construct(DB\PromDB $database, PageOptions $options, bool $failedlogin)
+    public function __construct(DB\PromDB $database, PageOptions $options, bool $successfullogin)
     {
         $this->adminheader=new Admin\Prom2AdminHeader($database);
-        $this->failedLogin=$failedlogin;
+        $this->failedLogin=!$successfullogin;
         try {
             parent::__construct($database, $options);
         } catch(Exceptions\NotLoggedInException $exception) {
