@@ -25,7 +25,7 @@ class SessionManager
      * @param bool $loginrequired If TRUE then we check the session.
      * @throws Prom2Exceptions\NotLoggedInException
      */
-    public static function secureSessionStart(bool $loginrequired, bool $success=false): void
+    public static function secureSessionStart(bool $loginrequired, bool $success=false, UserModel $user=null): void
     {
         if (!self::sessionIsActive()) {
             session_start();
@@ -38,6 +38,8 @@ class SessionManager
             $_SESSION['_USER_ACCEPT_ENCODING'] = $_SERVER['HTTP_ACCEPT_ENCODING'];
             $_SESSION['_USER_ACCEPT_LANG'] = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
             $_SESSION['timeout']=time();
+            $user->writeToSession();
+            $user->recordLastLogin();
         }
 
         if ($loginrequired) {

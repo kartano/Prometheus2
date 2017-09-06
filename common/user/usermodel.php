@@ -97,11 +97,27 @@ class UserModel
         $db = DB\PromDB::create();
         $query = "UPDATE prom2_user
             SET datLastLogin=NOW()
-            WHERRE cntPromUserID=?";
+            WHERE cntPromUserID=?";
         $statement = $db->prepare($query);
         $statement->bind_param('i', $this->promUserID);
         $statement->execute();
         $statement->close();
         $db->close();
+    }
+
+    /**
+     * Serialize this user and store them in the current session.
+     */
+    public function writeToSession(): void
+    {
+        $_SESSION['current_user']=serialize($this);
+    }
+
+    /**
+     * @return \Prometheus2\common\user\UserModel Returns a deserialized instance of a UserModel.
+     */
+    public static function readFromSession(): UserModel
+    {
+        return unserialize($_SESSION['current_user']);
     }
 }

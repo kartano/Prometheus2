@@ -52,7 +52,9 @@ class Prom2Admin extends Page\PageRenderer
     {
         ?>
         <style>
-            body { background-color: #235e98; }
+            <?php
+            require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'admin.css';
+            ?>
         </style>
         <?php
         // Render the custom HEAD content.
@@ -72,11 +74,23 @@ class Prom2Admin extends Page\PageRenderer
      */
     protected function renderSectionContent(): void
     {
-        $mobile=new Mobile_Detect();
-        echo "<pre>";
-        print_r($mobile->getHttpHeaders());
-        print_r($mobile->getUserAgent());
-        echo "</pre>";
+?>
+        <div class="admin_container">
+            <div class="lhs_menu">
+                <ul id="menu">
+                    <li class="ui-widget-header"><div>Admin</div></li>
+                    <li><div><i class="fa fa-users" aria-hidden="true"></i>&nbsp;Users</div></li>
+                    <li class="ui-widget-header"><div>Modules</div></li>
+                    <li><div>Option 4</div></li>
+                    <li><div>Option 5</div></li>
+                    <li><div>Option 6</div></li>
+                </ul>
+            </div>
+            <div class="rhs_screen">
+                <p>Content here</p>
+            </div>
+        </div>
+        <?php
     }
 
     /**
@@ -85,7 +99,11 @@ class Prom2Admin extends Page\PageRenderer
      */
     protected function renderDocumentReady(): void
     {
-        // Render document ready script.
+        ?>
+        $( "#menu" ).menu({
+            items: "> :not(.ui-widget-header)"
+        });
+        <?php
     }
 
     /**

@@ -56,7 +56,7 @@ abstract class PageRenderer
         if ($this->options->requires_logged_in && !User\AuthenticationManager::userLoggedIn()) {
             $success=false;
             if (isset($_POST['username']) && isset($_POST['password'])) {
-                echo "3";
+                $user=null;
                 try {
                     $user=User\AuthenticationManager::verifyUser($_POST['username'], $_POST['password']);
                     $success=true;
@@ -67,11 +67,10 @@ abstract class PageRenderer
                     //
                 }
                 if ($success) {
-                    User\SessionManager::secureSessionStart($this->options->requires_logged_in, $success);
+                    User\SessionManager::secureSessionStart($this->options->requires_logged_in, $success, $user);
                 }
             }
             if (!$success) {
-                echo "5";
                 $loginoptions = new PageOptions();
                 $login = new LoginPage($database, $loginoptions, $success);
                 $login->renderPage();

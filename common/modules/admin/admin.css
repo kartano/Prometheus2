@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #235e98;
+}
+p {
+    color: white;
+}
+.prom2admin_headerspan {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    color: white;
+    font-weight: bold;
+}
+.prom2admin_versionno {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-align: right;
+    color: lightblue;
+    position:absolute;
+    top:20px;
+    right:10px;
+}
+.admin_container {
+    position: absolute;
+    width: 100%;
+}
+
+.lhs_menu, .rhs_screen {
+    float:left;
+    width: 10%;
+    height: 400px;
+}
+
+.rhs_screen {
+    float: right;
+    width: 85%;
+}
