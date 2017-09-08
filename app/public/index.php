@@ -16,6 +16,7 @@ use Prometheus2\common\database as DB;
 use Prometheus2\common\pagerendering as PR;
 use Prometheus2\app\content as Content;
 use Prometheus2\common\exceptions AS Exceptions;
+use Prometheus2\common\settings\Settings;
 
 // TO DO:  Create an instance of the app.
 //         Determine what page is requested.
@@ -53,8 +54,8 @@ $path = $bits['path'];
 $database = DB\PromDB::create();
 switch(strtolower($path)) {
     case '/':
-    case 'index.html':
-    case 'index.php':
+    case '/index.html':
+    case '/index.php':
     case '':
         $options=new PR\PageOptions();
         $page = new Content\HomePage($database,$options);
@@ -71,7 +72,28 @@ switch(strtolower($path)) {
             //          If they ARE, it will render the Prom2Admin page.
         }
         break;
+
+
+    //============================================================================
+    // TO DO:  This all should be in some kind of sitemap.
+    //         Otherwise we will need a new url line in this switch for EVERY PAGE!
+    //============================================================================
+
+    case '/admin/useradminpage.php':
+        try {
+            $page = new Admin\UserAdminPage($database);
+            $page->renderPage();
+        } catch (Exceptions\NotLoggedInException $exception) {
+            // Squash:  The abstract pagerenderer engine will automatically throw up the LOGIN screen if the user is not logged in.
+            //          If they ARE, it will render the Prom2Admin page.
+        }
+        break;
     default:
+        if (Settings::get('app','debug')) {
+            echo "<pre>";
+            print_r($path);
+            echo "</pre>";
+        }
         PR\PageHelper::throwHTTPError(404,'Page not found');
 }
 $database->close();

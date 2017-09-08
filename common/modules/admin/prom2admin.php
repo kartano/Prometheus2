@@ -10,7 +10,6 @@
  */
 
 namespace Prometheus2\common\modules\admin;
-use Detection\MobileDetect as Mobile_Detect;
 use Prometheus2\common\database as DB;
 use Prometheus2\common\pagerendering as Page;
 use Prometheus2\common\exceptions AS Exceptions;
@@ -76,18 +75,20 @@ class Prom2Admin extends Page\PageRenderer
     {
 ?>
         <div class="admin_container">
-            <div class="lhs_menu">
+            <div class="lhs_menu menu_border">
                 <ul id="menu">
                     <li class="ui-widget-header"><div>Admin</div></li>
-                    <li><div><i class="fa fa-users" aria-hidden="true"></i>&nbsp;Users</div></li>
+                    <li><div id="home_button"><i class="fa fa-home blue" aria-hidden="true"></i>&nbsp;Home</div></li>
+                    <li><div id="users_button"><i class="fa fa-users green" aria-hidden="true"></i>&nbsp;Users</div></li>
                     <li class="ui-widget-header"><div>Modules</div></li>
                     <li><div>Option 4</div></li>
                     <li><div>Option 5</div></li>
                     <li><div>Option 6</div></li>
                 </ul>
             </div>
-            <div class="rhs_screen">
-                <p>Content here</p>
+            <div class="rhs_screen option_border">
+                <iframe class="content_frame" id="content_frame">
+                </iframe>
             </div>
         </div>
         <?php
@@ -102,6 +103,12 @@ class Prom2Admin extends Page\PageRenderer
         ?>
         $( "#menu" ).menu({
             items: "> :not(.ui-widget-header)"
+        });
+        $( "#home_button" ).click(function() {
+            window.location = '\index.php';
+        });
+        $( "#users_button" ).click(function() {
+            $("#content_frame").attr("src", "admin/useradminpage.php");
         });
         <?php
     }
@@ -121,7 +128,9 @@ class Prom2Admin extends Page\PageRenderer
      */
     protected function renderFooter(): void
     {
-        // Render any custom HTML to be displayed in the footer of the page.
+        ?>
+        <hr>
+        <p><i>Brought to you by SunsetCoders. &copy;<?= date('Y'); ?></i></p>
+        <?php
     }
-
 }

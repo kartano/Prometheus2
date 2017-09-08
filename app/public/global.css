@@ -8,3 +8,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.debug_info_test {
+    color: white;
+}
+
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}

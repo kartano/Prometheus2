@@ -21,17 +21,51 @@ p {
     right:10px;
 }
 .admin_container {
-    position: absolute;
-    width: 100%;
+    display: inline-block;
+    width: 90%;
+    height: 85%;
 }
 
 .lhs_menu, .rhs_screen {
     float:left;
     width: 10%;
-    height: 400px;
+    height: 95%;
+}
+
+.menu_border {
+    border: 2px solid  #2999ad;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #3aa0be;
+}
+
+.option_border {
+    border: 2px solid  #2999ad;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #EEEEEE;
 }
 
 .rhs_screen {
-    float: right;
+    position: absolute;
+    float: left;
+    left: 230px;
     width: 85%;
+    height: 80%;
+}
+
+.content_frame {
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }

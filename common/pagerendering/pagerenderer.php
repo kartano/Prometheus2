@@ -186,7 +186,7 @@ abstract class PageRenderer
             ?>
             <section id="debugsection_<?= __CLASS__; ?>">
                 <code>
-                    Page Render Time: <?= $timediff; ?> seconds.
+                    <span class="debug_info_test">Page Render Time: <?= $timediff; ?> seconds.</span>
                 </code>
             </section>
             <?php
