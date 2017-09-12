@@ -59,3 +59,6 @@ try {
     Prometheus2\common\pagerendering\pagehelper::throwHTTPError($exception->getCode(), $exception->getMessage());
     exit(-1);
 }
+
+// TO DO:  Verify modules NEEDED for PHP are loaded.
+//         Things like XSL, LDAP, MYSQLI.
