@@ -16,6 +16,7 @@ use Prometheus2\common\database as DB;
 use Prometheus2\common\settings\Settings AS CFG;
 use Prometheus2\common\user AS User;
 use Prometheus2\common\exceptions AS Exceptions;
+use Prometheus2\common\widgets AS Widgets;
 
 /**
  * Class PageRenderer
@@ -34,16 +35,21 @@ abstract class PageRenderer
     protected $options;
 
     /**
+     * @var array An array of widgets we want to initialize for this page.
+     */
+    protected $widgets;
+
+    /**
      * PageRenderer constructor.
-     * @param DB\PromDB $database  DB connection.
-     * @param PageOptions $options  Options for this page.
+     * @param DB\PromDB $database DB connection.
+     * @param PageOptions $options Options for this page.
      * @throws Exceptions\NotLoggedInException If the current user isn't logged in AND we require that for this page.
      */
     public function __construct(DB\PromDB $database, PageOptions $options)
     {
         $this->database = $database;
         $this->options = $options;
-
+        $this->widgets = [];
         if ($this->options->render_body_only) {
             return;
         }
@@ -54,16 +60,16 @@ abstract class PageRenderer
         }
 
         if ($this->options->requires_logged_in && !User\AuthenticationManager::userLoggedIn()) {
-            $success=false;
+            $success = false;
             if (isset($_POST['username']) && isset($_POST['password'])) {
-                $user=null;
+                $user = null;
                 try {
-                    $user=User\AuthenticationManager::verifyUser($_POST['username'], $_POST['password']);
-                    $success=true;
-                } catch(Exceptions\DatabaseException $exception) {
+                    $user = User\AuthenticationManager::verifyUser($_POST['username'], $_POST['password']);
+                    $success = true;
+                } catch (Exceptions\DatabaseException $exception) {
                     $exception->display();
                     die();
-                } catch(Exceptions\InvalidLogin $exception) {
+                } catch (Exceptions\InvalidLogin $exception) {
                     //
                 }
                 if ($success) {
@@ -115,46 +121,53 @@ abstract class PageRenderer
     private function renderHead(): void
     {
         ?>
-            <head>
-                <title><?= $this->options->title; ?></title>
-                <meta name="robots" content="noindex, nofollow, noarchive, none, noodp, nosnippet">
-                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-                <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-                <meta name="description" content="<?=$this->options->description;?>">
-                <meta charset="UTF-8">
+        <head>
+            <title><?= $this->options->title; ?></title>
+            <meta name="robots" content="noindex, nofollow, noarchive, none, noodp, nosnippet">
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+            <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+            <meta name="description" content="<?= $this->options->description; ?>">
+            <meta charset="UTF-8">
+            <?php
+            if ($this->options->uses_jquery) {
+                ?>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <?php
-                if ($this->options->uses_jquery) {
-                    ?>
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                    <?php
-                }
-                if ($this->options->uses_jqueryui) {
-                    ?>
-                    <link rel="stylesheet"
-                          href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-                    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-                    <?php
-                }
-                if ($this->options->uses_font_awesome) {
-                    ?>
-                    <script src="https://use.fontawesome.com/6c044d20cb.js"></script>
-                    <?php
-                }
-                $this->renderHeadContent();
+            }
+            if ($this->options->uses_jqueryui) {
                 ?>
                 <link rel="stylesheet"
-                      href="/global.css">
-                <script type="text/javascript">
-                    $(function () {
-                        <?php
-                        $this->renderDocumentReady();
-                        ?>
-                    });
+                      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+                <?php
+            }
+            if ($this->options->uses_font_awesome) {
+                ?>
+                <script src="https://use.fontawesome.com/6c044d20cb.js"></script>
+                <?php
+            }
+            $this->renderHeadContent();
+            $this->renderWidgetHeads();
+            ?>
+            <link rel="stylesheet"
+                  href="/global.css">
+            <script type="text/javascript">
+                $(function () {
                     <?php
-                    $this->renderCustomJS();
+                    $this->renderDocumentReady();
+                    foreach($this->widgets as $widget) {
+                        $widget->headDocumentReady();
+                    }
                     ?>
-                </script>
-            </head>
+                });
+                <?php
+                $this->renderCustomJS();
+                foreach($this->widgets as $widget) {
+                    $widget->customJS();
+                }
+                ?>
+            </script>
+        </head>
         </html>
         <?php
     }
@@ -220,6 +233,24 @@ abstract class PageRenderer
         <?php
         // Render the body content.
     }
+
+    /**
+     * Register a widget for initialization when the page is rendered.
+     *
+     * @param Widgets\BaseWidget $widget
+     */
+    public function registerWidget(Widgets\BaseWidget $widget): void
+    {
+        $this->widgets[]=$widget;
+    }
+
+    private function renderWidgetHeads(): void
+    {
+        foreach($this->widgets as $widget) {
+            $widget->customHead();
+        }
+    }
+
 
     //==================================================================================================================
     // Any methods under here can be overloaded by child classes to render pages.

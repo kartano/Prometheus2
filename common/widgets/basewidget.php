@@ -33,5 +33,40 @@ abstract class BaseWidget
     {
         $this->database=$database;
         $this->page=$page;
+        $page->registerWidget($this);
+    }
+
+    /**
+     * HTML code rendered automatically within <HEAD>...</HEAD> when the page is rendered.
+     * This is meant to be used to include separate STYLE elements or external libraries and such.
+     */
+    public function customHead(): void
+    {
+        //
+    }
+
+    /**
+     * Any code that this widget needs to be initialized should be placed inside this though.
+     */
+    public function headDocumentReady(): void
+    {
+        //
+    }
+
+    /**
+     * Any customised JS code needed by the Widget to execute will be placed in here.
+     */
+    public function customJS(): void
+    {
+        //
+    }
+
+    /**
+     * Your rendering code for your page can use this to render the actual widnet wherever you need it on the physical page.
+     * The page rendered engine DOES NOT DO THAT FOR YOU!  It only sets up and configures it!
+     */
+    public function renderWidget(): void
+    {
+        //
     }
 }
