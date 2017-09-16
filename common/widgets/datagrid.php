@@ -31,14 +31,20 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess
     protected $position = 0;
 
     /**
-     * DataGrid constructor.
-     *
-     * @param \Prometheus2\Common\database\PromDB $database
-     * @param \Prometheus2\Common\pagerendering\PageRenderer $page
+     * @var string The caption for this table.
      */
-    public function __construct(DB\PromDB $database, PAGE\PageRenderer $page)
+    protected $caption='';
+
+    /**
+     * DataGrid constructor.
+     * @param DB\PromDB $database
+     * @param PAGE\PageRenderer $page
+     * @param string $caption
+     */
+    public function __construct(DB\PromDB $database, PAGE\PageRenderer $page, $caption='')
     {
         $this->arrColumns = [];
+        $this->caption=$caption;
         parent::__construct($database, $page);
     }
 
@@ -85,6 +91,27 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess
     public function customJS(): void
     {
         //
+    }
+
+    private function openTable(): void
+    {
+        ?>
+        <div class="container">
+            <table class="responsive-table">
+        <?php
+    }
+
+    private function displayTHead(): void
+    {
+
+    }
+
+    private function closeTable(): void
+    {
+        ?>
+            </table>
+        </div>
+        <?php
     }
 
     /**
