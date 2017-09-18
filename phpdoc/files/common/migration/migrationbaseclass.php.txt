@@ -1,0 +1,100 @@
+<?php
+/**
+ * Database migration parent class.
+ * This can be used to update and create new tables and table entries when the site runs.
+ * These classes are special in that all scripts are dynamically loaded and executed, but individual classes
+ * are loaded from the directory.
+ *
+ * @author          Simon Mitchell <kartano@gmail.com>
+ *
+ * @namespace       Prometheus2\common\migration
+ *
+ * @version         1.0.0           2017-08-22 2017-08-22 Prototype
+ */
+
+namespace Prometheus2\common\migration;
+use Prometheus2\common\database AS DB;
+
+/**
+ * Class MigrationBaseClass
+ * @package Prometheus2\common\migration
+ */
+abstract class MigrationBaseClass
+{
+    /**
+     * @var \Prometheus2\common\database\PromDB The database to use.
+     */
+    protected $db;
+
+    /**
+     * @var bool Flag to determine whether we are using our own internal database, or an external one.
+     */
+    protected $internal_db_used;
+
+    /**
+     * MigrationBaseClass constructor.
+     *
+     * @param \Prometheus2\common\database\PromDB|null $db (optional) The database to use.  Internal one used if not set.
+     */
+    public function __construct(DB\PromDB $db=null)
+    {
+        if ($db!==null) {
+            $this->internal_db_used=true;
+            $this->db=$db;
+        } else {
+            $this->internal_db_used=true;
+            $this->db=DB\PromDB::create();
+        }
+    }
+
+    /**
+     * Kill class and kill the DB connection PROVIDED it was instantiated locally.
+     */
+    public function __destruct()
+    {
+        if ($this->internal_db_used) {
+            @$this->db->close();
+        }
+    }
+
+    /**
+     * Safely updates or creates tables, within a transaction.
+     *
+     * @return void
+     */
+    public function safeUp(): void
+    {
+        //
+    }
+
+    /**
+     * Safely drops any related tables or data, within a transaction.
+     *
+     * @return void
+     */
+    public function safeDown(): void
+    {
+        //
+    }
+
+    /**
+     * updates or creates tables, WITH NO transaction.
+     *
+     * @return void
+     */
+    public function up(): void
+    {
+        //
+    }
+
+    /**
+     * Drops tables or otherwise, WITH NO transaction.
+     *
+     * @return void
+     */
+    public function down(): void
+    {
+        //
+    }
+}
+
