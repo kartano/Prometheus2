@@ -26,5 +26,8 @@
   },
   "security" : {
     "session_regenerate_mins" : 10
+  },
+  "format" : {
+    "endiandate" : "d/m/Y"
   }
 }

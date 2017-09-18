@@ -13,10 +13,10 @@
 namespace Prometheus2\common\modules\admin;
 use Prometheus2\common\pagerendering as Page;
 use Prometheus2\common\database as DB;
+use Prometheus2\common\widgets AS Widgets;
 
 class UserAdminPage extends Page\PageRenderer
 {
-
     /**
      * UserAdminPage constructor.
      *
@@ -27,6 +27,13 @@ class UserAdminPage extends Page\PageRenderer
         $options=new Page\PageOptions();
         $options->render_body_only=true;
         parent::__construct($database, $options);
+
+        $datagrid=new Widgets\DataGrid($database,$this, 'user_table','Users');
+        $datagrid->addColumn('Fullname', 'row', 'Fullname', 'Fullname');
+        $datagrid->addColumn('Preferred Name', 'col', 'txtPreferredName', 'txtPreferredName');
+        $datagrid->addColumn('Email', 'col', 'txtEmail', 'txtEmail');
+        $datagrid->addColumn('Date Created','col','datCreated','datCreated',Widgets\DataGridColumn::DATE_FORMAT);
+        $datagrid->addColumn('Last Login','col','datLastLogin','datLastLogin',Widgets\DataGridColumn::DATE_FORMAT);
     }
 
     /**
@@ -35,27 +42,7 @@ class UserAdminPage extends Page\PageRenderer
      */
     protected function renderSectionContent(): void
     {
-        ?>
-        <style>
-            <?php
-            require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'table.css';
-            ?>
-        </style>
-        <div class="container">
-            <table class="responsive-table">
-                <caption>Users List</caption>
-                <thead>
-                <tr>
-                    <th scope="col">Fullname</th>
-                    <th scope="col">Preferred Name</th>
-                    <th scope="col">Date Created</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Last Login</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                $query="SELECT
+        $query="SELECT
                     prom2_user.cntPromUserID,
                     prom2_user.datCreated,
                     CONCAT(
@@ -84,25 +71,8 @@ class UserAdminPage extends Page\PageRenderer
                 FROM
                     prom2_user
                 ORDER BY Fullname";
-                $statement=$this->database->prepare($query);
-                $statement->execute();
-                $statement->bind_result($id, $datecreated, $fullname, $prename, $email, $datelastlogin);
-                while ($statement->fetch()) {
-                    ?>
-                    <tr>
-                        <th scope="row"><?=$fullname;?></th>
-                        <td data-title="PrefName"><?=$prename;?></td>
-                        <td data-title="DateCreated"><?=date('d/m/Y',strtotime($datecreated));?></td>
-                        <td data-title="Email"><?=$email;?></td>
-                        <td data-title="LastLogin"><?=date('d/m/Y',strtotime($datelastlogin));?></td>
-                    </tr>
-                    <?php
-                }
-                $statement->close();
-                ?>
-                </tbody>
-            </table>
-        </div>
-        <?php
+        $statement=$this->database->prepare($query);
+        $statement->execute();
+        $this->getWidget('user_table')->renderWidget($statement);
     }
 }

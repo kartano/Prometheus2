@@ -22,18 +22,13 @@ abstract class BaseWidget
 {
     protected $database;
     protected $page;
+    protected $widgetID;
 
-    /**
-     * BaseWidget constructor.
-     *
-     * @param \Prometheus2\Common\database\PromDB            $database
-     * @param \Prometheus2\Common\pagerendering\PageRenderer $page
-     */
-    public function __construct(DB\PromDB $database, PAGE\PageRenderer $page)
+    public function __construct(DB\PromDB $database, PAGE\PageRenderer $page, string $widgetID)
     {
         $this->database=$database;
         $this->page=$page;
-        $page->registerWidget($this);
+        $page->registerWidget($this, $widgetID);
     }
 
     /**
@@ -65,7 +60,7 @@ abstract class BaseWidget
      * Your rendering code for your page can use this to render the actual widnet wherever you need it on the physical page.
      * The page rendered engine DOES NOT DO THAT FOR YOU!  It only sets up and configures it!
      */
-    public function renderWidget(): void
+    public function renderWidget(\mysqli_stmt $statement): void
     {
         //
     }

@@ -37,7 +37,7 @@ abstract class PageRenderer
     /**
      * @var array An array of widgets we want to initialize for this page.
      */
-    protected $widgets;
+    protected $widgets=[];
 
     /**
      * PageRenderer constructor.
@@ -103,6 +103,7 @@ abstract class PageRenderer
             </html>
             <?php
         } else {
+            $this->renderHead();
             ?>
             <script type="text/javascript">
                 <?php
@@ -235,13 +236,23 @@ abstract class PageRenderer
     }
 
     /**
-     * Register a widget for initialization when the page is rendered.
-     *
-     * @param Widgets\BaseWidget $widget
+     * @param \Prometheus2\common\widgets\BaseWidget $widget
+     * @param string                                 $widgetID
      */
-    public function registerWidget(Widgets\BaseWidget $widget): void
+    public function registerWidget(Widgets\BaseWidget $widget, string $widgetID): void
     {
-        $this->widgets[]=$widget;
+        if (array_key_exists($widgetID, $this->widgets)) {
+            throw new \InvalidArgumentException("The widget ID $widgetID is already in use.");
+        }
+        $this->widgets[$widgetID]=$widget;
+    }
+
+    public function getWidget(string $widgetID): Widgets\BaseWidget
+    {
+        if (!array_key_exists($widgetID, $this->widgets)) {
+            throw new \InvalidArgumentException("The widget ID $widgetID does not exist.");
+        }
+        return $this->widgets[$widgetID];
     }
 
     private function renderWidgetHeads(): void
@@ -250,7 +261,6 @@ abstract class PageRenderer
             $widget->customHead();
         }
     }
-
 
     //==================================================================================================================
     // Any methods under here can be overloaded by child classes to render pages.
