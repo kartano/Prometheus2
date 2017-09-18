@@ -60,7 +60,7 @@ abstract class BaseWidget
      * Your rendering code for your page can use this to render the actual widnet wherever you need it on the physical page.
      * The page rendered engine DOES NOT DO THAT FOR YOU!  It only sets up and configures it!
      */
-    public function renderWidget(\mysqli_stmt $statement): void
+    public function renderWidget(\mysqli_stmt $statement=null): void
     {
         //
     }

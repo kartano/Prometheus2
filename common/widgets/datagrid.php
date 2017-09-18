@@ -210,7 +210,7 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
      * @param \mysqli_stmt $statement
      * @param array        ...$args
      */
-    public function renderWidget(\mysqli_stmt $statement): void
+    public function renderWidget(\mysqli_stmt $statement=null): void
     {
         $this->openTable()->displayTHead()->displayTFoot()->displayTBody($statement)->closeTable();
     }
