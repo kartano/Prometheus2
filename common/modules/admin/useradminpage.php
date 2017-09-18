@@ -7,6 +7,7 @@
  * @namespace       Prometheus2\common\modules\admin
  *
  * @version         1.0.0           2017-09-08 2017-09-08 Prototype
+ * @version         1.0.1           2017-09-18 SM:  Added use of the language utility.
  */
 
 
@@ -14,7 +15,12 @@ namespace Prometheus2\common\modules\admin;
 use Prometheus2\common\pagerendering as Page;
 use Prometheus2\common\database as DB;
 use Prometheus2\common\widgets AS Widgets;
+use Prometheus2\common\settings AS Settings;
 
+/**
+ * Class UserAdminPage
+ * @package Prometheus2\common\modules\admin
+ */
 class UserAdminPage extends Page\PageRenderer
 {
     /**
@@ -29,11 +35,11 @@ class UserAdminPage extends Page\PageRenderer
         parent::__construct($database, $options);
 
         $datagrid=new Widgets\DataGrid($database,$this, 'user_table','Users');
-        $datagrid->addColumn('Fullname', 'row', 'Fullname', 'Fullname');
-        $datagrid->addColumn('Preferred Name', 'col', 'txtPreferredName', 'txtPreferredName');
-        $datagrid->addColumn('Email', 'col', 'txtEmail', 'txtEmail');
-        $datagrid->addColumn('Date Created','col','datCreated','datCreated',Widgets\DataGridColumn::DATE_FORMAT);
-        $datagrid->addColumn('Last Login','col','datLastLogin','datLastLogin',Widgets\DataGridColumn::DATE_FORMAT);
+        $datagrid->addColumn(Settings\Language::translate('Fullname'), 'row', 'Fullname', 'Fullname');
+        $datagrid->addColumn(Settings\Language::translate('Preferred Name'), 'col', 'txtPreferredName', 'txtPreferredName');
+        $datagrid->addColumn(Settings\Language::translate('Email'), 'col', 'txtEmail', 'txtEmail');
+        $datagrid->addColumn(Settings\Language::translate('Date Created'),'col','datCreated','datCreated',Widgets\DataGridColumn::DATE_FORMAT);
+        $datagrid->addColumn(Settings\Language::translate('Last Login'),'col','datLastLogin','datLastLogin',Widgets\DataGridColumn::DATE_FORMAT);
     }
 
     /**

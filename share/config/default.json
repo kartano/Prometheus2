@@ -28,6 +28,7 @@
     "session_regenerate_mins" : 10
   },
   "format" : {
-    "endiandate" : "d/m/Y"
+    "endiandate" : "d/m/Y",
+    "prettydate" : "l jS \\of F Y h:i:s A"
   }
 }
