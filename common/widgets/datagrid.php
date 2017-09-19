@@ -9,6 +9,7 @@
  * @see             https://fiddle.jshell.net/shailesh_sal/o87z8yv6/1/
  *
  * @version         1.0.0           2017-09-11 2017-09-11 Prototype
+ * @version         1.0.1           2017-09-19 11:39:00  SM:  The table.css is only imported ONCE if multiple datagrids appear on the same page.
  */
 
 namespace Prometheus2\common\widgets;
@@ -23,6 +24,7 @@ use Prometheus2\common\exceptions;
  */
 class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
 {
+    protected static $cssAlreadyIncluded=false;
     /**
      * @var array Collection of DataGridColumn objects.
      */
@@ -79,6 +81,10 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
      */
     public function customHead(): void
     {
+        if (self::$cssAlreadyIncluded) {
+            return;
+        }
+        self::$cssAlreadyIncluded=true;
         ?>
         <style>
             <?php
