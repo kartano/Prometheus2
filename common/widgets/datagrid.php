@@ -9,14 +9,15 @@
  * @see             https://fiddle.jshell.net/shailesh_sal/o87z8yv6/1/
  *
  * @version         1.0.0           2017-09-11 2017-09-11 Prototype
- * @version         1.0.1           2017-09-19 11:39:00  SM:  The table.css is only imported ONCE if multiple datagrids appear on the same page.
+ * @version         1.0.1           2017-09-19 11:39:00  SM:  The table.css is only imported ONCE if multiple datagrids
+ *                  appear on the same page.
  */
 
 namespace Prometheus2\common\widgets;
 
 use Prometheus2\Common\database as DB;
 use Prometheus2\Common\pagerendering as PAGE;
-use Prometheus2\common\exceptions;
+use Prometheus2\Common\Settings AS Settings;
 
 /**
  * Class DataGrid
@@ -46,17 +47,39 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
     protected $footercaption = '';
 
     /**
+     * @var bool If TRUE then the ADD, EDIT and DELETE buttons will be added to the table.
+     */
+    protected $allowCRUDoperations=false;
+
+    protected $idQueryField='';
+
+    protected $callbackRenderingObject=null;
+
+    /**
      * DataGrid constructor.
      *
      * @param DB\PromDB         $database
      * @param PAGE\PageRenderer $page
      * @param string            $caption
      */
-    public function __construct(DB\PromDB $database, PAGE\PageRenderer $page, string $widgetID, $caption = '', $footercaption = '')
+    public function __construct(DB\PromDB $database, PAGE\PageRenderer $page, string $widgetID, string $caption = '', string $footercaption = '', bool $allowCRUDoperations=false, string $idQueryField='')
     {
         $this->arrColumns = [];
         $this->caption = $caption;
+        $this->allowCRUDoperations=$allowCRUDoperations;
+        $this->idQueryField=$idQueryField;
         parent::__construct($database, $page, $widgetID);
+    }
+
+    /**
+     * @param \Prometheus2\common\widgets\IDataGridJSCallBacks $callbacks
+    */
+    public function setCallbackRenderingObject(IDataGridJSCallBacks $callbacks)
+    {
+        if (!$this->allowCRUDoperations) {
+            throw new \RuntimeException(__METHOD__." called to set a callback for widget {$this->widgetID} but this widget has CRUD operations turned off.");
+        }
+        $this->callbackRenderingObject=$callbacks;
     }
 
     /**
@@ -99,15 +122,36 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
      */
     public function headDocumentReady(): void
     {
-        //
+        ?>
+        $("#add_record_button_<?=$this->widgetID;?>").button({icon: "ui-icon-plus", iconPosition: "beginning"})
+        .click(function(){
+            <?php
+            if ($this->callbackRenderingObject!==null) {
+                call_user_func([$this->callbackRenderingObject,'renderAddRecordJS']);
+            }
+            ?>
+        });
+        <?php
     }
 
-    /**
-     * Any customised JS code needed by the Widget to execute will be placed in here.
-     */
     public function customJS(): void
     {
-        //
+        if (!$this->callbackRenderingObject!==null) {
+            ?>
+            function delete_<?=$this->widgetID;?>(item_id)
+            {
+                <?php
+                call_user_func([$this->callbackRenderingObject,'renderDeleteRecordJS']);
+                ?>
+            }
+            function edit_<?=$this->widgetID;?>(item_id)
+            {
+                <?php
+                call_user_func([$this->callbackRenderingObject,'renderEditRecordJS']);
+                ?>
+            }
+            <?php
+        }
     }
 
     /**
@@ -118,7 +162,7 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
         ?>
         <div class="container">
         <table class="responsive-table">
-        <caption><?=$this->caption;?></caption>
+        <caption><?=Settings\Language::translate($this->caption);?></caption>
         <?php
         return $this;
     }
@@ -130,11 +174,31 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
     {
         ?>
         <thead>
+        <?php
+            if ($this->allowCRUDoperations) {
+                ?>
+                <tr>
+                    <td colspan="<?=count($this)+1;?>">
+                        <div class="div_crud_control_container">
+                            <div class="div_crud_control_button">
+                                <button id="add_record_button_<?=$this->widgetID;?>">Add New Record</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <?php
+            }
+         ?>
         <tr>
             <?php
             foreach ($this->arrColumns as $column) {
                 ?>
                 <th scope="<?=$column->scope; ?>"><?= $column->columnName; ?></th>
+                <?php
+            }
+            if ($this->allowCRUDoperations) {
+                ?>
+                <th class="controlColumn"></th>
                 <?php
             }
             ?>
@@ -164,7 +228,8 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
      * @param array        ...$args
      *
      * @return \Prometheus2\common\widgets\DataGrid
-     * @throws \Prometheus2\common\exceptions\DatabaseException If the count of fields does not match the count of fields in the statement.
+     * @throws \Prometheus2\common\exceptions\DatabaseException If the count of fields does not match the count of
+     *                                                          fields in the statement.
      */
     private function displayTBody(\mysqli_stmt $statement): DataGrid
     {
@@ -174,8 +239,9 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
         <?php
         while ($row = $result->fetch_array()) {
             $firstcolumn = true;
+            $id=$row[$this->idQueryField];
             ?>
-            <tr>
+            <tr data-id="<?=$id;?>">
                 <?php
                 foreach ($this as $column) {
                     $value=$column->formatValue($row[$column->queryFieldName]);
@@ -189,6 +255,16 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
                         <td data-title="PrefName"><?= $value; ?></td>
                         <?php
                     }
+                }
+                if ($this->allowCRUDoperations) {
+                    ?>
+                    <td>
+                        <div class="div_crud_control_container">
+                            <div class="div_crud_control_icon"></div><span class="table_green has_pointer" onclick="edit_<?=$this->widgetID;?>(<?=$id;?>);"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></div>
+                            <div class="div_crud_control_icon"><span class="table_red has_pointer" onclick="delete_<?=$this->widgetID;?>(<?=$id;?>);"><i class="fa fa-times" aria-hidden="true"></i></span></div>
+                        </div>
+                    </td>
+                    <?php
                 }
                 ?>
             </tr>
@@ -214,10 +290,12 @@ class DataGrid extends BaseWidget implements \Iterator, \ArrayAccess, \Countable
 
     /**
      * @param \mysqli_stmt $statement
-     * @param array        ...$args
      */
     public function renderWidget(\mysqli_stmt $statement=null): void
     {
+        if ($this->allowCRUDoperations && $this->callbackRenderingObject===null) {
+            throw new \RuntimeException(__METHOD__." for widget with ID {$this->widgetID} had CRUD options turned on, but no callback object set.");
+        }
         $this->openTable()->displayTHead()->displayTFoot()->displayTBody($statement)->closeTable();
     }
 

@@ -29,7 +29,9 @@ abstract class BaseException extends \Exception
      */
     public function __construct($message = "", $code = 0, \Throwable $previous = null)
     {
+        $logid=$this->saveToLog();
         parent::__construct($message, $code, $previous);
+        return $logid;
     }
 
     /**

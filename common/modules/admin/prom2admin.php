@@ -80,6 +80,7 @@ class Prom2Admin extends Page\PageRenderer
                     <li class="ui-widget-header"><div>Admin</div></li>
                     <li><div id="home_button"><i class="fa fa-home blue" aria-hidden="true"></i>&nbsp;Home</div></li>
                     <li><div id="users_button"><i class="fa fa-users green" aria-hidden="true"></i>&nbsp;Users</div></li>
+                    <li><div id="language_button"><i class="fa fa-book green" aria-hidden="true"></i>&nbsp;Translations</div></li>
                     <li class="ui-widget-header"><div>Modules</div></li>
                     <li><div>Option 4</div></li>
                     <li><div>Option 5</div></li>
@@ -110,6 +111,10 @@ class Prom2Admin extends Page\PageRenderer
         $( "#users_button" ).click(function() {
             $("#content_frame").attr("src", "admin/useradminpage.php");
         });
+        $( "#language_button" ).click(function() {
+        $("#content_frame").attr("src", "admin/translationadminpage.php");
+        });
+
         <?php
     }
 

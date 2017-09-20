@@ -23,6 +23,7 @@ use Prometheus2\common\settings AS Settings;
  */
 class UserAdminPage extends Page\PageRenderer
 {
+    protected $userGridCallback;
     /**
      * UserAdminPage constructor.
      *
@@ -31,15 +32,17 @@ class UserAdminPage extends Page\PageRenderer
     public function __construct(DB\PromDB $database)
     {
         $options=new Page\PageOptions();
-        $options->render_body_only=true;
         parent::__construct($database, $options);
 
-        $datagrid=new Widgets\DataGrid($database,$this, 'user_table','Users');
+        $datagrid=new Widgets\DataGrid($database,$this, 'user_table','Users', '', true,'cntPromUserID');
         $datagrid->addColumn(Settings\Language::translate('Fullname'), 'row', 'Fullname', 'Fullname');
         $datagrid->addColumn(Settings\Language::translate('Preferred Name'), 'col', 'txtPreferredName', 'txtPreferredName');
         $datagrid->addColumn(Settings\Language::translate('Email'), 'col', 'txtEmail', 'txtEmail');
         $datagrid->addColumn(Settings\Language::translate('Date Created'),'col','datCreated','datCreated',Widgets\DataGridColumn::DATE_FORMAT);
         $datagrid->addColumn(Settings\Language::translate('Last Login'),'col','datLastLogin','datLastLogin',Widgets\DataGridColumn::DATE_FORMAT);
+
+        $this->userGridCallback=new UserGridJSCallback();
+        $datagrid->setCallbackRenderingObject($this->userGridCallback);
     }
 
     /**
@@ -80,5 +83,33 @@ class UserAdminPage extends Page\PageRenderer
         $statement=$this->database->prepare($query);
         $statement->execute();
         $this->getWidget('user_table')->renderWidget($statement);
+    }
+}
+
+/**
+ * Class UserGridJSCallback
+ * @package Prometheus2\common\modules\admin
+ */
+class UserGridJSCallback implements Widgets\IDataGridJSCallBacks
+{
+    public function renderEditRecordJS(): void
+    {
+        ?>
+        alert('Edit User Here');
+        <?php
+    }
+
+    public function renderAddRecordJS(): void
+    {
+        ?>
+        alert('Add User Here');
+        <?php
+    }
+
+    public function renderDeleteRecordJS(): void
+    {
+        ?>
+        alert('Delete User Here');
+        <?php
     }
 }

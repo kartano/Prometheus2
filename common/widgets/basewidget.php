@@ -28,6 +28,7 @@ abstract class BaseWidget
     {
         $this->database=$database;
         $this->page=$page;
+        $this->widgetID=$widgetID;
         $page->registerWidget($this, $widgetID);
     }
 

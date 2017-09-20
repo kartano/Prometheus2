@@ -88,6 +88,15 @@ switch(strtolower($path)) {
             //          If they ARE, it will render the Prom2Admin page.
         }
         break;
+    case '/admin/translationadminpage.php':
+        try {
+            $page = new Admin\TranslationAdminPage($database);
+            $page->renderPage();
+        } catch (Exceptions\NotLoggedInException $exception) {
+            // Squash:  The abstract pagerenderer engine will automatically throw up the LOGIN screen if the user is not logged in.
+            //          If they ARE, it will render the Prom2Admin page.
+        }
+        break;
     default:
         if (Settings::get('app','debug')) {
             echo "<pre>";

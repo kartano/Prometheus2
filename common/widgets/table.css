@@ -26,6 +26,7 @@ a:hover, a:focus {
 }
 
 .responsive-table {
+    table-layout: fixed;
     width: 100%;
     margin-bottom: 1.5em;
 }
@@ -198,4 +199,25 @@ a:hover, a:focus {
     .responsive-table tbody td[data-title]:before {
         content: none;
     }
+}
+
+.table_red {
+    color: red;
+}
+
+.table_green {
+    color: green;
+}
+
+.has_pointer {
+    cursor: hand;
+}
+
+.div_crud_control_container {
+    float: left;
+}
+
+.div_crud_control_icon {
+    float: left;
+    width: 20px;
 }
