@@ -2,7 +2,8 @@
   "app": {
     "name": "Prometheus2",
     "description": "Default SunsetCoders project",
-    "debug": true
+    "debug": true,
+    "required_php_modules" : ["curl","json","ldap","libxml","mysqli","xsl" ]
   },
   "log": {
     "class": "Prometheus2\\common\\logging\\dblogger",

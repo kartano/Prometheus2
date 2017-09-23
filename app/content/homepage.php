@@ -170,6 +170,7 @@ class HomePage extends PR\PageRenderer
             </div>
         </div>
         <?php
+        phpinfo();
     }
 
     /**

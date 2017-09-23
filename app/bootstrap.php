@@ -6,7 +6,7 @@
  *
  * @namespace       NAMESPACE HERE
  *
- * @version         1.0.1           2017-08-31 11:13:00 SM:  Forces cookies and turns OFF trans SIDs being sent via URLS to stop session hijacking.
+ * @version         1.0.2           2017-09-23 00:16:00 SM:  Checks for required PHP modules.
  */
 
 // Including global autoloader
@@ -60,5 +60,9 @@ try {
     exit(-1);
 }
 
-// TO DO:  Verify modules NEEDED for PHP are loaded.
-//         Things like XSL, LDAP, MYSQLI.
+$modules=\Prometheus2\common\settings\Settings::get('app','required_php_modules');
+foreach($modules as $module) {
+    if (!extension_loaded($module)) {
+        throw new \RuntimeException("Required PHP module $module is not isntalled.  Modules we need are: ".implode(PHP_EOL, $modules));
+    }
+}
