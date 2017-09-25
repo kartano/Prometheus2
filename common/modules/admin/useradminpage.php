@@ -16,6 +16,7 @@ use Prometheus2\common\pagerendering as Page;
 use Prometheus2\common\database as DB;
 use Prometheus2\common\widgets AS Widgets;
 use Prometheus2\common\settings AS Settings;
+use Prometheus2\common\forms AS Forms;
 
 /**
  * Class UserAdminPage
@@ -24,6 +25,8 @@ use Prometheus2\common\settings AS Settings;
 class UserAdminPage extends Page\PageRenderer
 {
     protected $userGridCallback;
+    protected $userform;
+
     /**
      * UserAdminPage constructor.
      *
@@ -83,6 +86,46 @@ class UserAdminPage extends Page\PageRenderer
         $statement=$this->database->prepare($query);
         $statement->execute();
         $this->getWidget('user_table')->renderWidget($statement);
+
+
+        $query="SELECT
+                    prom2_user.cntPromUserID,
+                    prom2_user.datCreated,
+                    CONCAT(
+                
+                        IF (
+                            COALESCE (enuSalutation, '') = '',
+                            '',
+                            enuSalutation
+                        ),
+                        ' ',
+                
+                    IF (
+                        COALESCE (txtFirstname, '') = '',
+                        '',
+                        txtFirstname
+                    ),
+                    ' ',
+                    IF (
+                        COALESCE (txtLastname, '') = '',
+                        '',
+                        txtLastname
+                    )) AS Fullname,
+                 prom2_user.txtPreferredName,
+                 prom2_user.txtEmail,
+                 prom2_user.datLastLogin
+                FROM
+                    prom2_user
+                WHERE 0=1";
+        $statement=$this->database->prepare($query);
+        $statement->execute();
+        $result=$statement->get_result();
+        $this->userform=Forms\Form::buildFromResult($result,'user_dialog');
+        $result->free_result();
+        $statement->close();
+        echo "<pre>";
+        print_r($this->userform);
+        echo "</pre>";
     }
 }
 

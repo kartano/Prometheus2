@@ -24,6 +24,13 @@ abstract class BaseWidget
     protected $page;
     protected $widgetID;
 
+    /**
+     * BaseWidget constructor.
+     *
+     * @param \Prometheus2\Common\database\PromDB            $database
+     * @param \Prometheus2\Common\pagerendering\PageRenderer $page
+     * @param string                                         $widgetID
+     */
     public function __construct(DB\PromDB $database, PAGE\PageRenderer $page, string $widgetID)
     {
         $this->database=$database;
