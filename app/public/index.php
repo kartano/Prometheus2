@@ -110,4 +110,5 @@ switch(strtolower($path)) {
         }
         PR\PageHelper::throwHTTPError(404,'Page not found');
 }
+
 $database->close();
