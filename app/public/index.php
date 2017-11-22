@@ -79,7 +79,6 @@ switch(strtolower($path)) {
         }
         break;
 
-
     //============================================================================
     // TO DO:  This all should be in some kind of sitemap.
     //         Otherwise we will need a new url line in this switch for EVERY PAGE!
