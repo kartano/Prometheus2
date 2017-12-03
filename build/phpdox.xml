@@ -1,5 +1,5 @@
 <phpdox xmlns="http://xml.phpdox.net/config">
- <project name="Prometheus2" source="${basedir}" workdir="build/phpdox">
+ <project name="Prometheus2" source="../" workdir="build/phpdox">
   <collector publiconly="false">
    	<include mask="*.php" />
 	<ignore>**/vendor*</ignore>
