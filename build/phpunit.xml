@@ -8,7 +8,9 @@
          
     <testsuites>
         <testsuite name="The project's test suite">
-            <directory>../</directory>
+            <directory>../app</directory>
+            <directory>../common</directory>
+            <directory>../vendor</directory>
         </testsuite>
     </testsuites>
 
