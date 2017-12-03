@@ -8,9 +8,7 @@
          
     <testsuites>
         <testsuite name="The project's test suite">
-            <directory>../app</directory>
-            <directory>../common</directory>
-            <directory>../vendor</directory>
+            <directory>../</directory>
         </testsuite>
     </testsuites>
 
@@ -25,7 +23,7 @@
 
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src</directory>
+            <directory suffix=".php">../</directory>
             <exclude>
                 <file>../app/bootstrap.php</file>
             </exclude>
