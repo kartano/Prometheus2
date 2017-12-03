@@ -4,8 +4,17 @@
          backupStaticAttributes="false"
          strict="flase"
          verbose="true">
+         
+         
+    <testsuites>
+        <testsuite name="The project's test suite">
+            <directory>../</directory>
+        </testsuite>
+    </testsuites>
 
-    <logging>
+    
+         
+     <logging>
         <log type="coverage-html" target="build/coverage"/>
         <log type="coverage-clover" target="build/logs/clover.xml"/>
         <log type="coverage-crap4j" target="build/logs/crap4j.xml"/>
