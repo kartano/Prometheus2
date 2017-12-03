@@ -33,6 +33,9 @@ if (is_readable($configFile)) {
  * If the requested class cannot be found within the vendor autoload for Composer,
  * it will fall back to here - where we can determine our class name.
  */
+
+/**
+*NM: Commented out for testing phpunit 
 spl_autoload_register(function ($name) {
     $file = dirname(__FILE__);
     $file .= '\\..\\';
@@ -46,6 +49,7 @@ spl_autoload_register(function ($name) {
         throw new \Exception("Unable to create instance of class: $name.");
     }
 });
+ */
 
 /**
  * Execute migration scripts.
