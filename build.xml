@@ -143,7 +143,8 @@
          description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
   <exec executable="${phpmd}" taskname="phpmd">
    <arg path="${basedir}" />
-   <arg path="--exclude ${basedir}/vendor/*" />
+   <arg value="--exclude" />
+   <arg path="${basedir}/vendor/*" />
    <arg value="xml" />
    <arg path="${basedir}/build/phpmd.xml" />
    <arg value="--reportfile" />
@@ -200,7 +201,8 @@
   <exec executable="${phpcpd}" taskname="phpcpd">
    <arg value="--log-pmd" />
    <arg path="${basedir}/build/logs/pmd-cpd.xml" />
-   <arg path="--exclude vendor " />
+   <arg value="----exclude" />
+   <arg path="/vendor/* " />
    <arg path="${basedir}" />
   </exec>
 
