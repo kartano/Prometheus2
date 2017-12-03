@@ -34,14 +34,12 @@ if (is_readable($configFile)) {
  * it will fall back to here - where we can determine our class name.
  */
 
-/**
-*NM: Commented out for testing phpunit 
 spl_autoload_register(function ($name) {
     $file = dirname(__FILE__);
     $file .= '\\..\\';
     // SM:  We don't need to prepend the filename with Prometherus 2.
     //      ALL CLASS FILES should be in lower case.
-    $name = strtolower(str_replace('Prometheus2\\', '', $name)) . '.php';
+    $name = strtolower(str_replace('Prometheus2\\', '', ../$name)) . '.php';
     $file .= $name;
     if (file_exists($file)) {
         require_once $file;
@@ -49,7 +47,6 @@ spl_autoload_register(function ($name) {
         throw new \Exception("Unable to create instance of class: $name.");
     }
 });
- */
 
 /**
  * Execute migration scripts.
