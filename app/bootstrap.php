@@ -39,7 +39,7 @@ spl_autoload_register(function ($name) {
     $file .= '\\..\\';
     // SM:  We don't need to prepend the filename with Prometherus 2.
     //      ALL CLASS FILES should be in lower case.
-    $name = strtolower(str_replace('Prometheus2\\', '', ../$name)) . '.php';
+    $name = strtolower(str_replace('Prometheus2\\', '', '../$name')) . '.php';
     $file .= $name;
     if (file_exists($file)) {
         require_once $file;
