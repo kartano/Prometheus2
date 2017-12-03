@@ -6,7 +6,7 @@
  *
  * @namespace       NAMESPACE HERE
  *
- * @version         1.0.2           2017-09-23 00:16:00 SM:  Checks for required PHP modules.
+ * @version         1.0.3           2017-12-03 15:50:00 SM:  Working on bug fix for Linux file paths when using Linux.
  */
 
 // Including global autoloader
@@ -40,6 +40,12 @@ spl_autoload_register(function ($name) {
     //      ALL CLASS FILES should be in lower case.
     $name = strtolower(str_replace('Prometheus2\\', '', $name)) . '.php';
     $file .= $name;
+
+    // SM:  If we are not on windows, switch the directory separator.
+    if (strtoupper(substr(PHP_OS, 0, 3)) !== 'WIN') {
+        $file=str_replace('\\',DIRECTORY_SEPARATOR,$file);
+    }
+
     if (file_exists($file)) {
         require_once $file;
     } else {
