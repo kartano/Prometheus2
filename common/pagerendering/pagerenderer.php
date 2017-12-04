@@ -95,7 +95,17 @@ abstract class PageRenderer
         if (!$this->options->render_body_only) {
             ?>
             <!DOCUMENT <?= $this->options->document_type; ?>>
-            <html lang="en">
+            <?php
+            if ($this->options->uses_angular) {
+                ?>
+                <html lang="en" ng-app>
+                <?php
+            } else {
+                ?>
+                <html lang="en">
+                <?php
+            }
+            ?>
             <?php
             $this->renderHead();
             $this->renderBody($starttime);
@@ -145,6 +155,11 @@ abstract class PageRenderer
             if ($this->options->uses_font_awesome) {
                 ?>
                 <script src="https://use.fontawesome.com/6c044d20cb.js"></script>
+                <?php
+            }
+            if ($this->options->uses_angular) {
+                ?>
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
                 <?php
             }
             $this->renderHeadContent();
@@ -247,6 +262,10 @@ abstract class PageRenderer
         $this->widgets[$widgetID]=$widget;
     }
 
+    /**
+     * @param string $widgetID
+     * @return Widgets\BaseWidget
+     */
     public function getWidget(string $widgetID): Widgets\BaseWidget
     {
         if (!array_key_exists($widgetID, $this->widgets)) {
@@ -255,6 +274,9 @@ abstract class PageRenderer
         return $this->widgets[$widgetID];
     }
 
+    /**
+     * Render HEAD sections for widgets.
+     */
     private function renderWidgetHeads(): void
     {
         foreach($this->widgets as $widget) {

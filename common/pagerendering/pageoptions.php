@@ -6,7 +6,7 @@
  *
  * @namespace       Prometheus2\common\pagerendering
  *
- * @version         1.0.0        2017-08-18 12:39:00 Prototype
+ * @version         1.1.0        2017-12-03 20:18:00 SM:  Added uses_angular property.
  */
 
 /**
@@ -22,6 +22,7 @@
  * @property string description The Description to be used for the meta tags in web pages.
  * @property bool   requires_logged_in  If TRUE then session authentication will be checked.  THIS WILL *NOT* WORK IF YOU ARE OPERATING WITH CONTENT ONLY RENDERING!
  * @property bool   uses_font_awesome If TRUE then the CDN for the font awesome icon set is imported.  TRUE by default.
+ * @property bool   uses_angular    If TRUE then the CDN for the AngularJS library is included.
  */
 
 namespace Prometheus2\common\pagerendering;
@@ -66,6 +67,8 @@ class PageOptions
         $this->requires_logged_in=false;
 
         $this->uses_font_awesome=true;
+
+        $this->uses_angular=false;
     }
 
     /**
