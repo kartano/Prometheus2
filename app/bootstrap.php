@@ -33,12 +33,13 @@ if (is_readable($configFile)) {
  * If the requested class cannot be found within the vendor autoload for Composer,
  * it will fall back to here - where we can determine our class name.
  */
+
 spl_autoload_register(function ($name) {
-    $file = dirname(__FILE__);
-    $file .= '\\..\\';
+    $file = dirname(__FILE__) . '\\..\\';
+    //$file .= '\\..\\';
     // SM:  We don't need to prepend the filename with Prometherus 2.
     //      ALL CLASS FILES should be in lower case.
-    $name = strtolower(str_replace('Prometheus2\\', '', $name)) . '.php';
+    $name = strtolower(str_replace('Prometheus2\\', '' , $name)) . '.php';
     $file .= $name;
 
     // SM:  If we are not on windows, switch the directory separator.
